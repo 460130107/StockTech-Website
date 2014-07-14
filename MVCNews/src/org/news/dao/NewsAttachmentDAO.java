@@ -189,7 +189,7 @@ public class NewsAttachmentDAO {
       */
       public List<NewsAttachment> getAllSoftwares(String keyword, int currentPage, int lineSize){
     	  List<NewsAttachment> attachments = new ArrayList<NewsAttachment>();		//定义集合，接收全部数据
-       	 sql = "select * from News_Attachment where news_id=0 and attachment_name like ?" +
+       	 sql = "select * from News_Attachment where news_id=0 and attachment_name like binary ?" +
        	 		" order by Attachment_id limit ?,?";
        	 con = DB_UTILS.getConnection();
        	 

@@ -84,6 +84,7 @@ public class CharacterEncodingFilter implements Filter {
             String encoding = selectEncoding(request);
             if (encoding != null) {
                 request.setCharacterEncoding(encoding);
+                response.setCharacterEncoding(encoding);
             }
         }
         // Pass control on to the next filter

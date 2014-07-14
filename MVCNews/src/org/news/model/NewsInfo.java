@@ -24,7 +24,7 @@ public class NewsInfo {
 	private Date newsInfoTime;		//创建时间
 	private String newsAuthor;			//文章作者
 	private int adminId;				//管理员Id
-	private int newsTypeId;				//文章分类Id
+	private String newsType;				//文章分类Id
 	private int newsInfoState;			//文章状态
 	
 	/**
@@ -42,7 +42,7 @@ public class NewsInfo {
 	public NewsInfo(int newsInfoId, String newsInfoTitle,
 			String newsInfoDescribe, String newsInfoContent,
 			Date newsInfoTime, String newsAuthor, int adminId,
-			int newsTypeId, int newsInfoState) {
+			String newsType, int newsInfoState) {
 		super();
 		this.newsInfoId = newsInfoId;
 		this.newsInfoTitle = newsInfoTitle;
@@ -51,7 +51,7 @@ public class NewsInfo {
 		this.newsInfoTime = newsInfoTime;
 		this.newsAuthor = newsAuthor;
 		this.adminId = adminId;
-		this.newsTypeId = newsTypeId;
+		this.newsType = newsType;
 		this.newsInfoState = newsInfoState;
 	}
 	
@@ -167,19 +167,19 @@ public class NewsInfo {
 	}
 	
 	/**
-	 * 获取文章分类Id
-	 * @return the newsTypeId
+	 * 获取文章分类
+	 * @return the newsType
 	 */
-	public int getNewsTypeId() {
-		return newsTypeId;
+	public String getNewsType() {
+		return newsType;
 	}
 	
 	/**
-	 * 设置文章分类Id
-	 * @param newsTypeId the newsTypeId to set
+	 * 设置文章分类
+	 * @param newsType the newsType to set
 	 */
-	public void setNewsTypeId(int newsTypeId) {
-		this.newsTypeId = newsTypeId;
+	public void setNewsType(String newsType) {
+		this.newsType = newsType;
 	}
 	
 	/**

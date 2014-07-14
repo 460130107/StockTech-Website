@@ -1,7 +1,7 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-<head><title>²é¿´ĞÂÎÅÏêÇé</title></head>
+<head><title>æŸ¥çœ‹æ–°é—»è¯¦æƒ…</title></head>
 <body>
 	<script language="javascript">
 		function changeColor(obj,color){
@@ -12,35 +12,35 @@
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">
-			<h1>²é¿´ĞÂÎÅÏêÇé</h1>		</td>
+			<h1>æŸ¥çœ‹æ–°é—»è¯¦æƒ…</h1>		</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">±êÌâ£º</font></td>
+		<td><font size="2">æ ‡é¢˜ï¼š</font></td>
 		<td>${newsinfo.newsInfoTitle}</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">ÃèÊö£º</font></td>
+		<td><font size="2">æè¿°ï¼š</font></td>
 		<td>${newsinfo.newsInfoDescribe}</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">´´½¨Ê±¼ä£º</font></td>
+		<td><font size="2">åˆ›å»ºæ—¶é—´ï¼š</font></td>
 		<td>${newsinfo.newsInfoTime}</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">×÷Õß£º</font></td>
+		<td><font size="2">ä½œè€…ï¼š</font></td>
 		<td>${newsinfo.newsAuthor}</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">·ÖÀà£º</font></td>
-		<td>${type}</td>
+		<td><font size="2">åˆ†ç±»ï¼š</font></td>
+		<td>${newsinfo.newsType}</td>
 	</tr>	
 	<c:forEach items="${attachments}" var="attachment">
 		<tr>
-	    <td colspan="2" align="left"><font size="2"><a href="<%=request.getContextPath()%>/servlet/DownloadAttachmentServlet?id=${attachment.attachmentId}">¸½¼ş:${attachment.attachmentName}</a></font></td>
+	    <td colspan="2" align="left"><font size="2"><a href="<%=request.getContextPath()%>/servlet/DownloadAttachmentServlet?id=${attachment.attachmentId}">é™„ä»¶:${attachment.attachmentName}</a></font></td>
 	 	</tr>
 	 </c:forEach>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td colspan="2"><font size="2">ÏêÇé£º</font></td>
+		<td colspan="2"><font size="2">è¯¦æƒ…ï¼š</font></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">

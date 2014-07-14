@@ -1,10 +1,10 @@
-<%@page pageEncoding="GBK" import="org.news.model.*"%>
+<%@page pageEncoding="UTF-8" import="org.news.model.*"%>
 <html>
 <head>
-<title>¹ÜÀíÒ³Ãæ</title>
+<title>ç®¡ç†é¡µé¢</title>
 <script language=JavaScript>
 function logout(){
-	if (confirm("ÄúÈ·¶¨ÒªÍË³ö¿ØÖÆÃæ°åÂğ£¿"))
+	if (confirm("æ‚¨ç¡®å®šè¦é€€å‡ºæ§åˆ¶é¢æ¿å—ï¼Ÿ"))
 	top.location = "AdminLogoutServlet";
 	return false;
 }
@@ -42,13 +42,13 @@ function showsubmenu(sid) {
     <td width="61%" height="64"><img src="images/logo.png" width="279" height="68" border="0"></td>
     <td width="39%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="74%" height="38" class="admin_txt">¹ÜÀíÔ±£º<b>
+        <td width="74%" height="38" class="admin_txt">ç®¡ç†å‘˜ï¼š<b>
 		<%
 			Admin admin = (Admin) session.getAttribute("admin") ;
 		%>
 		<%=admin==null?"":admin.getAdminName()%>
-		</b> ÄúºÃ,¸ĞĞ»µÇÂ½Ê¹ÓÃ£¡</td>
-        <td width="22%"><a href="#" target="_self" onClick="logout();"><img src="images/out.gif" alt="°²È«ÍË³ö" width="46" height="20" border="0"></a></td>
+		</b> æ‚¨å¥½,æ„Ÿè°¢ç™»é™†ä½¿ç”¨ï¼</td>
+        <td width="22%"><a href="#" target="_self" onClick="logout();"><img src="images/out.gif" alt="å®‰å…¨é€€å‡º" width="46" height="20" border="0"></a></td>
         <td width="4%">&nbsp;</td>
       </tr>
       <tr>

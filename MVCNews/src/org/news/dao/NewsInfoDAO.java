@@ -17,6 +17,7 @@ import java.util.List;
 
 import org.news.model.NewsInfo;
 import org.news.utils.DB_UTILS;
+import org.news.utils.Logger;
 
 /**
  * 文章信息DAO
@@ -37,7 +38,7 @@ public class NewsInfoDAO {
 	 */
 	public boolean addNewsInfo(NewsInfo newsInfo){
 		boolean b = false;//操作成功与否
-		sql = "insert into newsinfo(newsInfoId,newsInfoTitle,newsInfoDescribe,newsInfoContent,newsInfoTime,newsAuthor,adminId,newsTypeId,newsInfoState) " +
+		sql = "insert into newsinfo(newsInfoId,newsInfoTitle,newsInfoDescribe,newsInfoContent,newsInfoTime,newsAuthor,adminId,newsType,newsInfoState) " +
 				"values(?,?,?,?,?,?,?,?,?)"; 
 		
 		con = DB_UTILS.getConnection();//获取连接
@@ -49,7 +50,7 @@ public class NewsInfoDAO {
 			Date newsInfoTime = newsInfo.getNewsInfoTime();
 			String newsAuthor = newsInfo.getNewsAuthor();
 			int adminId = newsInfo.getAdminId();
-			int newsTypeId = newsInfo.getNewsTypeId();
+			String newsType = newsInfo.getNewsType();
 			int newsInfoId = newsInfo.getNewsInfoId();
 			int newsInfoState = newsInfo.getNewsInfoState();
 
@@ -62,7 +63,7 @@ public class NewsInfoDAO {
 			
 			pstmt.setString(6, newsAuthor);					
 			pstmt.setInt(7, adminId);				
-			pstmt.setInt(8, newsTypeId);
+			pstmt.setString(8, newsType);
 			pstmt.setInt(9, newsInfoState);
 			
 			int i = pstmt.executeUpdate();							//更新表格
@@ -128,11 +129,11 @@ public class NewsInfoDAO {
 				String newsAuthor = rs.getString("newsAuthor");
 				String newsInfoContent = rs.getString("newsInfoContent");
 				int adminId = rs.getInt("adminId");
-				int newsTypeId = rs.getInt("newsTypeId");
+				String newsType = rs.getString("newsType");
 				int newsInfoState = rs.getInt("newsInfoState");
 				newsInfo = new NewsInfo(newsInfoId, newsInfoTitle,
 						newsInfoDescribe, newsInfoContent, newsInfoTime,
-						newsAuthor, adminId, newsTypeId, newsInfoState);
+						newsAuthor, adminId, newsType, newsInfoState);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -150,7 +151,7 @@ public class NewsInfoDAO {
 	public NewsInfo updateNewsInformation(NewsInfo newsInfo) {
 	   con = DB_UTILS.getConnection();
 	   sql = "update newsInfo set newsInfoTitle = ? ,newsInfoDescribe = ?,newsInfoContent = ?,"
-				+ "newsInfoTime = ?,newsAuthor = ?,adminId = ? , newsTypeId = ? ,newsInfoState = ? where newsInfoId = ?";
+				+ "newsInfoTime = ?,newsAuthor = ?,adminId = ? , newsType = ? ,newsInfoState = ? where newsInfoId = ?";
 	   
 		try {
 			pstmt = con.prepareStatement(sql);								//实例化操作
@@ -160,7 +161,7 @@ public class NewsInfoDAO {
 			Date newsInfoTime = newsInfo.getNewsInfoTime();
 			String newsAuthor = newsInfo.getNewsAuthor();
 			int adminId = newsInfo.getAdminId();
-			int newsTypeId = newsInfo.getNewsTypeId();
+			String newsType = newsInfo.getNewsType();
 			int newsInfoId = newsInfo.getNewsInfoId();
 			int newsInfoState = newsInfo.getNewsInfoState();
 
@@ -171,7 +172,7 @@ public class NewsInfoDAO {
 			pstmt.setDate(4, (java.sql.Date) newsInfoTime);
 			pstmt.setString(5, newsAuthor);
 			pstmt.setInt(6, adminId);
-			pstmt.setInt(7, newsTypeId);
+			pstmt.setString(7, newsType);
 			pstmt.setInt(8, newsInfoState);
 			pstmt.setInt(9, newsInfoId);
 
@@ -209,11 +210,11 @@ public class NewsInfoDAO {
  					String newsAuthor = rs.getString("newsAuthor");
  					String newsInfoContent = rs.getString("newsInfoContent");
  					int adminId = rs.getInt("adminId");
- 					int newsTypeId = rs.getInt("newsTypeId");
+ 					String newsType = rs.getString("newsType");
  					int newsInfoState = rs.getInt("newsInfoState");
  					newsInfo = new NewsInfo(newsInfoId, newsInfoTitle,
  							newsInfoDescribe, newsInfoContent, newsInfoTime,
- 							newsAuthor, adminId, newsTypeId, newsInfoState);
+ 							newsAuthor, adminId, newsType, newsInfoState);
  					allNews.add(newsInfo);
  				}
  			
@@ -233,11 +234,12 @@ public class NewsInfoDAO {
       */
      public List<NewsInfo> getAllNewsInfo(String keyword){
     	 List<NewsInfo> allNews = new ArrayList<NewsInfo>();		//定义集合，接收全部数据
-    	 sql = "select * from newsInfo where newsInfoTitle like ?" +
-    	 		" or newsInfoDescribe like ? " +
-    	 		" or newsInfoContent like ?" +
-    	 		" or newsInfoTime like ?" +
-    	 		" or newsAuthor like ? order by newsInfoId desc"; //模糊匹配
+    	 sql = "select * from newsInfo where newsInfoTitle like binary ?" +
+    	 		" or newsInfoDescribe like binary ? " +
+    	 		" or newsInfoContent like binary ?" +
+    	 		" or newsInfoTime like binary ?" +
+    	 		" or newsType like binary ?" +
+    	 		" or newsAuthor like binary ? order by newsInfoId desc"; //模糊匹配
     	 con = DB_UTILS.getConnection();
     	 
     	 try {
@@ -247,6 +249,7 @@ public class NewsInfoDAO {
  			 pstmt.setString(3, "%"+keyword+"%");   //设置查询关键字
  			 pstmt.setString(4, "%"+keyword+"%");   //设置查询关键字
  			 pstmt.setString(5, "%"+keyword+"%");   //设置查询关键字
+ 			 pstmt.setString(6, "%"+keyword+"%");   //设置查询关键字
  			 rs = pstmt.executeQuery();				//取得查询结果	
  			 
  			 NewsInfo newsInfo = null;
@@ -258,11 +261,11 @@ public class NewsInfoDAO {
  					String newsAuthor = rs.getString("newsAuthor");
  					String newsInfoContent = rs.getString("newsInfoContent");
  					int adminId = rs.getInt("adminId");
- 					int newsTypeId = rs.getInt("newsTypeId");
+ 					String newsType = rs.getString("newsType");
  					int newsInfoState = rs.getInt("newsInfoState");
  					newsInfo = new NewsInfo(newsInfoId, newsInfoTitle,
  							newsInfoDescribe, newsInfoContent, newsInfoTime,
- 							newsAuthor, adminId, newsTypeId, newsInfoState);
+ 							newsAuthor, adminId, newsType, newsInfoState);
  					allNews.add(newsInfo);
  				}
  			
@@ -284,22 +287,25 @@ public class NewsInfoDAO {
       */
      public List<NewsInfo> getAllNewsInfo(String keyword, int currentPage, int lineSize){
     	 List<NewsInfo> allNews = new ArrayList<NewsInfo>();		//定义集合，接收全部数据
-    	 sql = "select * from newsinfo where newsInfoTitle like ?" +
-	 		   " or newsInfoDescribe like ? " +
-	 		   " or newsInfoContent like ?" +
-	 		   " or newsInfoTime like ?" +
-	 		   " or newsAuthor like ?  order by newsInfoId desc limit ?,?"; //模糊匹配
+    	 sql = "select * from newsinfo where newsInfoTitle like binary ?" +
+	 		   " or newsInfoDescribe like binary ? " +
+	 		   " or newsInfoContent like binary ?" +
+	 		   " or newsInfoTime like binary ?" +
+	 		   " or newsType like binary ?" +
+	 		   " or newsAuthor like binary ?  order by newsInfoId desc limit ?,?"; //模糊匹配
     	 con = DB_UTILS.getConnection();
     	 
     	 try {
+    		 Logger.log(keyword, Logger.DEBUG);
  			 pstmt = con.prepareStatement(sql);		//实例化查询对象
  			 pstmt.setString(1, "%"+keyword+"%");   //设置查询关键字
  			 pstmt.setString(2, "%"+keyword+"%");   //设置查询关键字
  			 pstmt.setString(3, "%"+keyword+"%");   //设置查询关键字
  			 pstmt.setString(4, "%"+keyword+"%");   //设置查询关键字
  			 pstmt.setString(5, "%"+keyword+"%");   //设置查询关键字
- 			 pstmt.setInt(6, (currentPage - 1) * lineSize);//下限
- 			 pstmt.setInt(7, currentPage * lineSize);//上限
+ 			 pstmt.setString(6, "%"+keyword+"%");   //设置查询关键字
+ 			 pstmt.setInt(7, (currentPage - 1) * lineSize);//下限
+ 			 pstmt.setInt(8, currentPage * lineSize);//上限
 
  			 rs = pstmt.executeQuery();				//取得查询结果	
  			 
@@ -312,11 +318,11 @@ public class NewsInfoDAO {
  					String newsAuthor = rs.getString("newsAuthor");
  					String newsInfoContent = rs.getString("newsInfoContent");
  					int adminId = rs.getInt("adminId");
- 					int newsTypeId = rs.getInt("newsTypeId");
+ 					String newsType = rs.getString("newsType");
  					int newsInfoState = rs.getInt("newsInfoState");
  					newsInfo = new NewsInfo(newsInfoId, newsInfoTitle,
  							newsInfoDescribe, newsInfoContent, newsInfoTime,
- 							newsAuthor, adminId, newsTypeId, newsInfoState);
+ 							newsAuthor, adminId, newsType, newsInfoState);
  					allNews.add(newsInfo);
  				}
  			
@@ -336,8 +342,7 @@ public class NewsInfoDAO {
       public List<NewsInfo> getAllNewsInfoByType(String newsType){
     	 con = DB_UTILS.getConnection();
      	 List<NewsInfo> allNews = new ArrayList<NewsInfo>();		//定义集合，接收全部数据
-     	 sql = "select * from newsInfo where newsTypeId in" +		//组合查询
-     	 		"(select newsTypeId from newstype where newsTypeName=? ) order by newsInfoId desc";
+     	 sql = "select * from newsInfo where newsType=? order by newsInfoId desc";
      	 
      	 try {
   			 pstmt = con.prepareStatement(sql);		//实例化查询对象
@@ -353,11 +358,10 @@ public class NewsInfoDAO {
   					String newsAuthor = rs.getString("newsAuthor");
   					String newsInfoContent = rs.getString("newsInfoContent");
   					int adminId = rs.getInt("adminId");
-  					int newsTypeId = rs.getInt("newsTypeId");
   					int newsInfoState = rs.getInt("newsInfoState");
   					newsInfo = new NewsInfo(newsInfoId, newsInfoTitle,
-  							newsInfoDescribe, newsInfoContent, newsInfoTime,
-  							newsAuthor, adminId, newsTypeId, newsInfoState);
+ 							newsInfoDescribe, newsInfoContent, newsInfoTime,
+ 							newsAuthor, adminId, newsType, newsInfoState);
   					allNews.add(newsInfo);
   				}
   			
@@ -377,11 +381,12 @@ public class NewsInfoDAO {
        */
       public long getAllCount(String keyword){
     	  long count = 0;
-     	  sql = "select count(newsInfoId) from newsInfo where newsInfoTitle like ?" +
-	 		     " or newsInfoDescribe like ? " +
-	 		     " or newsInfoContent like ?" +
-	 		     " or newsInfoTime like ?" +
-	 		     " or newsAuthor like ? order by newsInfoId desc"; //模糊匹配
+     	  sql = "select count(newsInfoId) from newsInfo where newsInfoTitle like binary ?" +
+	 		     " or newsInfoDescribe like binary ? " +
+	 		     " or newsInfoContent like binary ?" +
+	 		     " or newsInfoTime like binary ?" +
+	 		     " or newsType like binary ?" +
+	 		     " or newsAuthor like binary ? order by newsInfoId desc"; //模糊匹配
      	  con = DB_UTILS.getConnection();
 	 
 		  try {
@@ -391,6 +396,7 @@ public class NewsInfoDAO {
 			  pstmt.setString(3, "%"+keyword+"%");   //设置查询关键字
 			  pstmt.setString(4, "%"+keyword+"%");   //设置查询关键字
 			  pstmt.setString(5, "%"+keyword+"%");   //设置查询关键字
+			  pstmt.setString(6, "%"+keyword+"%");   //设置查询关键字
 			  rs = pstmt.executeQuery();				//取得查询结果	
 		 
 			  if (rs.next()) { // 取得全部的记录数

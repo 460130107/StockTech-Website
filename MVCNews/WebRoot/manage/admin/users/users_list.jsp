@@ -1,7 +1,7 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-<head><title>»áÔ±ÁĞ±í</title>
+<head><title>ä¼šå‘˜åˆ—è¡¨</title>
 <style type="text/css">
 <!--
 .STYLE6 {font-size: 12px}
@@ -14,12 +14,12 @@
 			obj.bgColor = color ;
 		}
 		function show(thisurl){
-			window.open(thisurl,"ĞÂÎÅ·¢²¼ÏµÍ³","widht=500,height=370,scrollbars=yes,resizeable=no") ;
+			window.open(thisurl,"æ–°é—»å‘å¸ƒç³»ç»Ÿ","widht=500,height=370,scrollbars=yes,resizeable=no") ;
 		}
 	</script>
 <body>
 <center>
-	<h1>»áÔ±ÁĞ±í</h1>
+	<h1>ä¼šå‘˜åˆ—è¡¨</h1>
 <jsp:include page="split_page_plugin.jsp">
 	<jsp:param name="allRecorders" value="${recorders}"/>
 	<jsp:param name="url" value="${url}"/>
@@ -27,13 +27,13 @@
 <TABLE BORDER="1" cellpadding="5" cellspacing="0" bgcolor="F2F2F2" width="100%">
 	<TR onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td align="center" valign="middle"><span class="STYLE10">ID</span></td>
-		<td align="center" valign="middle"><span class="STYLE10">µÇÂ¼Ãû</span></td>
-		<td align="center" valign="middle"><span class="STYLE10">ÕæÊµĞÕÃû</span></td>
-		<td align="center" valign="middle"><span class="STYLE10">ĞÔ±ğ</span></td>
-		<td align="center" valign="middle"><span class="STYLE10">EmailµØÖ·</span></td>
-		<td align="center" valign="middle"><span class="STYLE10">ÁªÏµµç»°</span></td>
-		<td align="center" valign="middle"><span class="STYLE10">Éí·İÖ¤ºÅ</span></td>
-		<td align="center" valign="middle" colspan="2"><span class="STYLE10">²Ù×÷</span></td>
+		<td align="center" valign="middle"><span class="STYLE10">ç™»å½•å</span></td>
+		<td align="center" valign="middle"><span class="STYLE10">çœŸå®å§“å</span></td>
+		<td align="center" valign="middle"><span class="STYLE10">æ€§åˆ«</span></td>
+		<td align="center" valign="middle"><span class="STYLE10">Emailåœ°å€</span></td>
+		<td align="center" valign="middle"><span class="STYLE10">è”ç³»ç”µè¯</span></td>
+		<td align="center" valign="middle"><span class="STYLE10">èº«ä»½è¯å·</span></td>
+		<td align="center" valign="middle" colspan="2"><span class="STYLE10">æ“ä½œ</span></td>
 	</TR>
 	<c:forEach items="${users}" var="user">
 	<TR onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
@@ -44,8 +44,8 @@
 		<td align="center" valign="middle"><span class="STYLE6">${user.usersEmail}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">${user.userPhone}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">${user.userIdNum}</span></td>
-		<td align="center" valign="middle"><span class="STYLE6"><a href="UserServlet?status=updatepre&pid=${user.usersId}&cp=${page}&ls=${size}&pg=${url}">ĞŞ¸Ä</a></span></td>
-		<td align="center" valign="middle"><span class="STYLE6"><a href="UserServlet?status=delete&pid=${user.usersId}&cp=${page}&ls=${size}&pg=${url}">É¾³ı</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="UserServlet?status=updatepre&pid=${user.usersId}&cp=${page}&ls=${size}&pg=${url}">ä¿®æ”¹</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="UserServlet?status=delete&pid=${user.usersId}&cp=${page}&ls=${size}&pg=${url}">åˆ é™¤</a></span></td>
 	</TR>
 	</c:forEach>
 </table>

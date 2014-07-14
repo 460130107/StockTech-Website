@@ -7,16 +7,16 @@
  */
 package org.news.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.news.dao.AdminDAO;
 import org.news.dao.NewsAttachmentDAO;
 import org.news.dao.NewsInfoDAO;
-import org.news.dao.NewsTypeDAO;
 import org.news.model.NewsAttachment;
+import org.news.model.NewsIndex;
 import org.news.model.NewsInfo;
 import org.news.model.NewsVO;
-import org.news.utils.Constant;
 import org.news.utils.Logger;
 
 import com.jspsmart.upload.File;
@@ -30,7 +30,6 @@ import com.jspsmart.upload.SmartUpload;
 public class NewsInfoService {
 
 	private NewsInfoDAO newsInfoDAO = new NewsInfoDAO(); //引入新闻消息DAO
-	private NewsTypeDAO newsTypeDAO = new NewsTypeDAO();
 	private AdminDAO adminDAO = new AdminDAO();
 	private NewsAttachmentDAO attachmentDAO = new NewsAttachmentDAO();
 	
@@ -42,6 +41,7 @@ public class NewsInfoService {
 	public boolean addNewsInfo(NewsInfo newsInfo,SmartUpload upload){
 		Long currentID = (long)newsInfo.getNewsInfoId();
     	
+		//先上传附件
 		for(int i=0;i<upload.getFiles().getCount();i++){
 			File f = upload.getFiles().getFile(i);
 			if(f.isMissing())continue;
@@ -65,10 +65,12 @@ public class NewsInfoService {
 	 */
 	public boolean deleteNewsInfo(int[] newsInfoIds) {
 		for (int i=0;i<newsInfoIds.length;++i){
-			if(!attachmentDAO.deleteNewsAttachmentByNewsId(newsInfoIds[i])){
+			//有附件才删除附件
+			if(attachmentDAO.findNewsAttachmentByNewsId(newsInfoIds[i]).size()>0&&!attachmentDAO.deleteNewsAttachmentByNewsId(newsInfoIds[i])){
 				return false;
 			}
 		}
+
 		return newsInfoDAO.deleteNewsInfo(newsInfoIds);
 	}
 	
@@ -91,7 +93,7 @@ public class NewsInfoService {
 			return false;
 	    }else{
 	    	Long currentID = (long)newsInfo.getNewsInfoId();
-	    	attachmentDAO.deleteNewsAttachmentByNewsId(currentID);
+	    	//attachmentDAO.deleteNewsAttachmentByNewsId(currentID);
 			for(int i=0;i<upload.getFiles().getCount();i++){
 				File f = upload.getFiles().getFile(i);
 				if(f.isMissing())continue;
@@ -138,16 +140,42 @@ public class NewsInfoService {
      
      /**
   	 * 根据文章类型查询的相关的新闻
-  	 * @param newsTypes 
+  	 * @param newsType 
   	 * @return 新闻集合
   	 */
-       public List<NewsInfo> getAllNewsInfoByType(int[] newsTypes){
-    	   StringBuffer newsType = new StringBuffer();//要查询的类型字符串
-    	   for(int i=0; i<newsTypes.length; ++i){//根据ID生成要类型的字符串
-    		   newsType.append(Constant.NewsType.getName(i)+",");
+       public List<NewsInfo> getAllNewsInfoByType(String newsType){
+    	   List<NewsInfo> newsInfos = getAllNewsInfo();
+    	   List<NewsInfo> results = new ArrayList<NewsInfo>();
+    	   
+    	   for (NewsInfo news:newsInfos){
+    		   if (news.getNewsType().contains(newsType+",")){
+    			   results.add(news);
+    		   }
     	   }
-    	   return newsInfoDAO.getAllNewsInfoByType(newsType.toString());
+    	   return results;
        }
+       
+       /**
+     	 * 根据文章类型查询的相关的新闻
+     	 * @param newsType 
+     	 * @param currentPage 当前页
+     	 * @param lineSize 每页大小
+     	 * @return 新闻集合
+     	 */
+          public List<NewsInfo> getAllNewsInfoByType(String newsType, int currentPage, int lineSize){
+        	  List<NewsInfo> newsInfos = getAllNewsInfoByType(newsType);
+        	  int floor = (currentPage - 1) * lineSize ;//下限
+        	  int celling = currentPage * lineSize ; //上限
+        	 
+        	  List<NewsInfo> result = new ArrayList<NewsInfo>();
+        	  for (int i = 0; i < newsInfos.size(); ++i){
+        		  if (i >= floor && i < celling){
+        			  result.add(newsInfos.get(i));
+        		  }
+        	  }
+        	  
+        	  return result;
+          }
        
        /**
         * 获取查询结果的数量
@@ -168,13 +196,29 @@ public class NewsInfoService {
     	   if (newsInfo != null){
     		   newsVO.setNewsInfoId(newsInfo.getNewsInfoId());
     		   newsVO.setNewsAuthor(newsInfo.getNewsAuthor());
-    		   newsVO.setNewsInfoContent(newsInfo.getNewsInfoContent());
     		   newsVO.setNewsInfoDescribe(newsInfo.getNewsInfoDescribe());
     		   newsVO.setAdminName(adminDAO.findAdminById(newsInfo.getAdminId()).getAdminName());
     		   newsVO.setNewsInfoState(newsInfo.getNewsInfoState());
     		   newsVO.setNewsInfoTime(newsInfo.getNewsInfoTime());
     		   newsVO.setNewsInfoTitle(newsInfo.getNewsInfoTitle());
-    		   newsVO.setNewsType(newsTypeDAO.findNewsTypeById(newsInfo.getNewsTypeId()).getNewsTypeName());
+    		   newsVO.setNewsType(newsInfo.getNewsType());
+    	   }
+    	   return newsVO;    	   
+       }
+       
+       /**
+        * 将新闻的PO转化成索引VO供显示
+        * @param newsInfo
+        * @return
+        */
+       public NewsIndex toNewsIndex(NewsInfo newsInfo){
+    	   NewsIndex newsVO = new NewsIndex();
+    	   if (newsInfo != null){
+    		   newsVO.setNewsInfoId(newsInfo.getNewsInfoId());
+    		   newsVO.setNewsAuthor(newsInfo.getNewsAuthor());
+    		   newsVO.setNewsInfoDescribe(newsInfo.getNewsInfoDescribe());
+    		   newsVO.setNewsInfoTime(newsInfo.getNewsInfoTime().toString());
+    		   newsVO.setNewsInfoTitle(newsInfo.getNewsInfoTitle());
     	   }
     	   return newsVO;    	   
        }

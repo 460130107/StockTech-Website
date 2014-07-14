@@ -1,17 +1,11 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
-<%--	°üº¬ÒÔÏÂµÄÄÚÈİ¼´¿ÉÍê³É·ÖÒ³
-<jsp:include page="split_page_plugin.jsp">
-	<jsp:param name="allRecorders" value="<%=allRecorders%>"/>
-	<jsp:param name="url" value="<%=URL%>"/>
-</jsp:include>
---%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-	int currentPage = 1 ;	// Îªµ±Ç°ËùÔÚµÄÒ³£¬Ä¬ÈÏÔÚµÚ1Ò³
-	int lineSize = 20 ;		// Ã¿´ÎÏÔÊ¾µÄ¼ÇÂ¼Êı
-	long allRecorders = 0 ;	// ±íÊ¾È«²¿µÄ¼ÇÂ¼Êı
-	long pageSize = 1 ;		// ±íÊ¾È«²¿µÄÒ³Êı£¨Î²Ò³£©
+	int currentPage = 1 ;	// ä¸ºå½“å‰æ‰€åœ¨çš„é¡µï¼Œé»˜è®¤åœ¨ç¬¬1é¡µ
+	int lineSize = 20 ;		// æ¯æ¬¡æ˜¾ç¤ºçš„è®°å½•æ•°
+	long allRecorders = 0 ;	// è¡¨ç¤ºå…¨éƒ¨çš„è®°å½•æ•°
+	long pageSize = 1 ;		// è¡¨ç¤ºå…¨éƒ¨çš„é¡µæ•°ï¼ˆå°¾é¡µï¼‰
 	int lsData[] = {1,3,5,7,9,10,15,20,25,30,50,100} ;
-	String keyWord = request.getParameter("kw") ;	// ½ÓÊÕ²éÑ¯¹Ø¼ü×Ö
+	String keyWord = request.getParameter("kw") ;	// æ¥æ”¶æŸ¥è¯¢å…³é”®å­—
 	String url = request.getParameter("url") ;
 %>
 <%
@@ -25,7 +19,7 @@
 		allRecorders = Long.parseLong(request.getParameter("allRecorders")) ;
 	} catch(Exception e) {}
 	if(keyWord == null){
-		keyWord = "" ;	// Èç¹ûÄ£ºı²éÑ¯Ã»ÓĞ¹Ø¼ü×Ö£¬Ôò±íÊ¾²éÑ¯È«²¿
+		keyWord = "" ;	// å¦‚æœæ¨¡ç³ŠæŸ¥è¯¢æ²¡æœ‰å…³é”®å­—ï¼Œåˆ™è¡¨ç¤ºæŸ¥è¯¢å…¨éƒ¨
 	}
 %>
 <%
@@ -38,17 +32,17 @@
 <script language="javascript">
 	function go(num){
 		document.getElementById("cp").value = num ;
-		document.spform.submit() ;	// ±íµ¥Ìá½»
+		document.spform.submit() ;	// è¡¨å•æäº¤
 	}
 </script>
 <form name="spform" action="<%=url%>" method="post">
-	ÊäÈë²éÑ¯¹Ø¼ü×Ö£º<input type="text" name="kw" value="<%=keyWord%>">
-	<input type="submit" value="²éÑ¯"><br>
-	<input type="button" value="Ê×Ò³" onclick="go(1)" <%=currentPage==1?"DISABLED":""%>>
-	<input type="button" value="ÉÏÒ»Ò³" onclick="go(<%=currentPage-1%>)" <%=currentPage==1?"DISABLED":""%>>
-	<input type="button" value="ÏÂÒ»Ò³" onclick="go(<%=currentPage+1%>)" <%=currentPage==pageSize?"DISABLED":""%>>
-	<input type="button" value="Î²Ò³" onclick="go(<%=pageSize%>)" <%=currentPage==pageSize?"DISABLED":""%>>
-	Ìø×ªµ½µÚ<select name="selcp" onchange="go(this.value)">
+	è¾“å…¥æŸ¥è¯¢å…³é”®å­—ï¼š<input type="text" name="kw" value="<%=keyWord%>">
+	<input type="submit" value="æŸ¥è¯¢"><br>
+	<input type="button" value="é¦–é¡µ" onclick="go(1)" <%=currentPage==1?"DISABLED":""%>>
+	<input type="button" value="ä¸Šä¸€é¡µ" onclick="go(<%=currentPage-1%>)" <%=currentPage==1?"DISABLED":""%>>
+	<input type="button" value="ä¸‹ä¸€é¡µ" onclick="go(<%=currentPage+1%>)" <%=currentPage==pageSize?"DISABLED":""%>>
+	<input type="button" value="å°¾é¡µ" onclick="go(<%=pageSize%>)" <%=currentPage==pageSize?"DISABLED":""%>>
+	è·³è½¬åˆ°ç¬¬<select name="selcp" onchange="go(this.value)">
 		<%
 			for(int x=1;x<=pageSize;x++){
 		%>
@@ -56,8 +50,8 @@
 		<%
 			}
 		%>
-	</select>Ò³
-	Ã¿Ò³ÏÔÊ¾
+	</select>é¡µ
+	æ¯é¡µæ˜¾ç¤º
 		<select name="ls" onchange="go(1)">
 		<%
 			for(int x=0;x<lsData.length;x++){
@@ -67,6 +61,6 @@
 			}
 		%>
 		</select>
-	Ìõ
+	æ¡
 	<input type="hidden" name="cp" id="cp" value="1">
 </form>

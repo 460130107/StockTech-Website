@@ -1,10 +1,10 @@
-<%@ page contentType="text/html;charset=gbk"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%
-    double perMaxSize = 1024;//µ¥¸öÎÄ¼þÔÊÐíµÄmax´óÐ¡
-    String sizeUnit = "MB";//perMaxSizeÊý¾Ý¶ÔÓ¦µÄµ¥Î»
-    //String ext = "*.jpg;*.jpeg;*.gif";//ÔÊÐíÉÏ´«µÄÎÄ¼þÀàÐÍ
-    String ext = "*.*";//ÔÊÐíÉÏ´«µÄÎÄ¼þÀàÐÍ
-    //ÎÄ¼þÉÏ´«Ìá½»µÄÄ¿±êÒ³Ãæ
+    double perMaxSize = 1024;//å•ä¸ªæ–‡ä»¶å…è®¸çš„maxå¤§å°
+    String sizeUnit = "MB";//perMaxSizeæ•°æ®å¯¹åº”çš„å•ä½
+    //String ext = "*.jpg;*.jpeg;*.gif";//å…è®¸ä¸Šä¼ çš„æ–‡ä»¶ç±»åž‹
+    String ext = "*.*";//å…è®¸ä¸Šä¼ çš„æ–‡ä»¶ç±»åž‹
+    //æ–‡ä»¶ä¸Šä¼ æäº¤çš„ç›®æ ‡é¡µé¢
 	StringBuffer uploadUrl = new StringBuffer("http://");
 	uploadUrl.append(request.getHeader("Host"));
 	uploadUrl.append(request.getContextPath());
@@ -13,7 +13,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>ÅúÁ¿ÏàÆ¬ÉÏ´«</title>
+<title>æ‰¹é‡ç›¸ç‰‡ä¸Šä¼ </title>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk">
 <link href="css/default.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/swfupload.js"></script>
@@ -83,7 +83,7 @@ SWFUpload.onload = function () {
 	<table width="100%" cellspacing="4" cellpadding="4" border="0" bgcolor="#FCFCFC">
 	<tr>
 	<td class="DH2">
-	<STRONG>ÅúÁ¿ÉÏ´«Èí¼þ £¨Ö§³ÖµÄÀàÐÍ£º<%=ext%>£»µ¥¸öÈí¼þ×î´ó²»ÄÜ³¬¹ý£º<%=perMaxSize%> <%=sizeUnit%>£©</STRONG> 
+	<STRONG>æ‰¹é‡ä¸Šä¼ è½¯ä»¶ ï¼ˆæ”¯æŒçš„ç±»åž‹ï¼š<%=ext%>ï¼›å•ä¸ªè½¯ä»¶æœ€å¤§ä¸èƒ½è¶…è¿‡ï¼š<%=perMaxSize%> <%=sizeUnit%>ï¼‰</STRONG> 
 	</td><td class="DH2" align="right"></td>
 	</tr>
 	</table>
@@ -91,24 +91,24 @@ SWFUpload.onload = function () {
 	<form id="form1" action="SoftwareServlet" method="post" enctype="multipart/form-data">
 		<table width="90%" cellspacing="0" cellpadding="0" border="0"><tr><td>
 		<span id="spanButtonPlaceholder"></span>
-		<input id="btnUpload" type="button" value="ÉÏ´«Èí¼þ" class="btn" />
-		<input id="btnCancel" type="button" value="È¡ÏûÈ«²¿ÉÏ´«" disabled="disabled" class="btn" /></td>
+		<input id="btnUpload" type="button" value="ä¸Šä¼ è½¯ä»¶" class="btn" />
+		<input id="btnCancel" type="button" value="å–æ¶ˆå…¨éƒ¨ä¸Šä¼ " disabled="disabled" class="btn" /></td>
 		</tr></table>
-		<table id="idFileList" class="uploadFileList"><tr class="uploadTitle"><td><B>ÎÄ¼þÃû</B></td><td><B>ÎÄ¼þ´óÐ¡</B></td><td width=100px><B>×´Ì¬</B></td><td width=35px>&nbsp;</td></tr></table>
-		µÈ´ýÉÏ´« <span id="idFileListCount">0</span> ¸ö £¬³É¹¦ÉÏ´« <span id="idFileListSuccessUploadCount">0</span> ¸ö
+		<table id="idFileList" class="uploadFileList"><tr class="uploadTitle"><td><B>æ–‡ä»¶å</B></td><td><B>æ–‡ä»¶å¤§å°</B></td><td width=100px><B>çŠ¶æ€</B></td><td width=35px>&nbsp;</td></tr></table>
+		ç­‰å¾…ä¸Šä¼  <span id="idFileListCount">0</span> ä¸ª ï¼ŒæˆåŠŸä¸Šä¼  <span id="idFileListSuccessUploadCount">0</span> ä¸ª
 		<div id="divSWFUploadUI" style="visibility: hidden;"></div>
 		<noscript style="display: block; margin: 10px 25px; padding: 10px 15px;">
-			ºÜ±§Ç¸£¬ÏàÆ¬ÉÏ´«½çÃæÎÞ·¨ÔØÈë£¬Çë½«ä¯ÀÀÆ÷ÉèÖÃ³ÉÖ§³ÖJavaScript¡£
+			å¾ˆæŠ±æ­‰ï¼Œç›¸ç‰‡ä¸Šä¼ ç•Œé¢æ— æ³•è½½å…¥ï¼Œè¯·å°†æµè§ˆå™¨è®¾ç½®æˆæ”¯æŒJavaScriptã€‚
 		</noscript>
 		<div id="divLoadingContent" class="content" style="background-color: #FFFF66; border-top: solid 4px #FF9966; border-bottom: solid 4px #FF9966; margin: 10px 25px; padding: 10px 15px; display: none;">
-			ÉÏ´«½çÃæÕýÔÚÔØÈë£¬ÇëÉÔºó...
+			ä¸Šä¼ ç•Œé¢æ­£åœ¨è½½å…¥ï¼Œè¯·ç¨åŽ...
 		</div>
 		<div id="divLongLoading" class="content" style="background-color: #FFFF66; border-top: solid 4px #FF9966; border-bottom: solid 4px #FF9966; margin: 10px 25px; padding: 10px 15px; display: none;">
-			ÉÏ´«½çÃæÔØÈëÊ§°Ü£¬ÇëÈ·±£ä¯ÀÀÆ÷ÒÑ¾­¿ªÆô¶ÔJavaScriptµÄÖ§³Ö£¬²¢ÇÒÒÑ¾­°²×°¿ÉÒÔ¹¤×÷µÄFlash²å¼þ°æ±¾¡£
+			ä¸Šä¼ ç•Œé¢è½½å…¥å¤±è´¥ï¼Œè¯·ç¡®ä¿æµè§ˆå™¨å·²ç»å¼€å¯å¯¹JavaScriptçš„æ”¯æŒï¼Œå¹¶ä¸”å·²ç»å®‰è£…å¯ä»¥å·¥ä½œçš„Flashæ’ä»¶ç‰ˆæœ¬ã€‚
 		</div>
 		<div id="divAlternateContent" class="content" style="background-color: #FFFF66; border-top: solid 4px #FF9966; border-bottom: solid 4px #FF9966; margin: 10px 25px; padding: 10px 15px; display: none;">
-			ºÜ±§Ç¸£¬ÉÏ´«½çÃæÎÞ·¨ÔØÈë£¬Çë°²×°»òÕßÉý¼¶ÄúµÄFlash²å¼þ¡£
-			Çë·ÃÎÊ£º <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">AdobeÍøÕ¾</a> »ñÈ¡×îÐÂµÄFlash²å¼þ¡£
+			å¾ˆæŠ±æ­‰ï¼Œä¸Šä¼ ç•Œé¢æ— æ³•è½½å…¥ï¼Œè¯·å®‰è£…æˆ–è€…å‡çº§æ‚¨çš„Flashæ’ä»¶ã€‚
+			è¯·è®¿é—®ï¼š <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">Adobeç½‘ç«™</a> èŽ·å–æœ€æ–°çš„Flashæ’ä»¶ã€‚
 		</div>
 	</form>
 </div>

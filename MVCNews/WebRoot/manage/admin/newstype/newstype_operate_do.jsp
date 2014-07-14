@@ -1,10 +1,7 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-<head><title>¸üÐÂÆµµÀ</title></head>
+<head><title>æ›´æ–°é¢‘é“</title></head>
 <body>
-<%
-	request.setCharacterEncoding("GBK") ;
-%>
 <script language="javascript">
 	alert("<%=request.getAttribute("msg")%>") ;
 	window.location = "<%=request.getAttribute("url")%>" ;

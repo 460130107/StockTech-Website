@@ -1,17 +1,14 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
-<%	// ÂÒÂë½â¾ö
-	request.setCharacterEncoding("GBK") ;
-%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <center>
 	<br>
 	<%
 		if(session.getAttribute("id") != null){
 	%>
-			<h2>»¶Ó­<font color="RED"><%=session.getAttribute("id")%></font>¹âÁÙ£¡</h2>
-			<h3><a href="logout.jsp">µÇÂ½×¢Ïú</a></h3>
+			<h2>æ¬¢è¿Ž<font color="RED"><%=session.getAttribute("id")%></font>å…‰ä¸´ï¼</h2>
+			<h3><a href="logout.jsp">ç™»é™†æ³¨é”€</a></h3>
 	<%			
 		} else {
-			request.setAttribute("info","ÇëÏÈµÇÂ½£¡") ;
+			request.setAttribute("info","è¯·å…ˆç™»é™†ï¼") ;
 	%>
 			<jsp:forward page="login.jsp"/>
 	<%

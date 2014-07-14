@@ -1,11 +1,8 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*,org.news.model.*"%>
 <html>
-<head><title>Ôö¼ÓÐÂµÄÆµµÀ</title></head>
+<head><title>å¢žåŠ æ–°çš„é¢‘é“</title></head>
 <body>
-<%	// ÂÒÂë½â¾ö
-	request.setCharacterEncoding("GBK") ;
-%>
 <style type="text/css">
 <!--
 .STYLE6 {font-size: 12px}
@@ -17,13 +14,13 @@
 			obj.bgColor = color ;
 		}
 		function show(thisurl){
-			window.open(thisurl,"ÐÂÎÅ·¢²¼ÏµÍ³","widht=500,height=200,scrollbars=yes,resizeable=no") ;
+			window.open(thisurl,"æ–°é—»å‘å¸ƒç³»ç»Ÿ","widht=500,height=200,scrollbars=yes,resizeable=no") ;
 		}
 	</script>
 	<script language="javascript">
 		var url = "<%=request.getContextPath()%>" ;
 	</script>
-	<script language="javascript" src="<%=request.getContextPath()%>/js/newstype_validate.js">
+	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/js/newstype_validate.js">
 	</script>
 
 <center> 
@@ -31,23 +28,23 @@
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">
-			<h1>Ôö¼ÓÐÂµÄÆµµÀ</h1>		</td>
+			<h1>å¢žåŠ æ–°çš„é¢‘é“</h1>		</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">Ãû³Æ£º</font></td>
+		<td><font size="2">åç§°ï¼š</font></td>
 		<td><input type="text" name="name" onBlur="validateName(this.value)"></td>
 		<td><span id="name_msg"><font color="RED">*</font></span></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">ÃèÊö£º</font></td>
+		<td><font size="2">æè¿°ï¼š</font></td>
 		<td><input type="text" name="note" onBlur="validateNote(this.value)"></td>
 		<td><span id="note_msg"><font color="RED">*</font></span></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="4">
 			<input type="hidden" name="status" value="insert"/>
-			<input type="submit" value="Ìí¼Ó" />
-			<input type="reset" value="ÖØÖÃ" />		</td>
+			<input type="submit" value="æ·»åŠ " />
+			<input type="reset" value="é‡ç½®" />		</td>
 	</tr>
 </table>
 </form>

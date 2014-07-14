@@ -296,8 +296,8 @@ public class UsersDAO {
  	 */
       public List<Users> getUsersByKey(String keyword){
      	 List<Users> users = new ArrayList<Users>();		//定义集合，接收全部数据
-     	 sql = "select * from users where usersInfo like ? or usersName like ?" +
-     	 		"or realName like ? or usersEmail like ? or phone like ? or idNumber like ?";
+     	 sql = "select * from users where usersInfo like binary ? or usersName like binary ?" +
+     	 		"or realName like binary ? or usersEmail like binary ? or phone like binary ? or idNumber like binary ?";
      	 con = DB_UTILS.getConnection();
      	 
      	 try {
@@ -341,8 +341,8 @@ public class UsersDAO {
        */
       public long getCount(String keyword){
     	  long count = 0;
-    	  sql = "select count(usersId) from users where usersInfo like ? or usersName like ?" +
-     	 		"or realName like ? or usersEmail like ? or phone like ? or idNumber like ?";
+    	  sql = "select count(usersId) from users where usersInfo like binary ? or usersName like binary ?" +
+     	 		"or realName like binary ? or usersEmail like binary ? or phone like binary ? or idNumber like binary ?";
     	  con = DB_UTILS.getConnection();
     	  
     	  try {
@@ -376,8 +376,8 @@ public class UsersDAO {
       */
       public List<Users> getAllUsers(String keyword, int currentPage, int lineSize){
        	 List<Users> users = new ArrayList<Users>();		//定义集合，接收全部数据
-       	 sql = "select * from users where usersInfo like ? or usersName like ?" +
-       	 		"or realName like ? or usersEmail like ? or phone like ? or idNumber like ?" +
+       	 sql = "select * from users where usersInfo like binary ? or usersName like binary ?" +
+       	 		"or realName like binary ? or usersEmail like binary ? or phone like binary ? or idNumber like binary ?" +
        	 		" order by usersId desc limit ?,?";
        	 con = DB_UTILS.getConnection();
        	 

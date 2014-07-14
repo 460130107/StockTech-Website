@@ -57,13 +57,13 @@ public class UserLoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String pages = "login.jsp";//下一个要跳转的页面
-		request.setCharacterEncoding("GBK") ;// 乱码解决
 		String rand = (String) request.getSession().getAttribute("rand") ;	// 从session中取出验证码
 		String code = request.getParameter("code") ;
 		
 		if(!rand.equalsIgnoreCase(code)){//验证码不正确
 			request.setAttribute("info","请输入正确的验证码！") ;
 			request.getRequestDispatcher(pages).forward(request, response);//跳转到下一个界面
+			return;
 		}
 		
 		String mid = request.getParameter("mid") ;

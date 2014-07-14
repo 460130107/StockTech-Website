@@ -9,6 +9,7 @@ package org.news.servlet;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,7 @@ import com.jspsmart.upload.*;
 import org.news.model.Admin;
 import org.news.model.NewsAttachment;
 import org.news.model.NewsInfo;
+import org.news.model.NewsType;
 import org.news.model.NewsVO;
 
 /**
@@ -50,7 +52,6 @@ public class NewsInfoServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("GBK");
 		String pages = "../../../errors.jsp";//错误页	
 		
 		String status = request.getParameter("status");//获取当前的操作状态
@@ -58,6 +59,9 @@ public class NewsInfoServlet extends HttpServlet {
 		if (!(status == null || "".equals(status))) {
 			if ("list".equals(status)) {
 				this.list(request, response);
+			}
+			if ("insertpre".equals(status)) {
+				this.insertpre(request, response);
 			}
 			if ("updatepre".equals(status)) {
 				this.updatepre(request, response);
@@ -75,9 +79,13 @@ public class NewsInfoServlet extends HttpServlet {
 			//这里添加和删除都要从smartupload中获得参数
 			try {
 				smart.initialize(config, request, response);
-				smart.setMaxFileSize(1024*1024*20);
+				smart.setMaxFileSize(1024*1024*20);//附件最大20M
+				smart.setCharset("utf-8");
+				smart.setDeniedFilesList("exe,bat");
 				smart.upload() ;
 			} catch (SmartUploadException e) {
+				e.printStackTrace();
+			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 			status = smart.getRequest().getParameter("status");
@@ -117,32 +125,17 @@ public class NewsInfoServlet extends HttpServlet {
 			msg = "您未登录请登录！";
 			pages = "forward.jsp";
 		}else if (newsType != null){
-			int typeID = typeService.getTypeIdByName(newsType);//获取类别ID
-			if (typeID > 0){
 				NewsInfo news = null;
+				StringBuffer type = new StringBuffer();
+				for (int i = 0; i<newsType.length; i++){
+					type.append(newsType[i]+",");
+				}
 				msg = "新闻修改失败！" ;
 				newsInfoId = Integer.parseInt(smart.getRequest().getParameter("pid")) ;
 				news = new NewsInfo(newsInfoId,name,describe,content,
-						service.searchNewsInfo(newsInfoId).getNewsInfoTime(),author,admin.getAdminId(),typeID,1);//创建时间不变
+						service.searchNewsInfo(newsInfoId).getNewsInfoTime(),author,admin.getAdminId(),type.toString(),1);//创建时间不变
 				try {//更新数据库
-//					String fileName = null ;
-//					String filePath = null ;
-//					if(smart.getFiles().getSize()>0){	// 有文件上传，则自动生成新的名称		
-//						String ip = request.getRemoteAddr();
-//						ip = "127.0.0.1";
-//						IPTimeStamp its = new IPTimeStamp(ip) ;
-//						fileName = its.getIPTimeStampRand() + "." + smart.getFiles().getFile(0).getFileExt() ;
-//						filePath = this.getServletContext().getRealPath("/") + "attachment" + java.io.File.separator + fileName ;
-//						Logger.log(filePath, Logger.DEBUG);
-//					} 
 					if(service.updateNewsInformation(news,smart)){
-//						if(smart.getFiles().getSize()>0){
-//							try {
-//								smart.getFiles().getFile(0).saveAs(filePath) ;// 保存文件
-//							} catch (SmartUploadException e) {
-//								e.printStackTrace();
-//							}	// 保存文件
-//						}
 						msg = "新闻修改成功！" ;
 					}
 					pages = "newsinfo_operate_do.jsp";
@@ -153,7 +146,6 @@ public class NewsInfoServlet extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
 		}
 		request.setAttribute("msg", msg);
 		request.getRequestDispatcher(pages).forward(request, response);
@@ -185,47 +177,31 @@ public class NewsInfoServlet extends HttpServlet {
 			msg = "您未登录请登录！";
 			pages = "forward.jsp";
 		}else if (newsType != null){
-			int typeID = typeService.getTypeIdByName(newsType);//获取类别ID
-			if (typeID > 0){
 				NewsInfo news = null;
+				StringBuffer type = new StringBuffer();
+				for (int i = 0; i<newsType.length; i++){
+					type.append(newsType[i]+",");
+				}
 				msg = "新闻增加失败！" ;
 				List<NewsInfo> infoList = service.getAllNewsInfo();
 				newsInfoId = ((infoList.size() == 0)? 1: (service.getAllNewsInfo().get(0).getNewsInfoId()+1));//新的ID等于最大的ID加1
 				news = new NewsInfo(newsInfoId,name,describe,content,
-						new Date(new java.util.Date().getTime()),author,admin.getAdminId(),typeID,0);//创建时间为当前时间
+						new Date(new java.util.Date().getTime()),author,admin.getAdminId(),type.toString(),0);//创建时间为当前时间
 				try {//更新数据库
-//					String fileName = null ;
-//					String filePath = null ;
-//					if(smart.getFiles().getSize()>0){	// 有文件上传，则自动生成新的名称		
-//						String ip = request.getRemoteAddr();
-//						ip = "127.0.0.1";
-//						IPTimeStamp its = new IPTimeStamp(ip) ;
-//						fileName = its.getIPTimeStampRand() + "." + smart.getFiles().getFile(0).getFileExt() ;
-//						filePath = this.getServletContext().getRealPath("/") + "attachment" + java.io.File.separator + fileName ;
-//						Logger.log(filePath, Logger.DEBUG);
-//					} 
 					if(service.addNewsInfo(news,smart)){
-//						if(smart.getFiles().getSize()>0){
-//							try {
-//								smart.getFiles().getFile(0).saveAs(filePath) ;
-//							} catch (SmartUploadException e) {
-//								e.printStackTrace();
-//							}	// 保存文件
-//						}
 						msg = "新闻增加成功！" ;
 					}
 					pages = "newsinfo_insert_do.jsp";
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
 		}
 		request.setAttribute("msg", msg);
 		request.getRequestDispatcher(pages).forward(request, response);
 	}
 	
 	/**
-	 * 查看会 员信息
+	 * 查看新闻信息
 	 * @param request
 	 * @param response
 	 * @throws ServletException
@@ -237,11 +213,8 @@ public class NewsInfoServlet extends HttpServlet {
 		int newsId = Integer.parseInt(request.getParameter("pid")) ;
 		try {//获取当前会员VO，传给下个页面
 			NewsInfo pro = service.searchNewsInfo(newsId);
-			String type = null;
 			if(pro != null) {
 				request.setAttribute("newsinfo",pro);
-				type = typeService.getNewsTypeById(pro.getNewsTypeId()).getNewsTypeName();
-				request.setAttribute("type", type);
 				AttachmentService attiService = new AttachmentService();
 				List<NewsAttachment> attachments = attiService.findNewsAttachmentByNewsId((long)newsId);
 				request.setAttribute("attachments", attachments);
@@ -267,18 +240,35 @@ public class NewsInfoServlet extends HttpServlet {
 		try {//获取当前会员VO，传给下个页面
 			NewsInfo pro = service.searchNewsInfo(newsId);
 			String[] typeNames = null;
+			List<NewsType> newsType = typeService.getAllNewsType();
+			request.setAttribute("types", newsType);//所有种类
 			if(pro != null) {
 				request.setAttribute("newsinfo",pro);
-				typeNames = typeService.getNamesByTypeId(pro.getNewsTypeId());//获取所有的频道
-				request.setAttribute("typeNames",typeNames);
+				typeNames = pro.getNewsType().split(",");
+				request.setAttribute("typeNames",typeNames);//被选的种类
 				AttachmentService attiService = new AttachmentService();
-				List<NewsAttachment> attachments = attiService.findNewsAttachmentByNewsId((long)newsId);
+				List<NewsAttachment> attachments = attiService.findNewsAttachmentByNewsId((long)newsId);//已选的附件
 				request.setAttribute("attachments", attachments);
 			}
 			pages = "newsinfo_update.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		request.getRequestDispatcher(pages).forward(request, response);
+	}
+	
+	/**
+	 * 新增前的操作
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public void insertpre(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		String pages = "newsinfo_insert.jsp";
+		List<NewsType> newsType = typeService.getAllNewsType();
+		request.setAttribute("types", newsType);//所有种类
 		request.getRequestDispatcher(pages).forward(request, response);
 	}
 	
@@ -344,6 +334,7 @@ public class NewsInfoServlet extends HttpServlet {
 			long allRecorders = 0 ;	// 表示全部的记录数
 			String keyWord = request.getParameter("kw") ;	// 接收查询关键字
 			
+			Logger.log(keyWord, Logger.DEBUG);
 			try{
 				currentPage = Integer.parseInt(request.getParameter("cp")) ;
 			} catch(Exception e) {}

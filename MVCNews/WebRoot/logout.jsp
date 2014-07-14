@@ -1,15 +1,12 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-<head><title>注销程序</title></head>
+<head><title>娉ㄩ攢绋嬪簭</title></head>
 <body>
-<%	// 乱码解决
-	request.setCharacterEncoding("GBK") ;
-%>
 <center>
-	<h1>注销程序</h1>
+	<h1>娉ㄩ攢绋嬪簭</h1>
 	<br>
 	<%
-		session.invalidate() ;	// 让session失效
+		session.invalidate() ;	// 璁﹕ession澶辨晥
 		response.sendRedirect("login.jsp") ;
 	%>
 </center>

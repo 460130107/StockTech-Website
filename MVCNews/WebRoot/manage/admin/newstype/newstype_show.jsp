@@ -1,11 +1,8 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*,org.news.model.*"%>
 <html>
-<head><title>╡И©╢ф╣╣юпео╒</title></head>
+<head><title>Ф÷╔Г°▀И╒▒И│⌠Д©║Ф│╞</title></head>
 <body>
-<%	// брбК╫Б╬Ж
-	request.setCharacterEncoding("GBK") ;
-%>
 <style type="text/css">
 <!--
 .STYLE6 {font-size: 12px}
@@ -29,22 +26,22 @@
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">
-			<h1>╡И©╢ф╣╣юпео╒</h1>		</td>
+			<h1>Ф÷╔Г°▀И╒▒И│⌠Д©║Ф│╞</h1>		</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">цШЁфё╨</font></td>
+		<td><font size="2">Е░█Г╖╟О╪ </font></td>
 		<td><span class="STYLE6"><%=group.getNewsTypeName()%></span></td>
 		<td><span id="name_msg"><font color="RED">*</font></span></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">цХйЖё╨</font></td>
+		<td><font size="2">Ф▐▐Х©╟О╪ </font></td>
 		<td><span class="STYLE6"><%=group.getNewsTypeDescripe()%></span></td>
 		<td><span id="note_msg"><font color="RED">*</font></span></td>
 </table>
 <%
 	}
 %>
-<h3><a href="#" onclick="closeWin()">╧ь╠у╢╟©з</a></h3>
+<h3><a href="#" onclick="closeWin()">Е┘ЁИ≈╜Г╙≈Е▐ё</a></h3>
 </center>
 </body>
 </html>

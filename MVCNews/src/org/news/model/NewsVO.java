@@ -20,7 +20,6 @@ public class NewsVO {
 	private int newsInfoId;				//文章Id
 	private String newsInfoTitle;		//文章标题
 	private String newsInfoDescribe;	//文章描述
-	private String newsInfoContent;		//文章内容
 	private Date newsInfoTime;		//创建时间
 	private String newsAuthor;			//文章作者
 	private String adminName;				//管理员名称
@@ -35,8 +34,8 @@ public class NewsVO {
 		return newsInfoId;
 	}
 	
-	/**文章Id
-	 * 设置
+	/**
+	 * 设置文章Id
 	 * @param newsInfoId the newsInfoId to set
 	 */
 	public void setNewsInfoId(int newsInfoId) {
@@ -73,21 +72,6 @@ public class NewsVO {
 	 */
 	public void setNewsInfoDescribe(String newsInfoDescribe) {
 		this.newsInfoDescribe = newsInfoDescribe;
-	}
-	
-	/**获取文章内容
-	 * @return the newsInfoContent
-	 */
-	public String getNewsInfoContent() {
-		return newsInfoContent;
-	}
-	
-	/**
-	 * 设置文章内容
-	 * @param newsInfoContent the newsInfoContent to set
-	 */
-	public void setNewsInfoContent(String newsInfoContent) {
-		this.newsInfoContent = newsInfoContent;
 	}
 	
 	/**

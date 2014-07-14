@@ -1,12 +1,9 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-<head><title>´íÎóÒ³</title></head>
+<head><title>é”™è¯¯é¡µ</title></head>
 <body>
-<%
-	request.setCharacterEncoding("GBK") ;
-%>
 <h1>
-	³ÌÐò³öÏÖÁË´íÎó£¬ÇëÓë¹ÜÀíÔ±ÁªÏµ£¡
+	ç¨‹åºå‡ºçŽ°äº†é”™è¯¯ï¼Œè¯·ä¸Žç®¡ç†å‘˜è”ç³»ï¼
 </h1>
 </body>
 </html>

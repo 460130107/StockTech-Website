@@ -33,7 +33,6 @@ public class NewsTypeServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("GBK");
 		String pages = "../../../errors.jsp";
 		String status = request.getParameter("status");
 		if (!(status == null || "".equals(status))) {
@@ -78,7 +77,7 @@ public class NewsTypeServlet extends HttpServlet {
 		String pages = "../../../errors.jsp";
 		Logger.log("newstype list", Logger.DEBUG);
 		try {
-			request.setAttribute("all", newstypeService.getAllTypes());
+			request.setAttribute("all", newstypeService.getAllNewsType());
 			pages = "newstype_list.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();

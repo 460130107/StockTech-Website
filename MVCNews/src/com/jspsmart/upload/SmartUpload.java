@@ -32,7 +32,7 @@ public class SmartUpload
     public static final int SAVE_PHYSICAL = 2;
     private Files m_files;
     private Request m_formRequest;
-
+    private String charset = "gbk";
 public SmartUpload()
 {
     m_totalBytes = 0;
@@ -52,7 +52,7 @@ public SmartUpload()
 }
 
 
-public void downloadField(
+/** * @return the charset */public String getCharset() {	return charset;}/** * @param charset the charset to set */public void setCharset(String charset) {	this.charset = charset;}public void downloadField(
     ResultSet rs,
     String columnName,
     String contentType,
@@ -281,7 +281,7 @@ private String getDataHeader()
         {
             m_currentIndex++;
         }
-    String dataHeader = new String(m_binArray, start, (end - start) + 1);
+    String dataHeader = null;        if ("utf-8".equals(charset)){		try {			dataHeader = new String(m_binArray, start, (end - start) + 1,charset);		} catch (UnsupportedEncodingException e) {			// TODO Auto-generated catch block			e.printStackTrace();		}	}else{		dataHeader = new String(m_binArray, start, (end - start) + 1);	}	
     return dataHeader;
 }
 
@@ -774,8 +774,8 @@ public void upload() throws SmartUploadException, IOException, ServletException
         }
         else
         {
-            String value =
-                new String(m_binArray, m_startData, (m_endData - m_startData) + 1);
+            String value = null ;            if ("utf-8".equals(charset)){
+                value = new String(m_binArray, m_startData, (m_endData - m_startData) + 1,charset);            }else{            	value = new String(m_binArray, m_startData, (m_endData - m_startData) + 1);            }
             m_formRequest.putParameter(fieldName, value);
         }
         if ((char) m_binArray[m_currentIndex + 1] == '-')

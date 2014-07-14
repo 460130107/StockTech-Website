@@ -1,6 +1,6 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-<head><title>²é¿´»áÔ±ÏêÇé</title></head>
+<head><title>æŸ¥çœ‹ä¼šå‘˜è¯¦æƒ…</title></head>
 <body>
 	<script language="javascript">
 		function changeColor(obj,color){
@@ -11,34 +11,34 @@
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">
-			<h1>²é¿´»áÔ±ÏêÇé</h1>		</td>
+			<h1>æŸ¥çœ‹ä¼šå‘˜è¯¦æƒ…</h1>		</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">µÇÂ¼Ãû£º</font></td>
+		<td><font size="2">ç™»å½•åï¼š</font></td>
 		<td>${user.usersName}</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">ÕæÊµĞÕÃû£º</font></td>
+		<td><font size="2">çœŸå®å§“åï¼š</font></td>
 		<td>${user.realName}</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">ĞÔ±ğ£º</font></td>
+		<td><font size="2">æ€§åˆ«ï¼š</font></td>
 		<td>${user.userSex}</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">EmailµØÖ·£º</font></td>
+		<td><font size="2">Emailåœ°å€ï¼š</font></td>
 		<td>${user.usersEmail}</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">ÁªÏµµç»°£º</font></td>
+		<td><font size="2">è”ç³»ç”µè¯ï¼š</font></td>
 		<td>${user.userPhone}</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">Éí·İÖ¤ºÅ£º</font></td>
+		<td><font size="2">èº«ä»½è¯å·ï¼š</font></td>
 		<td>${user.userIdNum}</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td colspan="2"><font size="2">ÆäËüĞÅÏ¢£º</font></td>
+		<td colspan="2"><font size="2">å…¶å®ƒä¿¡æ¯ï¼š</font></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">

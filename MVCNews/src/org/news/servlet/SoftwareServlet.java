@@ -69,10 +69,9 @@ public class SoftwareServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("GBK");
 		String pages = "../errors.jsp";//错误页	
 		String msg = null ;
-		
+		response.setCharacterEncoding("UTF-8");
 		
 		String status = request.getParameter("status");//获取当前的操作状态
 		Logger.log(status, Logger.DEBUG);
@@ -126,8 +125,9 @@ public class SoftwareServlet extends HttpServlet {
 			Logger.log("upload", Logger.DEBUG);
 			//这里添加和删除都要从smartupload中获得参数
 			try {
-				smart.initialize(config, request, response);
+				smart.initialize(config, request, response);			
 				smart.setMaxFileSize(1024*1024*1024);//软件不超过1G
+				smart.setCharset("utf-8");//因为SWF的内置码为UTF8,必须转码
 				smart.upload() ;
 				
 				String filepath = getServletContext().getRealPath("/") + "softwares" + java.io.File.separator; //文件保存路径
@@ -176,22 +176,28 @@ public class SoftwareServlet extends HttpServlet {
             if(fileSize==0) fileSize=1;
             if(maxFileSize<fileSize) throw new Exception("单个上传相片的容量不能超过["+maxFileSize+"KB]");
 			
+            String fileName = f.getFileName();
             //因为SWF的内置码为UTF8,必须转码
-			String fileName=new String(f.getFileName().getBytes("GBK"),"UTF-8");
-			Logger.log(fileName, Logger.DEBUG);
-			Logger.log("size"+f.getSize(), Logger.DEBUG);
-			
-			//软件在附件中newsid为0,且只保存名称
-			NewsAttachment newsAttachment=new NewsAttachment();
-			newsAttachment.setNewsId((long)0);
-			newsAttachment.setAttachmentName(fileName);
-			//newsAttachment.setAttachmentContent(f.getFileBinaryData());
-			if (!service.addNewsAttachment(newsAttachment)){
-				return false;
-			}
+			//String fileName=new String(f.getFileName().getBytes("GBK"),"UTF-8");
+//			Logger.log(fileName, Logger.DEBUG);
+//			Logger.log("size"+f.getSize(), Logger.DEBUG);	
 			
 			//存入本地
-			f.saveAs(filePath + fileName ,SmartUpload.SAVE_PHYSICAL);//保存文件
+			try{
+				f.saveAs(filePath + fileName ,SmartUpload.SAVE_PHYSICAL);//保存文件
+				//软件在附件中newsid为0,且只保存名称
+				NewsAttachment newsAttachment=new NewsAttachment();
+				newsAttachment.setNewsId((long)0);
+				newsAttachment.setAttachmentName(fileName);
+				//newsAttachment.setAttachmentContent(f.getFileBinaryData());
+				if (!service.addNewsAttachment(newsAttachment)){
+					return false;
+				}
+			}catch (Exception e){
+				service.deleteFile(filePath+fileName);
+				throw new Exception("中文转码失败，请上传时修改文件名");
+			}
+			
 		}
 		
 		return true;

@@ -10,7 +10,9 @@ package org.news.utils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Enumeration;
 import java.util.LinkedList;
+import java.util.PropertyResourceBundle;
 
 /**
  * JDBC连接池,当系统需要获取数据库数据时，只需创建一个数据库连接对象，
@@ -21,19 +23,78 @@ import java.util.LinkedList;
 public class Pools {
 
 	private final static int num = 3;//池中连接数量
-	private final static String url = "jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=gbk";
-	private final static String password = "";
-	private final static String user = "root";
+	/**
+	 * 数据库访问URL
+	 */
+	private static String url;
+
+	/**
+	 * 数据库驱动
+	 */
+	private static String driver;
+
+	/**
+	 * 数据库访问用户名
+	 */
+	private static String user;
+
+	/**
+	 * 数据库访问口令
+	 */
+	private static String password;
+
+	/**
+	 * 配置文件名称
+	 */
+	private final static String fileName = "database";	
 	private static Connection con = null;
 	private static LinkedList<Connection> pools = new LinkedList<Connection>();//用链表表示连接池
 	
-	static{//初始化连接池，建立若干个连接
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
+//	static{//初始化连接池，建立若干个连接
+//		config();
+//		try {
+//			Class.forName(driver);
+//			for(int i = 1 ; i <= num ; i++){
+//				pools.addLast(getPoolsConnection());
+//			}
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		}
+//	}
+	
+	public static void config() {
+		//读取系统配置
+		PropertyResourceBundle resourceBundle = (PropertyResourceBundle) PropertyResourceBundle
+				.getBundle(fileName);
+		//将系统设置赋值给类变量
+		Enumeration<String> enu = resourceBundle.getKeys();
+		while (enu.hasMoreElements()) {
+			String propertyName = enu.nextElement().toString();
+			if (propertyName.equals("database.url"))
+				url = resourceBundle.getString("database.url");
+			if (propertyName.equals("database.driver"))
+				driver = resourceBundle.getString("database.driver");
+			if (propertyName.equals("database.username"))
+				user = resourceBundle.getString("database.username");
+			if (propertyName.equals("database.password"))
+				password = resourceBundle.getString("database.password");
+		}
+		try {//初始化连接池，建立若干个连接
+			Class.forName(driver);
 			for(int i = 1 ; i <= num ; i++){
 				pools.addLast(getPoolsConnection());
 			}
 		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void closeAllConnections(){
+		try {
+			for(int i = 1 ; i <= num ; i++){
+				pools.get(i).close();
+			}
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}

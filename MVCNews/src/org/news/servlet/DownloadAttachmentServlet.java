@@ -72,8 +72,8 @@ public class DownloadAttachmentServlet extends HttpServlet {
 		if (request.getParameter("id")!=null){
 			Long attid = Long.valueOf(request.getParameter("id"));
 			NewsAttachment attachment = service.findNewsAttachmentById(attid);
-	
-			response.setHeader("Content-Disposition","attachment;filename="+attachment.getAttachmentName());
+			String filename = attachment.getAttachmentName();
+			response.setHeader("Content-Disposition","attachment;filename="+new String(filename.getBytes("gb2312"), "ISO8859-1" ));
 			ServletOutputStream out = response.getOutputStream();
 			out.write(attachment.getAttachmentContent());
 		}else{//下载软件，从服务器里读
@@ -81,6 +81,7 @@ public class DownloadAttachmentServlet extends HttpServlet {
 			Logger.log(attid, Logger.DEBUG);
 			NewsAttachment attachment = service.findNewsAttachmentById(attid);
 			String filepath = getServletContext().getRealPath("/") + "softwares" + java.io.File.separator; //文件保存路径
+			String filename = attachment.getAttachmentName();
 			Logger.log(filepath+attachment.getAttachmentName(), Logger.DEBUG);
 			//新建一个SmartUpload对象
 			SmartUpload su=new SmartUpload();
@@ -93,7 +94,7 @@ public class DownloadAttachmentServlet extends HttpServlet {
 				  //浏览器将自动用word打开。扩展名为pdf时，浏览器将用acrobat打开.
 				  su.setContentDisposition(null);
 				  //下载文件
-				  su.downloadFile(filepath+attachment.getAttachmentName());
+				  su.downloadFile(filepath+filename,null,new String(filename.getBytes("gb2312"), "ISO8859-1" ));
 			} catch (SmartUploadException e) {
 				e.printStackTrace();
 			}finally{

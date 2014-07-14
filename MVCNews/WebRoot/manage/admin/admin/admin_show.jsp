@@ -1,11 +1,8 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*,org.news.model.*"%>
 <html>
-<head><title>╡И©╢╧эюМт╠пео╒</title></head>
+<head><title>Ф÷╔Г°▀Г╝║Г░├Е▒≤Д©║Ф│╞</title></head>
 <body>
-<%	// брбК╫Б╬Ж
-	request.setCharacterEncoding("GBK") ;
-%>
 <style type="text/css">
 <!--
 .STYLE6 {font-size: 12px}
@@ -17,7 +14,7 @@
 			obj.bgColor = color ;
 		}
 		function show(thisurl){
-			window.open(thisurl,"пбне╥╒╡╪о╣мЁ","widht=500,height=200,scrollbars=yes,resizeable=no") ;
+			window.open(thisurl,"Ф√╟И≈╩Е▐▒Е╦┐ГЁ╩Г╩÷","widht=500,height=200,scrollbars=yes,resizeable=no") ;
 		}
 	</script>
 <center> 
@@ -28,20 +25,20 @@
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">
-			<h1>╡И©╢╧эюМт╠пео╒</h1>		</td>
+			<h1>Ф÷╔Г°▀Г╝║Г░├Е▒≤Д©║Ф│╞</h1>		</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">IDё╨</font></td>
+		<td><font size="2">IDО╪ </font></td>
 		<td><%=admin.getAdminId()%></td>
 		<td><span id="adminid_msg"><font color="RED">*</font></span></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">цШЁфё╨</font></td>
+		<td><font size="2">Е░█Г╖╟О╪ </font></td>
 		<td><%=admin.getAdminName()%></td>
 		<td><span id="adminid_msg"><font color="RED">*</font></span></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">пео╒ё╨</font></td>
+		<td><font size="2">Д©║Ф│╞О╪ </font></td>
 		<td><%=admin.getAdminInfo()%></td>
 		<td><span id="note_msg"><font color="RED">*</font></span></td>
 	</tr>

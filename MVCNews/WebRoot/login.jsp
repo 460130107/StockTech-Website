@@ -1,32 +1,29 @@
-<%@ page contentType="text/html" pageEncoding="GBK"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <script type="text/javascript">
   function validate(f){
   			if (!(/^[a-zA-Z]\w{5,17}$/.test(f.mid.value))){
-  				alert("ÒÔ×ÖÄ¸¿ªÍ·£¬³¤¶ÈÔÚ6-18Ö®¼ä£¡");
+  				alert("ä»¥å­—æ¯å¼€å¤´ï¼Œé•¿åº¦åœ¨6-18ä¹‹é—´ï¼");
   				f.mid.focus();
   				return false;
   			}
   			if (!(/^\w{5,15}$/.test(f.password.value))){
-  				alert("ÃÜÂë±ØĞëÊÇ5~15Î»£¡");
+  				alert("å¯†ç å¿…é¡»æ˜¯5~15ä½ï¼");
   				f.password.focus();
   				return false;
   			}
   			return true;
   } 
 </script>
-<%	// ÂÒÂë½â¾ö
-	request.setCharacterEncoding("GBK") ;
-%>
 <center>
-	<h1>»áÔ±µÇÂ½</h1>
+	<h1>ä¼šå‘˜ç™»é™†</h1>
 	<hr>
-	<%=request.getAttribute("errors")!=null?request.getAttribute("info"):""%>
+	<%=request.getAttribute("info")!=null?request.getAttribute("info"):""%>
 	<form action="UserLoginServlet" method="post" onSubmit="return validate(this);">
-		ÓÃ»§Ãû£º<input type="text" name="mid"><br>
-		ÃÜ&nbsp;&nbsp;Âë£º<input type="password" name="password"><br>
-		ÑéÖ¤Âë£º<input type="text" name="code" maxlength="4" size="4"><img src="image.jsp"><br>
-		<input type="submit" value="µÇÂ½">
-		<input type="reset" value="ÖØÖÃ">
-		<a href="regist.jsp">ĞÂÓÃ»§×¢²á</a>
+		ç”¨æˆ·åï¼š<input type="text" name="mid"><br>
+		å¯†&nbsp;&nbsp;ç ï¼š<input type="password" name="password"><br>
+		éªŒè¯ç ï¼š<input type="text" name="code" maxlength="4" size="4"><img src="image.jsp"><br>
+		<input type="submit" value="ç™»é™†">
+		<input type="reset" value="é‡ç½®">
+		<a href="regist.jsp">æ–°ç”¨æˆ·æ³¨å†Œ</a>
 	</form>
 </center>

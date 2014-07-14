@@ -38,7 +38,6 @@ public class AdminServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("GBK");
 		String pages = "../../../errors.jsp";//错误页
 		String status = request.getParameter("status");//获取当前的操作状态
 		

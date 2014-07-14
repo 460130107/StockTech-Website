@@ -58,7 +58,6 @@ public class UserRegisterServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String pages = "regist_do.jsp";
-		request.setCharacterEncoding("GBK") ;// ÂÒÂë½â¾ö
 		
 		String mid = request.getParameter("mid") ;
 		String password = new MD5Code().getMD5ofStr(request.getParameter("password"));
