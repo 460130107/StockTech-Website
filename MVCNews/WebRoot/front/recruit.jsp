@@ -11,45 +11,23 @@
   <meta name="robots" content="index,follow">
   <meta name="application-name" content="istocktech.com">
 
+  <link href="dist/css/style.css" rel="stylesheet">
  
   <script>
     var _hmt = _hmt || [];
   </script>
+  <link href="dist/css/style.css" rel="stylesheet">
 <body>
 
 <!-- Subhead
 ================================================== -->
-<!--div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar">test</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">首页</a></li>
-			<li><a href="product.html">产品</a></li>
-			<li><a href="service.html">服务</a></li>
-			<li><a href="project.html">项目</a></li>
-			<li><a href="account.html">帐户</a></li>
-			<li><a href="corpration.html">合作</a></li>
-			<li><a href="vip.html">VIP</a></li>
-			<li class="active"><a href="recruit.html" target="_blank">加入我们</a></li>
-          </ul>
-        </div>
-      </div>
-    </div-->
 <jsp:include page="_header.jsp?index=recruit" />
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h1>加入我们</h1>
-    <p class="lead">和斯多克科技一起，做智能投资领域的先行者！</p>
-  </div>
-</header>
+	<header class="jumbotron subhead-green" id="overview">
+		<div class="container">
+			<h1>加入我们</h1>
+			<p class="lead">进入斯多克科技，做智能投资领域的先行者！</p>
+		</div>
+	</header>
   <div class="container">
 
     <!-- Docs nav
@@ -86,7 +64,7 @@
           <div class="page-header">
             <h1>加入斯多克</h1>
           </div>
-          <p class="lead">斯多克科技只选择在金融和科技领域<span style="color:#F00; font-size:xx-large;">最杰出</span>的人才。欢迎有志于在互联网金融大潮中有所作为的朋友加入斯多克。</p>
+          <p class="lead">斯多克科技只选择在金融和科技领域<span style="color:#EE4000; font-size:xx-large;">最杰出</span>的人才。欢迎有志于在互联网金融大潮中有所作为的朋友加入斯多克。</p>
             <blockquote>
           <h3 >我们向您提供的：</h3>
           <p >短期回报：业内极具竞争力的薪水，使你可以体面地生活着</p>

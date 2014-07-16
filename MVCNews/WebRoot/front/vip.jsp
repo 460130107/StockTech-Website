@@ -24,30 +24,6 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
-      <!--div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar">test</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="product.html">产品</a></li>
-            <li><a href="service.html">服务</a></li>
-            <li><a href="project.html">项目</a></li>
-            <li><a href="account.html">帐户</a></li>
-            <li><a href="corpration.html">合作</a></li>
-            <li class="active"><a href="vip.html">VIP</a></li>
-            <li><a href="recruit.html" target="_blank">加入我们</a></li>
-          </ul>
-        </div>
-      </div>
-    </div-->
     <jsp:include page="_header.jsp?index=vip" />
 	<header class="jumbotron " id="overview">
 		<div class="container">	
