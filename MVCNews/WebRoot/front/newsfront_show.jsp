@@ -1,7 +1,11 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-<head><title>查看新闻详情</title></head>
+<head>
+<base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
+	request.getServerPort() + request.getContextPath() %>/" />
+<title>查看新闻详情</title>
+</head>
 <body>
 	<script language="javascript">
 		function changeColor(obj,color){

@@ -2,6 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head><title>新闻列表</title>
+<base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
+	request.getServerPort() + request.getContextPath() %>/" />
 <style type="text/css">
 <!--
 .STYLE6 {font-size: 12px}

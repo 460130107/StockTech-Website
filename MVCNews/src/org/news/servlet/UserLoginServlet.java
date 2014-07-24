@@ -56,7 +56,7 @@ public class UserLoginServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String pages = "login.jsp";//下一个要跳转的页面
+		String pages = "front/account.jsp";//下一个要跳转的页面
 		String rand = (String) request.getSession().getAttribute("rand") ;	// 从session中取出验证码
 		String code = request.getParameter("code") ;
 		
@@ -72,10 +72,10 @@ public class UserLoginServlet extends HttpServlet {
 		try {
 			if(userService.findLogin(user)){//登录成功
 				request.getSession().setAttribute("id",mid) ;	// 保存mid
-				pages = "welcome.jsp" ;
+				pages = "front/welcome.jsp" ;
 			} else {
 				request.setAttribute("info","错误的用户名或密码！") ;
-				pages = "login.jsp" ;
+				pages = "front/account.jsp" ;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

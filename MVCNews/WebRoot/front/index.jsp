@@ -7,20 +7,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+<base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
+	request.getServerPort() + request.getContextPath() %>/" />
 <link rel="icon" href="img/icon.png">
 <title>斯多克科技，互联网金融引导者</title>
 
-<!-- Bootstrap core CSS -->
-<link href="dist/css/bootstrap.min.css" rel="stylesheet">
-
 <!-- Custom styles for this template -->
-<link href="dist/css/carousel.css" rel="stylesheet">
-<style type="text/css">
-*{
-	font-family: "微软雅黑" !important;
-	font-size: 16px;
-}
-</style>
+<link href="front/dist/css/carousel.css" rel="stylesheet">
+
 </head>
 <!-- NAVBAR
 ================================================== -->
@@ -37,7 +31,7 @@
   </ol>
   <div class="carousel-inner" >
     <div class="item active slide_middle"> 
-    <img src="dist/vagrant_header_background.png" alt="First slide">
+    <img src="front/dist/vagrant_header_background.png" alt="First slide">
       <div class="container">
         <div class="carousel-caption">
           <h1 class="carousel-title">斯多克如何改变股票投资行业？</h1>
@@ -46,7 +40,7 @@
         </div>
       </div>
     </div>
-    <div class="item"> <img src="dist/vagrant_header_background.png" alt="Second slide">
+    <div class="item"> <img src="front/dist/vagrant_header_background.png" alt="Second slide">
       <div class="container">
         <div class="carousel-caption">
           <h1>如何把钱用在正确的地方</h1>
@@ -55,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="item"> <img src="dist/vagrant_header_background.png" alt="Third slide">
+    <div class="item"> <img src="front/dist/vagrant_header_background.png" alt="Third slide">
       <div class="container">
         <div class="carousel-caption">
           <h1>斯多克VIP套餐，最专业的服务，最高效的决策</h1>

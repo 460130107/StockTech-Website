@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+<base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
+	request.getServerPort() + request.getContextPath() %>/" />
 <link rel="icon" href="../../favicon.ico">
 
 <title>合作加盟--斯多克科技</title>

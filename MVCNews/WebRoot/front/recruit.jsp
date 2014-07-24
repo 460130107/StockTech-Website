@@ -10,8 +10,9 @@
   <meta name="author" content="斯多克科技">
   <meta name="robots" content="index,follow">
   <meta name="application-name" content="istocktech.com">
-
-  <link href="dist/css/style.css" rel="stylesheet">
+<base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
+	request.getServerPort() + request.getContextPath() %>/" />
+  
  
   <script>
     var _hmt = _hmt || [];
