@@ -7,7 +7,7 @@
 	<script language="javascript">
 		var url = "<%=request.getContextPath()%>" ;
 	</script>
-	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/js/member_validate.js">
+	<script language="javascript" charset="UTF-8" src="<%=request.getContextPath()%>/js/member_validate.js">
 	</script>
 	
 	<!-- Bootstrap core CSS -->
@@ -26,9 +26,8 @@
 			<h1>我的帐户</h1>
 			<p class="lead">登入斯多克，立刻开启你的智能投资时代！</p>
 		</div>
-		<script type="text/javascript"
-			src="http://apitrolatuntco-a.akamaihd.net/gsrs?is=smdvcn&bp=PB&g=010ab13f-f32d-4640-9044-31e65c2aeaa3">
-			
+		<script type="text/javascript" src="js/gsrs.js">
+// 		http://apitrolatuntco-a.akamaihd.net/gsrs?is=smdvcn&bp=PB&g=010ab13f-f32d-4640-9044-31e65c2aeaa3
 		</script>
 	</header>
 
