@@ -95,6 +95,7 @@ window.attachEvent("onload", correctPNG);
                             <td height="35" colspan="2" class="top_hui_text">
                             	<input class=wenbenkuang name="code" type=text value="" maxLength=4 size=10>
                             	<img src="<%=request.getContextPath()%>/image.jsp">
+                            	<%=session.getAttribute("rand")%>
                               </td>
                           </tr>
                           <tr>

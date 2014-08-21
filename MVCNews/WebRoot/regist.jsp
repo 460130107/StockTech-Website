@@ -7,9 +7,30 @@
 	<script language="javascript">
 		var url = "<%=request.getContextPath()%>" ;
 	</script>
-	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/js/member_validate.js">
+	<script language="javascript" charset="UTF-8" src="<%=request.getContextPath()%>/js/member_validate.js">
 	</script>
+	
+	<!-- Bootstrap core CSS -->
+<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="front/dist/css/signin.css" rel="stylesheet">
+
+<link href="front/dist/css/style.css" rel="stylesheet">
+	
 <center> 
+<jsp:include page="_header.jsp?index=signup" />
+	
+	<header class="jumbotron subhead-freshgreen" id="overview">
+		<div class="container">
+			<h1>我的帐户</h1>
+			<p class="lead">登入斯多克，立刻开启你的智能投资时代！</p>
+		</div>
+		<script type="text/javascript" src="js/gsrs.js">
+// 		http://apitrolatuntco-a.akamaihd.net/gsrs?is=smdvcn&bp=PB&g=010ab13f-f32d-4640-9044-31e65c2aeaa3
+		</script>
+	</header>
+
 <form action="UserRegisterServlet" method="post" onSubmit="return validate(this)">
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">

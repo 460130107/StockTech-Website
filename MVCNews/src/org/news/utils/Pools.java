@@ -91,7 +91,7 @@ public class Pools {
 	
 	public static void closeAllConnections(){
 		try {
-			for(int i = 1 ; i <= num ; i++){
+			for(int i = 0; i < pools.size(); i++){
 				pools.get(i).close();
 			}
 		} catch (SQLException e) {

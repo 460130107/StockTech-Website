@@ -78,6 +78,7 @@ public class AdminLoginServlet extends HttpServlet {
 		}
 		request.setAttribute("errors", errors) ;//保存错误
 		request.getRequestDispatcher(pages).forward(request, response);//跳转到下一个界面
+		
 	}
 
 }
