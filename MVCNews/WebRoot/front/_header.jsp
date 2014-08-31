@@ -3,7 +3,7 @@
  	<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
   	<link href="front/dist/css/site.min.css" rel="stylesheet">
   	<link href="front/dist/css/style.css" rel="stylesheet">
-
+	<link href="front/dist/css/effect.css" rel="stylesheet">
   	<!-- Favicons -->
   	<link rel="apple-touch-icon-precomposed" href="img/icon.png">
   	<link rel="shortcut icon" href="img/icon.png">
