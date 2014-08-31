@@ -31,12 +31,12 @@
   </ol>
   <div class="carousel-inner" >
     <div class="item active slide_middle"> 
-    <img src="front/dist/vagrant_header_background.png" alt="First slide">
+    <img src="front/dist/img/index_slide_1.jpg" alt="First slide">
       <div class="container">
         <div class="carousel-caption">
-          <h1 class="carousel-title">斯多克如何改变股票投资行业？</h1>
-          <p>开创智能投资行业，为您做出智能化的决策，是的，一切就像去超市购物那样自然。</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">什么是智能投资？</a></p>
+<!--           <h1 class="carousel-title">斯多克如何改变股票投资行业？</h1> -->
+<!--           <p>开创智能投资行业，为您做出智能化的决策，是的，一切就像去超市购物那样自然。</p> -->
+<!--           <p><a class="btn btn-lg btn-primary" href="#" role="button">什么是智能投资？</a></p> -->
         </div>
       </div>
     </div>
@@ -72,18 +72,27 @@
   
   <!-- Three columns of text below the carousel -->
   <div class="row">
-    <div class="col-lg-4"> <a href="http://www.baidu.com" target="_blank" style="width: 300px; height: 220px;"> <img src="img/news_pic1.jpg" alt="Generic placeholder image" style="width: 300px; height: 220px;"> </a>
-      <p class="lead" style="color: green;">斯多克致力于投资智能化，旨在为广大客户提供智能化的决策。</p>
-      <p><a class="btn btn-default" href="#" role="button">产品与套餐 &raquo;</a></p>
+    <div class="col-lg-4"> 
+    	<a href="http://www.baidu.com" target="_blank" style="width: 300px; height: 220px;">
+    		<img src="front/dist/img/index_section1.jpg" alt="Generic placeholder image" style="width: 300px; height: 220px;">
+    	</a>
+      	<p class="lead" style="color: green;">斯多克致力于投资智能化，旨在为广大客户提供智能化的决策。</p>
+      	<p><a class="btn btn-default" href="#" role="button">产品与套餐 &raquo;</a></p>
     </div>
     <!-- /.col-lg-4 -->
-    <div class="col-lg-4"> <img class="img-rounded" src="img/news_pic1.jpg" alt="Generic placeholder image" style="width: 300px; height: 220px;">
-      <p class="lead" style="color: red;">斯多克致力于投资智能化，旨在为广大客户提供智能。</p>
-      <p><a class="btn btn-default" href="#" role="button">资产管理 &raquo;</a></p>
+    <div class="col-lg-4">
+    	<a href="http://www.baidu.com" target="_blank" style="width: 300px; height: 220px;">
+    		<img src="front/dist/img/index_section2.jpg" alt="Generic placeholder image" style="width: 300px; height: 220px;">
+    	</a>
+    	<p class="lead" style="color: red;">斯多克致力于投资智能化，旨在为广大客户提供智能。</p>
+      	<p><a class="btn btn-default" href="#" role="button">资产管理 &raquo;</a></p>
     </div>
     <!-- /.col-lg-4 -->
-    <div class="col-lg-4"> <img class="img-rounded" src="img/news_pic1.jpg" alt="Generic placeholder image" style="width: 300px; height: 220px;">
-      <p class="lead" style="color: blue;">斯多克致力于投资智能化，旨在为广大客户提供贴心的服务.</p>
+    <div class="col-lg-4"> 
+    	<a href="http://www.baidu.com" target="_blank" style="width: 300px; height: 220px;">
+    		<img src="front/dist/img/index_section3.jpg" alt="Generic placeholder image" style="width: 300px; height: 220px;">
+    	</a>
+    	<p class="lead" style="color: blue;">斯多克致力于投资智能化，旨在为广大客户提供贴心的服务.</p>
       <p><a class="btn btn-default" href="#" role="button">网上开户 &raquo;</a></p>
     </div>
     <!-- /.col-lg-4 --> 
@@ -100,11 +109,11 @@
         <span class="text-muted">让投资智能起来。</span></h2>
       <p class="lead">利用大数据、科学云计算、移动分布式计算等新兴技术进行投资智能化</p>
     </div>
-    <div class="col-md-5"> <img class="featurette-image img-responsive" src="img/test.png" alt="Generic placeholder image"> </div>
+    <div class="col-md-5"> <img class="featurette-image img-responsive" src="front/dist/img/index_intro1.jpg" alt="Generic placeholder image"> </div>
   </div>
   <hr class="featurette-divider">
   <div class="row featurette">
-    <div class="col-md-5"> <img class="featurette-image img-responsive" src="img/test.png" alt="Generic placeholder image"> </div>
+    <div class="col-md-5"> <img class="featurette-image img-responsive" src="front/dist/img/index_intro2.jpg" alt="Generic placeholder image"> </div>
     <div class="col-md-7">
       <h2 class="featurette-heading">所谓的智能是指什么呢？</br>
         </br>
@@ -120,7 +129,7 @@
         <span class="text-muted">我们提供差异化的服务.</span></h2>
       <p class="lead">毫无疑问，最尊贵的客人会赢得最佳的服务，斯多克具有“再次光临的顾客可为公司带来25%-85%的利润，而吸引它们再次光临的因素首先是服务质量的好坏，其次是产品本身，最后才是价格”，因此，做好服务工作，以真诚和温情打动消费者的心，培养“永久顾客”，刺激重复购买，才是谋求企业长远利益的上策。.</p>
     </div>
-    <div class="col-md-5"> <img class="featurette-image img-responsive" src="img/test.png" alt="" style="width:500px; height: 500px;"> </div>
+    <div class="col-md-5"> <img class="featurette-image img-responsive" src="front/dist/img/index_intro3.jpg" alt="" style="width:500px; height: 500px;"> </div>
   </div>
   <hr class="featurette-divider">
   
