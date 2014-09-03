@@ -12,8 +12,10 @@
 <link rel="icon" href="img/icon.png">
 <title>斯多克科技，互联网金融引导者</title>
 
-<!-- Custom styles for this template -->
-<link href="front/dist/css/carousel.css" rel="stylesheet">
+<!-- 引入index.jsp对应的css文件 -->
+<link href="front/dist/css/index.css" rel="stylesheet">
+
+
 
 </head>
 <!-- NAVBAR
@@ -23,14 +25,16 @@
 <!-- Carousel
     ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel" > 
-  <!-- Indicators -->
+  <!-- Indicators：轮播（Carousel）指标：对应slide下方的小圆点 -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
+  <!-- 轮播（Carousel）项目 -->
   <div class="carousel-inner" >
-    <div class="item active slide_middle"> 
+    <div class="item active"> 
+    <!-- slide_middle没有定义 -->
     <img src="front/dist/img/index_slide_1.jpg" alt="First slide">
       <div class="container">
         <div class="carousel-caption">
@@ -59,6 +63,7 @@
       </div>
     </div>
   </div>
+  <!-- 轮播（Carousel）导航 -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> 
   <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> </div>
 <!-- /.carousel --> 
@@ -73,26 +78,26 @@
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-4"> 
-    	<figure class="ser-mod-blind" data-num="1">
-	        <img src="image/indexPic.jpg" />
-	        <figcaption class="ser-blind-toggle-top" data-num="1">产品与套餐 &raquo;</figcaption>
-	        <figcaption class="ser-blind-toggle" data-num="1"><h3>产品与套餐 </h3><p>斯多克致力于投资智能化，旨在为广大客户提供智能化的决策。</p><p>更多细节&raquo;</p></figcaption>       
+    	<figure class="ser-blind" data-num="1"><!-- ser-blind==ser-mod-blind -->
+	        <img src="image/indexPic.jpg" /><!-- ser-blind-top==ser-blind-toggle-top --><!-- ser-blind-toggle -->
+	        <figcaption class="ser-blind-top" data-num="1">产品与套餐 &raquo;</figcaption>
+	        <figcaption class="ser-blind-bottom" data-num="1"><h3>产品与套餐 </h3><p>斯多克致力于投资智能化，旨在为广大客户提供智能化的决策。</p><p>更多细节&raquo;</p></figcaption>       
       	</figure>
     </div>
     <!-- /.col-lg-4 -->
     <div class="col-lg-4">
-    	<figure class="ser-mod-blind" data-num="2">
+    	<figure class="ser-blind" data-num="2">
             <img src="image/indexPic.jpg" />
-            <figcaption class="ser-blind-toggle-top" data-num="2">资产管理 &raquo;</figcaption>
-            <figcaption class="ser-blind-toggle" data-num="2"><h3>资产管理  </h3><p>斯多克致力于投资智能化，旨在为广大客户提供智能。</p><p>更多细节&raquo;</p></figcaption>       
+            <figcaption class="ser-blind-top" data-num="2">资产管理 &raquo;</figcaption>
+            <figcaption class="ser-blind-bottom" data-num="2"><h3>资产管理  </h3><p>斯多克致力于投资智能化，旨在为广大客户提供智能。</p><p>更多细节&raquo;</p></figcaption>       
         </figure>
     </div>
     <!-- /.col-lg-4 -->
     <div class="col-lg-4"> 
-    	<figure class="ser-mod-blind" data-num="3">
+    	<figure class="ser-blind" data-num="3">
             <img src="image/indexPic.jpg" />
-            <figcaption class="ser-blind-toggle-top" data-num="3">网上开户 &raquo;</figcaption>
-            <figcaption class="ser-blind-toggle" data-num="3"><h3>网上开户 </h3><p>斯多克致力于投资智能化，旨在为广大客户提供贴心的服务。</p><p>更多细节&raquo;</p></figcaption>       
+            <figcaption class="ser-blind-top" data-num="3">网上开户 &raquo;</figcaption>
+            <figcaption class="ser-blind-bottom" data-num="3"><h3>网上开户 </h3><p>斯多克致力于投资智能化，旨在为广大客户提供贴心的服务。</p><p>更多细节&raquo;</p></figcaption>       
         </figure>
     </div>
     <!-- /.col-lg-4 --> 
@@ -147,25 +152,25 @@
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery-ui.min.js"></script>
 <script type="text/javascript" language="javascript">
     
-    $( ".ser-mod-blind" ).hover(
+    $( ".ser-blind" ).hover(
             function() {
             	/*alert("hover on the figure");*/
-            	var options={direction:"down"};
+            	var options_down={direction:"down"};
+            	var options_up={direction:"left"};
             	var num=this.getAttribute("data-num");
             	//console.log("data-num = "+num+"  typeof data-num is "+typeof num);
             	switch(num){
             	   case "1":
-            		   $(".ser-blind-toggle-top[data-num='1']").toggle("blind");
-                       $(".ser-blind-toggle[data-num='1']").toggle( "blind",options );
+            		   $(".ser-blind-top[data-num='1']").toggle("blind");
+                       $(".ser-blind-bottom[data-num='1']").toggle( "blind",options_down );
             		   break;
             	   case "2":
-            		   $(".ser-blind-toggle-top[data-num='2']").toggle("blind");
-            		   $(".ser-blind-toggle[data-num='2']").toggle( "blind",options );
+            		   $(".ser-blind-top[data-num='2']").toggle("blind");
+                       $(".ser-blind-bottom[data-num='2']").toggle( "blind",options_down );
             		   break;
             	   case "3":
-            		   $(".ser-blind-toggle-top[data-num='3']").toggle("blind");
-                       $(".ser-blind-toggle[data-num='3']").toggle( "blind",options );
-                       break;
+            		   $(".ser-blind-top[data-num='3']").toggle("blind");
+                       $(".ser-blind-bottom[data-num='3']").toggle( "blind",options_down );
             		   break;
             	}
                 /*$(".ser-blind-toggle-top").toggle("blind");

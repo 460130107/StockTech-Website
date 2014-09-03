@@ -1,0 +1,45 @@
+/*-------body字体样式--------*/
+body{
+	font-family:"Comic Sans MS", cursive, sans-serif,"微软雅黑";
+	font-size:2em;
+	/*font-size:14px;*/
+}
+
+
+/*-------_header.jsp样式--------*/
+nav{
+	opacity:0.8;
+}
+
+/*-------_footer.jsp样式---------*/
+.footer {
+	color: #777;
+	text-align: center;
+	padding: 30px 0;
+	margin-top: 70px;
+	border-top: 1px solid #e5e5e5;
+	background-color: #333333
+}
+.footer a {
+	color: #777
+}
+
+.footer-item > h3 {
+	font-size: 20px;
+	color: green;
+}
+
+.footer-item > a {
+	font-size: 16px;
+	color: #ffffff;
+}
+
+/*---清除浮动---*/
+.clear{
+	clear: both;
+}
+
+/*---全局样式---*/
+/*@font-1{
+	
+}*/

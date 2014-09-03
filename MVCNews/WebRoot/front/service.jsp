@@ -13,19 +13,19 @@
 <link rel="icon" href="../../favicon.ico">
 
 <title>服务列表--斯多克科技</title>
-
+<link rel="stylesheet" type="text/css" href="front/dist/css/service.css">
 </head>
 <!-- NAVBAR
 ================================================== -->
 <body>
 	<jsp:include page="_header.jsp?index=service" />
-	<header class="jumbotron subhead-grassgreen" id="overview">
+	<!-- <header class="jumbotron subhead-grassgreen" id="overview">
 		<div class="container">
 			<h1>服务列表</h1>
 			<p class="lead">斯多克提供丰富、可靠、多样的服务！</p>
 		</div>
-	</header>
-	<div class="container">
+	</header> -->
+	<div class="container" id="service">
 		<div class="row">
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">

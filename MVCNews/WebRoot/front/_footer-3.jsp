@@ -101,5 +101,6 @@
 	
 	<script src="front/dist/js/jquery.min.js"></script>
    <script src="front/dist/js/bootstrap.min.js"></script>
+   
 </body>
 </html>

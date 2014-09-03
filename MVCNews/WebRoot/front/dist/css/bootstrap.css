@@ -4168,6 +4168,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
+  /*border-right-color: transparent;*/
 }
 
 .nav-tabs.nav-justified {

@@ -1,0 +1,75 @@
+/*--------carousel(轮播)的效果---------*/
+/*继承自bootstrap*/
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+  margin-top:50px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+  margin-bottom: 50px;
+}
+
+.carousel-caption h1{
+  font-weight: normal;
+  font-size: 50px;
+  color: #EE6A50;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #33CCCC;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+/*--------marketing的效果---------*/
+
+/*---二：：blind效果--*/
+.col-lg-4{
+	height:270px !important;/*----问题-若不设置此项，则在index.jsp中能正常显示，但是在index-ser-blind.jsp中.col-lg-4的默认height为1px，-*/
+	/*border:1px solid red;*/} 
+.marketing .col-lg-4 {
+  text-align: center;
+}
+.ser-blind{
+	position: relative;/*-important作为之后ser-blind-top和ser-blind-bottom定位的参考对象-*/
+}
+.ser-blind img{
+	width: 100%;height: 100%;
+	/*background: pink;*/
+}
+.ser-blind-top{
+	position:absolute;
+    /*bottom:0;*/
+    top:240px;
+	height:30px;
+	width:100%;
+	line-height: 30px;
+	background: rgba(153,153,153,.5); 
+	padding: 0;margin: 0;
+}
+.ser-blind-bottom{
+	position: relative;top:-270px;
+	height: 270px;
+	padding:0;margin:0;
+	display:none;
+	background: rgba(153,153,153,.3); 
+}
+.ser-blind-bottom h3{margin:0 !important;padding:0;padding-top:30px !important;}
+.ser-blind-bottom p{margin-top:30px !important;}
+
+
+
+/*--------featurettes(花絮)的效果---------*/
+
+
+/*-----------------*/

@@ -1,0 +1,139 @@
+header{
+		margin-top:51px;
+		background: url("../img/service-1-small.png") repeat-x center;
+		height:350px;
+		color:white;
+		font-size: 50px;
+		line-height: 350px;
+		background-size:contain;
+		-o-background-size:contain;
+		-moz-background-size:contain;
+		-webkit-background-size:contain;
+		/*background: pink;*/
+	}
+/*-------service全局样式--------*/
+.font-title{
+	font-weight: bold;
+	font-family: "楷体" "微软雅黑" "宋体" ;
+	font-size: 30px;
+}
+/*-------for service-1.jsp--------*/
+#main-service-1{
+	margin-top:70px;
+	.thumbnail:hover{
+		background: rgba(131,178,216,0.5);
+	}
+	/*--重写bootstrap中的样式---*/
+	.col-md-3{padding-right:0 !important;}
+	.col-md-9{
+		border: 2px solid rgba(39,188,211,1) !important;/*border-left:0 !important;*/
+		padding-top:30px;
+		img{
+			float:left;
+			/*margin-left:20px;*/
+			margin-bottom:10px;
+		}
+		.title{
+			.font-title;
+		}
+	}
+	.nav-tabs{
+		border-bottom:0 solid #ddd !important;
+		/*border-right:2px solid rgba(39,188,211,1) !important;*/
+		li{
+			/*&:hover{
+				background-color: rgba(39,188,211,0.6) !important;
+			}*/
+			/*---重写圆角样式----*/
+			a{
+				border-top-left-radius: 10px !important;
+				border-top-right-radius: 0 !important;
+				border-bottom-left-radius: 10px !important;
+				margin-right:0 !important;
+				color:black;
+				font-weight: bold;
+				font-family: "微软雅黑" "宋体" "楷体";
+				&:hover{
+					background-color: rgba(39,188,211,0.6) !important;
+				}
+			}
+			&.active{
+				a{
+					color: #555555;
+					cursor: default;
+					background-color: #ffffff;
+					border: 2px solid rgba(39,188,211,1) !important;				
+					border-right: 0 !important;					  				  
+					&:hover{
+						color: #555555;
+						cursor: default;
+						background-color: rgba(39,188,211,0.3);
+						border: 2px solid rgba(39,188,211,1) !important;			
+						border-right: 0 !important;		
+					}
+					&:focus{
+						color: #555555;
+						cursor: default;
+						background-color: rgba(39,188,211,0.6);
+						border: 2px solid rgba(39,188,211,1) !important;				
+						border-right: 0 !important;		
+					}
+				}
+			}
+		}
+	}	
+}
+
+/*-------for service-2.jsp--------*/
+.border-radius (@radius) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+.img-size(@size){
+	width:@size;height: @size;
+}
+/*.img-transition(){
+	transition:transform 1s ease;
+	-o-transition:-o-transform 1s ease;
+	-moz-transition:-moz-transform 1s ease;
+	-webkit-transition:-webkit-transform 1s ease;
+}*/
+.img-rotate(@degDefine){
+	/*transform:rotate(@degDefine);
+	-o-transform:rotate(@degDefine);
+	-moz-transform:rotate(@degDefine);
+	-webkit-transform:rotate(@degDefine);
+	filter:progd:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	-ms-filter:progd:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
+	color:@degDefine;
+}
+#main-service-2{
+	/*background: gray;*/
+	img{
+		float:left;
+		margin-right:30px;/*设置和右边文字的距离*/
+		.img-size(220px);
+		.border-radius(110px);
+		border:1px solid rgba(201,201,201,1);
+		/*.ing-transition;*/
+		/*&:hover{
+			.img-rotate(-90deg);
+		}*/
+	}
+	.container{
+		margin-bottom: 30px;
+		&:first-child{
+			margin-top:30px;
+		}
+	}
+	.col-md-6{	
+		padding-top:20px;padding-bottom:20px;	
+		&:hover{
+			border:1px solid rgba(201,201,201,1);
+			.border-radius(20px);
+			background: rgba(201,201,201,0.8);
+		}
+		/*box-sizing:border-box !important;*/
+	}
+}
