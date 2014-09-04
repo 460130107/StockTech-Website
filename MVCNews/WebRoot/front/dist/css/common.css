@@ -5,6 +5,36 @@ body{
 	/*font-size:14px;*/
 }
 
+/*--全局样式header--*/
+header{
+		margin-top:51px;
+		/*background: url("../img/service-1-small.png") repeat-x center;*/
+		/*height:350px;*/
+		color:white;
+		font-size: 50px;
+		/*line-height: 250px;
+		background-size:contain;
+		-o-background-size:contain;
+		-moz-background-size:contain;
+		-webkit-background-size:contain;*/
+		/*background: pink;*/
+}
+
+/*----nav下方header不部分列表样式-----*/
+{}
+header li a,header li{
+	color:white;
+}
+header li a{padding-right:20px;}
+header li a:link{color:white;}
+header li a:VISITED{color:white;}
+header li a:hover{
+	list-style: none !important;
+	text-decoration:none;
+	color:#F56C0F;
+	font-size:20px;
+}
+header li a:ACTIVE{}
 
 /*-------_header.jsp样式--------*/
 nav{

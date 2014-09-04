@@ -32,9 +32,9 @@
           <ul class="nav navbar-nav">
             <li class='${param.index=="index"?"active":"" }'><a href="front/index.jsp">首页</a></li>
             <li class='${param.index=="product"?"active":"" }'><a href="front/product.jsp">产品</a></li>
-            <li class='${param.index=="service"?"active":"" }'><a href="front/service-1.jsp">服务</a></li>
+            <li class='${param.index=="service"?"active":"" }'><a href="front/service-2.jsp">服务</a></li>
             <!-- <li class='${param.index=="service"?"active":"" }'><a href="front/service.jsp">服务</a></li> -->
-            <li class='${param.index=="project"?"active":"" }'><a href="front/project.jsp">项目</a></li>
+            <li class='${param.index=="project"?"active":"" }'><a href="front/project-1.jsp">项目</a></li>
             <li class='${param.index=="account"?"active":"" }'><a href="front/account.jsp">帐户</a></li>
             <li class='${param.index=="corpration"?"active":"" }'><a href="front/corpration.jsp">合作</a></li>
             <li class='${param.index=="vip"?"active":"" }'><a href="front/vip.jsp">VIP</a></li>

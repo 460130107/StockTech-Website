@@ -13,9 +13,7 @@
 <title>斯多克科技，互联网金融引导者</title>
 
 <!-- 引入index.jsp对应的css文件 -->
-<link href="front/dist/css/index.css" rel="stylesheet">
-
-
+<link href="front/dist/css/index.css" rel="stylesheet" type="text/css">
 
 </head>
 <!-- NAVBAR

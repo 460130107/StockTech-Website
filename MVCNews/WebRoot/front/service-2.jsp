@@ -36,15 +36,22 @@
 ================================================== -->
 <body>
 	<jsp:include page="_header.jsp?index=service" />
-	<!-- <header class="jumbotron subhead-grassgreen" id="overview">
+	<header class="jumbotron subhead-grassgreen" id="overview">
 		<div class="container">
-			<h1>服务列表</h1>
-			<p class="lead">斯多克提供丰富、可靠、多样的服务！</p>
+			<!--  <h1>服务列表</h1>
+			<p class="lead">斯多克提供丰富、可靠、多样的服务！</p>  -->
+			<ul class="list-inline">
+				<li><a href="">大数据分析</a>/</li>
+				<li><a href="">专业调查</a>/</li>
+				<li><a href="">数据挖掘</a>/</li>
+				<li><a href="">账户合作</a>/</li>
+				<li><a href="">用户培训</a>/</li>
+				<li><a href="">一对一指导</a>/</li>
+			</ul>
 		</div>
-	</header> -->
-	<header class="text-center">What can we do for you?
-		<!-- <img class="service-img" src="front/dist/img/service-1-small.png" /> -->
 	</header>
+	<!-- <header class="text-center">What can we do for you?
+	</header> -->
 	<div id="main-service-2">
 	<!-- 第一行 -->
 	 <div class="container" >
@@ -111,7 +118,7 @@
 			items.each(function(){				
 				//console.log($(this).attr("data-item"));
 				if($(this).attr("data-item")%4==1 || $(this).attr("data-item")%4==0){
-					$(this).css("border","1px solid rgba(201,201,201,1)");
+					$(this).css("border","1px solid rgba(28,103,126,1)");
 					$(this).css("border-radius","20px");$(this).css("-o-border-radius","20px");
 					$(this).css("-moz-border-radius","20px");$(this).css("-webkit-border-radius","20px");
 				}else{
@@ -121,7 +128,7 @@
 								if($(this).attr("data-item")%4==1 || $(this).attr("data-item")%4==0){
 									$(this).css("border","1px white");
 								}else{
-									$(this).css("border","1px solid rgba(201,201,201,1)");
+									$(this).css("border","1px solid rgba(28,103,126,1)");
 									$(this).css("border-radius","20px");$(this).css("-o-border-radius","20px");
 									$(this).css("-moz-border-radius","20px");$(this).css("-webkit-border-radius","20px");
 								}
@@ -131,7 +138,7 @@
 						function(){
 							items.each(function(){
 								if($(this).attr("data-item")%4==1 || $(this).attr("data-item")%4==0){
-									$(this).css("border","1px solid rgba(201,201,201,1)");
+									$(this).css("border","1px solid rgba(28,103,126,1)");
 									$(this).css("border-radius","20px");$(this).css("-o-border-radius","20px");
 									$(this).css("-moz-border-radius","20px");$(this).css("-webkit-border-radius","20px");
 								}else{

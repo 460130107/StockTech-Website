@@ -13,7 +13,7 @@
 <link rel="icon" href="../../favicon.ico">
 
 <title>服务列表--斯多克科技</title>
-<link rel="stylesheet" type="text/css" href="front/dist/css/service.css">
+<link rel="stylesheet" type="text/css" href="front/dist/css/service.less.css">
 </head>
 <!-- NAVBAR
 ================================================== -->

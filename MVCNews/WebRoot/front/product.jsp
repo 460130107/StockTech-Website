@@ -10,7 +10,7 @@
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
 <link rel="icon" href="../../favicon.ico">
-
+<link rel="stylesheet" href="front/dist/css/product.css" />
 <title>公司产品--斯多克科技</title>
 
 </head>
