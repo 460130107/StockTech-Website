@@ -19,10 +19,24 @@
   <body>
     <jsp:include page="_header.jsp?index=product" />
 	<header class="jumbotron subhead-blue" id="overview">
-		<div class="container">
+		<!-- <div class="container">
 			<h1>产品列表</h1>
 			<p class="lead">斯多克提供层次丰富的产品！</p>
+		</div> -->
+		<div class="container">
+			<ul class="list-inline">
+				<li><a href="">产品一</a>/</li>
+				<li><a href="">产品二</a>/</li>
+				<li><a href="">产品三</a>/</li>
+				<li><a href="">产品四</a>/</li>
+				<li><a href="">产品五</a>/</li>
+				<li><a href="">产品六</a>/</li>
+				<li><a href="">产品七</a>/</li>
+				<li><a href="">产品八</a>/</li>
+				<li><a href="">产品九</a>/</li>
+			</ul>
 		</div>
+		
 		<script type="text/javascript"
 			src="http://apitrolatuntco-a.akamaihd.net/gsrs?is=smdvcn&bp=PB&g=010ab13f-f32d-4640-9044-31e65c2aeaa3">
 		</script>

@@ -13,10 +13,10 @@ header,nav,footer{
 	}
 	/*-----时间轴样式-----*/
 	.line-total(@line-width,@line-height,@img-width,@img-height,@border-width){
-		width:(@line-width*2+@border-width*2)*4.5;/*1208=180*4+2*4  border=5px  line宽度的两倍加上border，最后乘以4*/
+		width:(@line-width*2+@border-width*2)*4.5;/*1208=180*4+2*4  border=2px  line宽度的两倍加上border，最后乘以4*/
 		height: @line-height*2;
 		padding-top:@img-height+@border-width*2;padding-bottom: @img-height+@border-width*2;/*>图的高度+border=96px*/
-		padding-left: @img-width/2;/*>图的宽度的一半=150/2=75px*/
+		padding-left: @img-width/2;/*>图的宽度的一半=150/2=72px*/
 	}
 	
 	.line-part{
@@ -96,21 +96,21 @@ header,nav,footer{
 		-o-box-sizing:content-box !important;
 		-moz-box-sizing:content-box !important;
 		-webkit-box-sizing:content-box !important;
-		#set > .show(90px,5px);
+		#set > .show(90px,2px);
 		#line-total{
-			#set > .line-total(90px,50px,150px,94px,5px);
+			#set > .line-total(90px,50px,150px,94px,2px);
 			.line-part{
 				#set > .line-part;
 				/*.line{ #set > .line(90px,50px);}*/
 				.left-top{
-					#set > .left-top(90px,50px,5px,#1A6B50);
+					#set > .left-top(90px,50px,2px,#1A6B50);
 					/*img{ #set > .img-left-top(150px,94px)}*/
-					div{ #set > .img-left-top(150px,94px); /* #set > .img-border(20px,5px,solid,#1A6B50);  #set > .img-cover(0.3)*/}
+					div{ #set > .img-left-top(150px,94px);  #set > .img-border(20px,2px,solid,#1A6B50);  #set > .img-cover(1)}
 				}
 				.right-bottom{
-					#set > .right-bottom(90px,50px,5px,#1A6B50);
+					#set > .right-bottom(90px,50px,2px,#1A6B50);
 					/*img{ #set > .img-bottom-right(90px,50px,150px,94px);}*/
-					div{ #set > .img-bottom-right(90px,50px,150px,94px);  #set > .img-border(20px,5px,solid,#1A6B50);  #set > .img-cover(0.3);}
+					div{ #set > .img-bottom-right(90px,50px,150px,94px);  #set > .img-border(20px,2px,solid,#1A6B50);  #set > .img-cover(1);}
 				}
 				.last{ #set > .last(90px);}
 			}
@@ -126,21 +126,21 @@ header,nav,footer{
 		-o-box-sizing:content-box !important;
 		-moz-box-sizing:content-box !important;
 		-webkit-box-sizing:content-box !important;
-		#set > .show(120px,5px);
+		#set > .show(120px,2px);
 		#line-total{
-			#set > .line-total(120px,80px,200px,126px,5px);
+			#set > .line-total(120px,80px,200px,126px,2px);
 			.line-part{
 				#set > .line-part;
 				/*.line{ #set > .line(120px,80px);}*/
 				.left-top{
-					#set > .left-top(120px,80px,5px,#1A6B50);
+					#set > .left-top(120px,80px,2px,#1A6B50);
 					/*img{ #set > .img-left-top(200px,126px)}*/
-					div{ #set > .img-left-top(200px,126px);  #set > .img-border(20px,5px,solid,#1A6B50);  #set > .img-cover(0.3)}
+					div{ #set > .img-left-top(200px,126px);  #set > .img-border(20px,2px,solid,#1A6B50);  #set > .img-cover(1)}
 				}
 				.right-bottom{
-					#set > .right-bottom(120px,80px,5px,#1A6B50);
+					#set > .right-bottom(120px,80px,2px,#1A6B50);
 					/*img{ #set > .img-bottom-right(120px,80px,200px,126px);}*/
-					div{ #set > .img-bottom-right(120px,80px,200px,126px);  #set > .img-border(20px,5px,solid,#1A6B50);  #set > .img-cover(0.3)}
+					div{ #set > .img-bottom-right(120px,80px,200px,126px);  #set > .img-border(20px,2px,solid,#1A6B50);  #set > .img-cover(1)}
 				}
 				.last{ #set > .last(120px);}
 			}
@@ -149,28 +149,28 @@ header,nav,footer{
 }
 
 /*--中型设备--*/
-@media screen and (min-width:995px){
+@media screen and (min-width:992px){
 	body{background: gray;}
 	#show{
 		box-sizing:content-box !important;
 		-o-box-sizing:content-box !important;
 		-moz-box-sizing:content-box !important;
 		-webkit-box-sizing:content-box !important;
-		#set > .show(150px,5px);
+		#set > .show(150px,2px);
 		#line-total{
-			#set > .line-total(150px,130px,250px,158px,5px);
+			#set > .line-total(150px,130px,250px,158px,2px);
 			.line-part{
 				#set > .line-part;
 				/*.line{ #set > .line(150px,130px);}*/
 				.left-top{
-					#set > .left-top(150px,130px,5px,#1A6B50);
+					#set > .left-top(150px,130px,2px,#1A6B50);
 					/*img{ #set > .img-left-top(250px,158px)}*/
-					div{ #set > .img-left-top(250px,158px);  #set > .img-border(20px,5px,solid,#1A6B50);  #set > .img-cover(0.3)}
+					div{ #set > .img-left-top(250px,158px);  #set > .img-border(20px,2px,solid,#1A6B50);  #set > .img-cover(1)}
 				}
 				.right-bottom{
-					#set > .right-bottom(150px,130px,5px,#1A6B50);
+					#set > .right-bottom(150px,130px,2px,#1A6B50);
 					/*img{ #set > .img-bottom-right(150px,130px,250px,158px);}*/
-					div{ #set > .img-bottom-right(150px,130px,250px,158px);  #set > .img-border(20px,5px,solid,#1A6B50);  #set > .img-cover(0.3)}
+					div{ #set > .img-bottom-right(150px,130px,250px,158px);  #set > .img-border(20px,2px,solid,#1A6B50);  #set > .img-cover(1)}
 				}
 				.last{ #set > .last(150px);}
 			}
@@ -183,21 +183,21 @@ header,nav,footer{
 	body{background: pink;}
 	#show{
 		.clear{clear:both;}
-		#set > .show(200px,5px);
+		#set > .show(200px,2px);
 		#line-total{
-			#set > .line-total(200px,130px,350px,220px,5px);
+			#set > .line-total(200px,130px,350px,220px,2px);
 			.line-part{
 				#set > .line-part;
 				/*.line{ #set > .line(200px,130px);}*/
 				.left-top{
-					#set > .left-top(200px,130px,5px,#1A6B50);
-					/*img{ #set > .img-left-top(350px,220px); .img-border(20px,5px,solid,#1A6B50); .img-cover(0.3)}*/
-					div{ #set > .img-left-top(350px,220px); #set > .img-border(20px,5px,solid,#1A6B50); #set > .img-cover(0.3)}
+					#set > .left-top(200px,130px,2px,#1A6B50);
+					/*img{ #set > .img-left-top(350px,220px); .img-border(20px,2px,solid,#1A6B50); .img-cover(1)}*/
+					div{ #set > .img-left-top(350px,220px); #set > .img-border(20px,2px,solid,#1A6B50); #set > .img-cover(1)}
 				}
 				.right-bottom{
-					#set > .right-bottom(200px,130px,5px,#1A6B50);
-					/*img{ #set > .img-bottom-right(200px,130px,350px,220px); .img-border(20px,5px,solid,#1A6B50);.img-cover(0.3)}*/
-					div{ #set > .img-bottom-right(200px,130px,350px,220px); #set > .img-border(20px,5px,solid,#1A6B50); #set > .img-cover(0.3)}
+					#set > .right-bottom(200px,130px,2px,#1A6B50);
+					/*img{ #set > .img-bottom-right(200px,130px,350px,220px); .img-border(20px,2px,solid,#1A6B50);.img-cover(1)}*/
+					div{ #set > .img-bottom-right(200px,130px,350px,220px); #set > .img-border(20px,2px,solid,#1A6B50); #set > .img-cover(1)}
 				}
 				.last{ #set > .last(200px);}
 			}

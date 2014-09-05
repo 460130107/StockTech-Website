@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class='${param.index=="index"?"active":"" }'><a href="front/index.jsp">首页</a></li>
-            <li class='${param.index=="product"?"active":"" }'><a href="front/product.jsp">产品</a></li>
+            <li class='${param.index=="product"?"active":"" }'><a href="front/product-1.jsp">产品</a></li>
             <li class='${param.index=="service"?"active":"" }'><a href="front/service-2.jsp">服务</a></li>
             <!-- <li class='${param.index=="service"?"active":"" }'><a href="front/service.jsp">服务</a></li> -->
             <li class='${param.index=="project"?"active":"" }'><a href="front/project-1.jsp">项目</a></li>

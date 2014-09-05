@@ -1,10 +1,22 @@
 /*-------body字体样式--------*/
 body{
-	font-family:"Comic Sans MS", cursive, sans-serif,"微软雅黑";
-	font-size:2em;
+	/*font-family:"Comic Sans MS", cursive, sans-serif,"微软雅黑";*/
+	/*font-family:"Times New Roman","KaiTi_GB2312";*/
+	/*font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2",
+	"Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB",
+	"Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;*/
+	/*font: 13px/22px 'Helvetica Neue',Arial,'Liberation Sans',FreeSans,'Hiragino Sans GB',sans-serif;*/
+	font-family:Georgia, "Times New Roman", 
+             "Microsoft YaHei", "微软雅黑", 
+             STXihei, "华文细黑", 
+             serif;
+	font-size:20px;
 	/*font-size:14px;*/
 }
 
+/*--导航栏字体--*/
+nav{font-size: 20px;}
+header{font-size:18px !important;}
 /*--全局样式header--*/
 header{
 		margin-top:51px;
@@ -32,7 +44,7 @@ header li a:hover{
 	list-style: none !important;
 	text-decoration:none;
 	color:#F56C0F;
-	font-size:20px;
+	font-size:18px;
 }
 header li a:ACTIVE{}
 

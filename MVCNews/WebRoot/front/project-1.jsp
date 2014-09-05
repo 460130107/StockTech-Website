@@ -25,12 +25,14 @@
 			<!-- <h1>项目列表</h1>
 			<p class="lead">斯多克提供项目深度定制，为您创造更多可能！</p> -->
 			<ul class="list-inline">
-				<li><a href="">大数据分析</a>/</li>
-				<li><a href="">专业调查</a>/</li>
-				<li><a href="">数据挖掘</a>/</li>
-				<li><a href="">账户合作</a>/</li>
-				<li><a href="">用户培训</a>/</li>
-				<li><a href="">一对一指导</a>/</li>
+				<li><a href="">私募基金</a>/</li>
+				<li><a href="">信托项目</a>/</li>
+				<li><a href="">代理</a>/</li>
+				<li><a href="">公募基金合作</a>/</li>
+				<li><a href="">上市公司合作</a>/</li>
+				<li><a href="">基金公司合作</a>/</li>
+				<li><a href="">券商合作</a>/</li>
+				<li><a href="">新三板合作项目</a>/</li>
 			</ul>
 		</div>
 		<script type="text/javascript"
@@ -114,15 +116,7 @@
 <script src="front/dist/js/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 	//图片循环高亮
-	$(document).ready(function(){
-		//alert("load success!");
-		var imgSet=$("div[data-pro-item]");
-		//console.log(imgSet.length);
-		//console.log($(imgSet[0]).attr("data-pro-item"));
-		/*function change(){
-			var flag=0;
-			console.log($(imgSet[flag%8]).attr("data-pro-item"));
-		}*/
+	/*$(document).ready(function(){
 		var flag=0;
 		window.setInterval(function change(){			
 			//console.log($(imgSet[flag%8]).attr("data-pro-item"));
@@ -148,6 +142,36 @@
 			
 			flag++;
 		},2000);
+	});*/
+	//hover放大
+	/*$(document).ready(function(){
+		$("div[data-pro-item]").hover(
+				function(){
+					//$(this).
+					//console.log($(this).attr("data-pro-item"));
+					$(this).animate({
+						height:'+=30px',
+					    width:'+=30px'
+					});
+				},
+				function(){
+					$(this).animate({
+						height:'-=30px',
+					    width:'-=30px'
+					});
+				}
+		);
+	});*/
+	$(document).ready(function(){
+		$("div[data-pro-item]").hover(
+			function(){
+				//$(this).css("background","rgba(23,103,77,0.5)");
+			},
+			function(){
+				
+			}
+		);
+
 	});
 </script>
 </body>

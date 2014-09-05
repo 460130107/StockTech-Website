@@ -104,37 +104,43 @@
   </div>
   
   <!-- START THE FEATURETTES -->
-  <div class="container">
+  <div class="container featurette">
   <!-- <p>新增加内容</p> -->
   <hr class="featurette-divider">
   <div class="row featurette">
-    <div class="col-md-7">
+    <div class="col-md-7" >
+     <div data-index-left="1">
       <h2 class="featurette-heading">斯多克科技提供什么：</br>
         </br>
         <span class="text-muted">让投资智能起来。</span></h2>
       <p class="lead">利用大数据、科学云计算、移动分布式计算等新兴技术进行投资智能化</p>
     </div>
-    <div class="col-md-5"> <img class="featurette-image img-responsive" src="front/dist/img/index_intro1.jpg" alt="Generic placeholder image"> </div>
+    </div>
+    <div class="col-md-5" > <div data-index-right="1"> <img class="featurette-image img-responsive" src="front/dist/img/index_intro1.jpg" alt="Generic placeholder image"> </div> </div>
   </div>
   <hr class="featurette-divider">
   <div class="row featurette">
-    <div class="col-md-5"> <img class="featurette-image img-responsive" src="front/dist/img/index_intro2.jpg" alt="Generic placeholder image"> </div>
+    <div class="col-md-5" > <div data-index-left="2" style="display:none;"><img class="featurette-image img-responsive" src="front/dist/img/index_intro2.jpg" alt="Generic placeholder image"></div> </div>
     <div class="col-md-7">
+     <div data-index-right="2" style="display:none;">
       <h2 class="featurette-heading">所谓的智能是指什么呢？</br>
         </br>
         <span class="text-muted">大数据和云计算</span></h2>
       <p class="lead">大数据(big data)，或称巨量资料，指的是所涉及的资料量规模巨大到无法透过目前主流软件工具，在合理时间内达到撷取、管理、处理、并整理成为帮助企业经营决策更积极目的的资讯</p>
+     </div>
     </div>
   </div>
   <hr class="featurette-divider">
   <div class="row featurette">
-    <div class="col-md-7">
+    <div class="col-md-7" >
+    <div data-index-left="3" style="display:none;">
       <h2 class="featurette-heading">智能决策有多少是可靠的？</br>
         </br>
         <span class="text-muted">我们提供差异化的服务.</span></h2>
       <p class="lead">毫无疑问，最尊贵的客人会赢得最佳的服务，斯多克具有“再次光临的顾客可为公司带来25%-85%的利润，而吸引它们再次光临的因素首先是服务质量的好坏，其次是产品本身，最后才是价格”，因此，做好服务工作，以真诚和温情打动消费者的心，培养“永久顾客”，刺激重复购买，才是谋求企业长远利益的上策。.</p>
+     </div>
     </div>
-    <div class="col-md-5"> <img class="featurette-image img-responsive" src="front/dist/img/index_intro3.jpg" alt="" style="width:500px; height: 500px;"> </div>
+    <div class="col-md-5" > <div data-index-right="3" style="display:none;"> <img class="featurette-image img-responsive" src="front/dist/img/index_intro3.jpg" alt="" style="width:500px; height: 500px;"> </div> </div>
   </div>
   <hr class="featurette-divider">
   
@@ -148,8 +154,8 @@
 <!-- 用于服务项目动画效果的js代码 -->
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery-ui.min.js"></script>
-<script type="text/javascript" language="javascript">
-    
+<!-- marketing展示效果 -->
+<script type="text/javascript" language="javascript">   
     $( ".ser-blind" ).hover(
             function() {
             	/*alert("hover on the figure");*/
@@ -179,6 +185,36 @@
                 $(".ser-blind-toggle").toggle( "blind",options );
             }*/
     );
+</script>
+<!-- 降落特效 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".ser-blind").css("display","none");
+		$(".ser-blind[data-num='1']").toggle("drop",{direction:"left"});
+		$(".ser-blind[data-num='2']").toggle("drop",{direction:"up"});
+		$(".ser-blind[data-num='3']").toggle("drop",{direction:"right"});
+		$("div[data-index-left='1']").css("display","none");
+		$("div[data-index-right='1']").css("display","none");
+		$("div[data-index-left='1']").toggle("drop",{direction:"left"});
+		$("div[data-index-right='1']").toggle("drop",{direction:"right"});
+		var dropflagleft=1,dropflagright=1;
+		$(document).scroll(function(){
+				//console.log("scroll to top = "+$(this).scrollTop()+"typeof top is : "+typeof $(this).scrollTop());
+				if($(this).scrollTop()==500 && dropflagleft==1){
+					//$("div[data-index-left='2']").css("display","none");
+					$("div[data-index-left='2']").toggle("drop",{direction:"right"});
+					//$("div[data-index-right='2']").css("display","none");
+					$("div[data-index-right='2']").toggle("drop",{direction:"left"});
+					dropflagleft++;
+				}
+				if($(this).scrollTop()==1000 && dropflagright==1){
+					$("div[data-index-left='3']").toggle("drop",{direction:"left"});
+					//$("div[data-index-right='2']").css("display","none");
+					$("div[data-index-right='3']").toggle("drop",{direction:"right"});
+					dropflagright++;
+				}
+		});
+	});
 </script>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#main{position:relative;
+		top:300px;}
+	.unit{
+		width:200px;height: 200px;
+		padding-right: 200px;
+		border-top: 2px dashed black;
+		float:left;
+		/*background:pink;*/
+	}
+	.img-show{position: relative;top:-100px;height: 200px;width: 200px;border: 1px solid red;background: url("pig-2.jpg");}
+	.horizantal{ /*竖线*/
+		height:200px;width:100px;
+		/*background:green;*/
+		position:relative;
+		top:-100px;
+		border-right:2px dashed black;
+	}
+	.layer .unit:last-child{
+		padding-right:0; /*--去除每一行最后一个的padding--*/
+		margin-right:-100px;
+		padding-bottom:200px;
+		/*border-right:2px dashed black;*/
+	}
+</style>
+</head>
+<body>
+<div id="main">
+	<!-- 第一层 -->
+	<div class="layer">
+		<div class="unit">
+			<div class="img-show"></div>
+		</div>
+		<div class="unit">
+			<div class="img-show"></div>
+		</div>
+		<div class="unit">
+			<div class="img-show top-right"></div>
+			<div class="horizantal"></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<!-- 第二层 -->
+	<div class="layer">
+		<div class="unit">
+			<div class="img-show"></div>
+			<div class="horizantal"></div>
+		</div>
+		<div class="unit">
+			<div class="img-show"></div>
+		</div>
+		<div class="unit">
+			<div class="img-show top-right"></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<!-- 第三层 -->
+	<div class="layer">
+		<div class="unit">
+			<div class="img-show"></div>
+		</div>
+		<div class="unit">
+			<div class="img-show"></div>
+		</div>
+		<div class="unit">
+			<div class="img-show top-right"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
