@@ -150,7 +150,7 @@
 </div>
 <!-- /.container -->
 
-	<jsp:include page="_footer-3.jsp" />
+	<jsp:include page="_footer.jsp" />
 <!-- 用于服务项目动画效果的js代码 -->
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery-ui.min.js"></script>

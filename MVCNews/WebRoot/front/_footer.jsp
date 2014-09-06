@@ -1,52 +1,47 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html">
 <html>
+<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="dist/css/common.css" rel="stylesheet">
 <body>
-	<footer class="footer ">
-  	
-  	  <div class="col-md-1">
-	  </div>
-	  <div class="col-md-3 text-left">
-	  	<h3>公司简介</h3>
-	  	<p><a href="javascript:void(0)"><small>关于斯多克</small></a></p>
-	  </div>
-	  <div class="col-md-8 text-left">
-	  	<h3>联系我们</h3>
-	  	<div class="col-md-3 text-left" style="padding-left:0">
-	  	<p><a href="mailto:abc@stock.com"><small>电子邮件:abc@stock.com</small></a></p>
-	  	<p><small>联系电话:010-62288888</small></p>
-	  	</div>
-	  	<div class="col-md-9 text-left">
-	  	<p><small>传真:010-62288888</small></p>
-	  	<p><small>公司地址:北京市海淀区上地科技园</small></p>
-	  	</div>
-	  	<p>斯多克科技有限公司版权所有 Copyright@stocktech all rights reserved</p>
-	  </div>
-    <!-- p>版权所有 © 2014斯多克科技股份有限公司</p>
-    <p>
-      <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a> | 京公网安备11010802014853
-    </p-->
-    <div style="clear:both"></div>
-  </footer>
-<!-- p class="pull-right"><a href="#">Back to top</a></p-->
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="dist/js/jquery.min.js"></script>
-	<script src="dist/js/bootstrap.min.js"></script>
-	<script src="dist/js/doc.min.js"></script>
-
-	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	<script src="dist/js/ie-emulation-modes-warning.js"></script>
-
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="dist/js/ie10-viewport-bug-workaround.js"></script>
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
+<div class="footer">
+<footer class="footer_auto">
+    <div class="container">
+        <ul class="list-unstyled col-sm-3 footer-item">
+            <li><h3>产品服务</h3></li>
+            <li><a href="#">产品简介</a></li>
+            <li><a href="#">产品购买</a></li>
+            <li><a href="#">会员升级</a></li>
+            <li><a href="#">售后服务</a></li>
+            <li><a href="#">定制合作</a></li>
+        </ul>
+        <ul class="list-unstyled col-sm-3 footer-item">
+            <li><h3>网站帮助</h3></li>
+            <li><a href="#">问题咨询</a></li>
+            <li><a href="#">在线客服</a></li>
+            <li><a href="#">隐私政策</a></li>
+            <li><a href="#">服务条款</a></li>
+        </ul>
+        <ul class="list-unstyled col-sm-3 footer-item">
+            <li><h3>关于我们</h3></li>
+            <li><a href="#">公司简介</a></li>
+            <li><a href="#">团队展示</a></li>
+            <li><a href="#">联系我们</a></li>
+            
+        </ul>
+        <ul class="list-unstyled col-sm-3 footer-item">
+            <li><h3>关注我们</h3></li>
+            <li><a href="#">官方博客</a></li>
+            <li><a href="#">官方微博</a></li>
+            <li><a href="#">官方微信</a></li>
+        </ul>
+    </div>
+    
+    <div class="text-center">
+        &copy; 2014北京斯多克科技有限公司版权所有   Beijing Stockii All rights reserved &nbsp;&nbsp;
+    </div>
+    <div class="text-center">京公网安备11010802014853</div>
+</footer>
+</div>
 </body>
 </html>
