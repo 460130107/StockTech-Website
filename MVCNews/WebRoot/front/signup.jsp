@@ -18,6 +18,7 @@
 	font-size: 16px;
 }
 </style>
+<link rel="icon" href="front/dist/img/icon_stockii_square.png">
 </head>
 <body>
 

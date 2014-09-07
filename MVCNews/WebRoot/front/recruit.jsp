@@ -18,6 +18,7 @@
     var _hmt = _hmt || [];
   </script>
   <link href="dist/css/style.css" rel="stylesheet">
+  <link rel="icon" href="front/dist/img/icon_stockii_square.png">
 <body>
 
 <!-- Subhead

@@ -49,7 +49,21 @@ header li a:ACTIVE{}
 
 /*-------_header.jsp样式--------*/
 nav{
-	opacity:0.8;
+/* 	opacity:0.8; */
+}
+
+.nav-logo {
+	font-size: 26px;
+	line-height: 39px;
+	font-size: 2.6rem;
+	line-height: 3.9000000000000004rem;
+	font-weight: 400;
+	text-indent: -999em;
+	margin: 0;
+	padding: 0;
+	width: 167px;
+	height: 50px;
+	background: transparent url("../img/icon_stockii_small.png") no-repeat;
 }
 
 /*------- 通用footer样式 ---------*/

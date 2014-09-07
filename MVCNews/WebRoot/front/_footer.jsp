@@ -1,8 +1,8 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<link href="dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="dist/css/common.css" rel="stylesheet">
+<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="front/dist/css/common.css" rel="stylesheet">
 <body>
 <div class="footer">
 <footer class="footer_auto">

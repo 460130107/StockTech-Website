@@ -9,7 +9,7 @@
 <meta name="author" content="">
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
-<link rel="icon" href="img/icon.png">
+<link rel="icon" href="front/dist/img/icon_stockii_square.png">
 <title>斯多克科技，互联网金融引导者</title>
 
 <!-- 引入index.jsp对应的css文件 -->

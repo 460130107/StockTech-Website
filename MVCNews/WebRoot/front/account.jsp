@@ -9,7 +9,7 @@
 <meta name="author" content="">
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
-<link rel="icon" href="dist/img/icon.png">
+<link rel="icon" href="front/dist/img/icon_stockii_square.png">
 
 <title>登录斯多克</title>
 <link href="front/dist/css/signin.css" rel="stylesheet">
