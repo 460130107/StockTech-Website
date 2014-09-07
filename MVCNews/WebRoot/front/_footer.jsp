@@ -1,5 +1,5 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html">
+<!DOCTYPE html>
 <html>
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="dist/css/common.css" rel="stylesheet">
