@@ -1,11 +1,10 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="front/dist/css/common.css" rel="stylesheet">
 <body>
-<div class="footer">
-<footer class="footer_auto">
+<div id="backToTop">
+</div>
+<footer>
     <div class="container">
         <ul class="list-unstyled col-sm-3 footer-item">
             <li><h3>产品服务</h3></li>
@@ -36,12 +35,11 @@
             <li><a href="#">官方微信</a></li>
         </ul>
     </div>
-    
+    <hr style="border:#ADADAD solid 1px; width:70%;">
     <div class="text-center">
         &copy; 2014北京斯多克科技有限公司版权所有   Beijing Stockii All rights reserved &nbsp;&nbsp;
     </div>
     <div class="text-center">京公网安备11010802014853</div>
 </footer>
-</div>
 </body>
 </html>

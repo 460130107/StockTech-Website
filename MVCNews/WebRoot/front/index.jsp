@@ -1,5 +1,6 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<! DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -11,34 +12,32 @@
 	request.getServerPort() + request.getContextPath() %>/" />
 <link rel="icon" href="front/dist/img/icon_stockii_square.png">
 <title>斯多克科技，互联网金融引导者</title>
-
-<!-- 引入index.jsp对应的css文件 -->
+<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="front/dist/css/index.css" rel="stylesheet" type="text/css">
-
+<link href="front/dist/css/common.css" rel="stylesheet">
+<!--[if lte IE 9]>
+	<script src="front/dist/js/respond.js"></script>
+	<script src="front/dist/js/html5.js"></script>
+<![endif]-->
 </head>
 <!-- NAVBAR
 ================================================== -->
 <body>
+
 <jsp:include page="_header.jsp?index=index" />
 <!-- Carousel
     ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel" > 
-  <!-- Indicators：轮播（Carousel）指标：对应slide下方的小圆点 -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
-  <!-- 轮播（Carousel）项目 -->
   <div class="carousel-inner" >
     <div class="item active"> 
-    <!-- slide_middle没有定义 -->
     <img src="front/dist/img/index_slide_1.jpg" alt="First slide">
       <div class="container">
         <div class="carousel-caption">
-<!--           <h1 class="carousel-title">斯多克如何改变股票投资行业？</h1> -->
-<!--           <p>开创智能投资行业，为您做出智能化的决策，是的，一切就像去超市购物那样自然。</p> -->
-<!--           <p><a class="btn btn-lg btn-primary" href="#" role="button">什么是智能投资？</a></p> -->
         </div>
       </div>
     </div>
@@ -120,9 +119,9 @@
   </div>
   <hr class="featurette-divider">
   <div class="row featurette">
-    <div class="col-md-5" > <div data-index-left="2" style="display:none;"><img class="featurette-image img-responsive" src="front/dist/img/index_intro2.jpg" alt="Generic placeholder image"></div> </div>
+    <div class="col-md-5" > <div data-index-left="2" ><img class="featurette-image img-responsive" src="front/dist/img/index_intro2.jpg" alt="Generic placeholder image"></div> </div>
     <div class="col-md-7">
-     <div data-index-right="2" style="display:none;">
+     <div data-index-right="2" >
       <h2 class="featurette-heading">所谓的智能是指什么呢？</br>
         </br>
         <span class="text-muted">大数据和云计算</span></h2>
@@ -133,14 +132,14 @@
   <hr class="featurette-divider">
   <div class="row featurette">
     <div class="col-md-7" >
-    <div data-index-left="3" style="display:none;">
+    <div data-index-left="3">
       <h2 class="featurette-heading">智能决策有多少是可靠的？</br>
         </br>
         <span class="text-muted">我们提供差异化的服务.</span></h2>
       <p class="lead">毫无疑问，最尊贵的客人会赢得最佳的服务，斯多克具有“再次光临的顾客可为公司带来25%-85%的利润，而吸引它们再次光临的因素首先是服务质量的好坏，其次是产品本身，最后才是价格”，因此，做好服务工作，以真诚和温情打动消费者的心，培养“永久顾客”，刺激重复购买，才是谋求企业长远利益的上策。.</p>
      </div>
     </div>
-    <div class="col-md-5" > <div data-index-right="3" style="display:none;"> <img class="featurette-image img-responsive" src="front/dist/img/index_intro3.jpg" alt="" style="width:500px; height: 500px;"> </div> </div>
+    <div class="col-md-5" > <div data-index-right="3" > <img class="featurette-image img-responsive" src="front/dist/img/index_intro3.jpg" alt="" style="width:500px; height: 500px;"> </div> </div>
   </div>
   <hr class="featurette-divider">
   
@@ -151,18 +150,17 @@
 <!-- /.container -->
 
 	<jsp:include page="_footer.jsp" />
-<!-- 用于服务项目动画效果的js代码 -->
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery-ui.min.js"></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
 <!-- marketing展示效果 -->
 <script type="text/javascript" language="javascript">   
     $( ".ser-blind" ).hover(
             function() {
-            	/*alert("hover on the figure");*/
             	var options_down={direction:"down"};
             	var options_up={direction:"left"};
             	var num=this.getAttribute("data-num");
-            	//console.log("data-num = "+num+"  typeof data-num is "+typeof num);
             	switch(num){
             	   case "1":
             		   $(".ser-blind-top[data-num='1']").toggle("blind");
@@ -177,18 +175,12 @@
                        $(".ser-blind-bottom[data-num='3']").toggle( "blind",options_down );
             		   break;
             	}
-                /*$(".ser-blind-toggle-top").toggle("blind");
-                $(".ser-blind-toggle").toggle( "blind",options );*/
-            }/*,
-            function(){
-                $(".ser-blind-toggle-top").css("display","block");
-                $(".ser-blind-toggle").toggle( "blind",options );
-            }*/
+            }
     );
 </script>
 <!-- 降落特效 -->
 <script type="text/javascript">
-	$(document).ready(function(){
+	/*$(document).ready(function(){
 		$(".ser-blind").css("display","none");
 		$(".ser-blind[data-num='1']").toggle("drop",{direction:"left"});
 		$(".ser-blind[data-num='2']").toggle("drop",{direction:"up"});
@@ -198,23 +190,19 @@
 		$("div[data-index-left='1']").toggle("drop",{direction:"left"});
 		$("div[data-index-right='1']").toggle("drop",{direction:"right"});
 		var dropflagleft=1,dropflagright=1;
-		$(document).scroll(function(){
-				//console.log("scroll to top = "+$(this).scrollTop()+"typeof top is : "+typeof $(this).scrollTop());
+		$(document).scroll(function(){				
 				if($(this).scrollTop()==500 && dropflagleft==1){
-					//$("div[data-index-left='2']").css("display","none");
 					$("div[data-index-left='2']").toggle("drop",{direction:"right"});
-					//$("div[data-index-right='2']").css("display","none");
 					$("div[data-index-right='2']").toggle("drop",{direction:"left"});
 					dropflagleft++;
 				}
 				if($(this).scrollTop()==1000 && dropflagright==1){
 					$("div[data-index-left='3']").toggle("drop",{direction:"left"});
-					//$("div[data-index-right='2']").css("display","none");
 					$("div[data-index-right='3']").toggle("drop",{direction:"right"});
 					dropflagright++;
 				}
 		});
-	});
+	});*/
 </script>
 </body>
 </html>

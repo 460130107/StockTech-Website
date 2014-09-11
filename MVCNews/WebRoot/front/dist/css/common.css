@@ -1,119 +1,69 @@
-/*-------body字体样式--------*/
-body{
-	/*font-family:"Comic Sans MS", cursive, sans-serif,"微软雅黑";*/
-	/*font-family:"Times New Roman","KaiTi_GB2312";*/
-	/*font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2",
-	"Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB",
-	"Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;*/
-	/*font: 13px/22px 'Helvetica Neue',Arial,'Liberation Sans',FreeSans,'Hiragino Sans GB',sans-serif;*/
-	font-family:Georgia, "Times New Roman", 
-             "Microsoft YaHei", "微软雅黑", 
-             STXihei, "华文细黑", 
-             serif;
-	/*font-size:14px;*/
+body {
+  font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif;
+  font-size: 18px;
+}
+nav {
+  font-size: 18px;
+}
+nav .nav-logo {
+  font-size: 26px;
+  line-height: 39px;
+  font-size: 2.6rem;
+  line-height: 3.9000000000000004rem;
+  font-weight: 400;
+  text-indent: -999em;
+  margin: 0;
+  padding: 0;
+  width: 167px;
+  height: 50px;
+  background: transparent url("../img/icon_stockii_small.png") no-repeat;
 }
 
-/*--导航栏字体--*/
-nav{font-size: 18px;}
-header{font-size:18px !important;}
-/*--全局样式header--*/
-header{
-		margin-top:51px;
-		/*background: url("../img/service-1-small.png") repeat-x center;*/
-		/*height:350px;*/
-		color:white;
-		font-size: 50px;
-		/*line-height: 250px;
-		background-size:contain;
-		-o-background-size:contain;
-		-moz-background-size:contain;
-		-webkit-background-size:contain;*/
-		/*background: pink;*/
+header {
+  font-size: 16px;
+  margin-top: 51px;
+  color: white;
+}
+header li {
+  color: white;
+}
+header li a {
+  color: white;
+  padding-right: 20px;
+}
+header li a:hover {
+  text-decoration: none;
+  color: #F56C0F;
 }
 
-/*----nav下方header不部分列表样式-----*/
-{}
-header li a,header li{
-	color:white;
+footer {
+  background: #222222;
+  color: white;
 }
-header li a{padding-right:20px;}
-header li a:link{color:white;}
-header li a:VISITED{color:white;}
-header li a:hover{
-	list-style: none !important;
-	text-decoration:none;
-	color:#F56C0F;
-	font-size:18px;
+footer li h3 {
+  color: white;
+  font-size: 20px;
 }
-header li a:ACTIVE{}
-
-/*-------_header.jsp样式--------*/
-nav{
-/* 	opacity:0.8; */
+footer li a {
+  color: white;
+  font-size: 16px;
+}
+footer li a:hover {
+  text-decoration: none;
+  color: #F56C0F;
 }
 
-.nav-logo {
-	font-size: 26px;
-	line-height: 39px;
-	font-size: 2.6rem;
-	line-height: 3.9000000000000004rem;
-	font-weight: 400;
-	text-indent: -999em;
-	margin: 0;
-	padding: 0;
-	width: 167px;
-	height: 50px;
-	background: transparent url("../img/icon_stockii_small.png") no-repeat;
+#backToTop{
+	position: fixed;
+	bottom: 150px;
+	width:51px; height:51px;
+	right: 60px;
+	background-image:url(../img/backtotop.gif);
+	background-position: 0 -51px;
+	overflow: hidden;
+	transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-webkit-transition: all 0.2s ease-in-out;
 }
-
-/*------- 通用footer样式 ---------*/
-.footer {
-	color: #AAAAAA;
-	font-size: 16px;
-	text-align: center;
-	padding: 30px 0;
-	margin-top: 70px;
-	border-top: 1px solid #e5e5e5;
-	background-color: #333333
+#backToTop:hover{
+	background-position: 0 0;
 }
-
-.footer-item {
-	line-height: 2.0em;
-}
-
-.footer-item > li > h3 {
-	font-size: 16px;
-	color: #AAAAAA;
-	font-family:"Microsoft YaHei", "微软雅黑";
-}
-
-.footer-item > li > a {
-	font-size: 14px;
-	color: #CCCCCC;
-}
-/*------- End of 通用footer样式 ---------*/
-
-/*---清除浮动---*/
-.clear{
-	clear: both;
-}
-
-/* 分割线样式 */
-.divider {
-	margin-top: 20px;
-	border:#CCCCCC solid 1px;
-	width:90%;
-}
-
-.divider-simple {
-	border:#ADADAD solid 1px;
-	width:90%;
-}
-
-/*------- End of 分割线样式 ---------*/
-
-
-/*---全局样式---*/
-/*@font-1{
-	
-}*/

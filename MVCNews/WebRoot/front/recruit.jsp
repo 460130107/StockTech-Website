@@ -12,7 +12,8 @@
   <meta name="application-name" content="istocktech.com">
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
-  
+<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="front/dist/css/common.css" rel="stylesheet">  
  
   <script>
     var _hmt = _hmt || [];
@@ -147,7 +148,9 @@
     var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
     document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3d8e7fc0de8a2a75f2ca3bfe128e6391' type='text/javascript'%3E%3C/script%3E"));
     </script>
-    
+    <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
+	<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
   </body>
 </html>
 

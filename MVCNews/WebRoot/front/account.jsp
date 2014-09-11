@@ -10,7 +10,8 @@
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
 <link rel="icon" href="front/dist/img/icon_stockii_square.png">
-
+<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="front/dist/css/common.css" rel="stylesheet">
 <title>登录斯多克</title>
 <link href="front/dist/css/signin.css" rel="stylesheet">
 </head>
@@ -65,6 +66,9 @@
  		</div>
 
     <jsp:include page="_footer.jsp" />
+    <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
+	<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
     <script type="text/javascript">
 	  function validate(f){
 	  			if (!(/^[a-zA-Z]\w{5,17}$/.test(f.mid.value))){

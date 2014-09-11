@@ -1,7 +1,5 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="front/dist/css/common.css" rel="stylesheet">
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
@@ -19,11 +17,11 @@
 					<li class='${param.index=="index"?"active":"" }'><a
 						href="front/index.jsp">首页</a></li>
 					<li class='${param.index=="product"?"active":"" }'><a
-						href="front/product-1.jsp">产品</a></li>
+						href="front/product.jsp">产品</a></li>
 					<li class='${param.index=="service"?"active":"" }'><a
-						href="front/service-2.jsp">服务</a></li>
+						href="front/service.jsp">服务</a></li>
 					<li class='${param.index=="project"?"active":"" }'><a
-						href="front/project-1.jsp">项目</a></li>
+						href="front/project.jsp">项目</a></li>
 					<li class='${param.index=="account"?"active":"" }'><a
 						href="front/account.jsp">帐户</a></li>
 					<li class='${param.index=="corpration"?"active":"" }'><a
