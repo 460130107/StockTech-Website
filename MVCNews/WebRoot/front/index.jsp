@@ -12,7 +12,7 @@
 	request.getServerPort() + request.getContextPath() %>/" />
 <link rel="icon" href="front/dist/img/icon_stockii_square.png">
 <title>斯多克科技，互联网金融引导者</title>
-<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/index.css" rel="stylesheet" type="text/css">
 <link href="front/dist/css/common.css" rel="stylesheet">
 <!--[if lte IE 9]>
@@ -151,7 +151,7 @@
 
 	<jsp:include page="_footer.jsp" />
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js"></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.js"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery-ui.min.js"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
 <!-- marketing展示效果 -->

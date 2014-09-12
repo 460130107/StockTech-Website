@@ -3,7 +3,7 @@ $(document).ready(function(){
 		/*--back-to-top--*/
 		$("#backToTop").hide();
 		$(document).scroll(function(){
-			if($(this).scrollTop()>600){
+			if($(this).scrollTop()>300){
 				$("#backToTop").fadeIn();
 			}else{$("#backToTop").fadeOut();}
 		});
@@ -11,5 +11,11 @@ $(document).ready(function(){
 			$('body,html').animate({scrollTop:0},500);
 	        return false;
 	    });
-	})();	
+	})();
+	(function(){
+		if(parseInt($("body").css("height"))<parseInt(window.outerHeight)){
+			$("footer").css("position","fixed");
+			$("footer").css("bottom","0");
+		}
+	})();
 });

@@ -1,16 +1,15 @@
-/*--¶¨ÖÆheader²¿·ÖµÄÑÕÉ«½¥±ä--*/
+/*--ï¿½ï¿½ï¿½ï¿½headerï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½--*/
 /*header,nav{
 	background: -webkit-gradient(linear,left top,right top,from(#1C677E),to(#79C6DE));
 	opacity:1;-webkit-opacity:1 !important;
 }*/
 
-/*--------carousel(ÂÖ²¥)µÄĞ§¹û---------*/
-/*¼Ì³Ğ×Ôbootstrap*/
+/*--------carousel(ï¿½Ö²ï¿½)ï¿½ï¿½Ğ§ï¿½ï¿½---------*/
+/*ï¿½Ì³ï¿½ï¿½ï¿½bootstrap*/
 /* Carousel base class */
 .carousel {
-  height: 450px;  /*--Í¼Æ¬µÄ¸ß¶ÈµÄ450px--*/
+  height: 450px;  /*--Í¼Æ¬ï¿½Ä¸ß¶Èµï¿½450px--*/
   margin-bottom: 60px;
-  margin-top:50px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -26,7 +25,7 @@
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 450px;  /*--Í¼Æ¬µÄ¸ß¶ÈµÄ450px--*/
+  height: 450px;  /*--Í¼Æ¬ï¿½Ä¸ß¶Èµï¿½450px--*/
   background-color: #33CCCC;
 }
 .carousel-inner > .item > img {
@@ -36,23 +35,23 @@
   min-width: 100%;
   height: 500px;
 }
-/*--¸ü¸ÄÂÖ²¥Ö¸±ê£º¶ÔÓ¦slideÏÂ·½µÄĞ¡Ô²µãµÄÑùÊ½--*/
+/*--ï¿½ï¿½ï¿½ï¿½ï¿½Ö²ï¿½Ö¸ï¿½ê£ºï¿½ï¿½Ó¦slideï¿½Â·ï¿½ï¿½ï¿½Ğ¡Ô²ï¿½ï¿½ï¿½ï¿½ï¿½Ê½--*/
 .carousel-indicators li{
 	width:20px !important;
 	border-radius:4px !important;-o-border-radius:4px !important;-moz-border-radius:4px !important;-webkit-border-radius:4px !important;
 }
 
-/*--------marketingµÄĞ§¹û---------*/
+/*--------marketingï¿½ï¿½Ğ§ï¿½ï¿½---------*/
 
-/*---¶ş£º£ºblindĞ§¹û--*/
+/*---ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½blindĞ§ï¿½ï¿½--*/
 .col-lg-4{
-	height:270px !important;/*----ÎÊÌâ-Èô²»ÉèÖÃ´ËÏî£¬ÔòÔÚindex.jspÖĞÄÜÕı³£ÏÔÊ¾£¬µ«ÊÇÔÚindex-ser-blind.jspÖĞ.col-lg-4µÄÄ¬ÈÏheightÎª1px£¬-*/
+	height:270px !important;/*----ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½index.jspï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½index-ser-blind.jspï¿½ï¿½.col-lg-4ï¿½ï¿½Ä¬ï¿½ï¿½heightÎª1pxï¿½ï¿½-*/
 	/*border:1px solid red;*/} 
 .marketing .col-lg-4 {
   text-align: center;
 }
 .ser-blind{
-	position: relative;/*-important×÷ÎªÖ®ºóser-blind-topºÍser-blind-bottom¶¨Î»µÄ²Î¿¼¶ÔÏó-*/
+	position: relative;/*-importantï¿½ï¿½ÎªÖ®ï¿½ï¿½ser-blind-topï¿½ï¿½ser-blind-bottomï¿½ï¿½Î»ï¿½Ä²Î¿ï¿½ï¿½ï¿½ï¿½ï¿½-*/
 }
 .ser-blind img{
 	width: 100%;height: 100%;
@@ -80,7 +79,7 @@
 
 
 
-/*--------featurettes(»¨Ğõ)µÄĞ§¹û---------*/
+/*--------featurettes(ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½Ğ§ï¿½ï¿½---------*/
 
 
 /*-----------------*/

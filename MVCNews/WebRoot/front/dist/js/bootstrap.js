@@ -703,6 +703,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
   var backdrop = '.dropdown-backdrop'
   var toggle   = '[data-toggle=dropdown]'
+  var toggle_ul   = '[data-toggle=dropdown_ul]'
   var Dropdown = function (element) {
     $(element).on('click.bs.dropdown', this.toggle)
   }
@@ -823,8 +824,8 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
   // APPLY TO STANDARD DROPDOWN ELEMENTS
   // ===================================
 
-  $(document)
-    .on('click.bs.dropdown.data-api', clearMenus)
+  $(document)  
+  	.on('click.bs.dropdown.data-api', clearMenus)
     .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
     .on('click.bs.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
     .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)

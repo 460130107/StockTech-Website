@@ -2312,8 +2312,8 @@ fieldset[disabled] .btn {
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-  color: #333333;
-  background-color: #ebebeb;
+  color: #ebebeb;
+  background-color: #222222;
   border-color: #adadad;
 }
 
@@ -3532,9 +3532,10 @@ input[type="button"].btn-block {
   margin: 2px 0 0;
   font-size: 14px;
   list-style: none;
-  background-color: #ffffff;
+  background-color: #222;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
+  border-top:1px solid #ffffff;
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);

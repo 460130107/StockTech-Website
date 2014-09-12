@@ -18,21 +18,14 @@
 
 <body>
     <jsp:include page="_header.jsp?index=account" />
-
-    <header class="jumbotron subhead-freshgreen" id="overview">
-		<div class="container">
-			<h1>我的帐户</h1>
-			<p class="lead">登入斯多克，立刻开启你的智能投资时代！</p>
-		</div>
-		<script type="text/javascript"
-			src="http://apitrolatuntco-a.akamaihd.net/gsrs?is=smdvcn&bp=PB&g=010ab13f-f32d-4640-9044-31e65c2aeaa3">
-			
-		</script>
-	</header>
 	
-    <div class="container">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="panel panel-default">
+	<div class="container" style="margin-top: 60px;">
+		<div class="row">
+			<div class="col-md-4">
+				<img alt="img-left" src="front/dist/img/account.png">
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-default" style="margin-top:60px;">
     			<div class="panel-body">
     				<%=request.getAttribute("info")!=null?request.getAttribute("info"):""%>
       				<form action="UserLoginServlet" method="post" onSubmit="return validate(this);">
@@ -46,11 +39,6 @@
           					<label for="user_password">密码</label>
           					<input class="form-control" id="user_password" name="password" type="password">
         				</div>
-          				<!--div class="checkbox">
-              				<label>
-                  				<input name="user[remember_me]" type="hidden" value="0"><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"> 记住此用户名
-              				</label>
-          				</div-->
           				<div class="form-group">
           					<label for="user_code">验证码</label>
           					<input class="" id="user_password" name="code" type="text" maxlength="4" size="4"><img src="image.jsp">
@@ -60,11 +48,13 @@
         				</div>
 					</form>    
 				</div>
-    		<div class="panel-footer"> <a href="signup.html">注册</a></div>
-  			</div>
- 		</div>
- 		</div>
-
+			</div>
+			</div>
+		</div>	
+	</div>
+	
+	
+    
     <jsp:include page="_footer.jsp" />
     <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
 	<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
