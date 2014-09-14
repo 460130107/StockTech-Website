@@ -1,14 +1,6 @@
-/*--����header���ֵ���ɫ����--*/
-/*header,nav{
-	background: -webkit-gradient(linear,left top,right top,from(#1C677E),to(#79C6DE));
-	opacity:1;-webkit-opacity:1 !important;
-}*/
-
-/*--------carousel(�ֲ�)��Ч��---------*/
-/*�̳���bootstrap*/
 /* Carousel base class */
 .carousel {
-  height: 450px;  /*--ͼƬ�ĸ߶ȵ�450px--*/
+  height: 450px; 
   margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -35,23 +27,18 @@
   min-width: 100%;
   height: 500px;
 }
-/*--�����ֲ�ָ�꣺��Ӧslide�·���СԲ�����ʽ--*/
 .carousel-indicators li{
 	width:20px !important;
 	border-radius:4px !important;-o-border-radius:4px !important;-moz-border-radius:4px !important;-webkit-border-radius:4px !important;
 }
-
-/*--------marketing��Ч��---------*/
-
-/*---������blindЧ��--*/
 .col-lg-4{
-	height:270px !important;/*----����-�������ô������index.jsp����������ʾ��������index-ser-blind.jsp��.col-lg-4��Ĭ��heightΪ1px��-*/
+	height:270px !important;
 	/*border:1px solid red;*/} 
 .marketing .col-lg-4 {
   text-align: center;
 }
 .ser-blind{
-	position: relative;/*-important��Ϊ֮��ser-blind-top��ser-blind-bottom��λ�Ĳο�����-*/
+	position: relative;
 }
 .ser-blind img{
 	width: 100%;height: 100%;
@@ -77,9 +64,18 @@
 .ser-blind-bottom h3{margin:0 !important;padding:0;padding-top:30px !important;}
 .ser-blind-bottom p{margin-top:30px !important;}
 
-
-
-/*--------featurettes(����)��Ч��---------*/
-
-
-/*-----------------*/
+#product{
+	width:100%;
+	margin-top:50px;
+	margin-bottom:50px;
+	border: 1px solid #000;
+}
+#product .pro{
+	width:1000px;
+	margin: 0 auto;
+	border: 1px solid pink;
+}
+#product .pro-title{
+	border: 1px solid green;
+	margin: 5px 0 5px 0;
+}

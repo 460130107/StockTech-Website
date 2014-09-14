@@ -23,9 +23,10 @@
         </ul>
         <ul class="list-unstyled col-sm-3 footer-item">
             <li><h3>关于我们</h3></li>
-            <li><a href="#">公司简介</a></li>
-            <li><a href="#">团队展示</a></li>
-            <li><a href="#">联系我们</a></li>
+            <li><a href="front/introduction.jsp" target="_blank">公司简介</a></li>
+            <li><a href="front/recruit.jsp" target="_blank">团队展示</a></li>
+            <li><a href="front/recruit.jsp#position" target="_blank">诚邀精英</a></li>
+            <li><a href="front/recruit.jsp#contact" target="_blank">联系我们</a></li>
             
         </ul>
         <ul class="list-unstyled col-sm-3 footer-item">

@@ -28,25 +28,25 @@
 				<li class="dropdown">
 			      <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 产品导航<span class="caret"></span></a>
 			      <ul class="dropdown-menu" data-toggle="toggle_ul" style="width:400px;">
-			      	 <li class="product-sort">A类产品
+			      	 <li class="product-sort"><a href="front/index.jsp#proa">A类产品</a>
 			      	 	<ul>
-			      	 		<li>AAAAA-1</li>
-			      	 		<li>AAAAA-1</li>
-			      	 		<li>AAAAA-1</li>
+			      	 		<li><a href="front/index.jsp#proa-1">AAAAA-1</a></li>
+			      	 		<li><a href="front/index.jsp#proa-2">AAAAA-2</a></li>
+			      	 		<li><a href="front/index.jsp#proa-3">AAAAA-3</a></li>
 			      	 	</ul>
 			      	 </li>
-			      	 <li class="product-sort">B类产品
+			      	 <li class="product-sort"><a href="front/index.jsp#prob">B类产品</a>
 			      	 	<ul>
-			      	 		<li>BBBBB-1</li>
-			      	 		<li>BBBBB-1</li>
-			      	 		<li>BBBBB-1</li>
+			      	 		<li><a href="front/index.jsp#prob-1">BBBBB-1</a></li>
+			      	 		<li><a href="front/index.jsp#prob-2">BBBBB-2</a></li>
+			      	 		<li><a href="front/index.jsp#prob-3">BBBBB-3</a></li>
 			      	 	</ul>
 			      	 </li>
-			      	 <li class="product-sort">C类产品
+			      	 <li class="product-sort"><a href="front/index.jsp#proc">C类产品</a>
 			      	 	<ul>
-			      	 		<li>CCCCC-1</li>
-			      	 		<li>CCCCC-1</li>
-			      	 		<li>CCCCC-1</li>
+			      	 		<li><a href="front/index.jsp#proc-1">CCCCC-1</a></li>
+			      	 		<li><a href="front/index.jsp#proc-2">CCCCC-2</a></li>
+			      	 		<li><a href="front/index.jsp#proc-3">CCCCC-3</a></li>
 			      	 	</ul>
 			      	 </li>			       
 			      </ul>
@@ -56,8 +56,6 @@
 					href="front/project.jsp">项目</a></li>
 				<li class='${param.index=="account"?"active":"" }'><a
 					href="front/account.jsp">帐户</a></li>
-				<li class='${param.index=="corpration"?"active":"" }'><a
-					href="front/corpration.jsp">合作</a></li>
 				<li class='${param.index=="recruit"?"active":"" }'><a
 					href="front/recruit.jsp" target="_blank">加入我们</a></li>
 			</ul>
