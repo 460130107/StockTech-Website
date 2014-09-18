@@ -149,6 +149,14 @@ header {
 	font-size: 50px;
 }
 
+/*-------------------------- header style -----------------------*/
+.navbar-transparent {
+  	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+/*-------------------------- header style -----------------------*/
 
 /*-------------------------- footer style -----------------------*/
 .footer {
@@ -174,8 +182,4 @@ header {
 }
 
 /*-------------------------- footer style -----------------------*/
-
-
-
-
 

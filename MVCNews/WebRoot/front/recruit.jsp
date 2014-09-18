@@ -80,12 +80,12 @@
 </head>
 
 <body data-spy="scroll" data-target="#myScrollspy">
-<jsp:include page="_header.jsp?index=index" />
+<jsp:include page="_header.jsp" />
 <div class="container">
     <div class="row">
         <div class="col-xs-3" id="myScrollspy">
             <ul class="nav nav-tabs nav-stacked" id="myNav">
-                <li class="active"><a href="front/recruit.jsp#about">关于我们</a></li>
+                <li class="active"><a href="front/recruit.jsp#about">公司简介</a></li>
                 <li><a href="front/recruit.jsp#team">团队建设</a></li>
                 <li><a href="front/recruit.jsp#join">加入斯多克</a></li>
                 <li><a href="front/recruit.jsp#position">在招职位</a></li>
@@ -94,7 +94,7 @@
         </div>
         <div class="col-xs-9">           
             <img alt="about" style="width:150px;height:150px;"  src="front/dist/img/recruit-about.png">   
-            <h2 id="about">关于我们</h2>         
+            <h2 id="about">公司简介</h2>         
             <p class="lead">　　斯多克科技有限公司正式成立于2014年4月在北京成立，是一家致力于利用大数据、科学云计算、移动分布式计算等新兴技术进行投资智能化的高新科技公司。斯多克科技的理念是：专注智能投资领域，做智能投资领域的先行者。斯多克科技崇尚客户至上，以人为先的公司文化，努力为客户提供智能可靠的决策，至真至善的服务。	</p>           
             <div class="clear"></div>
             <hr>           
@@ -104,7 +104,7 @@
 			<div class="clear"></div>
 			<hr>
             
-            <img alt="join" style="width:150px;height:150px;" src="front/dist/img/recruit-join.png">
+            <img alt="join" style="width:150px;height:150px;" src="front/dist/img/recruit-join.jpg">
             <h2 id="join">加入斯多克</h2>
             <p class="lead">　　斯多克科技只选择在金融和科技领域<span style="color:#EE4000;">~~最杰出~~</span>的人才。欢迎有志于在互联网金融大潮中有所作为的朋友加入斯多克。</p>
             <div class="clear"></div>

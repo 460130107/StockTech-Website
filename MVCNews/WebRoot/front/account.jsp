@@ -13,7 +13,7 @@
 <link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
 <title>登录斯多克</title>
-<link href="front/dist/css/signin.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -44,7 +44,10 @@
           					<input class="" id="user_password" name="code" type="text" maxlength="4" size="4"><img src="image.jsp">
         				</div>
         				<div>
-        					<input class="btn btn-lg btn-block btn-success" name="commit" type="submit" value="登录"/>
+        					<ul class="list-inline" style="width: 100%;">
+        						<li style="width: 45%;"><input class="btn btn-lg btn-block btn-success" name="commit" type="submit" value="登录"/></li>
+        						<li style="width: 45%;"><a class="btn btn-lg btn-block btn-success" href="front/signup.jsp">立即注册</a></li>
+        					</ul>        					        					
         				</div>
 					</form>    
 				</div>

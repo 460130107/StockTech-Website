@@ -8,8 +8,8 @@
     <div class="container">
         <ul class="list-unstyled col-sm-3 footer-item">
             <li><h3>产品服务</h3></li>
-            <li><a href="#">产品简介</a></li>
-            <li><a href="#">产品购买</a></li>
+            <li><a href="front/index.jsp">产品简介</a></li>
+            <li><a href="front/account.jsp">产品购买</a></li>
             <li><a href="#">会员升级</a></li>
             <li><a href="#">售后服务</a></li>
             <li><a href="#">定制合作</a></li>
