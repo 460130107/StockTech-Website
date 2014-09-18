@@ -12,9 +12,22 @@ body {
 	padding-right:20%;
 	font-size: 14px;
 }
+#top ul li{
+	text-decoration: none;	
+	padding:0;margin: 0;
+}
+#top a{
+	color:white;
+	padding:0 15px;
+}
+#top a:hover{
+	color:#368ED3;
+	text-decoration: none;
+}
 
 nav {
   font-size: 18px;
+  height: 50px;
 }
 nav .nav-logo {
   font-size: 26px;
@@ -30,39 +43,35 @@ nav .nav-logo {
   background: transparent url("../img/icon_stockii_small.png") no-repeat;
 }
 
-.product-sort{
-	float: left;
-	font-size: 16px;
-	margin-right: 20px;
+.dropdown-menu{
+	text-decoration: none;
+	display: none;	
+	padding:0 20px;
 }
-.product-sort a{
-	color: white !important;
-	margin:0 !important;padding: 0 !important;
+.dropdown-menu > li{
+	margin: 15px;
 }
-.product-sort a:hover{
-	list-style: none;
-	background: #222 !important;
-	color:#F56C0F !important;
-}
-.product-sort ul,.product-sort li{
-	list-style: none;
-	margin: 0;padding: 0;
-	font-size: 14px;
-}
-.product-sort li a:hover{
-	list-style: none !important;
-}
-.product-divider{
-	background: black;
-	border: 2px solid black;
-	width: 2px;
-	position: absolute;
-	left: 50px;
-}
-.open{
-	background: #222 !important;
+.dropdown-menu > li > a{
 	color:white;
-	
+	font-size:18px;
+	padding:3px 0;
+	letter-spacing: 2px;
+}
+.dropdown-menu > li > a:hover{
+	color:red;
+	background: #222;
+}
+.dropdown-menu > li > ul{
+	margin-top: 15px;
+}
+.dropdown-menu > li > ul > li >a{
+	color:white;
+	font-size: 18px;
+	padding:5px;padding-left:0;
+}
+.dropdown-menu > li > ul > li >a:hover{
+	text-decoration: none;
+	color:red;
 }
 
 header {
