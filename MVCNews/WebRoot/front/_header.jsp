@@ -1,16 +1,16 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
 <body>
-<div id="top" class="navbar-inverse text-right">
-	<ul class="list-inline">
-		<li>客服电话：xxx-xxx-xxx</li>
-		<li>登录</li>
-		<li>注册</li>
-		<li>忘记密码</li>
-	</ul>
-</div>
+<!-- <div id="top" class="navbar-inverse text-right"> -->
+<!-- 	<ul class="list-inline"> -->
+<!-- 		<li>客服电话：xxx-xxx-xxx</li> -->
+<!-- 		<li>登录</li> -->
+<!-- 		<li>注册</li> -->
+<!-- 		<li>忘记密码</li> -->
+<!-- 	</ul> -->
+<!-- </div> -->
 <hr style="margin:0;padding:0;">
-<nav class="nav navbar-inverse" role="navigation">
+<nav class="nav navbar-transparent" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
