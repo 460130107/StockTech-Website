@@ -9,9 +9,10 @@
 <meta name="author" content="">
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
-<link rel="icon" href="front/dist/img/icon_stockii_square.png">
+<link rel="icon" href="./dist/img/icon_stockii_square.png">
 <link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
+<link href="front/dist/css/account.css" rel="stylesheet">
 <title>登录斯多克</title>
 
 </head>
@@ -19,13 +20,16 @@
 <body>
     <jsp:include page="_header.jsp?index=account" />
 	
-	<div class="container" style="margin-top: 60px;">
+	<div class="container-fluid maxbg">
 		<div class="row">
-			<div class="col-md-4">
-				<img alt="img-left" src="front/dist/img/account.png">
+			<div class="col-md-2">
+<!-- 				<img alt="img-left" src="front/dist/img/account.png"> -->
 			</div>
-			<div class="col-md-6">
-				<div class="panel panel-default" style="margin-top:60px;">
+			<div id="img-tips" class="col-md-5">
+				<img alt="img-tips" src="front/dist/img/account_tips.png">
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
     			<div class="panel-body">
     				<%=request.getAttribute("info")!=null?request.getAttribute("info"):""%>
       				<form action="UserLoginServlet" method="post" onSubmit="return validate(this);">
@@ -52,6 +56,8 @@
 					</form>    
 				</div>
 			</div>
+			</div>
+			<div class="col-md-2">
 			</div>
 		</div>	
 	</div>

@@ -10,7 +10,7 @@
 <meta name="author" content="">
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
-<link rel="icon" href="front/dist/img/icon_stockii_square.png">
+<link rel="icon" href="./dist/img/icon_stockii_square.png">
 <title>斯多克科技，互联网金融引导者</title>
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
@@ -41,12 +41,12 @@
         </div>
       </div>
     </div>
-    <div class="item"> <img src="front/dist/vagrant_header_background.png" alt="Second slide">
+    <div class="item"> <img src="front/dist/img/index_slide_2.jpg" alt="Second slide">
       <div class="container">
         <div class="carousel-caption">
-          <h1>如何把钱用在正确的地方</h1>
-          <p>股票投资，唯快不破！斯多克，让您抢尽先机！</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">与我们合作</a></p>
+<!--           <h1>如何把钱用在正确的地方</h1> -->
+<!--           <p>股票投资，唯快不破！斯多克，让您抢尽先机！</p> -->
+<!--           <p><a class="btn btn-lg btn-primary" href="#" role="button">与我们合作</a></p> -->
         </div>
       </div>
     </div>
