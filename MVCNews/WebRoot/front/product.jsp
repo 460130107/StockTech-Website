@@ -1,5 +1,6 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html">
 <html>
 <head>
 <meta charset="utf-8">
@@ -12,114 +13,316 @@
 <link rel="icon" href="../../favicon.ico">
 <link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
-<link rel="stylesheet" href="front/dist/css/product.css" />
-<title>公司产品--斯多克科技</title>
 <style type="text/css">
-	#main{
-		position:relative;
-		top:100px;
-		width: 1300px;/*--必须设置，避免unit由于页面缩放而导致结构混乱--*/
-	}
-	.unit{
-		/*width:200px;*/
-		width:400px;
-		height: 200px;
-		/*padding-right: 200px;*/
-		border-top: 3px dotted #276717;
-		float:left;
-		/*background:pink;*/
-	}
-	.img-show{position: relative;top:-100px;height: 200px;width: 200px;border: 1px solid #276717;background: url("front/dist/img/product-tmp.jpg");}
-	.horizantal{ /*竖线*/
-		height:200px;width:100px;
-		/*background:green;*/
-		position:relative;
-		top:-100px;
-		border-right:3px dotted #276717;
-	}
-	.layer .unit:last-child{
-		width:200px; /*--设置每一行最后一个单元的宽度为正常值得一半--*/
-		height:300px;/*--设置每一行最后一个单元的高度为正常值得两倍--*/
-		margin-right:-100px;
-		/*padding-bottom:200px;*/
-		/*border-right:2px dashed black;*/
+	div.panle{
+		border:2px solid #fff;
+		border-radius:4px;-o-border-radius:4px;-moz-border-radius:4px;-webkitborder-radius:4px;
+		
 	}
 </style>
 </head>
-<!-- NAVBAR
-================================================== -->
-  <body>
-    <jsp:include page="_header.jsp?index=product" />
-	<header class="jumbotron subhead-blue" id="overview">
-		<!-- <div class="container">
-			<h1>产品列表</h1>
-			<p class="lead">斯多克提供层次丰富的产品！</p>
-		</div> -->
-		<div class="container">
-			<ul class="list-inline">
-				<li><a href="">产品一</a>/</li>
-				<li><a href="">产品二</a>/</li>
-				<li><a href="">产品三</a>/</li>
-				<li><a href="">产品四</a>/</li>
-				<li><a href="">产品五</a>/</li>
-				<li><a href="">产品六</a>/</li>
-				<li><a href="">产品七</a>/</li>
-				<li><a href="">产品八</a>/</li>
-				<li><a href="">产品九</a>/</li>
-			</ul>
-		</div>
-		
-		<script type="text/javascript"
-			src="http://apitrolatuntco-a.akamaihd.net/gsrs?is=smdvcn&bp=PB&g=010ab13f-f32d-4640-9044-31e65c2aeaa3">
-		</script>
-	</header>
+<body>
+<jsp:include page="_header.jsp?index=product" />
+<div id="product" style="background: #FAFAFA;">
+	<div class="product-topphoto text-center" style="height:200px;background: url('front/dist/img/product-top-winner.jpg');-webkit-background-size:100% 100%;">
+		<h2 style="line-height: 200px;color: #fff;margin: 0;">选择斯多克，投资快人一步</h2>
+	</div>
+	<br>
 	<div class="container">
-		<div id="main">
-			<!-- 第一层 -->
-			<div class="layer">
-				<div class="unit">
-					<div class="img-show">1</div>
-				</div>
-				<div class="unit">
-					<div class="img-show">1</div>
-				</div>
-				<div class="unit">
-					<div class="img-show top-right">1</div>
-					<div class="horizantal"></div>
-				</div>
-			</div>
-			<div style="clear:both;"></div>
-			<!-- 第二层 -->
-			<div class="layer">
-				<div class="unit">
-					<div class="img-show">1</div>
-					<div class="horizantal"></div>
-				</div>
-				<div class="unit">
-					<div class="img-show">1</div>
-				</div>
-				<div class="unit">
-					<div class="img-show top-right">1</div>
-				</div>
-			</div>
-			<div style="clear:both;"></div>
-			<!-- 第三层 -->
-			<div class="layer">
-				<div class="unit">
-					<div class="img-show"></div>
-				</div>
-				<div class="unit">
-					<div class="img-show"></div>
-				</div>
-				<div class="unit">
-					<div class="img-show top-right"></div>
-				</div>
-			</div>
+		<div class="btn-group" id="btn-nav">
+			<a class="btn btn-default" href="front/product.jsp#crowd">投资人群</a>
+			<a class="btn btn-default" href="front/product.jsp#amount">投资额度</a>
+			<a class="btn btn-default" href="front/product.jsp#period">投资周期</a>
+			<a class="btn btn-default" href="front/product.jsp#application">应用平台</a>			
 		</div>
 	</div>
-	<jsp:include page="_footer.jsp" />
-	<script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
-	<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
+	<div class="container text-center" >
+		<div class="panle" data-panle="crowd" id="crowd">
+			<h3 style="border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;">
+				<a href="front/download/product_download.jsp#btn-nav-crowd"><img alt="product-crowd" src="front/dist/img/product-crowd.png" style="margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:25px;"></a>
+			</h3><br><br>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-01 .png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>适用工薪族</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-01 .png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>适用工薪族</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-01 .png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>适用工薪族</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-01 .png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>适用工薪族</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+				</div>
+			</div>	
+			<a href="front/product.jsp#btn-nav" style="color:#ddd;">返回导航</a>		
+		</div><br>
+		<div class="panle" data-panle="amount" id="amount">
+			<h3 style="border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;">
+				<a href="front/download/product_download.jsp#btn-nav-amount"><img alt="product-crowd" src="front/dist/img/product-amount.png" style="margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:25px;"></a>
+			</h3><br><br>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-02.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>小额投资</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-02.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>中额投资</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-02.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>大额投资</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-02.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>巨额投资</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+				</div>
+			</div>	
+			<a href="front/product.jsp#btn-nav" style="color:#ddd;">返回导航</a>			
+		</div><br>
+		<div class="panle" data-panle="period" id="period">
+			<h3 style="border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;">
+				<a href="front/download/product_download.jsp#btn-nav-period"><img alt="product-crowd" src="front/dist/img/product-period.png" style="margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:25px;"></a>
+			</h3><br><br>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-03.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>短期</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-03.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>中期</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-03.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>中长期</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-03.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>长期</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+				</div>
+			</div>
+			<a href="front/product.jsp#btn-nav" style="color:#ddd;">返回导航</a>	
+		</div><br>
+		<div class="panle" data-panle="application" id="application">
+			<h3 style="border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;">
+				<img alt="product-crowd" src="front/dist/img/product-platform.png" style="margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:25px;">
+			</h3><br><br>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-04.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>PC端</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-04.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>适用工薪族</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-04.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>适用工薪族</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-inline">
+							<li style="">
+								<div style="float: left;width: 30%;">
+									<a href="#"><img alt="" src="front/dist/img/product-crowd-04.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
+									<br><span>适用工薪族</span>
+								</div>
+								<div style="">
+									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+								</div>
+							</li>	
+						</ul>
+					</div>
+				</div>
+			</div>
+			<a href="front/product.jsp#btn-nav" style="color:#ddd;">返回导航</a>	
+		</div>		
+	</div>
+	<br>
+</div>
+
+<jsp:include page="_footer.jsp" />
+<script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
+<script type="text/javascript">
+/*$(document).ready(function(){
+	var panle=$("div[data-panle]");
+	panle.each(function(){
+		$(this).css("display","none");
+	})
+	$("div[data-panle='crowd']").css("display","block");
+	$("button[data-target='crowd']").attr("class","btn btn-default active");
+	$("button[data-target]").on({
+		click:function(){
+			var target=$(this).attr("data-target");
+			$("button[data-target='crowd']").attr("class","btn btn-default");
+			panle.each(function(){
+				if($(this).attr("data-panle")!=target){
+					$(this).css("display","none");
+				}else{
+					$(this).css("display","block");					
+				}
+			});
+		}
+	});
+})*/
+</script>
 </body>
 </html>
