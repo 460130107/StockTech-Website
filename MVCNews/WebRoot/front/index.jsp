@@ -70,41 +70,42 @@
     ================================================== --> 
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<div class="container marketing text-center"> 
+<div id="quick-start">
+<div class="container marketing text-center" > 
   <h1 style="padding-bottom: 20px;">快速体验通道</h1>
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-4"> 
     	<figure class="ser-blind" data-num="1"><!-- ser-blind==ser-mod-blind -->
-	        <img src="image/indexPic.jpg" /><!-- ser-blind-top==ser-blind-toggle-top --><!-- ser-blind-toggle -->
+	        <img src="front/dist/img/index-marketing-1.png" /><!-- ser-blind-top==ser-blind-toggle-top --><!-- ser-blind-toggle -->
 	        <figcaption class="ser-blind-top" data-num="1">产品与套餐 &raquo;</figcaption>
-	        <figcaption class="ser-blind-bottom" data-num="1"><h3>产品与套餐 </h3><p>斯多克致力于投资智能化，旨在为广大客户提供智能化的决策。</p><p>更多细节&raquo;</p></figcaption>       
+	        <figcaption class="ser-blind-bottom text-left" data-num="1"><h3>产品与套餐 </h3><p>斯多克致力于投资智能化，旨在为广大客户提供智能化的决策。</p><br><a>更多细节&raquo;</a></figcaption>       
       	</figure>
     </div>
     <!-- /.col-lg-4 -->
     <div class="col-lg-4">
     	<figure class="ser-blind" data-num="2">
-            <img src="image/indexPic.jpg" />
+            <img src="front/dist/img/index-marketing-2.png" />
             <figcaption class="ser-blind-top" data-num="2">资产管理 &raquo;</figcaption>
-            <figcaption class="ser-blind-bottom" data-num="2"><h3>资产管理  </h3><p>斯多克致力于投资智能化，旨在为广大客户提供智能。</p><p>更多细节&raquo;</p></figcaption>       
+            <figcaption class="ser-blind-bottom text-left" data-num="2"><h3>资产管理  </h3><p>斯多克致力于投资智能化，旨在为广大客户提供智能。</p><br><a>更多细节&raquo;</a></figcaption>       
         </figure>
     </div>
     <!-- /.col-lg-4 -->
     <div class="col-lg-4"> 
     	<figure class="ser-blind" data-num="3">
-            <img src="image/indexPic.jpg" />
+            <img src="front/dist/img/index-marketing-3.png" />
             <figcaption class="ser-blind-top" data-num="3">网上开户 &raquo;</figcaption>
-            <figcaption class="ser-blind-bottom" data-num="3"><h3>网上开户 </h3><p>斯多克致力于投资智能化，旨在为广大客户提供贴心的服务。</p><p>更多细节&raquo;</p></figcaption>       
+            <figcaption class="ser-blind-bottom text-left" data-num="3"><h3>网上开户 </h3><p>斯多克致力于投资智能化，旨在为广大客户提供贴心的服务。</p><br><a>更多细节&raquo;</a></figcaption>       
         </figure>
     </div>
     <!-- /.col-lg-4 --> 
   </div>
   <!-- /.row --> 
 </div>
+</div><!-- ./quick start -->
   
 <!-- START THE FEATURETTES -->
-<br><br>
-<div id="what_is_stockii" style="background: url('front/dist/img/pat.png');background-color:#40A1D3;padding: 30px 0 30px; ">
+<div id="what-is-stockii" style="background: url('front/dist/img/pat.png');background-color:#40A1D3;padding: 30px 0 30px; ">
 <div class="container text-center">
 	<h1 style="padding-bottom: 20px;">斯多克是什么</h1>
 	<div class="row">
@@ -122,36 +123,32 @@
 		</div>
 	</div> 
 	<br><br>
-	<a href="front/introduction.jsp" class="btn btn-warning">更多了解</a>
+	<a href="front/indroduction/introduction.jsp" class="btn btn-warning">更多了解</a>
 </div>
 </div>  
 
 <!-- product platform -->
-<div id="display" class="text-center" style="width:100%;padding: 30px 0 30px;">
+<div id="index-product" class="text-center" style="width:100%;padding: 30px 0 30px;">
 <h1>斯多克产品</h1>
 <div class="container text-center" >	
-	<h3 style="border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;">
-		<span style="margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:17px;background: #fafafa;">全平台支持</span>
-	</h3>
-	<br><br>
+	<h3><span>全平台支持</span></h3>
+	<br>
 	<ul class="list-inline">
-		<li style="margin:0 60px;"><a href="front/product.jsp#application"><img alt="" src="front/dist/img/mobile_icon_pc.png" style="margin-bottom: 30px;"></a><br><span>桌面产品</span></li>
-		<li style="margin:0 60px;"><a href="front/product.jsp#application"><img alt="" src="front/dist/img/mobile_icon_iphone.png" style="margin-bottom: 30px;"></a><br><span>Iphone</span></li>
-		<li style="margin:0 60px;"><a href="front/product.jsp#application"><img alt="" src="front/dist/img/mobile_icon_android.png" style="margin-bottom: 30px;"></a><br><span>Android</span></li>
+		<li style="margin:0 60px;"><a href="front/product.jsp#application"><img alt="" src="front/dist/img/mobile_icon_pc.png" style="margin-bottom: 30px;"></a><br><p>桌面产品</p></li>
+		<li style="margin:0 60px;"><a href="front/product.jsp#application"><img alt="" src="front/dist/img/mobile_icon_iphone.png" style="margin-bottom: 30px;"></a><br><p>Iphone</p></li>
+		<li style="margin:0 60px;"><a href="front/product.jsp#application"><img alt="" src="front/dist/img/mobile_icon_android.png" style="margin-bottom: 30px;"></a><br><p>Android</p></li>
 	</ul>
-</div>
+</div><br>
 <a href="front/product.jsp" class="btn btn-success">更多了解</a>
 <div class="container text-center" >
-	<h3 style="border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;">
-		<span style="margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:17px;background: #fafafa;">多角度定位</span>
-	</h3>
-	<br><br>
+	<h3><span>多角度定位</span></h3>
+	<br>
 	<ul class="list-inline">
-		<li style="margin:0 60px;"><a href="front/product.jsp#crowd"><img alt="" src="front/dist/img/mobile_icon_pc.png" style="margin-bottom: 30px;"></a><br><span>投资人群</span></li>
-		<li style="margin:0 60px;"><a href="front/product.jsp#amount"><img alt="" src="front/dist/img/mobile_icon_iphone.png" style="margin-bottom: 30px;"></a><br><span>投资额度</span></li>
-		<li style="margin:0 60px;"><a href="front/product.jsp#period"><img alt="" src="front/dist/img/mobile_icon_android.png" style="margin-bottom: 30px;"></a><br><span>投资周期</span></li>
+		<li style="margin:0 60px;"><a href="front/product.jsp#crowd"><img alt="" src="front/dist/img/mobile_icon_pc.png" style="margin-bottom: 30px;"></a><br><p>投资人群</p></li>
+		<li style="margin:0 60px;"><a href="front/product.jsp#amount"><img alt="" src="front/dist/img/mobile_icon_iphone.png" style="margin-bottom: 30px;"></a><br><p>投资额度</p></li>
+		<li style="margin:0 60px;"><a href="front/product.jsp#period"><img alt="" src="front/dist/img/mobile_icon_android.png" style="margin-bottom: 30px;"></a><br><p>投资周期</p></li>
 	</ul>
-</div>
+</div><br>
 <a href="front/product.jsp" class="btn btn-success">更多了解</a>
 </div>  
 
@@ -159,13 +156,11 @@
 <div id="index-service" class="text-center" style="background: url('front/dist/img/pat.png');background-color:#40A1D3;padding: 30px 0 30px;">
 <h1>斯多克项目</h1>
 <div class="container">
-	<h3 style="border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;">
-		<span style="margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:17px;background: #40A1D3;">多人群适用</span>
-	</h3>
+	<h3><span>多人群适用</span></h3>
 	<br><br>
 	<ul class="list-inline">
-		<li style="margin:0 60px;"><a href="front/project.jsp"><img alt="" src="front/dist/img/mobile_icon_pc.png" style="margin-bottom: 30px;"></a><br><span>个人级用户</span></li>
-		<li style="margin:0 60px;"><a href="front/project.jsp"><img alt="" src="front/dist/img/mobile_icon_iphone.png" style="margin-bottom: 30px;"></a><br><span>企业级用户</span></li>
+		<li style="margin:0 60px;"><a href="front/project.jsp"><img alt="" src="front/dist/img/mobile_icon_pc.png" style="margin-bottom: 30px;"></a><br><p>个人级用户</p></li>
+		<li style="margin:0 60px;"><a href="front/project.jsp"><img alt="" src="front/dist/img/mobile_icon_iphone.png" style="margin-bottom: 30px;"></a><br><p>企业级用户</p></li>
 	</ul>
 </div>
 <a href="front/project.jsp" class="btn btn-warning">更多了解</a>

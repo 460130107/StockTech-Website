@@ -1,7 +1,7 @@
 /* Carousel base class */
 .carousel {
   height: 450px; 
-  margin-bottom: 60px;
+  /*margin-bottom: 60px;*/
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -33,10 +33,45 @@
 }
 .col-lg-4{
 	height:270px !important;
-	/*border:1px solid red;*/} 
+} 
+
+#quick-start{
+	width:100%;
+	padding-top:60px;padding-bottom:60px;
+	background: url("../img/bg.png") repeat;
+}
+#quick-start figcaption h3,#quick-start figcaption p,#quick-start figcaption a{
+	padding:0 20px 0;
+	color:white;
+}
+#quick-start figcaption h3{
+	font-weight: bold;
+}
 .marketing .col-lg-4 {
   text-align: center;
 }
+
+
+#index-product{
+	width:100%;
+	padding-top:60px;padding-bottom:60px;
+	background: url("../img/bg.png") repeat;
+}
+#index-product span{
+	background: url("../img/bg.png");
+	margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:17px;
+}
+#index-product h3,#index-service h3{
+	border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;
+}
+
+#index-service span{
+	margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:17px;background: #40A1D3;
+}
+#index-service h3{
+	border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;
+}
+
 .ser-blind{
 	position: relative;
 }
