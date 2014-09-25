@@ -241,17 +241,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, .lead {
 .btn-lg.btn-shadow {
 	padding: 13px 35px 17px
 }
-.footer {
-	color: #777;
-	text-align: center;
-	padding: 30px 0;
-	margin-top: 70px;
-	border-top: 1px solid #e5e5e5;
-	background-color: #f5f5f5
-}
-.footer a {
-	color: #777
-}
 
 #scrollUp {
 	bottom: 20px;

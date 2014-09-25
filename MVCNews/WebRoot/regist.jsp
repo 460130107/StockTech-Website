@@ -16,7 +16,7 @@
 <!-- Custom styles for this template -->
 <link href="front/dist/css/signin.css" rel="stylesheet">
 
-<link href="front/dist/css/style.css" rel="stylesheet">
+<link href="front/dist/css/global.css" rel="stylesheet">
 	
 <center> 
 <jsp:include page="_header.jsp?index=signup" />

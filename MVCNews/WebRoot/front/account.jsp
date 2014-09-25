@@ -7,56 +7,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="dist/img/icon.png">
-
+<base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
+	request.getServerPort() + request.getContextPath() %>/" />
+<link rel="icon" href="./dist/img/icon_stockii_square.png">
+<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="front/dist/css/common.css" rel="stylesheet">
+<link href="front/dist/css/account.css" rel="stylesheet">
 <title>登录斯多克</title>
-<link href="dist/css/signin.css" rel="stylesheet">
-<link href="dist/css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
     <jsp:include page="_header.jsp?index=account" />
-
-    <header class="jumbotron subhead-freshgreen" id="overview">
-		<div class="container">
-			<h1>我的帐户</h1>
-			<p class="lead">登入斯多克，立刻开启你的智能投资时代！</p>
-		</div>
-		<script type="text/javascript"
-			src="http://apitrolatuntco-a.akamaihd.net/gsrs?is=smdvcn&bp=PB&g=010ab13f-f32d-4640-9044-31e65c2aeaa3">
-			
-		</script>
-	</header>
 	
-    <div class="container">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="panel panel-default">
+	<div class="container-fluid maxbg">
+		<div class="row">
+			<div class="col-md-2">
+<!-- 				<img alt="img-left" src="front/dist/img/account.png"> -->
+			</div>
+			<div id="img-tips" class="col-md-5">
+				<img alt="img-tips" src="front/dist/img/account_tips.png">
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
     			<div class="panel-body">
-      				<form accept-charset="UTF-8" action="/session" class="new_user" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="3EliZ07kHTqkHCEcNDJegiCF6qNH3xDxQLU+K8H6+rk="></div>
+    				<%=request.getAttribute("info")!=null?request.getAttribute("info"):""%>
+      				<form action="UserLoginServlet" method="post" onSubmit="return validate(this);">
+      					<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓">
+      					<input name="authenticity_token" type="hidden" value="3EliZ07kHTqkHCEcNDJegiCF6qNH3xDxQLU+K8H6+rk="></div>
         				<div class="form-group">
-          					<label>登录 <small>(邮箱/手机号)</small></label>
-          					<input autofocus="autofocus" class="form-control" id="user_login" name="user[login]" type="text">
+          					<label>登录 <small>(用户名)</small></label>
+          					<input autofocus="autofocus" class="form-control" id="user_login" name="mid" type="text">
         				</div>
         				<div class="form-group">
           					<label for="user_password">密码</label>
-          					<input class="form-control" id="user_password" name="user[password]" type="password">
+          					<input class="form-control" id="user_password" name="password" type="password">
         				</div>
-          				<div class="checkbox">
-              				<label>
-                  				<input name="user[remember_me]" type="hidden" value="0"><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"> 记住此用户名
-              				</label>
-          				</div>
+          				<div class="form-group">
+          					<label for="user_code">验证码</label>
+          					<input class="" id="user_password" name="code" type="text" maxlength="4" size="4"><img src="image.jsp">
+        				</div>
         				<div>
-        					<input class="btn btn-lg btn-block btn-success" name="commit" type="submit" value="登录">
+        					<ul class="list-inline" style="width: 100%;">
+        						<li style="width: 45%;"><input class="btn btn-lg btn-block btn-success" name="commit" type="submit" value="登录"/></li>
+        						<li style="width: 45%;"><a class="btn btn-lg btn-block btn-success" href="front/signup.jsp">立即注册</a></li>
+        					</ul>        					        					
         				</div>
 					</form>    
 				</div>
-    		<div class="panel-footer"> <a href="signup.html">注册</a></div>
-  			</div>
- 		</div>
- 		</div>
-
-
+			</div>
+			</div>
+			<div class="col-md-2">
+			</div>
+		</div>	
+	</div>
+	
+	
+    
     <jsp:include page="_footer.jsp" />
+    <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
+	<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
+    <script type="text/javascript">
+	  function validate(f){
+	  			if (!(/^[a-zA-Z]\w{5,17}$/.test(f.mid.value))){
+	  				alert("以字母开头，长度在6-18之间！");
+	  				f.mid.focus();
+	  				return false;
+	  			}
+	  			if (!(/^\w{5,15}$/.test(f.password.value))){
+	  				alert("密码必须是5~15位！");
+	  				f.password.focus();
+	  				return false;
+	  			}
+	  			return true;
+	  } 
+	</script>
   </body>
 </html>

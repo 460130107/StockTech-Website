@@ -2312,8 +2312,8 @@ fieldset[disabled] .btn {
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-  color: #333333;
-  background-color: #ebebeb;
+  color: #ebebeb;
+  background-color: #222222;
   border-color: #adadad;
 }
 
@@ -3522,20 +3522,22 @@ input[type="button"].btn-block {
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top:100%;
   left: 0;
   z-index: 1000;
   display: none;
   float: left;
   min-width: 160px;
   padding: 5px 0;
-  margin: 2px 0 0;
+  /*margin: 2px 0 0;*/
+  margin:0;
   font-size: 14px;
   list-style: none;
-  background-color: #ffffff;
+  background-color: #222;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  border-top:1px solid #ffffff;
+  /*border-radius: 4px;*/
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
@@ -4168,6 +4170,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
+  /*border-right-color: transparent;*/
 }
 
 .nav-tabs.nav-justified {
@@ -6479,7 +6482,7 @@ button.close {
 
 .carousel-indicators li {
   display: inline-block;
-  width: 10px;
+  width: 20px;
   height: 10px;
   margin: 1px;
   text-indent: -999px;
