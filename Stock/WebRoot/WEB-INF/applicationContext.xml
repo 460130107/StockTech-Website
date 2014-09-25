@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	<!-- 配置sessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
+	</bean>
+	
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 配置事务的传播特性 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="*" read-only="true" timeout="5"/>
+		</tx:attributes>
+	</tx:advice>
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+
+	<!-- 那些类的哪些方法参与事务 -->
+	<aop:config>
+		<aop:pointcut id="allManagerMethod"
+			expression="execution(* org.news.service.impl.*.*(..))" />
+		<aop:advisor pointcut-ref="allManagerMethod" advice-ref="txAdvice" />
+	</aop:config>
+	
+	<!-- 定义DAO Bean-->
+	<bean id="adminDAO" class="org.news.dao.AdminHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="attachmentDAO" class="org.news.dao.NewsAttachmentHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="newsInfoDAO" class="org.news.dao.NewsInfoHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="newsTypeDAO" class="org.news.dao.NewsTypeHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="usersDAO" class="org.news.dao.UsersHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="permissionDAO" class="org.news.dao.PermissionHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="adminService" class="org.news.service.impl.AdminServiceImpl">
+		<property name="adminDAO" ref="adminDAO"></property></bean>
+	<bean id="attachmentService" class="org.news.service.impl.AttachmentServiceImpl">
+		<property name="attachmentDAO" ref="attachmentDAO"></property></bean>
+	<bean id="newsInfoService" class="org.news.service.impl.NewsInfoServiceImpl">
+		<property name="newsInfoDAO" ref="newsInfoDAO"></property>
+		<property name="adminDAO" ref="adminDAO"></property>
+		<property name="attachmentDAO" ref="attachmentDAO"></property></bean>
+	<bean id="newsTypeService" class="org.news.service.impl.NewsTypeServiceImpl">
+		<property name="newsTypeDAO" ref="newsTypeDAO"></property>
+		<property name="infoService" ref="newsInfoService"></property></bean>
+	<bean id="userService" class="org.news.service.impl.UserServiceImpl">
+		<property name="userDAO" ref="usersDAO"></property></bean>
+	<bean id="permissionService" class="org.news.service.impl.PermissionServiceImpl">
+		<property name="permissionDao" ref="permissionDAO"></property></bean>
+		
+	<bean id="adminAction" class="org.news.action.AdminAction">
+		<property name="adminService" ref="adminService"></property></bean>
+	<bean id="adminLogin" class="org.news.action.AdminLogin">
+		<property name="adminService" ref="adminService"></property></bean>
+	<bean id="downloadAttachmentAction" class="org.news.action.DownloadAttachmentAction">
+		<property name="service" ref="attachmentService"></property></bean>
+	<bean id="newsInfoAction" class="org.news.action.NewsInfoAction">
+		<property name="service" ref="newsInfoService"></property>
+		<property name="typeService" ref="newsTypeService"></property>
+		<property name="attiService" ref="attachmentService"></property></bean>
+	<bean id="newsTypeAction" class="org.news.action.NewsTypeAction">
+		<property name="newstypeService" ref="newsTypeService"></property></bean>
+	<bean id="softwareAction" class="org.news.action.SoftwareAction">
+		<property name="service" ref="attachmentService"></property></bean>
+	<bean id="userLoginAction" class="org.news.action.UserLoginAction">
+		<property name="userService" ref="userService"></property></bean>
+	<bean id="userRegisterAction" class="org.news.action.UserRegisterAction">
+		<property name="userService" ref="userService"></property></bean>
+	<bean id="userAction" class="org.news.action.UsersAction">
+		<property name="userService" ref="userService"></property></bean>
+	<bean id="validateNameAction" class="org.news.action.ValidateNameAction">
+		<property name="userService" ref="userService"></property>
+		<property name="adminService" ref="adminService"></property>
+		<property name="newstypeService" ref="newsTypeService"></property></bean>
+	<bean id="newsInterfaceAction" class="org.news.action.NewsInterfaceAction">
+		<property name="service" ref="newsInfoService"></property>
+		<property name="typeService" ref="newsTypeService"></property>
+		<property name="attiService" ref="attachmentService"></property>
+	</bean>
+	<bean id="permissionAction" class="org.news.action.PermissionAction">
+		<property name="permissionService" ref="permissionService"></property></bean>
+</beans>
