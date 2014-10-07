@@ -22,7 +22,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <%
-		response.sendRedirect("front/") ;
+		//response.sendRedirect("front/") ;
+    	response.sendRedirect("front-version2/") ;
 	%>
   </body>
 </html>
