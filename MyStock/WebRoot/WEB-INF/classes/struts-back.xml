@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="global" extends="struts-default">
+		<interceptors>
+			<!-- 定义权限检查拦截器 -->
+			<interceptor name="authority" class="org.mystock.utils.AuthorityInterceptor">
+				<param name="allowAction">adminLogin</param>
+			</interceptor>
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="authority" />
+			</interceptor-stack>			
+		</interceptors>
+		<default-interceptor-ref name="mydefault" />
+		<global-results>
+			<result name="error">/WEB-INF/pages/errors.jsp</result>
+			<result name="forward">/WEB-INF/back/forward.jsp</result>
+			<result name="login">/WEB-INF/back/login.jsp</result>
+			<result name="input">/WEB-INF/pages/errors.jsp</result>
+		</global-results>		
+	</package>
+	<package name="admin" namespace="/back/admin/admin" extends="global">
+	<action name="Admin_list" class="adminAction" method="list">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_list.jsp
+		</result>
+	</action>
+	<action name="Admin_insert" class="adminAction" method="insert">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_operate_do.jsp
+		</result>
+	</action>
+	<action name="Admin_updatepre" class="adminAction" method="updatepre">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_update.jsp
+		</result>
+	</action>
+	<action name="Admin_update" class="adminAction" method="update">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_operate_do.jsp
+		</result>
+	</action>
+	<action name="Admin_show" class="adminAction" method="show">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_show.jsp
+		</result>
+	</action>
+	<action name="Admin_delete" class="adminAction" method="delete">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_operate_do.jsp
+		</result>
+	</action>
+	<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/admin/admin/{1}.jsp</result>
+		</action>
+	</package>	
+	<package name="back" namespace="/back"
+		extends="global">
+		<action name="adminLogin" class="adminLogin">
+			<result name="success">/WEB-INF/back/index.htm</result>
+			<result name="error">/WEB-INF/back/login.jsp</result>
+		</action>
+		<action name="adminLogout" class="org.mystock.action.AdminLogout">
+			<result name="success">/WEB-INF/back/login.jsp</result>
+		</action>
+		<action name="Table_list" method="tablelist"
+			class="org.mystock.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/TableList.jsp
+			</result>
+		</action>
+		<action name="Table_delete" method="delete"
+			class="org.mystock.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/tables_operate_do.jsp
+			</result>
+		</action>
+		<action name="Document_list" method="documentlist"
+			class="org.mystock.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/DocumentList.jsp
+			</result>
+		</action>
+		<action name="Document_delete" method="delete"
+			class="org.mystock.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/documents_operate_do.jsp
+			</result>
+		</action>
+		<action name="Image_list" method="imagelist"
+			class="org.mystock.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/ImageList.jsp
+			</result>
+		</action>
+		<action name="Image_delete" method="delete"
+			class="org.mystock.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/images_operate_do.jsp
+			</result>
+		</action>
+		<action name="File_upload" method="upload"
+			class="org.mystock.action.FileUploadAction">
+			<!-- 不超过1G -->
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1073741824</param>
+				<param name="allowedTypes">
+					application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,application/octet-stream,
+					image/x-ms-bmp,image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/pjpeg,image/gif,image/x-png,
+					application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+					application/pdf,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,
+					text/plain,application/rtf,text/xml,application/xml
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />			
+		</action>
+		<action name="Image_upload" method="uploadImage"
+			class="org.mystock.action.FileUploadAction">
+			<!-- 不超过1G -->
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1073741824</param>
+				<param name="allowedTypes">
+					application/octet-stream,image/x-ms-bmp,image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/pjpeg,image/gif,image/x-png,
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />			
+		</action>
+		<action name="File_download"
+			class="org.mystock.action.FileUploadAction">
+			<result name="success" type="stream">
+				<param name="contentType">text/plain;charset=utf-8</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="validateName"
+			class="validateNameAction">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">tip</param>
+			</result>
+		</action>	
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/{1}.jsp</result>
+		</action>
+	</package>
+	<package name="newsinfo" namespace="/back/admin/newsinfo"
+		extends="global">
+		<action name="NewsInfo_insertpre" method="insertpre"
+			class="newsInfoAction">
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_insert.jsp</result>
+		</action>
+		<action name="NewsInfo_insert" method="insert"
+			class="newsInfoAction">			
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_insert_do.jsp</result>
+		</action>
+		<action name="NewsInfo_update" method="update"
+			class="newsInfoAction">		
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_operate_do.jsp</result>
+		</action>
+		<action name="NewsInfo_show" method="show"
+			class="newsInfoAction">
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_show.jsp</result>
+		</action>
+		<action name="NewsInfo_updatepre" method="updatepre"
+			class="newsInfoAction">
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_update.jsp</result>
+		</action>
+		<action name="NewsInfo_delete" method="delete"
+			class="newsInfoAction">
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_operate_do.jsp</result>
+		</action>
+		<action name="NewsInfo_list" method="list"
+			class="newsInfoAction">
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_list.jsp</result>
+		</action>
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/admin/newsinfo/{1}.jsp</result>
+		</action>
+	</package>
+	<package name="newstype" namespace="/back/admin/newstype"
+		extends="global">
+		<action name="NewsType_list" method="list"
+			class="newsTypeAction">
+			<result name="success">
+				/WEB-INF/back/admin/newstype/newstype_list.jsp
+			</result>
+		</action>
+		<action name="NewsType_insert" method="insert"
+			class="newsTypeAction">
+			<result name="success">
+				/WEB-INF/back/admin/newstype/newstype_operate_do.jsp
+			</result>
+		</action>
+		<action name="NewsType_update"  method="update"
+			class="newsTypeAction">
+			<result name="success">
+				/WEB-INF/back/admin/newstype/newstype_operate_do.jsp
+			</result>
+		</action>
+		<action name="NewsType_updatepre" method="updatepre"
+			class="newsTypeAction">
+			<result name="success">
+				/WEB-INF/back/admin/newstype/newstype_update.jsp
+			</result>
+		</action>
+		<action name="NewsType_delete" method="delete"
+			class="newsTypeAction">
+			<result name="success">
+				/WEB-INF/back/admin/newstype/newstype_operate_do.jsp
+			</result>
+		</action>
+		<action name="NewsType_show" method="show"
+			class="newsTypeAction">
+			<result name="success">
+				/WEB-INF/back/admin/newstype/newstype_show.jsp
+			</result>
+		</action>
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/admin/newstype/{1}.jsp</result>
+		</action>
+	</package>
+	<package name="table" namespace="/back/admin/table"
+		extends="global">
+		<action name="Table_insert" method="insert"
+			class="tableAction">			
+			<result name="success">/WEB-INF/back/admin/table/table_operate_do.jsp</result>
+		</action>
+		<action name="Table_update" method="update"
+			class="tableAction">		
+			<result name="success">/WEB-INF/back/admin/table/table_operate_do.jsp</result>
+		</action>
+		<action name="Table_show" method="show"
+			class="tableAction">
+			<result name="success">/WEB-INF/back/admin/table/table_show.jsp</result>
+		</action>
+		<action name="Table_updatepre" method="updatepre"
+			class="tableAction">
+			<result name="success">/WEB-INF/back/admin/table/table_update.jsp</result>
+		</action>
+		<action name="Table_delete" method="delete"
+			class="tableAction">
+			<result name="success">/WEB-INF/back/admin/table/table_operate_do.jsp</result>
+		</action>
+		<action name="Table_list" method="list"
+			class="tableAction">
+			<result name="success">/WEB-INF/back/admin/table/table_list.jsp</result>
+		</action>
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/admin/table/{1}.jsp</result>
+		</action>
+	</package>
+</struts>

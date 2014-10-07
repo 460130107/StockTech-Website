@@ -1,5 +1,5 @@
 一、系统说明
-本程序用的是J2EE技术，MVC框架，TOMCAT服务器和MySQL数据库
+本程序用的是J2EE技术，MVC框架，TOMCAT服务器和MySQL数据库。
 二、系统移植步骤
 1、在MyEclipse中导入工程，可以通过Eclipse中的菜单File→Import→Existing Projects intoWorkspace中选择Project；
 2、启动MySQL数据库，在MySQL中创建数据库，使用MySQL Control Center执行src目录下的MakeTables.sql数据库脚本文件创建数据库SQL语句创建数据库和表及数据；
