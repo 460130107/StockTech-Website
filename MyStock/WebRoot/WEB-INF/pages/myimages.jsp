@@ -20,10 +20,58 @@
 	height: 233px;
 }
 
-</style>
-</head>
-<body>
+.fileUpload
+{ 
+position: absolute;
+margin-left:-130px;
+top:8px;
+opacity: 0; /*For Firefox*/ 
+filter: alpha(opacity=0); /*for IE*/ 
+}
 
+</style>
+
+</head>
+<script type="text/javascript" src="front/js/jquery-1.2.1.js"></script>
+<script type="text/javascript">var jq = $.noConflict(true);</script>
+<script type="text/javascript" src="front/js/ajaxfileupload.js"></script>
+
+<script type="text/javascript">
+	
+	function imgUpload(){
+		jq("#upfile").click();
+	}
+	function startUpload(value){
+
+	   	jq("#loading")
+        .ajaxStart(function(){
+            jq(this).show();
+        })//开始上传文件时显示一个图片
+        .ajaxComplete(function(){
+            jq(this).hide();
+        });//文件上传完成将图片隐藏起来
+
+        jq.ajaxFileUpload
+        (
+            {
+                url:'interface/Image_upload.action',//用于文件上传的服务器端请求地址
+                secureuri:false,//一般设置为false
+                fileElementId:'upfile',//文件上传空间的id属性  <input type="file" id="upfile" name="file" />
+                dataType: 'json',//返回值类型 一般设置为json
+                success: function (data, status)  //服务器成功响应处理函数
+                {
+                    $('#waterfall').waterfall();
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(data.message);
+                }
+            }
+        )
+		return false;
+	}
+</script>
+<body>
 <s:include value="header.jsp">  
 	<s:param name="index">myimages</s:param>  
 	</s:include> 	
@@ -35,8 +83,8 @@
 </div>
 -->
 <div id="waterfall">
-    <div class="cell"><a href="#"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="imgUpload()">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/001.jpg" /></a><p><a href="#">图片名称</a></p></div>
+    <div class="cell"><a href="#"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="imgUpload()">上传图片</a></p></div>
+    <!--<div class="cell"><a href="#"><img src="front/img/waterfall/001.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/002.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/003.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/004.jpg" /></a><p><a href="#">图片名称</a></p></div>
@@ -56,9 +104,10 @@
     <div class="cell"><a href="#"><img src="front/img/waterfall/018.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/019.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/020.jpg" /></a><p><a href="#">图片名称</a></p></div>
-</div>
+--></div>
+<img src="front/img/loading.gif" id="loading" style="display: none;">
+<input id="upfile" class="fileUpload" type="file" size="45" name="file" onchange="return startUpload(this.value);" >  
 <s:include value="footer.jsp"></s:include>
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="front/js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -92,7 +141,35 @@ var opt={
   insert_type:1
 }
 //不可删除，里面的‘opt’参数可删除
+
 $('#waterfall').waterfall(opt);
+
+
 </script>
+<script>
+$(document).ready(function(){
+  		$.ajax({
+  			type: "post",//使用get方法访问后台
+            dataType: "json",//返回json格式的数据
+            url: "interface/acquireImagelist.action",//要访问的后台地址
+            data: "cp=1&ls=20",//要发送的数据
+            complete :function(){$("#load").hide();},//AJAX请求完成时隐藏loading提示
+            success: function(msg){//msg为返回的数据，在这里做数据绑定
+                var data = msg.filenames;
+                var html='<div class="cell"><a href="#"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="return imgUpload();">上传图片</a></p></div>';
+                $.each(data, function(i, n){
+                    html+='<div class="cell"><a href="#"><img src="images/'+n+'" /></a><p>'+n+'</p></div>';
+                    
+                });
+                $('#waterfall').html(html);
+
+                $('#waterfall').waterfall();
+
+			}
+		});
+
+});
+</script>
+
 </body>
 </html>
