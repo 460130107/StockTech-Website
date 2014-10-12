@@ -17,7 +17,6 @@
   <filter-mapping>
      <filter-name>XssSqlFilter</filter-name>
      <url-pattern>/back/adminLogin.action</url-pattern>
-	 <url-pattern>/back/userLogin.action</url-pattern>
      <url-pattern>/back/admin/newstype/*</url-pattern>
      <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
