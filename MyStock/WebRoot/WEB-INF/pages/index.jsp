@@ -60,7 +60,9 @@ iframe{position: absolute;top:60px;left:75%;}
 		</div>
 		
 		<div class="row info-list">
-			<button class="btn btn-success" onclick="saveInfo();">提交</button>
+			<div class="col-lg-2">
+				<button class="btn btn-success" onclick="saveInfo();">提交</button>
+			</div>
 		</div>
 		
 	</div>

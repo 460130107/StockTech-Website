@@ -20,15 +20,13 @@
 	height: 233px;
 }
 
-.fileUpload
-{ 
+.fileUpload { 
 position: absolute;
 margin-left:-130px;
 top:8px;
 opacity: 0; /*For Firefox*/ 
 filter: alpha(opacity=0); /*for IE*/ 
 }
-
 </style>
 
 </head>
@@ -88,26 +86,8 @@ filter: alpha(opacity=0); /*for IE*/
 <div class="container container-content">
 <div id="waterfall">
     <div class="cell"><a href="javascript:void(0)" onclick="imgUpload()"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="imgUpload()">上传图片</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/人.jpg" /></a><p><a href="#">图片名称</a></p></div>
+    <div class="cell"><a href="#"><img src="front/img/waterfall/000.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <!--<div class="cell"><a href="#"><img src="front/img/waterfall/001.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/002.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/003.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/004.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/005.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/006.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/007.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/008.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/009.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/010.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/011.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/012.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/013.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/014.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/015.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/016.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/017.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/018.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/019.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/020.jpg" /></a><p><a href="#">图片名称</a></p></div>
 --></div>
 <img src="front/img/loading.gif" id="loading" style="display: none;">
@@ -150,31 +130,28 @@ var opt={
 
 $('#waterfall').waterfall(opt);
 
+function loadImages(){
+	$.ajax({
+ 			type: "post",//使用get方法访问后台
+           dataType: "json",//返回json格式的数据
+           url: "interface/acquireImagelist.action",//要访问的后台地址
+           data: "cp=1&ls=100",//要发送的数据
+           beforeSend: function(){$("#loading").show();},
+           complete :function(){$("#loading").hide();},//AJAX请求完成时隐藏loading提示
+           success: function(msg){//msg为返回的数据，在这里做数据绑定
+               var data = msg.filenames;
+               var html='<div class="cell"><a href="javascript:void(0)" onclick="imgUpload()"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="return imgUpload();">上传图片</a></p></div>';
+               $.each(data, function(i, n){
+                   html+='<div class="cell"><a href="#"><img src="images/'+n+'" /></a></div>';
+               });
+               $('#waterfall').html(html);
 
-</script>
-<script>
-	function loadImages(){
-		$.ajax({
-  			type: "post",//使用get方法访问后台
-            dataType: "json",//返回json格式的数据
-            url: "interface/acquireImagelist.action",//要访问的后台地址
-            data: "cp=1&ls=100",//要发送的数据
-            beforeSend: function(){$("#loading").show();},
-            complete :function(){$("#loading").hide();},//AJAX请求完成时隐藏loading提示
-            success: function(msg){//msg为返回的数据，在这里做数据绑定
-                var data = msg.filenames;
-                var html='<div class="cell"><a href="javascript:void(0)" onclick="imgUpload()"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="return imgUpload();">上传图片</a></p></div>';
-                $.each(data, function(i, n){
-                    html+='<div class="cell"><a href="#"><img src="images/'+n+'" /></a></div>';
-                });
-                $('#waterfall').html(html);
+               $('#waterfall').waterfall();
 
-                $('#waterfall').waterfall();
-
-			}
-		});
+		}
+	});
 		
-	}
+}
 $(document).ready(function(){
   		loadImages();
 });
