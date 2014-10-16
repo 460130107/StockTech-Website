@@ -75,25 +75,31 @@ filter: alpha(opacity=0); /*for IE*/
 <body>
 <s:include value="header.jsp">  
 	<s:param name="index">myimages</s:param>  
-	</s:include> 	
-<!-- 	
-<div class="col-sm-6 col-md-4">
-	<a href="#" class="thumbnail"> 
-		<img src="img/icon_plus.png" alt="通用的占位符缩略图">
-	</a>
-</div>
--->
-<div class="container container-content">
-<div id="waterfall">
-    <div class="cell"><a href="javascript:void(0)" onclick="imgUpload()"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="imgUpload()">上传图片</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/000.jpg" /></a><p><a href="#">图片名称</a></p></div>
-    <!--<div class="cell"><a href="#"><img src="front/img/waterfall/001.jpg" /></a><p><a href="#">图片名称</a></p></div>
+	</s:include>
+	<div class="container container-content">
+		<div id="waterfall">
+			<div class="cell">
+				<a href="javascript:void(0)" onclick="imgUpload()"><img
+					src="front/img/icon_plus.png" /></a>
+				<p>
+					<a href="javascript:void(0)" onclick="imgUpload()">上传图片</a>
+				</p>
+			</div>
+			<div class="cell">
+				<a href="#"><img src="front/img/waterfall/000.jpg" /></a>
+				<p>
+					<a href="#">图片名称</a>
+				</p>
+			</div>
+			<!--<div class="cell"><a href="#"><img src="front/img/waterfall/001.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/020.jpg" /></a><p><a href="#">图片名称</a></p></div>
---></div>
-<img src="front/img/loading.gif" id="loading" style="display: none;">
-<input id="upfile" class="fileUpload" type="file" size="45" name="file" onchange="return startUpload(this.value);" >  
-</div>
-<s:include value="footer.jsp"></s:include>
+-->
+		</div>
+		<img src="front/img/loading.gif" id="loading" style="display: none;">
+		<input id="upfile" class="fileUpload" type="file" size="45"
+			name="file" onchange="return startUpload(this.value);">
+	</div>
+	<s:include value="footer.jsp"></s:include>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="front/js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -145,9 +151,7 @@ function loadImages(){
                    html+='<div class="cell"><a href="#"><img src="images/'+n+'" /></a></div>';
                });
                $('#waterfall').html(html);
-
                $('#waterfall').waterfall();
-
 		}
 	});
 		
