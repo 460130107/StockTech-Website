@@ -34,7 +34,7 @@ public class DelFile extends HttpServlet {
 		//System.out.print("name = "+name+"\n");
 		del(name);
 		response.setContentType("application/x-unknown;charset=utf-8");
-		response.sendRedirect("../home?path="+request.getParameter("path"));
+		response.sendRedirect("../myfiles?path="+request.getParameter("path"));
 		//response.sendRedirect("http://www.hao123.com");
 	}
 	public void del(String path)throws FileNotFoundException,IOException {

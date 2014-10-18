@@ -66,6 +66,7 @@ body{
 /*right content*/
 .right{
 	margin-left: 212px;
+	margin-bottom: 100px;
 	/*width: 100%;margin-left: -212px;*/
 }
 /*tool-bar*/
