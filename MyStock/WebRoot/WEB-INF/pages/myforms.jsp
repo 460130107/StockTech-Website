@@ -188,7 +188,7 @@
 <script type="text/javascript" src="front/js/bootstrap.js"></script>
 <script type="text/javascript" src="front/js/ajax.article.js"></script>
 <script type="text/javascript" src="front/js/article.js"></script>
-<script type="text/javascript" src="front/js/jqPaginator.js"></script>
+<script type="text/javascript" src="front/js/jqPaginator.min.js"></script>
 <script type="text/javascript">
 $.jqPaginator('#pagination1', {
     /*totalPages: 100,*/ /*总页数*/

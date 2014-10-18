@@ -29,6 +29,9 @@
 		<action name="userLogout" class="org.mystock.action.UserLogout">
 			<result name="success">/WEB-INF/pages/account.jsp</result>
 		</action>
+		<action name="file/*" class="org.mystock.action.MyFilesPreview">
+			<result name="success">/WEB-INF/files/{1}</result>
+		</action>
 		<!-- 通用的Action，*表示可以处理任意的请求 -->
 		<action name="*">
 			<!-- 此处{1}表示前面第一个*代表的字符串 -->

@@ -17,7 +17,7 @@
   <filter-mapping>
      <filter-name>XssSqlFilter</filter-name>
      <url-pattern>/back/adminLogin.action</url-pattern>
-	 <url-pattern>/back/userLogin.action</url-pattern>
+     <url-pattern>/back/userLogin.action</url-pattern>
      <url-pattern>/back/admin/newstype/*</url-pattern>
      <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
@@ -52,4 +52,31 @@
   <filter-mapping>
   	<filter-name>struts2</filter-name>
   	<url-pattern>/*</url-pattern>
-  </filter-mapping></web-app>
+  </filter-mapping>
+  
+  	<servlet>
+		<servlet-name>org.mystock.myfiles.SaveFile</servlet-name>
+		<servlet-class>org.mystock.myfiles.SaveFile</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>org.mystock.myfiles.SaveFile</servlet-name>
+    	<url-pattern>/myfiles/save.jsp</url-pattern>
+  	</servlet-mapping>
+  	<servlet>
+  		<servlet-name>org.mystock.myfiles.DelFile</servlet-name>
+  		<servlet-class>org.mystock.myfiles.DelFile</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>org.mystock.myfiles.DelFile</servlet-name>
+  		<url-pattern>/myfiles/del.jsp</url-pattern>
+  	</servlet-mapping>
+  	<servlet>
+  		<servlet-name>org.mystock.myfiles.RenameFile</servlet-name>
+  		<servlet-class>org.mystock.myfiles.RenameFile</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>org.mystock.myfiles.RenameFile</servlet-name>
+  		<url-pattern>/myfiles/rename.jsp</url-pattern>
+  	</servlet-mapping>  
+ 
+</web-app>
