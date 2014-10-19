@@ -964,6 +964,111 @@ public class NewsInterfaceAction extends ActionSupport {
         return SUCCESS;
     }
 
+	
+	
+	
+	/**
+	 * 上传文件到服务器
+	 * @author zxy
+	 * @return
+	 * @throws Exception
+	 */
+	public String uploadFile() throws Exception {
+        /******************************
+		InputStream is;
+		String pageErrorInfo = null;
+		message = "successed";
+		try {
+			ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
+			is = new FileInputStream(file);
+			String root = ServletActionContext.getServletContext().getRealPath("/images");//保存图片的目录
+			
+			//将后缀名改成小写
+			String name =this.getFileFileName();
+			int pos = name.lastIndexOf(".");
+			String suffix = name.substring(pos);
+			
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd_HHmmss");
+			Random r=new Random();
+			String newName = r.nextInt(1000)+sdf.format(new Date())+suffix.toLowerCase();
+			
+			File deskFile = new File(root,newName);
+
+			//输出到外存中
+			OutputStream os = new FileOutputStream(deskFile);
+			byte [] bytefer = new byte[400];
+			int length = 0 ; 
+			while((length = is.read(bytefer) )>0)
+			{
+				os.write(bytefer,0,length);
+			}
+			os.close();
+			is.close();		
+			
+			if (FtpUtil.isValid()){
+				//备份文件到FTP
+				if(FtpUtil.backupFile(root+File.separatorChar+newName, newName, "images/"+MessageUtil.getID("config.id"))){
+					System.out.println("image:"+newName+" backup success");
+				}else{
+					System.out.println("image:"+newName+" backup fail");
+				}
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			pageErrorInfo = e.getMessage();
+			message = "failed"+pageErrorInfo;
+			return ERROR;
+		} catch (IOException e) {
+			e.printStackTrace();
+			message = "failed"+pageErrorInfo;
+			return ERROR;
+		}
+		
+		*******************************/
+        return SUCCESS;
+    }
+	
+	
+	/**
+	 * 新建文件夹
+	 * @author zxy
+	 * @return
+	 * @throws Exception
+	 */
+	public String createFold() throws Exception {
+		
+		String name = ServletActionContext.getRequest().getParameter("name");
+		String path = ServletActionContext.getRequest().getParameter("path");
+		
+		System.out.println(path);
+		if(path.equals("root")){
+			path = "C:\\Stockii\\MyStock\\WebRoot\\files\\"+name;
+			System.out.println(path);
+
+		}
+		System.out.println(path);
+		File file = new File(path);  
+	    if(file.exists()) {  
+	        System.out.println("创建目录" + path + "失败，目标目录已存在！");  
+	        return ERROR;  
+	    }else{
+	    	file.mkdirs();
+	    	return SUCCESS;
+	    }  
+
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * 增加文章
 	 * @param smart
