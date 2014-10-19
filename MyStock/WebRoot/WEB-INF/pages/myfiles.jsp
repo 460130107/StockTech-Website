@@ -2,12 +2,9 @@
     pageEncoding="utf-8"%>
 <%@ page import="java.io.*" %>
 <%@ page import="java.net.*" %>
-<%@ page import="java.util.*" %>
 <%@ page import="java.text.*" %>
 <%@ page import="javax.naming.*" %>
 <%@ page import="java.math.*" %>
-<%@ page import="java.lang.*" %>
-<%@ page import="org.apache.commons.fileupload.*" %>
 <%@ page import="org.apache.commons.codec.binary.*" %>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
@@ -60,10 +57,7 @@ public static String getFormatSize(long size) {
 } 
 //Type
 public static String getFileType(String fname){	
-	//System.out.println(fname);
-	//String[] list=fname.split(".");
 	String prefix=fname.substring(fname.lastIndexOf(".")+1);
-	//System.out.println(prefix);
 	return prefix;
 }
  %>
@@ -81,11 +75,8 @@ public static String getFileType(String fname){
 	if(path == null) {
 		//path = rootPath;
 		path="C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot\\files";	
-		//path="http://localhost:8080/MyStock/files/";
-		//url=new URL(path);
 	}else{
 		path = new String(Base64.decodeBase64(path.getBytes()));
-		//url=new URL(path);
 	}
 	File fpath = new File(path);
 %>
@@ -103,13 +94,11 @@ public static String getFileType(String fname){
 </div>
 <div class="right">
 	<div class="right-top-bar">
-		<span><span class="top-bar-icon upload"></span><span>上传</span></span>
-		<span><span class="top-bar-icon download"></span><span>新建</span></span>
+		<span id="uploadfile" type="file"><span class="top-bar-icon upload"></span><span>上传</span></span>
+		<span id="createNewFolder"><span class="top-bar-icon createNewFolder"></span><span>新建XX</span></span>
 	</div>
 	<div class="file-nav">
 			<%
-				//if(fpath.getParentFile() != null){//返回上级目录
-					//System.out.print(fpath.getParentFile()+"\n");
 				if(!fpath.getParentFile().toString().equals("C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot")){
 			%>
 			<a href="<%=request.getContextPath()%>/myfiles?path=<%=new String(Base64.encodeBase64(fpath.getParentFile().getAbsolutePath().getBytes()))%>">返回上一级&nbsp;</a>
@@ -201,23 +190,71 @@ $(function(){
 	});
 	//preview
 	$(".node-list").each(function(key,val){
-		//console.log($(this).attr("data-file-type"));
 		var type=$(this).attr("data-file-type");		
 		if(!type.match("dir")){
 			var name=$(this).attr("data-file-name");
 			var path=$(this).attr("data-file-path");
 			path=path.substring(65,path.length);
 			console.log("name = "+name+" && path = "+path);
-			//console.log(type);
 			if(type.match("doc") || type.match("xls") || type.match("ppt") || type.match("xx")){
-				//console.log("microsoft preview "+type);
 				$(this).children(".node-name").children(".link").children("a").attr("href","https://view.officeapps.live.com/op/view.aspx?src=http://officeweb365.com/viewfile/关于加快临时设施建设速度和保证建设标准的通知.docx");
 			}else if(type.match("txt") ||type.match("pdf") || type.match("js")){
-				//console.log("pdffff");
 				$(this).children(".node-name").children(".link").children("a").attr("href","http://localhost:8080/MyStock/"+path+"/"+name);
 			}
 		}
 	});
+	
+	//create new folder
+	$("#createNewFolder").on({
+		"click":function(){
+			//alert("dasd");
+			var listObj=$('<div class="node-list"></div>').insertAfter($(".node-list").last());
+			var nameObj=$('<div class="node-name"><span class="node-icon l-folder"></span></div>').appendTo(listObj);
+			var linkObj=$('<span class="link"><input type="text" class="input" value="新建文件夹"></span>').appendTo(nameObj);
+			var choiceObj=$('<span class="btn-icon sname"></span><span class="btn-icon abandon"></span>').appendTo(nameObj);
+			//save
+			$(choiceObj).eq(0).on({
+				"click":function(){
+					var path=getQueryString("path");
+					if(path==null){path="root";};
+					var folderName=$(linkObj).children("input").val();
+					$(linkObj).children("input").remove();
+					$(choiceObj).remove();
+					var linkA=$("<a href='http://www.baidu.com'></a>").text(folderName).appendTo(linkObj);
+					//后台处理文件上传 -- 参数
+					$.ajax({
+						url:'interface/Creat_folder.action',
+						type:"POST",
+						data:{
+							name:folderName,
+							path:path,
+						},
+						success:function(){
+							console.log("new folder success");
+						},
+						error:function(){
+							console.log("new folder failed");
+						}
+					});
+					
+				}
+			});
+			//abandon
+			$(choiceObj).eq(1).on({
+				"click":function(){
+					$(listObj).remove();
+				}
+			});
+		}
+	});
+	
+	//get url 
+	function getQueryString(name) {
+	    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	    var r = window.location.search.substr(1).match(reg);
+	    if (r != null) return unescape(r[2]); return null;
+    }
+    console.log(getQueryString("path"));
 });
 </script>
 </body>
