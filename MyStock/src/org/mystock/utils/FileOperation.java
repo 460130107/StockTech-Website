@@ -12,7 +12,7 @@ public class FileOperation {
 	
 	
 	/**
-	 * »ñÈ¡Â·¾¶
+	 * è·å–è·¯å¾„
 	 * @author zxy
 	 * @return
 	 * @throws Exception
@@ -29,21 +29,21 @@ public class FileOperation {
 	
 	
 	/**
-	 * »ñÈ¡ÎÄ¼şĞŞ¸ÄÊ±¼ä
+	 * è·å–æ–‡ä»¶ä¿®æ”¹æ—¶é—´
 	 * @author zxy
 	 * @return
 	 * @throws Exception
 	 */
 	
 	public String getLastChangeDate(File file) throws Exception {
-		// ºÁÃëÊı
+		// æ¯«ç§’æ•°
 		long modifiedTime = file.lastModified();
 		String lastTime = getFormatDate(modifiedTime);
 		return lastTime;
 	}
 	
 	/**
-	 * »ñÈ¡ÎÄ¼ş´óĞ¡
+	 * è·å–æ–‡ä»¶å¤§å°
 	 * @author zxy
 	 * @return
 	 * @throws Exception
@@ -57,7 +57,7 @@ public class FileOperation {
 	}
 
 	/**
-	 * ¸ñÊ½»¯ÈÕÆÚ
+	 * æ ¼å¼åŒ–æ—¥æœŸ
 	 * @author zxy
 	 * @return
 	 * @throws Exception
@@ -71,7 +71,7 @@ public class FileOperation {
 	}
 	
 	/**
-	 * ¸ñÊ½»¯ÎÄ¼ş´óĞ¡
+	 * æ ¼å¼åŒ–æ–‡ä»¶å¤§å°
 	 * @author zxy
 	 * @return
 	 * @throws Exception
@@ -105,7 +105,7 @@ public class FileOperation {
 	} 
 	
 	/**
-	 * »ñÈ¡ÎÄ¼şÀàĞÍ£ºÎÄ¼şorÎÄ¼ş¼Ğ
+	 * è·å–æ–‡ä»¶ç±»å‹ï¼šæ–‡ä»¶oræ–‡ä»¶å¤¹
 	 * @author zxy
 	 * @return
 	 * @throws Exception
@@ -122,7 +122,7 @@ public class FileOperation {
 	}
 	
 	/**
-	 * ½«Json×ª»»Îªstr
+	 * å°†Jsonè½¬æ¢ä¸ºstr
 	 * @author zxy
 	 * @return
 	 * @throws Exception
@@ -149,20 +149,6 @@ public class FileOperation {
 		return str;
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 
