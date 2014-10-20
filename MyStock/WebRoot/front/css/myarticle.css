@@ -58,4 +58,6 @@
 	width: 93%;
 	padding-left: 25px;
 	padding-right: 25px;
-} 
+}
+
+.loading { width: 152px; height: 152px; margin: 0 auto;}
