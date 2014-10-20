@@ -5,12 +5,6 @@
  * 
  * 创建日期：2014-09-24
  */
-
-/*
-kklgdfkgd
-dlgkldfkgl
-sdklgfkds
-*/
 package org.mystock.action;
 
 import java.util.List;
