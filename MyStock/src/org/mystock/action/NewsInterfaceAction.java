@@ -14,8 +14,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,10 +23,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
-
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 import org.hibernate.SessionFactory;
@@ -103,6 +97,8 @@ public class NewsInterfaceAction extends ActionSupport {
     private String fileFileContentType;
 
     private String message = "你已成功上传图片";
+    private String myFilemessage;
+    private String myFileUploadMessage;
     
     private String name;//文章标题
     private String content;//文章内容
@@ -197,8 +193,25 @@ public class NewsInterfaceAction extends ActionSupport {
     public void setMessage(String message) {
         this.message = message;
     }
+    
 
-    public File getFile() {
+    public String getMyFilemessage() {
+		return myFilemessage;
+	}
+
+	public void setMyFilemessage(String myFilemessage) {
+		this.myFilemessage = myFilemessage;
+	}
+
+	public String getMyFileUploadMessage() {
+		return myFileUploadMessage;
+	}
+
+	public void setMyFileUploadMessage(String myFileUploadMessage) {
+		this.myFileUploadMessage = myFileUploadMessage;
+	}
+
+	public File getFile() {
         return file;
     }
 
@@ -972,13 +985,53 @@ public class NewsInterfaceAction extends ActionSupport {
 	
 	
 	/**
-	 * 上传文件
+	 * 上传文件到服务器
 	 * @author zxy
 	 * @return
 	 * @throws Exception
 	 */
 	public String uploadFile() throws Exception {
-        
+		
+		FileOperation fileOperation = new FileOperation();
+		String OutputPath = fileOperation.getSavePath();
+		String InputPath = fileOperation.getUploadPath();
+		String name = fileOperation.getFileName(InputPath);
+	
+		InputStream is;
+		
+		try {
+			is = new FileInputStream(new File(InputPath));			
+			 
+			File dir=new File(new File(OutputPath),name); 
+			if(!dir.exists()){
+				try {
+					dir.createNewFile();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}else{				
+				myFileUploadMessage = "文件已存在";
+				return ERROR;
+			}	
+			
+			//输出到外存中
+			OutputStream os = new FileOutputStream(dir);
+			byte [] bytefer = new byte[400];
+			int length = 0 ; 
+			while((length = is.read(bytefer) )>0)
+			{
+				os.write(bytefer,0,length);
+			}
+			os.close();
+			is.close();		
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();			
+			return ERROR;
+		} catch (IOException e) {
+			e.printStackTrace();			
+			return ERROR;
+		}
         return SUCCESS;
     }
 	
@@ -1009,9 +1062,7 @@ public class NewsInterfaceAction extends ActionSupport {
 	 * @return
 	 * @throws Exception
 	 */
-	public String openFold(Map map) throws Exception {
-		
-		//JSONObject json = 
+	public String openFold() throws Exception {
 		
 		FileOperation fileOperation = new FileOperation();
 		String path = fileOperation.getPath();
@@ -1020,15 +1071,22 @@ public class NewsInterfaceAction extends ActionSupport {
 			//...
 			return SUCCESS;
 		}else{
-	        String[] filelist = file.list();
-	        Map mapForJson = new HashMap();
-	        for (int i = 0; i < filelist.length; i++) {
-                File readfile = new File(path + "\\" + filelist[i]); 
+	        String[] fileList = file.list();
+	        //如果是空文件夹
+	        if(fileList.length == 0){
+	        	myFilemessage = "";
+	        	return SUCCESS;
+	        	
+	        }
+	        Map<String,String[]> mapForJson = new HashMap<String,String[]>();
+	        
+	        for (int i = 0; i < fileList.length; i++) {
+                File readfile = new File(path + "\\" + fileList[i]); 
                 
                 String[] str = fileOperation.getFileInfo(readfile);
     			mapForJson.put(String.valueOf(i),str);
 	        }
-	        message = fileOperation.getJson(map);
+	        myFilemessage = fileOperation.getJson(mapForJson);
 	        return SUCCESS;
 		}
 		

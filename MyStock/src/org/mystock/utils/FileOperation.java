@@ -2,8 +2,8 @@ package org.mystock.utils;
 
 import java.io.File;
 import java.math.BigDecimal;
+import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
@@ -18,14 +18,64 @@ public class FileOperation {
 	 * @throws Exception
 	 */
 	public String getPath() throws Exception {       
-		String name = ServletActionContext.getRequest().getParameter("name");
-		String path = ServletActionContext.getRequest().getParameter("path");
-	
+		String path = URLDecoder.decode(URLDecoder.decode(ServletActionContext.getRequest().getParameter("path"),"UTF-8"),"UTF-8");
+
 		if(path.equals("root")){
-			path = "C:\\Stockii\\MyStock\\WebRoot\\files\\"+name;
+			path = "C:\\Stockii\\MyStock\\WebRoot\\files";
+		}else{
+			path = path + "\\" + path.substring(path.indexOf("\\")+1);
 		}			
         return path;
     }
+	
+	/**
+	 * 获取文件保存路径
+	 * @author zxy
+	 * @return
+	 * @throws Exception
+	 */
+	public String getSavePath() throws Exception {       
+		
+		String path = ServletActionContext.getRequest().getParameter("path");	
+		if(path.equals("root")){
+			path = "C:\\Stockii\\MyStock\\WebRoot\\files\\";
+		}			
+        return path;
+    }
+	
+	
+	/**
+	 * 获取文件上传路径
+	 * @author zxy
+	 * @return
+	 * @throws Exception
+	 */
+	public String getUploadPath() throws Exception {   
+		
+		String name = ServletActionContext.getRequest().getParameter("name");						
+        return name;
+    }
+	
+	
+	/**
+	 * 从路径中获取文件名
+	 * @author zxy
+	 * @return
+	 * @throws Exception
+	 */
+	//获取文件名
+	public String getFileName(String absolutePath){
+		
+		
+		int pos = absolutePath.lastIndexOf("\\");
+		String suffix = absolutePath.substring(pos+1);
+		System.out.println(suffix);
+		return suffix;
+		
+	}
+	
+	
+	
 	
 	
 	/**
@@ -114,7 +164,7 @@ public class FileOperation {
 	public String getFileType(File file) throws Exception {	
 		String type;
 		if(file.isDirectory()){
-			type = "forder";
+			type = "folder";
 		}else{
 			type = "file";
 		}	
@@ -126,25 +176,24 @@ public class FileOperation {
 	 * @author zxy
 	 * @return
 	 * @throws Exception
-	 */
-	//Json
-	
+	 */	
 	public String getJson(Map map) throws Exception {
-		net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(map);
-		
+		net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(map);		
 		String str = json.toString();
 		return str;
 		
 	}
-	
-	
-	
+	/**
+	 * 获取文件信息：type,name,size,date
+	 * @author zxy
+	 * @return
+	 * @throws Exception
+	 */		
 	public String[] getFileInfo(File readfile) throws Exception {
 		String type = getFileType(readfile);
 		String name = readfile.getName();
 		String size = getFileSize(readfile);
-		String date = getLastChangeDate(readfile);
-		
+		String date = getLastChangeDate(readfile);	
 		String[] str= new String[]{type,name,size,date}; 
 		return str;
 		
