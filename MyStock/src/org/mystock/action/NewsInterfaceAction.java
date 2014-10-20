@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -45,6 +46,7 @@ import org.mystock.service.NewsInfoService;
 import org.mystock.service.NewsTypeService;
 import org.mystock.service.TableService;
 import org.mystock.utils.Common;
+import org.mystock.utils.FileOperation;
 import org.mystock.utils.FtpUtil;
 import org.mystock.utils.HibernateMappingManager;
 import org.mystock.utils.MessageUtil;
@@ -53,6 +55,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+
+
 
 /**
  * 为前端访问提供接口的的Action
@@ -965,6 +969,8 @@ public class NewsInterfaceAction extends ActionSupport {
     }
 	
 	
+	
+	
 	/**
 	 * 上传文件
 	 * @author zxy
@@ -985,24 +991,47 @@ public class NewsInterfaceAction extends ActionSupport {
 	 */
 	public String createFold() throws Exception {
 		
-		String name = ServletActionContext.getRequest().getParameter("name");
-		String path = ServletActionContext.getRequest().getParameter("path");
-		
-		System.out.println(path);
-		if(path.equals("root")){
-			path = "C:\\Stockii\\MyStock\\WebRoot\\files\\"+name;
-			System.out.println(path);
-
-		}
-		System.out.println(path);
+		FileOperation fileOperation = new FileOperation();
+		String path = fileOperation.getPath();
 		File file = new File(path);  
-	    if(file.exists()) {  
-	        
+	    if(file.exists()) {  	        
 	        return ERROR;  
 	    }else{
 	    	file.mkdirs();
 	    	return SUCCESS;
 	    }  
+
+    }
+	
+	/**
+	 * 打开文件夹
+	 * @author zxy
+	 * @return
+	 * @throws Exception
+	 */
+	public String openFold(Map map) throws Exception {
+		
+		//JSONObject json = 
+		
+		FileOperation fileOperation = new FileOperation();
+		String path = fileOperation.getPath();
+		File file = new File(path);
+		if(!file.isDirectory()){
+			//...
+			return SUCCESS;
+		}else{
+	        String[] filelist = file.list();
+	        Map mapForJson = new HashMap();
+	        for (int i = 0; i < filelist.length; i++) {
+                File readfile = new File(path + "\\" + filelist[i]); 
+                
+                String[] str = fileOperation.getFileInfo(readfile);
+    			mapForJson.put(String.valueOf(i),str);
+	        }
+	        message = fileOperation.getJson(map);
+	        return SUCCESS;
+		}
+		
 
     }
 	
