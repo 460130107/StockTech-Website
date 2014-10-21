@@ -23,10 +23,11 @@ public class FileOperation {
 		if(path.equals("root")){
 			path = "C:\\Stockii\\MyStock\\WebRoot\\files";
 		}else{
-			path = path + "\\" + path.substring(path.indexOf("\\")+1);
+			path = "C:\\Stockii\\MyStock\\WebRoot\\files" + "\\" + path.substring(path.indexOf("\\")+1);
 		}			
         return path;
     }
+	
 	
 	/**
 	 * 获取文件保存路径
@@ -34,15 +35,16 @@ public class FileOperation {
 	 * @return
 	 * @throws Exception
 	 */
+	/*
 	public String getSavePath() throws Exception {       
 		
 		String path = ServletActionContext.getRequest().getParameter("path");	
 		if(path.equals("root")){
-			path = "C:\\Stockii\\MyStock\\WebRoot\\files\\";
+			path = "C:\\Stockii\\MyStock\\WebRoot\\files";
 		}			
         return path;
     }
-	
+	*/
 	
 	/**
 	 * 获取文件上传路径
@@ -199,6 +201,56 @@ public class FileOperation {
 		
 	}
 	
+	
+	
+	/**
+	 * 获取前端请求文件类型
+	 * @author zxy
+	 * @return
+	 * @throws Exception
+	 */	
+	public String getFileType() throws Exception {
+		String type = ServletActionContext.getRequest().getParameter("type");	
+		return type;
+	}
+	
+
+		
+	/**
+	 * 获取文件相对目录
+	 * @author zxy
+	 * @return
+	 * @throws Exception
+	 */
+
+	public String getFileByTypePath(File root,File file) throws Exception {
+	    
+		String path = file.getPath();
+		path = path.substring(root.getPath().length()+1);
+		
+		return path;
+		
+	}
+		
+	
+	/**
+	 * 获取文件信息：name,size,date,path
+	 * @author zxy
+	 * @return
+	 * @throws Exception
+	 */		
+	public String[] getFileByTypeInfo(File readfile) throws Exception {
+		String name = readfile.getName();
+		
+		String size = getFileSize(readfile);
+		String date = getLastChangeDate(readfile);	
+		File file = new File("C:\\Stockii\\MyStock\\WebRoot\\files");
+		String path = getFileByTypePath(file,readfile);
+		
+		String[] str= new String[]{name,size,date,path}; 
+		return str;
+		
+	}
 	
 
 }

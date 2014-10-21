@@ -23,6 +23,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 import org.hibernate.SessionFactory;
@@ -96,9 +97,18 @@ public class NewsInterfaceAction extends ActionSupport {
     private String fileFileName;
     private String fileFileContentType;
 
+    private File upfile; 
+    private String upfileFileName;
+    private String upfileFileContentType;
+    
     private String message = "你已成功上传图片";
-    private String myFilemessage;
-    private String myFileUploadMessage;
+    private String myFilemessage;         //文件浏览（前进，后退）
+    private String myFileUploadMessage;   //文件上传
+    private String showFileByTypeMessage;
+    
+    private static int fileByTypeNum = 0;  //某类文件数量
+    private String fileType;   //文件类型
+    
     
     private String name;//文章标题
     private String content;//文章内容
@@ -211,6 +221,14 @@ public class NewsInterfaceAction extends ActionSupport {
 		this.myFileUploadMessage = myFileUploadMessage;
 	}
 
+	public String getShowFileByTypeMessage() {
+		return showFileByTypeMessage;
+	}
+
+	public void setShowFileByTypeMessage(String showFileByTypeMessage) {
+		this.showFileByTypeMessage = showFileByTypeMessage;
+	}
+
 	public File getFile() {
         return file;
     }
@@ -234,7 +252,31 @@ public class NewsInterfaceAction extends ActionSupport {
     public void setFileFileContentType(String fileFileContentType) {
         this.fileFileContentType = fileFileContentType;
     }
+    
+	public File getUpfile() {
+		return upfile;
+	}
+
+	public void setUpfile(File upfile) {
+		this.upfile = upfile;
+	}
 	
+	public String getUpfileFileName() {
+		return upfileFileName;
+	}
+
+	public void setUpfileFileName(String upfileFileName) {
+		this.upfileFileName = upfileFileName;
+	}
+
+	public String getUpfileFileContentType() {
+		return upfileFileContentType;
+	}
+
+	public void setUpfileFileContentType(String upfileFileContentType) {
+		this.upfileFileContentType = upfileFileContentType;
+	}
+
 	/**
 	 * @return the filelist
 	 */
@@ -992,20 +1034,23 @@ public class NewsInterfaceAction extends ActionSupport {
 	 */
 	public String uploadFile() throws Exception {
 		
-		FileOperation fileOperation = new FileOperation();
-		String OutputPath = fileOperation.getSavePath();
-		String InputPath = fileOperation.getUploadPath();
-		String name = fileOperation.getFileName(InputPath);
-	
 		InputStream is;
-		
+
+		String pageErrorInfo = null;
+		myFileUploadMessage = "successed";
 		try {
-			is = new FileInputStream(new File(InputPath));			
-			 
-			File dir=new File(new File(OutputPath),name); 
-			if(!dir.exists()){
+			ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
+			is = new FileInputStream(upfile);
+			FileOperation fileOperation = new FileOperation();
+			String OutputPath = fileOperation.getPath();//保存文件的目录
+			
+			String name =this.getUpfileFileName();//获取文件名
+		
+			File deskFile = new File(OutputPath,name);
+			
+			if(!deskFile.exists()){
 				try {
-					dir.createNewFile();
+					deskFile.createNewFile();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -1015,7 +1060,7 @@ public class NewsInterfaceAction extends ActionSupport {
 			}	
 			
 			//输出到外存中
-			OutputStream os = new FileOutputStream(dir);
+			OutputStream os = new FileOutputStream(deskFile);
 			byte [] bytefer = new byte[400];
 			int length = 0 ; 
 			while((length = is.read(bytefer) )>0)
@@ -1023,16 +1068,18 @@ public class NewsInterfaceAction extends ActionSupport {
 				os.write(bytefer,0,length);
 			}
 			os.close();
-			is.close();		
-			
+			is.close();				
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();			
+			e.printStackTrace();
+			pageErrorInfo = e.getMessage();
+			myFileUploadMessage = "failed"+pageErrorInfo;
 			return ERROR;
 		} catch (IOException e) {
-			e.printStackTrace();			
+			e.printStackTrace();
+			myFileUploadMessage = "failed"+pageErrorInfo;
 			return ERROR;
 		}
-        return SUCCESS;
+        return SUCCESS;		
     }
 	
 	
@@ -1093,6 +1140,180 @@ public class NewsInterfaceAction extends ActionSupport {
 
     }
 	
+	
+	//按类型获取文件
+	public void ShowFileByType(){
+		
+		FileOperation fileOperation = new FileOperation();
+		try {
+			fileType = fileOperation.getFileType();
+			Map<String,String[]> mapForJson = new HashMap<String,String[]>();
+			
+			File file = new File("C:\\Stockii\\MyStock\\WebRoot\\files");
+			getFileByType(file,mapForJson);
+					
+			net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(mapForJson);	
+			net.sf.json.JSONObject json2 = new net.sf.json.JSONObject();
+			json2.put("num", fileByTypeNum);
+			json2.put("info", json);
+			showFileByTypeMessage = json2.toString();
+					
+			//System.out.println(s);
+			fileByTypeNum = 0;
+			
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+	}
+			
+	
+	//按类型获取文件		
+	public void getFileByType(File file,Map m){
+		
+		FileOperation fileOperation = new FileOperation();
+		File[] files = file.listFiles();
+		//System.out.println("aaa");
+		for(File f:files){
+			String fName = f.getName().toLowerCase();
+			
+			if("doc".equals(fileType)){	
+				
+				if(fName.endsWith(".txt")
+				   ||fName.endsWith(".doc")
+				   ||fName.endsWith(".docx")
+				   ||fName.endsWith(".ppt")
+				   ||fName.endsWith(".pptx")
+				   ||fName.endsWith(".xls")
+				   ||fName.endsWith(".xlsx")
+				   ||fName.endsWith(".pdf")){
+					try {					
+						String[] str = fileOperation.getFileByTypeInfo(f);                
+						m.put(String.valueOf(++fileByTypeNum),str);						        
+					} catch (Exception e) {
+						e.printStackTrace();
+					}				
+				}
+				if(f.isDirectory()){
+					getFileByType(f,m);					
+				}
+			}else if("img".equals(fileType)){
+				
+				if(fName.endsWith(".bmp")
+				   ||fName.endsWith(".gif")
+				   ||fName.endsWith(".jpg")
+				   ||fName.endsWith(".png")
+				   ||fName.endsWith(".jpeg")
+				   ||fName.endsWith(".psd")
+				   ||fName.endsWith(".pcd")
+				   ||fName.endsWith(".mac")){
+					try {					
+						String[] str = fileOperation.getFileByTypeInfo(f);                
+						m.put(String.valueOf(++fileByTypeNum),str);						        
+					} catch (Exception e) {
+						e.printStackTrace();
+					}				
+				}
+				if(f.isDirectory()){
+					getFileByType(f,m);					
+				}
+				
+			}else if("video".equals(fileType)){
+				
+				if(fName.endsWith(".avi")
+				   ||fName.endsWith(".mkv")
+				   ||fName.endsWith(".mp4")
+				   ||fName.endsWith(".flv")
+				   ||fName.endsWith(".rmvb")
+				   ||fName.endsWith(".wmv")
+				   ||fName.endsWith(".asf")
+				   ||fName.endsWith(".swf")
+				   ||fName.endsWith(".vob")
+				   ||fName.endsWith(".ra")
+				   ||fName.endsWith(".rm")
+				   ||fName.endsWith(".mpg")
+				   ||fName.endsWith(".mov")
+				   ||fName.endsWith(".qt")
+				   ||fName.endsWith(".dat")
+				   ||fName.endsWith(".mlv")
+				   ||fName.endsWith(".wmvhd")
+				   ||fName.endsWith(".divx")
+				   ||fName.endsWith(".xvid")
+				   ||fName.endsWith(".m4v")
+				   ||fName.endsWith(".3gp")
+				   ||fName.endsWith(".mpeg")
+				   ||fName.endsWith(".f4v")
+				   ||fName.endsWith(".ogm")
+				   ||fName.endsWith(".m2ts")
+				   ||fName.endsWith(".mts")
+				   ||fName.endsWith(".ts")
+				   ||fName.endsWith(".tp")
+				   ||fName.endsWith(".trp")
+				   ||fName.endsWith(".ask")
+				   ||fName.endsWith(".m2v")){
+					try {					
+						String[] str = fileOperation.getFileByTypeInfo(f);                
+						m.put(String.valueOf(++fileByTypeNum),str);						        
+					} catch (Exception e) {
+						e.printStackTrace();
+					}				
+				}
+				if(f.isDirectory()){
+					getFileByType(f,m);					
+				}				
+			}else if("bt".equals(fileType)){
+				if(fName.endsWith(".torrent")){
+					try {					
+						String[] str = fileOperation.getFileByTypeInfo(f);                
+						m.put(String.valueOf(++fileByTypeNum),str);						        
+					} catch (Exception e) {
+						e.printStackTrace();
+					}				
+				}
+				if(f.isDirectory()){
+					getFileByType(f,m);					
+				}
+			}else if("music".equals(fileType)){
+				if(fName.endsWith(".wma")
+				   ||fName.endsWith(".aac")
+				   ||fName.endsWith(".ac3")
+				   ||fName.endsWith(".ogg")
+				   ||fName.endsWith(".flac")
+				   ||fName.endsWith(".ape")
+				   ||fName.endsWith(".m4a")
+				   ||fName.endsWith(".amr")
+				   ||fName.endsWith(".wav")
+				   ||fName.endsWith(".pcm")
+				   ||fName.endsWith(".midi")
+				   ||fName.endsWith(".mid")
+				   ||fName.endsWith(".mka")
+				   ||fName.endsWith(".mpc")
+				   ||fName.endsWith(".cda")
+				   ||fName.endsWith(".voc")
+				   ||fName.endsWith(".aif")
+				   ||fName.endsWith(".svx")
+				   ||fName.endsWith(".snd")
+				   ||fName.endsWith(".vqf")){
+					try {					
+						String[] str = fileOperation.getFileByTypeInfo(f);                
+						m.put(String.valueOf(++fileByTypeNum),str);						        
+					} catch (Exception e) {
+						e.printStackTrace();
+					}				
+				}
+				if(f.isDirectory()){
+					getFileByType(f,m);					
+				}
+						
+			}else if("other".equals(fileType)){
+				
+			}else if("all".equals(fileType)){
+				
+			}	
+			
+		}		
+	}
+		
+		
 	
 
 	/**
