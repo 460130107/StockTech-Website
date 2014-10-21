@@ -31,25 +31,23 @@ filter: alpha(opacity=0); /*for IE*/
 
 </head>
 <script type="text/javascript" src="front/js/jquery-1.2.1.js"></script>
-<script type="text/javascript">var jq = $.noConflict(true);</script>
 <script type="text/javascript" src="front/js/ajaxfileupload.js"></script>
-
 <script type="text/javascript">
 	
 	function imgUpload(){
-		jq("#upfile").click();
+		$("#upfile").click();
 	}
 	function startUpload(value){
 
-	   	jq("#loading")
+	   	$("#loading")
         .ajaxStart(function(){
-            jq(this).show();
+            $(this).show();
         })//开始上传文件时显示一个图片
         .ajaxComplete(function(){
-            jq(this).hide();
+            $(this).hide();
         });//文件上传完成将图片隐藏起来
 
-        jq.ajaxFileUpload
+        $.ajaxFileUpload
         (
             {
                 url:'interface/Image_upload.action',//用于文件上传的服务器端请求地址

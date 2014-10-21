@@ -23,13 +23,13 @@
 <div id="main">
 <div class="left-bar">
 	<ul>
-		<li><span><span class="list-icon all"></span>全部文件</span></li>
-		<li><span><span class="list-icon pic"></span>图片</span></li>
-		<li><span><span class="list-icon doc"></span>文档</span></li>
-		<li><span><span class="list-icon video"></span>视频</span></li>
-		<li><span><span class="list-icon nat"></span>种子</span></li>
-		<li><span><span class="list-icon music"></span>音乐</span></li>
-		<li><span><span class="list-icon other"></span>其他</span></li>
+		<li><a href="?type=all"><span class="list-icon all"></span>全部文件</a></li>
+		<li><a href="?type=img"><span class="list-icon pic"></span>图片</a></li>
+		<li><a href="?type=doc"><span class="list-icon doc"></span>文档</a></li>
+		<li><a href="?type=video"><span class="list-icon video"></span>视频</a></li>
+		<li><a href="?type=bt"><span class="list-icon nat"></span>种子</a></li>
+		<li><a href="?type=music"><span class="list-icon music"></span>音乐</a></li>
+		<li><a href="?type=other"><span class="list-icon other"></span>其他</a></li>
 	</ul>
 </div>
 <div class="right">
@@ -49,27 +49,25 @@
 	<div class="right-fileset" id="doc"></div>
 </div>
 </div>
-<input id="upfile" class="fileUpload" style="opacity:0;" type="file" size="45" name="file" onchange="return fileUpLoad(this.value);">
+<input id="Upfile" class="fileUpload" style="opacity:0;" type="file" size="45" name="upfile">
 <s:include value="footer.jsp"></s:include>
 <script type="text/javascript" src="front/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="front/js/ajaxfileupload.js"></script>
 <script type="text/javascript">
+//文件浏览 -- 前进后退
 $(function(){
 	var search=window.location.search;
-	console.log(search);
 	if(search==""){
 		var path="root";
 	}else{
 		var path=getQueryString("path");
-		console.log("path = "+path);
-	}	
-	console.log("path = "+path);	
+	}		
 	$.ajax({		
 		url:'interface/Open_folder.action',
 		type:"GET",
 		data:{path:path},
 		dataType: 'json',
 		success:function(msg){
-			console.log(msg.myFilemessage);
 			fileListShow(msg.myFilemessage);		
 		},
 		error:function(){
@@ -86,19 +84,15 @@ $(function(){
 		var r = window.location.search.substr(1).match(reg);
 		if (r != null) return unescape(r[2]); return null;
 	}
-	function fileListShow(msg){
-		
+	function fileListShow(msg){		
 		$(".right-fileset").children().remove();
 		$(".right-fileset").append("<div class='node-list'></div>");
 		var decodeUri=decodeURI(decodeURI(window.location.href));
-		console.log("decodeUri = "+decodeUri);
 		if(window.location.search==""){
 			var pht="root";
-			console.log("pht tttt1 =="+pht);
 		}else{
 			decodeUri=decodeUri.split("?")[1];
 			var pht=decodeUri.split("=")[1];
-			console.log("pht tttt2 =="+pht);
 		}
 		$(".file-nav").children(".back").attr("href",encodeURI(encodeURI("http://localhost:8080/MyStock/myfiles?path="+pht.split("\\",pht.split("\\").length-1).join("\\"))));
 		var list=eval("("+msg+")");
@@ -119,6 +113,104 @@ $(function(){
 				var iconObj=$('<span class="node-icon l-file"></span>').prependTo(nodeNameObj);
 				$(nameObj).children("a").attr("href","http://www.hao123.com");
 			}
+			
+			//删除、下载、重命名	
+			var funObj='<span class="float-tool"><a class="rename"></a><a class="down" target="_blank"></a><a class="delete"></a></span>';	
+			$(nodeListObj).on({
+				"mouseenter":function(){
+					var tit=this;
+					var tit_nodeName=$(this).children(".node-name").clone(true);
+					$(nodeNameObj).append(funObj);	
+					//delete
+					$(nodeNameObj).children(".float-tool").children(".delete").on({
+						"click":function(){
+							$.ajax({
+								url:'interface/',
+								data:{},
+								type:"POST",
+								success:function(){
+									console.log("delete success");
+									//window.location=window.location.href;
+								},
+								error:function(){
+									console.log("delete failed");
+								}
+							});
+							$(tit).remove();
+							return false;
+						}
+					});
+					//download
+					$(nodeNameObj).children(".float-tool").children(".down").on({
+						"click":function(){
+							alert("download");
+							$(tit).children(".node-name").children().last().remove();
+							$.ajax({
+								url:'interface/',
+								data:{},
+								type:"POST",
+								success:function(){
+									console.log("");
+								},
+								error:function(){
+									console.log("");
+								}
+							});
+							return false;
+						}
+					});
+					//rename
+					/* $(nodeNameObj).children(".float-tool").children(".rename").on({
+						"click":function(){
+							//alert("rename");
+							var tit_rename=this;
+							var tit_link=$(tit).children(".node-name").children(".link");
+							var tit_link_name=$(tit_link).children().last();
+							var oldName=$(tit_link_name).text();
+							console.log("oldName = "+oldName); 
+							$(tit_link_name).remove();
+							var newAobj=$('<span class="rename-set"><input type="text" class="input"><span class="btn-icon sname"></span><span class="btn-icon abandon"></span></span>');
+							$(newAobj).appendTo($(tit_link));
+							$(newAobj).children("input").val(oldName).trigger("focus").trigger("select");
+							var newName=$(newAobj).children("input").val();
+							console.log("newName = "+newName);			
+							//save new name
+							$(newAobj).children(".sname").on({
+								"click":function(){
+									 $.ajax({
+										url:'interface/',
+										data:{path:path,newName:newName},
+										type:"POST",
+										success:function(){
+											console.log("rename success");
+										},
+										error:function(){
+											console.log("rename faile");
+										}
+									}); 
+									$(tit).children(".node-name").remove();
+									return false;
+								}
+							});
+							//abandon new name
+							$(newAobj).children(".abandon").on({
+								"click":function(){
+									//alert("ddd");
+									$(tit).children(".node-name").remove();
+									$(tit).prepend(tit_nodeName);
+									return false;
+								}
+							});														
+							return false;
+						}
+					}); */
+					return false;
+				},
+				"mouseleave":function(){
+					$(nodeNameObj).children(".float-tool").remove();
+					return false;
+				}
+			});						
 		});
 	}			
 	//create new folder
@@ -166,37 +258,88 @@ $(function(){
 	});
 	//end create folder
 });
-//upload signal file
+//upload file
+$(function(){	
 	var decodeUri=decodeURI(decodeURI(window.location.href));
 	if(window.location.search==""){
 			var pht="root";
-			console.log("pht tttt1 =="+pht);
 		}else{
-			var decodeUri=decodeUri.split("?")[1];
+			decodeUri=decodeUri.split("?")[1];
 			var pht=decodeUri.split("=")[1];
-			console.log("pht tttt2 =="+pht);
 		}
 	$("#uploadfile").on({
 		"click":function(){
-			$("#upfile").click();
+			$("#Upfile").click();
 		}
 	});
-	function fileUpLoad(val){
-		$.ajax({
-			url:"interface/File_upload.action",
-			type:"POST",
-			data:{
-				name:val,
-				path:pht,
+	$("#Upfile").change(function(){
+		$.ajaxFileUpload({
+			url:'interface/File_upload.action',
+			secureuri:false,
+			fileElementId:"Upfile",
+			data:{path:pht},
+			dataType:"json",
+			success:function(){
+				window.location=window.location.href;
 			},
-			success:function(msg){
-				window.location.href="http://localhost:8080/MyStock/index";
-			},
-		});
-		//alert(val);
-		return "ok";
+			error:function(){
+				console.log("failed");
+			},			
+		}); 
+	});
+});
+//end upload signal file
+
+//文件分类获取 
+$(function(){
+	var type=window.location.search;
+	if(!type==""){
+		type=type.split("=")[1];
+		if(type.match("img") ||type.match("doc") ||type.match("video") ||type.match("bt") ||type.match("music") || type.match("other") ){
+			$.ajax({
+				//url:'interface/ShowFileByType.action',
+				url:'http://localhost:8080/MyStock/files/test.txt',
+				type:"POST",
+				//data:{type:type},
+				success:function(msg){
+					//console.log("type success");
+					var mm=eval("("+msg+")");
+					console.log(mm.info);
+					shoFileByType(mm.num,mm.info);
+				},
+				error:function(msg){
+					console.log("type error");
+				},
+			});
+		}else if(type.match("all")){
+			window.location="http://localhost:8080/MyStock/myfiles";
+		}
 	}
-	//edn upload signal file
+	//分类展示 -- 分页
+	function shoFileByType(num,info){
+		$(".right-fileset").children().remove();
+		for(var i=1;i<=num;i++){
+			var nodeListObj=$('<div class="node-list"></div>');
+			var nodeNameObj=$('<div class="node-name"></div>');
+			var nodeSizeObj=$('<div class="node-size"></div>');
+			var nodeDateObj=$('<div class="node-date"></div>');
+			var linkObj=$('<span class="link"><span class="node-icon l-file"></span><a><span>'+info[i][0]+'</span></a></span>').appendTo(nodeNameObj);
+			//set
+			$(nodeSizeObj).text(info[i][1]);
+			$(nodeDateObj).text(info[i][2]);
+			//append
+			$(nodeNameObj).appendTo(nodeListObj);
+			$(nodeSizeObj).appendTo(nodeListObj);
+			$(nodeDateObj).appendTo(nodeListObj);
+			$(nodeListObj).appendTo($(".right-fileset"));
+			//just for test
+			for(var j=0;j<4;j++){
+				console.log("info["+i+"]["+j+"] = "+info[i][j]);
+			}
+		}
+	}
+});
+//end 文件分类获取
 </script>
 </body>
 </html>

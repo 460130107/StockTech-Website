@@ -1,65 +1,74 @@
-
-jq.extend({
-	
-
+jQuery.extend({
     createUploadIframe: function(id, uri)
 	{
 			//create frame
             var frameId = 'jUploadFrame' + id;
-            var iframeHtml = '<iframe id="' + frameId + '" name="' + frameId + '" style="position:absolute; top:-9999px; left:-9999px"';
-			if(window.ActiveXObject)
-			{
+            
+            if(window.ActiveXObject) {
+                var io = document.createElement('<iframe id="' + frameId + '" name="' + frameId + '" />');
                 if(typeof uri== 'boolean'){
-					iframeHtml += ' src="' + 'javascript:false' + '"';
-
+                    io.src = 'javascript:false';
                 }
                 else if(typeof uri== 'string'){
-					iframeHtml += ' src="' + uri + '"';
+                    io.src = uri;
+                }
+            }
+            else {
+                var io = document.createElement('iframe');
+                io.id = frameId;
+                io.name = frameId;
+            }
+            io.style.position = 'absolute';
+            io.style.top = '-1000px';
+            io.style.left = '-1000px';
 
-                }	
-			}
-			iframeHtml += ' />';
-			jq(iframeHtml).appendTo(document.body);
+            document.body.appendChild(io);
 
-            return jq('#' + frameId).get(0);			
+            return io;			
     },
-    createUploadForm: function(id, fileElementId)
+    createUploadForm: function(id, fileElementId, data)
 	{
 		//create form	
 		var formId = 'jUploadForm' + id;
 		var fileId = 'jUploadFile' + id;
-		var form = jq('<form  action="" method="POST" name="' + formId + '" id="' + formId + '" enctype="multipart/form-data"></form>');	
-		var oldElement = jq('#' + fileElementId);
-		var newElement = jq(oldElement).clone();
-		jq(oldElement).attr('id', fileId);
-		jq(oldElement).before(newElement);
-		jq(oldElement).appendTo(form);
+		var form = $('<form  action="" method="POST" name="' + formId + '" id="' + formId + '" enctype="multipart/form-data"></form>');	
+		var oldElement = $('#' + fileElementId);
+		var newElement = $(oldElement).clone();
+		$(oldElement).attr('id', fileId);
+		$(oldElement).before(newElement);
+		$(oldElement).appendTo(form);		
+		//增加文本参数的支持
+		if (data) {
+			for (var i in data) {
+				$('<input type="hidden" name="' + i + '" value="' + data[i] + '" />').appendTo(form);
+			}
+		}		
 		//set attributes
-		jq(form).css('position', 'absolute');
-		jq(form).css('top', '-1200px');
-		jq(form).css('left', '-1200px');
-		jq(form).appendTo('body');		
+		$(form).css('position', 'absolute');
+		$(form).css('top', '-1200px');
+		$(form).css('left', '-1200px');
+		$(form).appendTo('body');		
 		return form;
     },
 
     ajaxFileUpload: function(s) {
         // TODO introduce global settings, allowing the client to modify them for all requests, not only timeout		
-        s = jq.extend({}, jq.ajaxSettings, s);
+        s = jQuery.extend({}, jQuery.ajaxSettings, s);
         var id = new Date().getTime()        
-		var form = jq.createUploadForm(id, s.fileElementId);
-		var io = jq.createUploadIframe(id, s.secureuri);
+		var form = jQuery.createUploadForm(id, s.fileElementId, s.data);
+		var io = jQuery.createUploadIframe(id, s.secureuri);
 		var frameId = 'jUploadFrame' + id;
 		var formId = 'jUploadForm' + id;		
         // Watch for a new set of requests
-        if ( s.global && ! jq.active++ )
+        if ( s.global && ! jQuery.active++ )
 		{
-			jq.event.trigger( "ajaxStart" );
+			jQuery.event.trigger( "ajaxStart" );
 		}            
         var requestDone = false;
         // Create the request object
-        var xml = {}   
+        var xml = {};   
         if ( s.global )
-            jq.event.trigger("ajaxSend", [xml, s]);
+            jQuery.event.trigger("ajaxSend", [xml, s]);
         // Wait for a response to come back
         var uploadCallback = function(isTimeout)
 		{			
@@ -78,7 +87,7 @@ jq.extend({
 				}						
             }catch(e)
 			{
-				jq.handleError(s, xml, null, e);
+				jQuery.handleError(s, xml, null, e);
 			}
             if ( xml || isTimeout == "timeout") 
 			{				
@@ -90,45 +99,45 @@ jq.extend({
                     if ( status != "error" )
 					{
                         // process the data (runs the xml through httpData regardless of callback)
-                        var data = jq.uploadHttpData( xml, s.dataType );    
+                        var data = jQuery.uploadHttpData( xml, s.dataType );    
                         // If a local callback was specified, fire it and pass it the data
                         if ( s.success )
                             s.success( data, status );
     
                         // Fire the global callback
                         if( s.global )
-                            jq.event.trigger( "ajaxSuccess", [xml, s] );
+                            jQuery.event.trigger( "ajaxSuccess", [xml, s] );
                     } else
-                        jq.handleError(s, xml, status);
+                        jQuery.handleError(s, xml, status);
                 } catch(e) 
 				{
                     status = "error";
-                    jq.handleError(s, xml, status, e);
+                    jQuery.handleError(s, xml, status, e);
                 }
 
                 // The request was completed
                 if( s.global )
-                    jq.event.trigger( "ajaxComplete", [xml, s] );
+                    jQuery.event.trigger( "ajaxComplete", [xml, s] );
 
                 // Handle the global AJAX counter
-                if ( s.global && ! --jq.active )
-                    jq.event.trigger( "ajaxStop" );
+                if ( s.global && ! --jQuery.active )
+                    jQuery.event.trigger( "ajaxStop" );
 
                 // Process result
                 if ( s.complete )
                     s.complete(xml, status);
 
-                jq(io).unbind()
+                jQuery(io).unbind()
 
                 setTimeout(function()
 									{	try 
 										{
-											jq(io).remove();
-											jq(form).remove();	
+											$(io).remove();
+											$(form).remove();	
 											
 										} catch(e) 
 										{
-											jq.handleError(s, xml, null, e);
+											jQuery.handleError(s, xml, null, e);
 										}									
 
 									}, 100)
@@ -147,27 +156,31 @@ jq.extend({
         }
         try 
 		{
-
-			var form = jq('#' + formId);
-			jq(form).attr('action', s.url);
-			jq(form).attr('method', 'POST');
-			jq(form).attr('target', frameId);
+           // var io = $('#' + frameId);
+			var form = $('#' + formId);
+			$(form).attr('action', s.url);
+			$(form).attr('method', 'POST');
+			$(form).attr('target', frameId);
             if(form.encoding)
 			{
-				jq(form).attr('encoding', 'multipart/form-data');      			
+                form.encoding = 'multipart/form-data';				
             }
             else
-			{	
-				jq(form).attr('enctype', 'multipart/form-data');			
+			{				
+                form.enctype = 'multipart/form-data';
             }			
-            jq(form).submit();
+            $(form).submit();
 
         } catch(e) 
 		{			
-            jq.handleError(s, xml, null, e);
+            jQuery.handleError(s, xml, null, e);
         }
-		
-		jq('#' + frameId).load(uploadCallback	);
+        if(window.attachEvent){
+            document.getElementById(frameId).attachEvent('onload', uploadCallback);
+        }
+        else{
+            document.getElementById(frameId).addEventListener('load', uploadCallback, false);
+        } 		
         return {abort: function () {}};	
 
     },
@@ -177,15 +190,14 @@ jq.extend({
         data = type == "xml" || data ? r.responseXML : r.responseText;
         // If the type is "script", eval it in global context
         if ( type == "script" )
-            jq.globalEval( data );
+            jQuery.globalEval( data );
         // Get the JavaScript object, if JSON is used.
         if ( type == "json" )
             eval( "data = " + data );
         // evaluate scripts within html
         if ( type == "html" )
-            jq("<div>").html(data).evalScripts();
-
+            jQuery("<div>").html(data).evalScripts();
+			//alert($('param', data).each(function(){alert($(this).attr('value'));}));
         return data;
     }
-})
-
+});
