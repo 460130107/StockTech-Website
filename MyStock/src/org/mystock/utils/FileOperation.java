@@ -1,10 +1,18 @@
 package org.mystock.utils;
 
+
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Map;
+
+import javax.servlet.ServletOutputStream;
 
 import org.apache.struts2.ServletActionContext;
 
@@ -17,16 +25,34 @@ public class FileOperation {
 	 * @return
 	 * @throws Exception
 	 */
-	public String getPath() throws Exception {       
-		String path = URLDecoder.decode(URLDecoder.decode(ServletActionContext.getRequest().getParameter("path"),"UTF-8"),"UTF-8");
-
-		if(path.equals("root")){
-			path = "C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot\\files";
+	public String getFilePath(String path) throws Exception {       
+		String fpath = URLDecoder.decode(URLDecoder.decode(ServletActionContext.getRequest().getParameter(path),"UTF-8"),"UTF-8");
+				
+		if(fpath.equals("root")){
+			fpath = ServletActionContext.getServletContext().getRealPath("files");
 		}else{
-			path="C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot\\files"+"\\"+path.substring(path.indexOf("\\")+1);
-		}			
-        return path;
+			fpath = ServletActionContext.getServletContext().getRealPath("files") + "\\" + fpath.substring(fpath.indexOf("\\")+1);
+		}
+		/*
+		if(path.equals("root")){
+			path = "C:\\Stockii\\MyStock\\WebRoot\\files";
+		}else{
+			path = "C:\\Stockii\\MyStock\\WebRoot\\files" + "\\" + path.substring(path.indexOf("\\")+1);
+		}		
+		*/	
+        return fpath;
     }
+	/*
+	public String getFilePath() throws Exception {       
+		String fpath = URLDecoder.decode(URLDecoder.decode(ServletActionContext.getRequest().getParameter("path"),"UTF-8"),"UTF-8");
+				
+		if(fpath.equals("root")){
+			fpath = ServletActionContext.getServletContext().getRealPath("files");
+		}else{
+			fpath = ServletActionContext.getServletContext().getRealPath("files") + "\\" + fpath.substring(fpath.indexOf("\\")+1);
+		}		
+        return fpath;
+	}*/
 	
 	/**
 	 * 获取文件保存路径
@@ -39,23 +65,11 @@ public class FileOperation {
 		
 		String path = ServletActionContext.getRequest().getParameter("path");	
 		if(path.equals("root")){
-			path = "C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot\\files";
+			path = "C:\\Stockii\\MyStock\\WebRoot\\files";
 		}			
         return path;
     }
 	*/
-	
-	/**
-	 * 获取文件上传路径
-	 * @author zxy
-	 * @return
-	 * @throws Exception
-	 */
-	public String getUploadPath() throws Exception {   
-		
-		String name = ServletActionContext.getRequest().getParameter("name");						
-        return name;
-    }
 	
 	
 	/**
@@ -201,14 +215,15 @@ public class FileOperation {
 	}
 	
 	
+	
 	/**
 	 * 获取前端请求文件类型
 	 * @author zxy
 	 * @return
 	 * @throws Exception
 	 */	
-	public String getFileType() throws Exception {
-		String type = ServletActionContext.getRequest().getParameter("typeName");	
+	public String getFileType(String s) throws Exception {
+		String type = ServletActionContext.getRequest().getParameter(s);	
 		return type;
 	}
 	
@@ -242,11 +257,62 @@ public class FileOperation {
 		
 		String size = getFileSize(readfile);
 		String date = getLastChangeDate(readfile);	
-		File file = new File("C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot\\files");
+		File file = new File(ServletActionContext.getServletContext().getRealPath("files"));
 		String path = getFileByTypePath(file,readfile);
 		
 		String[] str= new String[]{name,size,date,path}; 
 		return str;
 		
 	}
+	
+	
+	/**
+	 * 删除文件或文件夹
+	 * @author zxy
+	 * @return
+	 * @throws FileNotFoundException,IOException
+	 */	
+	public void del(String path)throws FileNotFoundException,IOException {
+		File file = new File(path);
+		 if(!file.isDirectory()){
+			 file.delete();
+		 }else if (file.isDirectory()){
+			 String[] filelist = file.list();
+		     for (int i = 0; i < filelist.length; i++){
+		    	 File delfile = new File(path + "\\" + filelist[i]);
+		    	 if (!delfile.isDirectory()){
+		    		 delfile.delete();
+		    	 }else if (delfile.isDirectory()){
+		    		 del(path + "\\" + filelist[i]);
+		    	 }
+		     }
+		     file.delete();
+		 }
+	}
+	
+	
+	public void downFile(String fpath) throws Exception{
+		
+		File file = new File(fpath);
+		if(file.isFile()){
+			ServletActionContext.getResponse().setContentType("application/x-unknown;charset=GB2312");
+			ServletActionContext.getResponse().setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(file.getName(),"UTF8"));
+			ServletActionContext.getResponse().setContentLength((int)file.length());
+			int i = 0;
+			byte [] bt = new byte[8192];
+			FileInputStream fis = new FileInputStream(file);
+			ServletOutputStream sos = ServletActionContext.getResponse().getOutputStream();
+			while( (i = fis.read(bt)) != -1){
+				sos.write(bt,0,i);
+			}
+			sos.flush();
+			sos.close();
+			sos = null;
+			fis.close();
+		}		
+	}
+	
+	
+	
+
 }

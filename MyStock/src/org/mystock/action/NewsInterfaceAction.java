@@ -101,6 +101,11 @@ public class NewsInterfaceAction extends ActionSupport {
     private String upfileFileName;
     private String upfileFileContentType;
     
+    //private String path;
+    //private String deletePath;
+    //private String downPath;
+    
+    
     private String message = "你已成功上传图片";
     private String myFilemessage;         //文件浏览（前进，后退）
     private String myFileUploadMessage;   //文件上传
@@ -196,6 +201,30 @@ public class NewsInterfaceAction extends ActionSupport {
 		this.author = author;
 	}
 
+	/*public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public String getDeletePath() {
+		return deletePath;
+	}
+
+	public void setDeletePath(String deletePath) {
+		this.deletePath = deletePath;
+	}
+
+	public String getDownPath() {
+		return downPath;
+	}
+
+	public void setDownPath(String downPath) {
+		this.downPath = downPath;
+	}
+*/
 	public String getMessage() {
         return message;
     }
@@ -229,7 +258,6 @@ public class NewsInterfaceAction extends ActionSupport {
 		this.showFileByTypeMessage = showFileByTypeMessage;
 	}
 
-	
 	public String getFileType() {
 		return fileType;
 	}
@@ -1051,7 +1079,7 @@ public class NewsInterfaceAction extends ActionSupport {
 			ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
 			is = new FileInputStream(upfile);
 			FileOperation fileOperation = new FileOperation();
-			String OutputPath = fileOperation.getPath();//保存文件的目录
+			String OutputPath = fileOperation.getFilePath("path");//保存文件的目录
 			
 			String name =this.getUpfileFileName();//获取文件名
 		
@@ -1101,8 +1129,9 @@ public class NewsInterfaceAction extends ActionSupport {
 	public String createFold() throws Exception {
 		
 		FileOperation fileOperation = new FileOperation();
-		String path = fileOperation.getPath();
-		File file = new File(path);  
+		String fpath = fileOperation.getFilePath("path");
+		File file = new File(fpath); 
+				
 	    if(file.exists()) {  	        
 	        return ERROR;  
 	    }else{
@@ -1121,8 +1150,8 @@ public class NewsInterfaceAction extends ActionSupport {
 	public String openFold() throws Exception {
 		
 		FileOperation fileOperation = new FileOperation();
-		String path = fileOperation.getPath();
-		File file = new File(path);
+		String fpath = fileOperation.getFilePath("path");
+		File file = new File(fpath);
 		if(!file.isDirectory()){
 			//...
 			return SUCCESS;
@@ -1137,7 +1166,7 @@ public class NewsInterfaceAction extends ActionSupport {
 	        Map<String,String[]> mapForJson = new HashMap<String,String[]>();
 	        
 	        for (int i = 0; i < fileList.length; i++) {
-                File readfile = new File(path + "\\" + fileList[i]); 
+                File readfile = new File(fpath + "\\" + fileList[i]); 
                 
                 String[] str = fileOperation.getFileInfo(readfile);
     			mapForJson.put(String.valueOf(i),str);
@@ -1151,15 +1180,14 @@ public class NewsInterfaceAction extends ActionSupport {
 	
 	
 	//按类型获取文件
-	public String ShowFileByType() throws Exception {
-		System.out.println("fileType = doc");
+	public String ShowFileByType(){
+		
 		FileOperation fileOperation = new FileOperation();
 		try {
-			fileType = fileOperation.getFileType();
-			System.out.println("fileType = "+fileType);
+			fileType = fileOperation.getFileType("typeName");
 			Map<String,String[]> mapForJson = new HashMap<String,String[]>();
 			
-			File file = new File("C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot\\files");
+			File file = new File(ServletActionContext.getServletContext().getRealPath("files"));
 			getFileByType(file,mapForJson);
 					
 			net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(mapForJson);	
@@ -1176,7 +1204,6 @@ public class NewsInterfaceAction extends ActionSupport {
 			e1.printStackTrace();
 			return ERROR;
 		}
-		//return SUCCESS;
 	}
 			
 	
@@ -1185,12 +1212,10 @@ public class NewsInterfaceAction extends ActionSupport {
 		
 		FileOperation fileOperation = new FileOperation();
 		File[] files = file.listFiles();
-		//System.out.println("aaa");
+		
 		for(File f:files){
-			String fName = f.getName().toLowerCase();
-			
-			if("doc".equals(fileType)){	
-				
+			String fName = f.getName().toLowerCase();			
+			if("doc".equals(fileType)){					
 				if(fName.endsWith(".txt")
 				   ||fName.endsWith(".doc")
 				   ||fName.endsWith(".docx")
@@ -1199,12 +1224,10 @@ public class NewsInterfaceAction extends ActionSupport {
 				   ||fName.endsWith(".xls")
 				   ||fName.endsWith(".xlsx")
 				   ||fName.endsWith(".pdf")){
-					try {					
-						String[] str = fileOperation.getFileByTypeInfo(f);                
-						m.put(String.valueOf(++fileByTypeNum),str);						        
-					} catch (Exception e) {
-						e.printStackTrace();
-					}				
+										
+					String[] str = fileOperation.getFileByTypeInfo(f);                
+					m.put(String.valueOf(++fileByTypeNum),str);						        
+								
 				}
 				if(f.isDirectory()){
 					getFileByType(f,m);					
@@ -1219,12 +1242,10 @@ public class NewsInterfaceAction extends ActionSupport {
 				   ||fName.endsWith(".psd")
 				   ||fName.endsWith(".pcd")
 				   ||fName.endsWith(".mac")){
-					try {					
-						String[] str = fileOperation.getFileByTypeInfo(f);                
-						m.put(String.valueOf(++fileByTypeNum),str);						        
-					} catch (Exception e) {
-						e.printStackTrace();
-					}				
+									
+					String[] str = fileOperation.getFileByTypeInfo(f);                
+					m.put(String.valueOf(++fileByTypeNum),str);						        
+								
 				}
 				if(f.isDirectory()){
 					getFileByType(f,m);					
@@ -1263,24 +1284,20 @@ public class NewsInterfaceAction extends ActionSupport {
 				   ||fName.endsWith(".trp")
 				   ||fName.endsWith(".ask")
 				   ||fName.endsWith(".m2v")){
-					try {					
-						String[] str = fileOperation.getFileByTypeInfo(f);                
-						m.put(String.valueOf(++fileByTypeNum),str);						        
-					} catch (Exception e) {
-						e.printStackTrace();
-					}				
+										
+					String[] str = fileOperation.getFileByTypeInfo(f);                
+					m.put(String.valueOf(++fileByTypeNum),str);						        
+								
 				}
 				if(f.isDirectory()){
 					getFileByType(f,m);					
 				}				
 			}else if("bt".equals(fileType)){
 				if(fName.endsWith(".torrent")){
-					try {					
-						String[] str = fileOperation.getFileByTypeInfo(f);                
-						m.put(String.valueOf(++fileByTypeNum),str);						        
-					} catch (Exception e) {
-						e.printStackTrace();
-					}				
+										
+					String[] str = fileOperation.getFileByTypeInfo(f);                
+					m.put(String.valueOf(++fileByTypeNum),str);						        
+								
 				}
 				if(f.isDirectory()){
 					getFileByType(f,m);					
@@ -1306,12 +1323,10 @@ public class NewsInterfaceAction extends ActionSupport {
 				   ||fName.endsWith(".svx")
 				   ||fName.endsWith(".snd")
 				   ||fName.endsWith(".vqf")){
-					try {					
-						String[] str = fileOperation.getFileByTypeInfo(f);                
-						m.put(String.valueOf(++fileByTypeNum),str);						        
-					} catch (Exception e) {
-						e.printStackTrace();
-					}				
+										
+					String[] str = fileOperation.getFileByTypeInfo(f);                
+					m.put(String.valueOf(++fileByTypeNum),str);						        
+								
 				}
 				if(f.isDirectory()){
 					getFileByType(f,m);					
@@ -1393,25 +1408,27 @@ public class NewsInterfaceAction extends ActionSupport {
 				if(f.isDirectory()){
 					getFileByType(f,m);					
 				}
-
-				
-			}else if("all".equals(fileType)){
+						
+			}else if("all".equals(fileType)){								
 				String[] str = fileOperation.getFileByTypeInfo(f);                
-				m.put(String.valueOf(++fileByTypeNum),str);		
-			}	
+				m.put(String.valueOf(++fileByTypeNum),str);						        
+				
+			}
 			
-		}		
+		}
 	}
-	
-
+		
 	/**
 	 * 删除文件或文件夹
 	 * @author zxy
 	 * @param smart
 	 * @return
+	 * @throws Exception 
 	 */
-	public String deleteFiles(){
-		System.out.println("deleteFiles");
+	public String deleteFiles() throws Exception{
+		FileOperation fileOperation = new FileOperation();
+		String fpath = fileOperation.getFilePath("downPath");		
+		fileOperation.del(fpath);		
 		return SUCCESS;
 	}	
 	
@@ -1421,13 +1438,17 @@ public class NewsInterfaceAction extends ActionSupport {
 	 * @author zxy
 	 * @param smart
 	 * @return
+	 * @throws Exception 
 	 */
-	public String downFile(){
-		System.out.println("downFile");
+	public String downFile() throws Exception{
+		FileOperation fileOperation = new FileOperation();
+		String fpath = fileOperation.getFilePath("deletePath");	
+		fileOperation.downFile(fpath);
 		return SUCCESS;
 	}	
-
 	
+	
+
 	/**
 	 * 增加文章
 	 * @param smart
