@@ -229,6 +229,15 @@ public class NewsInterfaceAction extends ActionSupport {
 		this.showFileByTypeMessage = showFileByTypeMessage;
 	}
 
+	
+	public String getFileType() {
+		return fileType;
+	}
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+	}
+
 	public File getFile() {
         return file;
     }
@@ -1142,14 +1151,15 @@ public class NewsInterfaceAction extends ActionSupport {
 	
 	
 	//按类型获取文件
-	public void ShowFileByType(){
-		
+	public String ShowFileByType() throws Exception {
+		System.out.println("fileType = doc");
 		FileOperation fileOperation = new FileOperation();
 		try {
 			fileType = fileOperation.getFileType();
+			System.out.println("fileType = "+fileType);
 			Map<String,String[]> mapForJson = new HashMap<String,String[]>();
 			
-			File file = new File("C:\\Stockii\\MyStock\\WebRoot\\files");
+			File file = new File("C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot\\files");
 			getFileByType(file,mapForJson);
 					
 			net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(mapForJson);	
@@ -1160,15 +1170,18 @@ public class NewsInterfaceAction extends ActionSupport {
 					
 			//System.out.println(s);
 			fileByTypeNum = 0;
+			return SUCCESS;
 			
 		} catch (Exception e1) {
 			e1.printStackTrace();
+			return ERROR;
 		}
+		//return SUCCESS;
 	}
 			
 	
 	//按类型获取文件		
-	public void getFileByType(File file,Map m){
+	public void getFileByType(File file,Map m) throws Exception{
 		
 		FileOperation fileOperation = new FileOperation();
 		File[] files = file.listFiles();
@@ -1305,17 +1318,116 @@ public class NewsInterfaceAction extends ActionSupport {
 				}
 						
 			}else if("other".equals(fileType)){
+				if(!(fName.endsWith(".txt")
+				   ||fName.endsWith(".doc")
+				   ||fName.endsWith(".docx")
+				   ||fName.endsWith(".ppt")
+				   ||fName.endsWith(".pptx")
+				   ||fName.endsWith(".xls")
+				   ||fName.endsWith(".xlsx")
+				   ||fName.endsWith(".pdf")
+				   ||fName.endsWith(".bmp")
+				   ||fName.endsWith(".gif")
+				   ||fName.endsWith(".jpg")
+				   ||fName.endsWith(".png")
+				   ||fName.endsWith(".jpeg")
+				   ||fName.endsWith(".psd")
+				   ||fName.endsWith(".pcd")
+				   ||fName.endsWith(".mac")
+				   ||fName.endsWith(".avi")
+				   ||fName.endsWith(".mkv")
+				   ||fName.endsWith(".mp4")
+				   ||fName.endsWith(".flv")
+				   ||fName.endsWith(".rmvb")
+				   ||fName.endsWith(".wmv")
+				   ||fName.endsWith(".asf")
+				   ||fName.endsWith(".swf")
+				   ||fName.endsWith(".vob")
+				   ||fName.endsWith(".ra")
+				   ||fName.endsWith(".rm")
+				   ||fName.endsWith(".mpg")
+				   ||fName.endsWith(".mov")
+				   ||fName.endsWith(".qt")
+				   ||fName.endsWith(".dat")
+				   ||fName.endsWith(".mlv")
+				   ||fName.endsWith(".wmvhd")
+				   ||fName.endsWith(".divx")
+				   ||fName.endsWith(".xvid")
+				   ||fName.endsWith(".m4v")
+				   ||fName.endsWith(".3gp")
+				   ||fName.endsWith(".mpeg")
+				   ||fName.endsWith(".f4v")
+				   ||fName.endsWith(".ogm")
+				   ||fName.endsWith(".m2ts")
+				   ||fName.endsWith(".mts")
+				   ||fName.endsWith(".ts")
+				   ||fName.endsWith(".tp")
+				   ||fName.endsWith(".trp")
+				   ||fName.endsWith(".ask")
+				   ||fName.endsWith(".m2v")
+				   ||fName.endsWith(".torrent")
+				   ||fName.endsWith(".wma")
+				   ||fName.endsWith(".aac")
+				   ||fName.endsWith(".ac3")
+				   ||fName.endsWith(".ogg")
+				   ||fName.endsWith(".flac")
+				   ||fName.endsWith(".ape")
+				   ||fName.endsWith(".m4a")
+				   ||fName.endsWith(".amr")
+				   ||fName.endsWith(".wav")
+				   ||fName.endsWith(".pcm")
+				   ||fName.endsWith(".midi")
+				   ||fName.endsWith(".mid")
+				   ||fName.endsWith(".mka")
+				   ||fName.endsWith(".mpc")
+				   ||fName.endsWith(".cda")
+				   ||fName.endsWith(".voc")
+				   ||fName.endsWith(".aif")
+				   ||fName.endsWith(".svx")
+				   ||fName.endsWith(".snd")
+				   ||fName.endsWith(".vqf"))){
+										
+					String[] str = fileOperation.getFileByTypeInfo(f);                
+					m.put(String.valueOf(++fileByTypeNum),str);						        					
+				}
+				if(f.isDirectory()){
+					getFileByType(f,m);					
+				}
+
 				
 			}else if("all".equals(fileType)){
-				
+				String[] str = fileOperation.getFileByTypeInfo(f);                
+				m.put(String.valueOf(++fileByTypeNum),str);		
 			}	
 			
 		}		
 	}
-		
-		
 	
 
+	/**
+	 * 删除文件或文件夹
+	 * @author zxy
+	 * @param smart
+	 * @return
+	 */
+	public String deleteFiles(){
+		System.out.println("deleteFiles");
+		return SUCCESS;
+	}	
+	
+	
+	/**
+	 * 下载文件
+	 * @author zxy
+	 * @param smart
+	 * @return
+	 */
+	public String downFile(){
+		System.out.println("downFile");
+		return SUCCESS;
+	}	
+
+	
 	/**
 	 * 增加文章
 	 * @param smart

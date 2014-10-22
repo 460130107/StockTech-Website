@@ -21,13 +21,12 @@ public class FileOperation {
 		String path = URLDecoder.decode(URLDecoder.decode(ServletActionContext.getRequest().getParameter("path"),"UTF-8"),"UTF-8");
 
 		if(path.equals("root")){
-			path = "C:\\Stockii\\MyStock\\WebRoot\\files";
+			path = "C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot\\files";
 		}else{
-			path = "C:\\Stockii\\MyStock\\WebRoot\\files" + "\\" + path.substring(path.indexOf("\\")+1);
+			path="C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot\\files"+"\\"+path.substring(path.indexOf("\\")+1);
 		}			
         return path;
     }
-	
 	
 	/**
 	 * 获取文件保存路径
@@ -40,7 +39,7 @@ public class FileOperation {
 		
 		String path = ServletActionContext.getRequest().getParameter("path");	
 		if(path.equals("root")){
-			path = "C:\\Stockii\\MyStock\\WebRoot\\files";
+			path = "C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot\\files";
 		}			
         return path;
     }
@@ -202,7 +201,6 @@ public class FileOperation {
 	}
 	
 	
-	
 	/**
 	 * 获取前端请求文件类型
 	 * @author zxy
@@ -210,7 +208,7 @@ public class FileOperation {
 	 * @throws Exception
 	 */	
 	public String getFileType() throws Exception {
-		String type = ServletActionContext.getRequest().getParameter("type");	
+		String type = ServletActionContext.getRequest().getParameter("typeName");	
 		return type;
 	}
 	
@@ -244,13 +242,11 @@ public class FileOperation {
 		
 		String size = getFileSize(readfile);
 		String date = getLastChangeDate(readfile);	
-		File file = new File("C:\\Stockii\\MyStock\\WebRoot\\files");
+		File file = new File("C:\\Users\\stock\\Workspaces\\MyEclipse Professional\\MyStock\\WebRoot\\files");
 		String path = getFileByTypePath(file,readfile);
 		
 		String[] str= new String[]{name,size,date,path}; 
 		return str;
 		
 	}
-	
-
 }

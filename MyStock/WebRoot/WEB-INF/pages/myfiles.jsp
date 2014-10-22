@@ -49,31 +49,64 @@
 	<div class="right-fileset" id="doc"></div>
 </div>
 </div>
-<input id="Upfile" class="fileUpload" style="opacity:0;" type="file" size="45" name="upfile">
+<input id="Upfile" class="fileUpload" style="opacity:0;position: absolute;bottom: 0;" type="file" size="45" name="upfile">
 <s:include value="footer.jsp"></s:include>
 <script type="text/javascript" src="front/js/jquery-1.11.1.js"></script>
 <script type="text/javascript" src="front/js/ajaxfileupload.js"></script>
 <script type="text/javascript">
-//文件浏览 -- 前进后退
+
 $(function(){
+//文件浏览 -- 前进后退   && 文件分类获取 
 	var search=window.location.search;
 	if(search==""){
 		var path="root";
+		var type="";
 	}else{
 		var path=getQueryString("path");
-	}		
-	$.ajax({		
-		url:'interface/Open_folder.action',
-		type:"GET",
-		data:{path:path},
-		dataType: 'json',
-		success:function(msg){
-			fileListShow(msg.myFilemessage);		
-		},
-		error:function(){
-			console.log("get failed");
+		var type=getQueryString("type");
+	}	
+	//console.log("type = "+type);
+	if(type==null||type==""){
+		/*文件浏览*/
+		$.ajax({		
+			url:'interface/Open_folder.action',
+			type:"GET",
+			data:{path:path},
+			dataType: 'json',
+			success:function(msg){
+				fileListShow(msg.myFilemessage);
+				fileNav();		
+			},
+			error:function(){
+				console.log("get failed");
+			}
+		});
+	}else{
+		/*文件分类展示*/
+		if(type.match("img") ||type.match("doc") ||type.match("video") ||type.match("bt") ||type.match("music") || type.match("other") ){
+			$.ajax({
+				url:'interface/ShowFile_ByType.action',
+				//url:'http://localhost:8080/MyStock/files/test.txt',
+				type:"GET",
+				//data:{type:type},
+				data:{typeName:type},
+				dataType: 'json',
+				success:function(msg){
+					//console.log("type = "+type);
+					console.log("length = "+$("#doc").children().length);
+					var mm=eval("("+msg.showFileByTypeMessage+")");
+					//console.log(mm.info);
+					shoFileByType(mm.num,mm.info);
+				},
+				error:function(msg){
+					console.log("type error");
+				},
+			});
+		}else if(type.match("all")){
+			window.location="http://localhost:8080/MyStock/myfiles";
 		}
-	});
+	}	
+		//functions for browser  and typing		
 	function getQueryStringTT(decodeUri,name){
 		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
 		var r = decodeUri.substr(0).match(reg);
@@ -121,12 +154,17 @@ $(function(){
 					var tit=this;
 					var tit_nodeName=$(this).children(".node-name").clone(true);
 					$(nodeNameObj).append(funObj);	
+					var name=$(tit_nodeName).children().last().text();
+					name="root"+pht+"\\"+name;
+					var testURI=encodeURI(encodeURI("http://localhost:8080/MyStock/myfiles?path="+name));
+					var del_downPath=testURI.split("?")[1].split("=")[1];
 					//delete
 					$(nodeNameObj).children(".float-tool").children(".delete").on({
 						"click":function(){
+							alert("path = "+del_downPath);
 							$.ajax({
-								url:'interface/',
-								data:{},
+								url:'interface/DeleteFiles.action',
+								data:{deletePath:del_downPath},
 								type:"POST",
 								success:function(){
 									console.log("delete success");
@@ -143,17 +181,16 @@ $(function(){
 					//download
 					$(nodeNameObj).children(".float-tool").children(".down").on({
 						"click":function(){
-							alert("download");
-							$(tit).children(".node-name").children().last().remove();
+							//alert("path = "+del_downPath);
 							$.ajax({
-								url:'interface/',
-								data:{},
+								url:'interface/DownFile.action',
+								data:{downPath:del_downPath},
 								type:"POST",
 								success:function(){
-									console.log("");
+									console.log("download yy");
 								},
 								error:function(){
-									console.log("");
+									console.log("download nn");
 								}
 							});
 							return false;
@@ -212,8 +249,40 @@ $(function(){
 				}
 			});						
 		});
-	}			
-	//create new folder
+	}
+	function shoFileByType(num,info){		
+		for(var i=1;i<=num;i++){
+			var nodeListObj=$('<div class="node-list"></div>');
+			var nodeNameObj=$('<div class="node-name"></div>');
+			var nodeSizeObj=$('<div class="node-size"></div>');
+			var nodeDateObj=$('<div class="node-date"></div>');
+			var linkObj=$('<span class="link"><span class="node-icon"></span><a><span>'+info[i][0]+'</span></a></span>').appendTo(nodeNameObj);
+			//set icon
+			switch(type){
+				case "doc":$("span.node-icon").addClass("l-doc");break;
+				case "img":$("span.node-icon").addClass("l-img");break;
+				case "video":$("span.node-icon").addClass("l-video");break;
+				case "bt":$("span.node-icon").addClass("l-bt");break;
+				case "music":$("span.node-icon").addClass("l-music");break;
+				case "other":$("span.node-icon").addClass("l-other");break;
+			}
+			//set
+			$(nodeSizeObj).text(info[i][1]);
+			$(nodeDateObj).text(info[i][2]);
+			//append
+			$(nodeNameObj).appendTo(nodeListObj);
+			$(nodeSizeObj).appendTo(nodeListObj);
+			$(nodeDateObj).appendTo(nodeListObj);
+			$(nodeListObj).appendTo($(".right-fileset"));
+			//just for test
+			/* for(var j=0;j<4;j++){
+				console.log("info["+i+"]["+j+"] = "+info[i][j]);
+			} */
+		}
+	}
+//end 文件浏览 -- 前进后退   && 文件分类获取 	
+				
+//create new folder
 	$("#createNewFolder").on({
 		"click":function(){
 			//alert("dasd");
@@ -258,6 +327,7 @@ $(function(){
 	});
 	//end create folder
 });
+
 //upload file
 $(function(){	
 	var decodeUri=decodeURI(decodeURI(window.location.href));
@@ -289,57 +359,6 @@ $(function(){
 	});
 });
 //end upload signal file
-
-//文件分类获取 
-$(function(){
-	var type=window.location.search;
-	if(!type==""){
-		type=type.split("=")[1];
-		if(type.match("img") ||type.match("doc") ||type.match("video") ||type.match("bt") ||type.match("music") || type.match("other") ){
-			$.ajax({
-				//url:'interface/ShowFileByType.action',
-				url:'http://localhost:8080/MyStock/files/test.txt',
-				type:"POST",
-				//data:{type:type},
-				success:function(msg){
-					//console.log("type success");
-					var mm=eval("("+msg+")");
-					console.log(mm.info);
-					shoFileByType(mm.num,mm.info);
-				},
-				error:function(msg){
-					console.log("type error");
-				},
-			});
-		}else if(type.match("all")){
-			window.location="http://localhost:8080/MyStock/myfiles";
-		}
-	}
-	//分类展示 -- 分页
-	function shoFileByType(num,info){
-		$(".right-fileset").children().remove();
-		for(var i=1;i<=num;i++){
-			var nodeListObj=$('<div class="node-list"></div>');
-			var nodeNameObj=$('<div class="node-name"></div>');
-			var nodeSizeObj=$('<div class="node-size"></div>');
-			var nodeDateObj=$('<div class="node-date"></div>');
-			var linkObj=$('<span class="link"><span class="node-icon l-file"></span><a><span>'+info[i][0]+'</span></a></span>').appendTo(nodeNameObj);
-			//set
-			$(nodeSizeObj).text(info[i][1]);
-			$(nodeDateObj).text(info[i][2]);
-			//append
-			$(nodeNameObj).appendTo(nodeListObj);
-			$(nodeSizeObj).appendTo(nodeListObj);
-			$(nodeDateObj).appendTo(nodeListObj);
-			$(nodeListObj).appendTo($(".right-fileset"));
-			//just for test
-			for(var j=0;j<4;j++){
-				console.log("info["+i+"]["+j+"] = "+info[i][j]);
-			}
-		}
-	}
-});
-//end 文件分类获取
 </script>
 </body>
 </html>

@@ -4,8 +4,10 @@
 
 	<!-- 所有的页面都要进行登录验证，未登录进入登录界面 -->
 	<package name="auth" extends="struts-default">
+		<!-- 定义权限检查拦截器 -->
+		<!-- 
 		<interceptors>
-			<!-- 定义权限检查拦截器 -->
+			
 			<interceptor name="authority" class="org.mystock.utils.AuthorityInterceptor">
 				<param name="allowAction">userLogin</param>
 			</interceptor>
@@ -15,6 +17,7 @@
 			</interceptor-stack>			
 		</interceptors>
 		<default-interceptor-ref name="mydefault" />
+	 	-->
 		<global-results>
 			<result name="error">/WEB-INF/pages/errors.jsp</result>
 			<result name="login">/WEB-INF/pages/account.jsp</result>
@@ -236,7 +239,7 @@
         </action>
         
         <!-- 按类型显示文件 -->
-		<action name="ShowFileByType" class="newsInterfaceAction" method="ShowFileByType">
+		<action name="ShowFile_ByType" class="newsInterfaceAction" method="ShowFileByType">
             <result type="json" name="success">
             	<param name="noCache">true</param>
 				<param name="contentType">text/html</param>
@@ -247,6 +250,29 @@
             </result>
         </action>
 		
+		<!-- 删除文件或文件夹 -->
+		<action name="DeleteFiles" class="newsInterfaceAction" method="deleteFiles">
+            <result type="json" name="success">
+            	<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+            <result type="json" name="error">
+                <param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+        </action>
+        
+        <!-- 下载文件 -->
+		<action name="DownFile" class="newsInterfaceAction" method="downFile">
+            <result type="json" name="success">
+            	<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+            <result type="json" name="error">
+                <param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+        </action>
 	
 		
 	</package>

@@ -1,7 +1,7 @@
 /*main*/
 body{
 	margin: 0;padding: 0;
-	font-family: tahoma, arial, ËÎÌå;
+	font-family: tahoma, arial, ï¿½ï¿½ï¿½ï¿½;
 	font-size: 12px;
 	height: 100%;
 }
@@ -97,7 +97,7 @@ body{
 	display: inline-block;
 }
 .file-title{
-	font-size: 12px;font-family: tahoma, arial, ËÎÌå;
+	font-size: 12px;font-family: tahoma, arial, ï¿½ï¿½ï¿½ï¿½;
 	font-style: normal;font-variant: normal;font-weight: normal;
 	/* position: absolute;
 	top:125px;left: 211px; */padding-left: 30px;
@@ -146,7 +146,13 @@ body{
 	background-image: url("../img/myfiles/sprite_list_icon.gif");
 }
 .l-folder{background-position:-5px -3px; }
-.l-file{background-position:-5px -83px; }
+.l-file{background-position:-68px -83px; }
+.l-doc{background-position: -100px -83px;}
+.l-img{background-position: -5px -83px;}
+.l-video{background-position: -228px -83px;}
+.l-bt{background-position: -453px -83px;}
+.l-music{background-position: -196px -83px;}
+.l-other{background-position: -43px -28px;}
 
 /*rename*/
 .btn-icon{
@@ -160,7 +166,7 @@ body{
 .abandon{background-position: -26px -507px;}
 .input{width:200px;height:20px;line-height:20px;margin: 0;padding: 0;margin-right: 50px;}
 
-/*float tool*/
+/*float tool v x-- rename && create new folder*/
 .float-tool{
 	display: inline-block;
 	float: right;
