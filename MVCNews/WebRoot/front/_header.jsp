@@ -23,11 +23,11 @@
 					</li>
 				</ul>
 				<div id="account-bar" class="collapse navbar-collapse text-right">
-					<ul class="nav navbar-nav" style="float: right;border-left: 1px solid black;height: 50px;">
+					<ul class="nav navbar-nav" style="float: right;border-left: 1px solid black; height: 50px;">
 						<li class='${param.index=="account"?"active":"" }'>
-							<a href="front/account.jsp">登录</a>|</li>
+							<a href="front/account.jsp">登录</a></li>
 						<li class='${param.index=="account"?"active":"" }'>
-							<a href="front/signup.jsp">注册</a>|</li>
+							<a href="front/signup.jsp">注册</a></li>
 						<li class='${param.index=="account"?"active":"" }'>
 							<a href="front/account.jsp">忘记密码</a></li>
 					</ul>

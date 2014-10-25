@@ -11,7 +11,7 @@
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
 <link rel="icon" href="./dist/img/icon_stockii_square.png">
-<title>斯多克科技，互联网金融引导者</title>
+<title>斯多克，科技改变投资</title>
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
 <link href="front/dist/css/index.css" rel="stylesheet" type="text/css">
@@ -26,8 +26,7 @@
 <body>
 
 <jsp:include page="_header.jsp?index=index" />
-<!-- Carousel
-    ================================================== -->
+<!-- Carousel ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel" > 
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -67,7 +66,7 @@
 <!-- /.carousel --> 
 
 
-<!-- Marketing messaging and featurettes
+<!-- Marketing messaging and features
     ================================================== --> 
 <!-- Wrap the rest of the page in another container to center all the content. -->
 <div id="quick-start">
