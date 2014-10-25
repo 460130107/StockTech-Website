@@ -37,7 +37,7 @@
 			} else {
 				request.setAttribute("info","请先登陆！") ;
 		%>
-				<jsp:forward page="login.jsp"/>
+				<jsp:forward page="account.jsp"/>
 		<%
 			}
 		%>
