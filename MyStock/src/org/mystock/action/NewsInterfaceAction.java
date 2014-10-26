@@ -61,6 +61,8 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class NewsInterfaceAction extends ActionSupport {
 
+	private static final String FILE_TYPE_MKV = ".mkv";
+
 	private static final long serialVersionUID = 8726165028217895272L;
 
 	private NewsInfoService service;
@@ -110,6 +112,7 @@ public class NewsInterfaceAction extends ActionSupport {
     private String myFilemessage;         //文件浏览（前进，后退）
     private String myFileUploadMessage;   //文件上传
     private String showFileByTypeMessage;
+    private String reNameMessage;
     
     private static int fileByTypeNum = 0;  //某类文件数量
     private String fileType;   //文件类型
@@ -256,6 +259,14 @@ public class NewsInterfaceAction extends ActionSupport {
 
 	public void setShowFileByTypeMessage(String showFileByTypeMessage) {
 		this.showFileByTypeMessage = showFileByTypeMessage;
+	}
+
+	public String getReNameMessage() {
+		return reNameMessage;
+	}
+
+	public void setReNameMessage(String reNameMessage) {
+		this.reNameMessage = reNameMessage;
 	}
 
 	public String getFileType() {
@@ -1002,7 +1013,7 @@ public class NewsInterfaceAction extends ActionSupport {
 	
 	/**
 	 * 上传图片到服务器
-	 * @return
+	 * @return 
 	 * @throws Exception
 	 */
 	public String uploadPhoto() throws Exception {
@@ -1066,11 +1077,11 @@ public class NewsInterfaceAction extends ActionSupport {
 	/**
 	 * 上传文件到服务器
 	 * @author zxy
-	 * @return
+	 * @return myFileUploadMessage：操作信息
 	 * @throws Exception
 	 */
 	public String uploadFile() throws Exception {
-		
+
 		InputStream is;
 
 		String pageErrorInfo = null;
@@ -1079,51 +1090,50 @@ public class NewsInterfaceAction extends ActionSupport {
 			ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
 			is = new FileInputStream(upfile);
 			FileOperation fileOperation = new FileOperation();
-			String OutputPath = fileOperation.getFilePath("path");//保存文件的目录
-			
-			String name =this.getUpfileFileName();//获取文件名
-		
-			File deskFile = new File(OutputPath,name);
-			
-			if(!deskFile.exists()){
+			String OutputPath = fileOperation.getFilePath("path");// 保存文件的目录
+
+			String name = this.getUpfileFileName();// 获取文件名
+
+			File deskFile = new File(OutputPath, name);
+
+			if (!deskFile.exists()) {
 				try {
 					deskFile.createNewFile();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			}else{				
+			} else {
 				myFileUploadMessage = "文件已存在";
+				is.close();
 				return ERROR;
-			}	
-			
-			//输出到外存中
+			}
+
+			// 输出到外存中
 			OutputStream os = new FileOutputStream(deskFile);
-			byte [] bytefer = new byte[400];
-			int length = 0 ; 
-			while((length = is.read(bytefer) )>0)
-			{
-				os.write(bytefer,0,length);
+			byte[] bytefer = new byte[400];
+			int length = 0;
+			while ((length = is.read(bytefer)) > 0) {
+				os.write(bytefer, 0, length);
 			}
 			os.close();
-			is.close();				
+			is.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			pageErrorInfo = e.getMessage();
-			myFileUploadMessage = "failed"+pageErrorInfo;
+			myFileUploadMessage = "failed" + pageErrorInfo;
 			return ERROR;
 		} catch (IOException e) {
 			e.printStackTrace();
-			myFileUploadMessage = "failed"+pageErrorInfo;
+			myFileUploadMessage = "failed" + pageErrorInfo;
 			return ERROR;
 		}
-        return SUCCESS;		
-    }
+		return SUCCESS;
+	}
 	
 	
 	/**
 	 * 新建文件夹
 	 * @author zxy
-	 * @return
 	 * @throws Exception
 	 */
 	public String createFold() throws Exception {
@@ -1144,7 +1154,7 @@ public class NewsInterfaceAction extends ActionSupport {
 	/**
 	 * 打开文件夹
 	 * @author zxy
-	 * @return
+	 * @return myFilemessage:保存文件信息的json
 	 * @throws Exception
 	 */
 	public String openFold() throws Exception {
@@ -1179,7 +1189,12 @@ public class NewsInterfaceAction extends ActionSupport {
     }
 	
 	
-	//按类型获取文件
+	/**
+	 * 按类型获取文件
+	 * @author zxy
+	 * @return showFileByTypeMessage:保存文件信息的json
+	 * @throws Exception
+	 */
 	public String ShowFileByType(){
 		
 		FileOperation fileOperation = new FileOperation();
@@ -1225,7 +1240,7 @@ public class NewsInterfaceAction extends ActionSupport {
 				   ||fName.endsWith(".xlsx")
 				   ||fName.endsWith(".pdf")){
 										
-					String[] str = fileOperation.getFileByTypeInfo(f);                
+					String[] str = fileOperation.getFileByTypeInfo(f,"files");                
 					m.put(String.valueOf(++fileByTypeNum),str);						        
 								
 				}
@@ -1243,7 +1258,7 @@ public class NewsInterfaceAction extends ActionSupport {
 				   ||fName.endsWith(".pcd")
 				   ||fName.endsWith(".mac")){
 									
-					String[] str = fileOperation.getFileByTypeInfo(f);                
+					String[] str = fileOperation.getFileByTypeInfo(f,"files");                
 					m.put(String.valueOf(++fileByTypeNum),str);						        
 								
 				}
@@ -1285,7 +1300,7 @@ public class NewsInterfaceAction extends ActionSupport {
 				   ||fName.endsWith(".ask")
 				   ||fName.endsWith(".m2v")){
 										
-					String[] str = fileOperation.getFileByTypeInfo(f);                
+					String[] str = fileOperation.getFileByTypeInfo(f,"files");                
 					m.put(String.valueOf(++fileByTypeNum),str);						        
 								
 				}
@@ -1295,7 +1310,7 @@ public class NewsInterfaceAction extends ActionSupport {
 			}else if("bt".equals(fileType)){
 				if(fName.endsWith(".torrent")){
 										
-					String[] str = fileOperation.getFileByTypeInfo(f);                
+					String[] str = fileOperation.getFileByTypeInfo(f,"files");                
 					m.put(String.valueOf(++fileByTypeNum),str);						        
 								
 				}
@@ -1324,7 +1339,7 @@ public class NewsInterfaceAction extends ActionSupport {
 				   ||fName.endsWith(".snd")
 				   ||fName.endsWith(".vqf")){
 										
-					String[] str = fileOperation.getFileByTypeInfo(f);                
+					String[] str = fileOperation.getFileByTypeInfo(f,"files");                
 					m.put(String.valueOf(++fileByTypeNum),str);						        
 								
 				}
@@ -1350,7 +1365,7 @@ public class NewsInterfaceAction extends ActionSupport {
 				   ||fName.endsWith(".pcd")
 				   ||fName.endsWith(".mac")
 				   ||fName.endsWith(".avi")
-				   ||fName.endsWith(".mkv")
+				   ||fName.endsWith(FILE_TYPE_MKV)
 				   ||fName.endsWith(".mp4")
 				   ||fName.endsWith(".flv")
 				   ||fName.endsWith(".rmvb")
@@ -1402,7 +1417,7 @@ public class NewsInterfaceAction extends ActionSupport {
 				   ||fName.endsWith(".snd")
 				   ||fName.endsWith(".vqf"))){
 										
-					String[] str = fileOperation.getFileByTypeInfo(f);                
+					String[] str = fileOperation.getFileByTypeInfo(f,"files");                
 					m.put(String.valueOf(++fileByTypeNum),str);						        					
 				}
 				if(f.isDirectory()){
@@ -1410,7 +1425,7 @@ public class NewsInterfaceAction extends ActionSupport {
 				}
 						
 			}else if("all".equals(fileType)){								
-				String[] str = fileOperation.getFileByTypeInfo(f);                
+				String[] str = fileOperation.getFileByTypeInfo(f,"files");                
 				m.put(String.valueOf(++fileByTypeNum),str);						        
 				
 			}
@@ -1421,14 +1436,12 @@ public class NewsInterfaceAction extends ActionSupport {
 	/**
 	 * 删除文件或文件夹
 	 * @author zxy
-	 * @param smart
-	 * @return
 	 * @throws Exception 
 	 */
 	public String deleteFiles() throws Exception{
 		FileOperation fileOperation = new FileOperation();
-		String fpath = fileOperation.getFilePath("downPath");		
-		fileOperation.del(fpath);		
+		String fpath = fileOperation.getFilePath("deletePath");
+		fileOperation.del(fpath);
 		return SUCCESS;
 	}	
 	
@@ -1436,18 +1449,56 @@ public class NewsInterfaceAction extends ActionSupport {
 	/**
 	 * 下载文件
 	 * @author zxy
-	 * @param smart
-	 * @return
+	 * @return null
 	 * @throws Exception 
 	 */
 	public String downFile() throws Exception{
+		
 		FileOperation fileOperation = new FileOperation();
-		String fpath = fileOperation.getFilePath("deletePath");	
-		fileOperation.downFile(fpath);
+		String fpath = fileOperation.getFilePath("downPath");	
+		System.out.println(fpath);
+		if(fpath != null) {
+			fileOperation.downLoadFile(fpath);
+			return null;
+		}
 		return SUCCESS;
 	}	
 	
 	
+	/**
+	 * 文件重命名
+	 * @author zxy
+	 * @return reNameMessage :重命名信息
+	 * @throws Exception 
+	 */
+	public String Rename() throws Exception{
+		
+		FileOperation fileOperation = new FileOperation();
+		String fpath = fileOperation.getFilePath("renamePath");
+		String oldName = fileOperation.getFileName(fpath);
+		String newName = ServletActionContext.getRequest().getParameter("newName");
+		if(!oldName.equals(newName)){//新的文件名和以前文件名不同时,才有必要进行重命名 
+	         File oldfile=new File(fpath); 
+	         File newfile=new File(oldfile.getParent()+"\\"+newName); 
+	         if(!oldfile.exists()){
+	        	reNameMessage = "此操作不可进行";
+	            return ERROR;//重命名文件不存在
+	         }
+	         if(newfile.exists()){//若在该目录下已经有一个文件和新文件名相同，则不允许重命名 
+	        	reNameMessage = "该文件已存在";
+	         	return ERROR;
+	         }else{ 
+	             oldfile.renameTo(newfile); 
+	             return SUCCESS;
+	         } 
+	    }else{
+	    	reNameMessage = "请重新输入文件名";
+	    	return ERROR;
+	    }
+	}	
+	
+
+	 	
 
 	/**
 	 * 增加文章
@@ -1459,11 +1510,13 @@ public class NewsInterfaceAction extends ActionSupport {
 		Admin admin = (Admin) ctx.getSession().get("admin") ;//登录的管理员
 
 		int newsInfoId = 0;//新闻ID
-		
+		System.out.println("1111111111111111111111111111");
 		if (admin == null){
 			setMsg(MessageUtil.get("adminlogin.msg"));
+			System.out.println("22222222222222222222222222222");
 			return ERROR;
 		}else {
+			System.out.println("hhhhhhhhhhhhhhhhhhhhhhhhh");
 			NewsInfo news = null;
 			String type = typeService.getNewsTypeById(1).getNewsTypeName()+",";
 			setMsg(MessageUtil.get("newsinfo.insert.false"));
@@ -1471,12 +1524,13 @@ public class NewsInterfaceAction extends ActionSupport {
 			newsInfoId = ((infoList.size() == 0)? 1: (service.getAllNewsInfo().get(0).getNewsInfoId()+1));//新的ID等于最大的ID加1
 			news = new NewsInfo(newsInfoId,name,content,
 					new Date(new java.util.Date().getTime()),author,type,admin.getAdminName());//创建时间为当前时间
-
+			System.out.println("333333333333333333333333333");
 			try {//更新数据库
 				if(service.addNewsInfo(news)){
+					System.out.println("44444444444444444444444444444444");
 					setMsg(MessageUtil.get("newsinfo.insert.true"));
 				}
-
+				System.out.println("5555555555555555555555555555");
 				return SUCCESS;
 			} catch (Exception e) {
 				e.printStackTrace();

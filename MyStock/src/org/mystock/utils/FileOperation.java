@@ -1,21 +1,27 @@
 package org.mystock.utils;
 
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 
-import javax.servlet.ServletOutputStream;
+
 
 import org.apache.struts2.ServletActionContext;
-
+/**
+ * 
+ * @author dirkwang
+ *
+ */
 public class FileOperation {
 	
 	
@@ -79,19 +85,12 @@ public class FileOperation {
 	 * @throws Exception
 	 */
 	//获取文件名
-	public String getFileName(String absolutePath){
-		
-		
+	public String getFileName(String absolutePath){	
 		int pos = absolutePath.lastIndexOf("\\");
 		String suffix = absolutePath.substring(pos+1);
-		System.out.println(suffix);
 		return suffix;
 		
 	}
-	
-	
-	
-	
 	
 	/**
 	 * 获取文件修改时间
@@ -252,12 +251,13 @@ public class FileOperation {
 	 * @return
 	 * @throws Exception
 	 */		
-	public String[] getFileByTypeInfo(File readfile) throws Exception {
+	public String[] getFileByTypeInfo(File readfile,String directory) throws Exception {
 		String name = readfile.getName();
 		
 		String size = getFileSize(readfile);
 		String date = getLastChangeDate(readfile);	
-		File file = new File(ServletActionContext.getServletContext().getRealPath("files"));
+		//"files"
+		File file = new File(ServletActionContext.getServletContext().getRealPath(directory));
 		String path = getFileByTypePath(file,readfile);
 		
 		String[] str= new String[]{name,size,date,path}; 
@@ -291,8 +291,14 @@ public class FileOperation {
 	}
 	
 	
-	public void downFile(String fpath) throws Exception{
-		
+	/**
+	 * 下载文件
+	 * @author zxy
+	 * @return
+	 * @throws FileNotFoundException,IOException
+	 */	
+	public void downLoadFile(String fpath) throws Exception{
+		/*
 		File file = new File(fpath);
 		if(file.isFile()){
 			ServletActionContext.getResponse().setContentType("application/x-unknown;charset=GB2312");
@@ -309,10 +315,27 @@ public class FileOperation {
 			sos.close();
 			sos = null;
 			fis.close();
-		}		
+		}
+			*/
+		
+		
+		File file = new File(fpath);// path是根据日志路径和文件名拼接出来的
+	    String filename = file.getName();// 获取日志文件名称
+	    InputStream fis = new BufferedInputStream(new FileInputStream(fpath));
+	    byte[] buffer = new byte[fis.available()];
+	    fis.read(buffer);
+	    fis.close();
+	    ServletActionContext.getResponse().reset();
+	    // 先去掉文件名称中的空格,然后转换编码格式为utf-8,保证不出现乱码,这个文件名称用于浏览器的下载框中自动显示的文件名
+	    ServletActionContext.getResponse().addHeader("Content-Disposition", "attachment;filename=" + new String(filename.replaceAll(" ", "").getBytes("utf-8"),"iso8859-1"));
+	    ServletActionContext.getResponse().addHeader("Content-Length", "" + file.length());
+	    
+	    OutputStream os = new BufferedOutputStream(ServletActionContext.getResponse().getOutputStream());
+	   
+	    os.write(buffer);// 输出文件
+	    os.flush();
+	    os.close();
 	}
-	
-	
-	
+
 
 }

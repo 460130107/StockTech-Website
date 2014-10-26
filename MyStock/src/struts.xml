@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-
 	<!-- 所有的页面都要进行登录验证，未登录进入登录界面 -->
 	 
 	<package name="auth" extends="struts-default">
@@ -25,7 +24,7 @@
 			<result name="input">/WEB-INF/pages/errors.jsp</result>
 		</global-results>		
 	</package>
-	  
+	  	
 	<package name="default" namespace="/" extends="auth">
 	   <action name="userLogin" class="userLogin">
 			<result name="success">/WEB-INF/pages/index.jsp</result>
@@ -264,7 +263,15 @@
         </action>
         
         <!-- 下载文件 -->
+        <!-- 下载不能使用ajax -->
 		<action name="DownFile" class="newsInterfaceAction" method="downFile">
+            <result name="success">/WEB-INF/pages/myfiles.jsp</result>
+			<result name="error">/WEB-INF/pages/myfiles.jsp</result>
+        </action> 
+        
+        
+         <!-- 文件重命名 -->
+		<action name="RenameFiles" class="newsInterfaceAction" method="Rename">
             <result type="json" name="success">
             	<param name="noCache">true</param>
 				<param name="contentType">text/html</param>
@@ -275,7 +282,11 @@
             </result>
         </action>
         
+        
+            
 	</package>
+	
+
 	
 	<package name="servlet" namespace="/Servlet"
 		extends="struts-default">
