@@ -36,6 +36,7 @@ import org.mystock.model.Admin;
 import org.mystock.model.FileVO;
 import org.mystock.model.NewsIndex;
 import org.mystock.model.NewsInfo;
+import org.mystock.model.NewsType;
 import org.mystock.model.NewsVO;
 import org.mystock.service.NewsInfoService;
 import org.mystock.service.NewsTypeService;
@@ -61,7 +62,6 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class NewsInterfaceAction extends ActionSupport {
 
-	private static final String FILE_TYPE_MKV = ".mkv";
 
 	private static final long serialVersionUID = 8726165028217895272L;
 
@@ -126,7 +126,9 @@ public class NewsInterfaceAction extends ActionSupport {
     private String configName;//客户姓名
     private String configDoName;//客户域名
     private String configSSID;//序列号
-    
+     
+    private String newsTypeName;     //文章类别名
+    private String newsTypeDescripe;   //文章类别描述
     
     
     
@@ -160,6 +162,22 @@ public class NewsInterfaceAction extends ActionSupport {
 
 	public void setConfigDoName(String configDoName) {
 		this.configDoName = configDoName;
+	}
+
+	public String getNewsTypeName() {
+		return newsTypeName;
+	}
+
+	public void setNewsTypeName(String newsTypeName) {
+		this.newsTypeName = newsTypeName;
+	}
+
+	public String getNewsTypeDescripe() {
+		return newsTypeDescripe;
+	}
+
+	public void setNewsTypeDescripe(String newsTypeDescripe) {
+		this.newsTypeDescripe = newsTypeDescripe;
 	}
 
 	/**
@@ -1071,9 +1089,10 @@ public class NewsInterfaceAction extends ActionSupport {
         return SUCCESS;
     }
 	
-	
-	
-	
+	/**
+	 * 我的文件模块
+	 * @author zxy
+	 */	
 	/**
 	 * 上传文件到服务器
 	 * @author zxy
@@ -1365,7 +1384,7 @@ public class NewsInterfaceAction extends ActionSupport {
 				   ||fName.endsWith(".pcd")
 				   ||fName.endsWith(".mac")
 				   ||fName.endsWith(".avi")
-				   ||fName.endsWith(FILE_TYPE_MKV)
+				   ||fName.endsWith(".mkv")
 				   ||fName.endsWith(".mp4")
 				   ||fName.endsWith(".flv")
 				   ||fName.endsWith(".rmvb")
@@ -1497,40 +1516,37 @@ public class NewsInterfaceAction extends ActionSupport {
 	    }
 	}	
 	
-
-	 	
-
+	/**
+	 * 我的文章模块
+	 * @author tt&zxy
+	 */
+	
 	/**
 	 * 增加文章
-	 * @param smart
-	 * @return
+	 * @author tt
 	 */
 	public String insertArticle(){
 		ActionContext ctx = ActionContext.getContext();
+		//user id=2
 		Admin admin = (Admin) ctx.getSession().get("admin") ;//登录的管理员
-
+		
 		int newsInfoId = 0;//新闻ID
-		System.out.println("1111111111111111111111111111");
 		if (admin == null){
 			setMsg(MessageUtil.get("adminlogin.msg"));
-			System.out.println("22222222222222222222222222222");
 			return ERROR;
 		}else {
-			System.out.println("hhhhhhhhhhhhhhhhhhhhhhhhh");
 			NewsInfo news = null;
+			//现在NewsTypeId固定为1  by zxy
 			String type = typeService.getNewsTypeById(1).getNewsTypeName()+",";
 			setMsg(MessageUtil.get("newsinfo.insert.false"));
 			List<NewsInfo> infoList = service.getAllNewsInfo();
 			newsInfoId = ((infoList.size() == 0)? 1: (service.getAllNewsInfo().get(0).getNewsInfoId()+1));//新的ID等于最大的ID加1
 			news = new NewsInfo(newsInfoId,name,content,
 					new Date(new java.util.Date().getTime()),author,type,admin.getAdminName());//创建时间为当前时间
-			System.out.println("333333333333333333333333333");
 			try {//更新数据库
 				if(service.addNewsInfo(news)){
-					System.out.println("44444444444444444444444444444444");
 					setMsg(MessageUtil.get("newsinfo.insert.true"));
 				}
-				System.out.println("5555555555555555555555555555");
 				return SUCCESS;
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -1539,6 +1555,70 @@ public class NewsInterfaceAction extends ActionSupport {
 	
 		return ERROR;
 	}
+	
+	/**
+	 * 删除文章
+	 * @author zxy
+	 */	
+	public String deleteArticle(){
+		
+		ActionContext ctx = ActionContext.getContext();
+		//user id=2
+		Admin admin = (Admin) ctx.getSession().get("admin") ;//登录的管理员
+		
+		if (admin == null){
+			setMsg(MessageUtil.get("adminlogin.msg"));
+			return ERROR;
+		}else {
+			int[] newsId = new int[1];
+			newsId[0] = pid;
+			try {
+				if (service.deleteNewsInfo(newsId)) {
+					setMsg(MessageUtil.get("newsinfo.delete.true"));
+				} else {
+					setMsg(MessageUtil.get("newsinfo.delete.false"));
+				}
+				return SUCCESS;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}	
+		return ERROR;
+	}
+	
+	
+	
+	
+	
+	/**
+	 * 增加文章类别
+	 * @author zxy
+	 * @return
+	 */
+	public String addArticleType(){
+		
+		ActionContext ctx = ActionContext.getContext();
+		Admin admin = (Admin) ctx.getSession().get("admin") ;//登录的管理员
+		
+		int newsTypeId = 0;//类别ID
+		if (admin == null){
+			setMsg(MessageUtil.get("adminlogin.msg"));
+			return ERROR;
+		}else {
+			try {//更新数据库
+				if(typeService.addNewsType(newsTypeName, newsTypeDescripe)){
+					setMsg(MessageUtil.get("newsinfo.insert.true"));
+				}
+				return SUCCESS;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}	
+		return ERROR;
+	}
+	
+	
+	
 	
 	/**
 	 * 保存用户信息

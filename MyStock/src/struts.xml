@@ -169,6 +169,7 @@
 				<param name="contentType">text/html</param>
             </result>
         </action>
+        <!-- 新写文章  -->
         <action name="Article_add" class="newsInterfaceAction" method="insertArticle">
             <result type="json" name="success">
                 <param name="contentType">
@@ -181,6 +182,42 @@
                 </param>
             </result>
         </action>
+        
+        <!-- 删除文章  -->
+        <action name="Article_delete" class="newsInterfaceAction" method="deleteArticle">
+            <result type="json" name="success">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+            <result type="json" name="error">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+        </action>
+        
+        
+        <!-- 添加文章类别  -->        
+        <action name="ArticleType_add" class="newsInterfaceAction" method="addArticleType">
+            <result type="json" name="success">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+            <result type="json" name="error">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+        </action>
+         <!--test
+         <action name="ArticleType_add" class="newsInterfaceAction" method="addArticleType">
+            <result name="success">/WEB-INF/pages/myfiles.jsp</result>
+			<result name="error">/WEB-INF/pages/myfiles.jsp</result>
+        </action> 
+        -->
+
         <action name="saveInfo" class="newsInterfaceAction" method="saveInfo">
             <result type="json" name="success">
                 <param name="contentType">
@@ -285,9 +322,7 @@
         
             
 	</package>
-	
-
-	
+		
 	<package name="servlet" namespace="/Servlet"
 		extends="struts-default">
 		<action name="data_test">
