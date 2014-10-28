@@ -36,20 +36,20 @@ import org.mystock.model.Admin;
 import org.mystock.model.FileVO;
 import org.mystock.model.NewsIndex;
 import org.mystock.model.NewsInfo;
-import org.mystock.model.NewsType;
 import org.mystock.model.NewsVO;
 import org.mystock.service.NewsInfoService;
 import org.mystock.service.NewsTypeService;
 import org.mystock.service.TableService;
+import org.mystock.utils.ArticleOperation;
 import org.mystock.utils.Common;
 import org.mystock.utils.FileOperation;
 import org.mystock.utils.FtpUtil;
 import org.mystock.utils.HibernateMappingManager;
 import org.mystock.utils.MessageUtil;
+import org.mystock.utils.Page;
 import org.mystock.utils.TimerManager;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 
@@ -69,6 +69,9 @@ public class NewsInterfaceAction extends ActionSupport {
 	private NewsTypeService typeService;
 	private TableService tableService;
 	
+	private ArticleOperation articelUtil = new ArticleOperation();
+	private FileOperation fileOperation = new FileOperation();
+
 	int type; //新闻类别编号
 	List<NewsIndex> index; //新闻目录列表
 	String pg;  //URL
@@ -114,6 +117,8 @@ public class NewsInterfaceAction extends ActionSupport {
     private String showFileByTypeMessage;
     private String reNameMessage;
     
+    private String myArticleMessage;  //文章浏览(分页，分类)
+    
     private static int fileByTypeNum = 0;  //某类文件数量
     private String fileType;   //文件类型
     
@@ -121,6 +126,7 @@ public class NewsInterfaceAction extends ActionSupport {
     private String name;//文章标题
     private String content;//文章内容
     private String author;//文章作者
+    
     
     private String configId;//客户ID
     private String configName;//客户姓名
@@ -131,6 +137,9 @@ public class NewsInterfaceAction extends ActionSupport {
     private String newsTypeDescripe;   //文章类别描述
     
     
+    private String currentPage;     //当前页
+    private String newsTypeId;      //文章类型
+    //private String newsId;          //文章Id
     
     public String getConfigSSID() {
 		return configSSID;
@@ -179,6 +188,23 @@ public class NewsInterfaceAction extends ActionSupport {
 	public void setNewsTypeDescripe(String newsTypeDescripe) {
 		this.newsTypeDescripe = newsTypeDescripe;
 	}
+
+	public String getCurrentPage() {
+		return currentPage;
+	}
+
+	public void setCurrentPage(String currentPage) {
+		this.currentPage = currentPage;
+	}
+
+	public String getNewsTypeId() {
+		return newsTypeId;
+	}
+
+	public void setNewsTypeId(String newsTypeId) {
+		this.newsTypeId = newsTypeId;
+	}
+
 
 	/**
 	 * @return the name
@@ -285,6 +311,14 @@ public class NewsInterfaceAction extends ActionSupport {
 
 	public void setReNameMessage(String reNameMessage) {
 		this.reNameMessage = reNameMessage;
+	}
+
+	public String getMyArticleMessage() {
+		return myArticleMessage;
+	}
+
+	public void setMyArticleMessage(String myArticleMessage) {
+		this.myArticleMessage = myArticleMessage;
 	}
 
 	public String getFileType() {
@@ -1108,7 +1142,6 @@ public class NewsInterfaceAction extends ActionSupport {
 		try {
 			ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
 			is = new FileInputStream(upfile);
-			FileOperation fileOperation = new FileOperation();
 			String OutputPath = fileOperation.getFilePath("path");// 保存文件的目录
 
 			String name = this.getUpfileFileName();// 获取文件名
@@ -1157,7 +1190,6 @@ public class NewsInterfaceAction extends ActionSupport {
 	 */
 	public String createFold() throws Exception {
 		
-		FileOperation fileOperation = new FileOperation();
 		String fpath = fileOperation.getFilePath("path");
 		File file = new File(fpath); 
 				
@@ -1178,7 +1210,6 @@ public class NewsInterfaceAction extends ActionSupport {
 	 */
 	public String openFold() throws Exception {
 		
-		FileOperation fileOperation = new FileOperation();
 		String fpath = fileOperation.getFilePath("path");
 		File file = new File(fpath);
 		if(!file.isDirectory()){
@@ -1216,7 +1247,6 @@ public class NewsInterfaceAction extends ActionSupport {
 	 */
 	public String ShowFileByType(){
 		
-		FileOperation fileOperation = new FileOperation();
 		try {
 			fileType = fileOperation.getFileType("typeName");
 			Map<String,String[]> mapForJson = new HashMap<String,String[]>();
@@ -1242,9 +1272,9 @@ public class NewsInterfaceAction extends ActionSupport {
 			
 	
 	//按类型获取文件		
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void getFileByType(File file,Map m) throws Exception{
 		
-		FileOperation fileOperation = new FileOperation();
 		File[] files = file.listFiles();
 		
 		for(File f:files){
@@ -1458,7 +1488,6 @@ public class NewsInterfaceAction extends ActionSupport {
 	 * @throws Exception 
 	 */
 	public String deleteFiles() throws Exception{
-		FileOperation fileOperation = new FileOperation();
 		String fpath = fileOperation.getFilePath("deletePath");
 		fileOperation.del(fpath);
 		return SUCCESS;
@@ -1526,10 +1555,9 @@ public class NewsInterfaceAction extends ActionSupport {
 	 * @author tt
 	 */
 	public String insertArticle(){
-		ActionContext ctx = ActionContext.getContext();
-		//user id=2
-		Admin admin = (Admin) ctx.getSession().get("admin") ;//登录的管理员
 		
+		Admin admin = articelUtil.LoginAuthority("admin");  //登录的管理员
+			
 		int newsInfoId = 0;//新闻ID
 		if (admin == null){
 			setMsg(MessageUtil.get("adminlogin.msg"));
@@ -1537,7 +1565,8 @@ public class NewsInterfaceAction extends ActionSupport {
 		}else {
 			NewsInfo news = null;
 			//现在NewsTypeId固定为1  by zxy
-			String type = typeService.getNewsTypeById(1).getNewsTypeName()+",";
+			//String type = typeService.getNewsTypeById(1).getNewsTypeName()+",";
+			String type = typeService.getNewsTypeById(2).getNewsTypeName();
 			setMsg(MessageUtil.get("newsinfo.insert.false"));
 			List<NewsInfo> infoList = service.getAllNewsInfo();
 			newsInfoId = ((infoList.size() == 0)? 1: (service.getAllNewsInfo().get(0).getNewsInfoId()+1));//新的ID等于最大的ID加1
@@ -1562,10 +1591,7 @@ public class NewsInterfaceAction extends ActionSupport {
 	 */	
 	public String deleteArticle(){
 		
-		ActionContext ctx = ActionContext.getContext();
-		//user id=2
-		Admin admin = (Admin) ctx.getSession().get("admin") ;//登录的管理员
-		
+		Admin admin = (Admin)articelUtil.LoginAuthority("admin");//登录的管理员
 		if (admin == null){
 			setMsg(MessageUtil.get("adminlogin.msg"));
 			return ERROR;
@@ -1587,20 +1613,114 @@ public class NewsInterfaceAction extends ActionSupport {
 	}
 	
 	
+	/**
+	 * 按类别分页显示文章
+	 * @author zxy
+	 * @throws Exception 
+	 */
+	public String listArticle() throws Exception{
+		
+		String type ="all";
+		
+		if(newsTypeId != null){
+			type = typeService.getNewsTypeById(Integer.valueOf(newsTypeId).intValue()).getNewsTypeName();
+		}
+		
+		Page page = new Page();
+		int cp = Integer.valueOf(currentPage).intValue();
+		int pageSize = 20;
+		
+		page.setEveryPage(pageSize);
+		page.setBeginIndex((cp-1)*pageSize);
+		
+		List<NewsInfo> all = service.getNewsInfoByType(type, page); 
+		Iterator<NewsInfo> iter = all.iterator();  
+		
+		int i=1;
+		Map<String,String[]> mapForJson = new HashMap<String,String[]>();
+        while(iter.hasNext()){  
+        	NewsInfo n = iter.next();
+        	//Article Id,title,Time,Type
+        	String[] str = {String.valueOf(n.getNewsInfoId()),n.getNewsInfoTitle(),String.valueOf(n.getNewsInfoTime()),n.getNewsType()};
+        	
+ 	        mapForJson.put(String.valueOf(i++),str);
+ 	    }
+        net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(mapForJson);	
+		net.sf.json.JSONObject json2 = new net.sf.json.JSONObject();
+		json2.put("totalCount", all.size());
+		json2.put("info", json);
+		myArticleMessage = json2.toString();
+
+		return SUCCESS;
+
+	}
 	
+
+	/**
+	 * 编辑文章
+	 * @author zxy
+	 */
+	public String updateArticle(){
 	
-	
+		Admin admin = (Admin)articelUtil.LoginAuthority("admin");//登录的管理员
+		
+		//判断文章是否修改
+		if (admin == null){
+			setMsg(MessageUtil.get("adminlogin.msg"));
+			return ERROR;
+		}else {
+			NewsInfo newsInfo = service.searchNewsInfo(pid);
+			boolean update = false;
+			
+			
+			if(!name.equals("")&&name!=null){
+				if(!name.equals(newsInfo.getNewsInfoTitle())){
+					newsInfo.setNewsInfoTitle(name);
+					update = true;
+				}
+			}
+			
+			if(!author.equals("")&&author!=null){
+				if(!author.equals(newsInfo.getNewsAuthor())){
+					newsInfo.setNewsAuthor(author);
+					update = true;
+				}
+			}
+			
+			if(!content.equals("")&&content!=null){
+				if(!content.equals(newsInfo.getNewsInfoContent())){
+					newsInfo.setNewsInfoContent(content);
+					update = true;
+				}
+			}
+			
+			if(update){
+				newsInfo.setNewsInfoTime(new Date(new java.util.Date().getTime()));
+			}
+					
+			try {
+				if (service.updateNewsInformation(newsInfo)) {
+					setMsg(MessageUtil.get("newsinfo.delete.true"));
+				} else {
+					setMsg(MessageUtil.get("newsinfo.delete.false"));
+				}
+				return SUCCESS;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}	
+		return ERROR;
+	}
+
+
 	/**
 	 * 增加文章类别
 	 * @author zxy
 	 * @return
 	 */
 	public String addArticleType(){
-		
-		ActionContext ctx = ActionContext.getContext();
-		Admin admin = (Admin) ctx.getSession().get("admin") ;//登录的管理员
-		
-		int newsTypeId = 0;//类别ID
+				
+		Admin admin = (Admin)articelUtil.LoginAuthority("admin");
 		if (admin == null){
 			setMsg(MessageUtil.get("adminlogin.msg"));
 			return ERROR;

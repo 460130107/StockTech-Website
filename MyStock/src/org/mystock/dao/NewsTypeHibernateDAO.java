@@ -70,7 +70,9 @@ public class NewsTypeHibernateDAO extends HibernateDaoSupport {
      * @return
      */
     public NewsType findNewsTypeById(int typeId){
+    	
     	return (NewsType)getHibernateTemplate().get(NewsType.class, typeId); 
+    	
     }
     
     /**

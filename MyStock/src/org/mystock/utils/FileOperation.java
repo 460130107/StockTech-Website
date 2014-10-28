@@ -1,5 +1,18 @@
+/*
+ * 系统名称：斯多克个人网站自助系统
+ * 
+ * 类名：FileOperation
+ * 
+ * 创建日期：2014-10-28
+ */
+
 package org.mystock.utils;
 
+/**
+ * 文件操作辅助类
+ * @author zxy
+ * @version 14.10.28
+ */
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

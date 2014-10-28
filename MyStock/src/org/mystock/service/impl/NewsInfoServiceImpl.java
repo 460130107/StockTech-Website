@@ -19,6 +19,7 @@ import org.mystock.model.NewsIndex;
 import org.mystock.model.NewsInfo;
 import org.mystock.model.NewsVO;
 import org.mystock.service.NewsInfoService;
+import org.mystock.utils.Page;
 
 /**
  * 文章信息服务类
@@ -246,4 +247,18 @@ public class NewsInfoServiceImpl implements NewsInfoService{
 	   			}
 	   		}
        }
+       
+       
+       /**
+        * 按类型分页获取文章
+        * @author zxy
+        */
+       @Override
+    public List<NewsInfo> getNewsInfoByType(String newsTypeId, Page page) {
+    	
+    	   return newsInfoDAO.getNewsInfoBypaging(newsTypeId, page);
+    	   
+    	   
+    }
+       
 }

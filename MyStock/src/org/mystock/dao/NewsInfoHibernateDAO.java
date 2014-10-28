@@ -11,9 +11,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.mystock.model.NewsInfo;
 import org.mystock.utils.Common;
+import org.mystock.utils.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.orm.hibernate3.HibernateCallback;
@@ -204,5 +206,26 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 	 		    '%' + keyword + '%', '%' + keyword + '%').get(0);
        }
        
-       
+       /**
+        * 按类别分页查询文章
+        * @param keyword
+        * @return
+        */
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	public List<NewsInfo> getNewsInfoBypaging(final String newsTypeId,final Page page) {
+		return (List<NewsInfo>) this.getHibernateTemplate().executeFind(new HibernateCallback() {
+			public Object doInHibernate(Session session)throws HibernateException, SQLException {
+				
+				Query query = session.createQuery("from newsinfo news where news.newsType = ?");
+				// 设置参数
+				query.setParameter(0, newsTypeId);
+				// 设置每页显示多少个，设置多大结果。
+				query.setMaxResults(page.getEveryPage());
+				// 设置起点
+				query.setFirstResult(page.getBeginIndex());
+				List<NewsInfo> NewsInfolist = query.list();
+				return NewsInfolist;
+			}
+		});
+	}
 }

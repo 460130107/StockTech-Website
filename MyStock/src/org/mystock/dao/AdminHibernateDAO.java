@@ -33,8 +33,7 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
 		String adminPass = user.getAdminPass();
 		
 		//取得ID数，且大于零
-		long result = (Long)getHibernateTemplate().find("select count(a.adminId) from admin a where a.adminName = ? and a.adminPass = ?", adminName,adminPass).get(0);
-		
+		long result = (Long)getHibernateTemplate().find("select count(a.adminId) from admin a where a.adminName = ? and a.adminPass = ?", adminName,adminPass).get(0);		
 		if (result > 0){
 			return true;
 		}else{

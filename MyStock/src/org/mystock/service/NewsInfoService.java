@@ -14,6 +14,7 @@ import org.hibernate.SessionFactory;
 import org.mystock.model.NewsIndex;
 import org.mystock.model.NewsInfo;
 import org.mystock.model.NewsVO;
+import org.mystock.utils.Page;
 
 /**
  * 文章信息服务类接口
@@ -115,4 +116,10 @@ public interface NewsInfoService {
         * 备份到数据库
         */
        public void backup(SessionFactory sf);
+       
+       /**
+        * @author zxy
+        * 按类型分页查询文章
+        */
+       public List<NewsInfo> getNewsInfoByType(String keyword, Page page);
 }
