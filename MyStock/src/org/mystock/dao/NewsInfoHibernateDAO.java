@@ -208,13 +208,16 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
        
        /**
         * 按类别分页查询文章
-        * @param keyword
+        * @author zxy
+        * @param keyword,page
         * @return
         */
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	public List<NewsInfo> getNewsInfoBypaging(final String newsTypeId,final Page page) {
 		return (List<NewsInfo>) this.getHibernateTemplate().executeFind(new HibernateCallback() {
 			public Object doInHibernate(Session session)throws HibernateException, SQLException {
+				
+				
 				
 				Query query = session.createQuery("from newsinfo news where news.newsType = ?");
 				// 设置参数
@@ -228,4 +231,22 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 			}
 		});
 	}
+    
+    /**
+     * 查询文章数
+     * @author zxy
+     * @return文章类型数
+     */
+	public long getNewsInfoNum(){	
+		try{
+			String query = "select count(*) from newsinfo";
+			Long l = (Long)getHibernateTemplate().find(query).get(0);
+			return l.longValue();
+		}catch(RuntimeException re){
+			log.error("find all failed", re);
+   			throw re;
+		}
+		
+	}
+    
 }

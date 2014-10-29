@@ -261,4 +261,14 @@ public class NewsInfoServiceImpl implements NewsInfoService{
     	   
     }
        
+       /**
+        * 查询文章数
+        * @author zxy
+        * @return文章总数
+        */
+   	public long getNewsInfoNum(){
+   		
+   		return newsInfoDAO.getNewsInfoNum();
+   	}
+       
 }

@@ -18,6 +18,7 @@ import org.mystock.model.NewsInfo;
 import org.mystock.model.NewsType;
 import org.mystock.service.NewsInfoService;
 import org.mystock.service.NewsTypeService;
+import org.mystock.utils.Page;
 
 /**
  * 文章类型服务类
@@ -195,4 +196,25 @@ public class NewsTypeServiceImpl implements NewsTypeService {
 			}
 		}
 	}
+    
+    /**
+	* 分页查询文章类型
+	* @author zxy
+	* @return 文章集合
+	*/
+	 public List<NewsType> getNewsTypeByPage(Page page){
+		 return newsTypeDAO.getNewsTypeBypaging(page);
+	}
+	 
+	 
+	 
+    /**
+	* 查询文章类型数
+	* @author zxy
+	* @return 文章集合
+	*/
+	 public long getNewsTypeNum(){
+		 return newsTypeDAO.getNewsTypeNum();
+	}
+    
 }

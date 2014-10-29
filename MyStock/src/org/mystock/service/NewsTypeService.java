@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.mystock.model.NewsType;
+import org.mystock.utils.Page;
 
 /**
  * 文章类型服务类接口
@@ -65,4 +66,21 @@ public interface NewsTypeService {
      * 备份到数据库
      */
     public void backup(SessionFactory sf);
+    
+    /**
+     * 分页查询文章信息
+     * @author zxy
+     */
+    public List<NewsType> getNewsTypeByPage(Page page);
+    
+    
+    /**
+	* 查询文章类型数
+	* @author zxy
+	* @return 文章集合
+	*/
+	 public long getNewsTypeNum();
+    
+    
+    
 }

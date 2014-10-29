@@ -122,4 +122,11 @@ public interface NewsInfoService {
         * 按类型分页查询文章
         */
        public List<NewsInfo> getNewsInfoByType(String keyword, Page page);
+       
+       /**
+        * 查询文章数
+        * @author zxy
+        * @return文章总数
+        */
+   		public long getNewsInfoNum();
 }

@@ -26,6 +26,7 @@ import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.components.Param;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
@@ -36,6 +37,7 @@ import org.mystock.model.Admin;
 import org.mystock.model.FileVO;
 import org.mystock.model.NewsIndex;
 import org.mystock.model.NewsInfo;
+import org.mystock.model.NewsType;
 import org.mystock.model.NewsVO;
 import org.mystock.service.NewsInfoService;
 import org.mystock.service.NewsTypeService;
@@ -118,6 +120,8 @@ public class NewsInterfaceAction extends ActionSupport {
     private String reNameMessage;
     
     private String myArticleMessage;  //文章浏览(分页，分类)
+    private String myArticleTypeMessage;   //文章类型浏览(分页)
+    private String allmyArticleTypeMessage;    //所有文章类别
     
     private static int fileByTypeNum = 0;  //某类文件数量
     private String fileType;   //文件类型
@@ -138,7 +142,7 @@ public class NewsInterfaceAction extends ActionSupport {
     
     
     private String currentPage;     //当前页
-    private String newsTypeId;      //文章类型
+    private String newsTypeId;      //文章类型Id
     //private String newsId;          //文章Id
     
     public String getConfigSSID() {
@@ -319,6 +323,22 @@ public class NewsInterfaceAction extends ActionSupport {
 
 	public void setMyArticleMessage(String myArticleMessage) {
 		this.myArticleMessage = myArticleMessage;
+	}
+
+	public String getMyArticleTypeMessage() {
+		return myArticleTypeMessage;
+	}
+
+	public void setMyArticleTypeMessage(String myArticleTypeMessage) {
+		this.myArticleTypeMessage = myArticleTypeMessage;
+	}
+
+	public String getAllmyArticleTypeMessage() {
+		return allmyArticleTypeMessage;
+	}
+
+	public void setAllmyArticleTypeMessage(String allmyArticleTypeMessage) {
+		this.allmyArticleTypeMessage = allmyArticleTypeMessage;
 	}
 
 	public String getFileType() {
@@ -1553,6 +1573,8 @@ public class NewsInterfaceAction extends ActionSupport {
 	/**
 	 * 增加文章
 	 * @author tt
+	 * @author zxy
+	 * @param newsTypeId,name,content,author
 	 */
 	public String insertArticle(){
 		
@@ -1566,7 +1588,7 @@ public class NewsInterfaceAction extends ActionSupport {
 			NewsInfo news = null;
 			//现在NewsTypeId固定为1  by zxy
 			//String type = typeService.getNewsTypeById(1).getNewsTypeName()+",";
-			String type = typeService.getNewsTypeById(2).getNewsTypeName();
+			String type = typeService.getNewsTypeById(Integer.valueOf(newsTypeId).intValue()).getNewsTypeName();
 			setMsg(MessageUtil.get("newsinfo.insert.false"));
 			List<NewsInfo> infoList = service.getAllNewsInfo();
 			newsInfoId = ((infoList.size() == 0)? 1: (service.getAllNewsInfo().get(0).getNewsInfoId()+1));//新的ID等于最大的ID加1
@@ -1588,6 +1610,7 @@ public class NewsInterfaceAction extends ActionSupport {
 	/**
 	 * 删除文章
 	 * @author zxy
+	 * @param pid
 	 */	
 	public String deleteArticle(){
 		
@@ -1616,80 +1639,103 @@ public class NewsInterfaceAction extends ActionSupport {
 	/**
 	 * 按类别分页显示文章
 	 * @author zxy
-	 * @throws Exception 
+	 * @param newsTypeId currentPage
+	 * @return myArticleMessage：文章信息（Article Id,title,Time,Type）字符串
+	 * 
 	 */
 	public String listArticle() throws Exception{
 		
-		String type ="all";
-		
-		if(newsTypeId != null){
-			type = typeService.getNewsTypeById(Integer.valueOf(newsTypeId).intValue()).getNewsTypeName();
+		try{
+			String type ="all";
+			
+			if(newsTypeId != null && !newsTypeId.equals("")){
+				type = typeService.getNewsTypeById(Integer.valueOf(newsTypeId).intValue()).getNewsTypeName();
+			}
+			
+			Page page = new Page();
+			int cp = Integer.valueOf(currentPage).intValue();
+			int pageSize = 20;
+			
+			page.setEveryPage(pageSize);
+			page.setBeginIndex((cp-1)*pageSize);
+			
+			List<NewsInfo> all = null;
+			if("all".equals(type)){			
+				all = service.getAllNewsInfo();			
+			}else{
+				all = service.getNewsInfoByType(type, page); 
+			}
+			
+			Iterator<NewsInfo> iter = all.iterator();  
+			
+			int i=1;
+			Map<String,String[]> mapForJson = new HashMap<String,String[]>();
+	        while(iter.hasNext()){  
+	        	NewsInfo n = iter.next();
+	        	//Article Id,title,Time,Type
+	        	String[] str = {String.valueOf(n.getNewsInfoId()),n.getNewsInfoTitle(),String.valueOf(n.getNewsInfoTime()),n.getNewsType()};
+	        	
+	 	        mapForJson.put(String.valueOf(i++),str);
+	 	    }
+	        net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(mapForJson);	
+			net.sf.json.JSONObject json2 = new net.sf.json.JSONObject();
+			json2.put("totalCount", service.getNewsInfoNum());
+			json2.put("info", json);
+			
+			myArticleMessage = json2.toString();
+			
+			return SUCCESS;
+		}catch(Exception e){
+			e.printStackTrace();
 		}
-		
-		Page page = new Page();
-		int cp = Integer.valueOf(currentPage).intValue();
-		int pageSize = 20;
-		
-		page.setEveryPage(pageSize);
-		page.setBeginIndex((cp-1)*pageSize);
-		
-		List<NewsInfo> all = service.getNewsInfoByType(type, page); 
-		Iterator<NewsInfo> iter = all.iterator();  
-		
-		int i=1;
-		Map<String,String[]> mapForJson = new HashMap<String,String[]>();
-        while(iter.hasNext()){  
-        	NewsInfo n = iter.next();
-        	//Article Id,title,Time,Type
-        	String[] str = {String.valueOf(n.getNewsInfoId()),n.getNewsInfoTitle(),String.valueOf(n.getNewsInfoTime()),n.getNewsType()};
-        	
- 	        mapForJson.put(String.valueOf(i++),str);
- 	    }
-        net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(mapForJson);	
-		net.sf.json.JSONObject json2 = new net.sf.json.JSONObject();
-		json2.put("totalCount", all.size());
-		json2.put("info", json);
-		myArticleMessage = json2.toString();
-
-		return SUCCESS;
-
+		return ERROR;
 	}
 	
 
 	/**
 	 * 编辑文章
 	 * @author zxy
+	 * @param name author content
 	 */
 	public String updateArticle(){
 	
 		Admin admin = (Admin)articelUtil.LoginAuthority("admin");//登录的管理员
 		
-		//判断文章是否修改
+		
 		if (admin == null){
 			setMsg(MessageUtil.get("adminlogin.msg"));
 			return ERROR;
 		}else {
+			//判断文章是否修改
 			NewsInfo newsInfo = service.searchNewsInfo(pid);
 			boolean update = false;
 			
 			
-			if(!name.equals("")&&name!=null){
+			if(!name.equals("") && name!=null){
 				if(!name.equals(newsInfo.getNewsInfoTitle())){
 					newsInfo.setNewsInfoTitle(name);
 					update = true;
 				}
 			}
 			
-			if(!author.equals("")&&author!=null){
+			if(!author.equals("") && author!=null){
 				if(!author.equals(newsInfo.getNewsAuthor())){
 					newsInfo.setNewsAuthor(author);
 					update = true;
 				}
 			}
 			
-			if(!content.equals("")&&content!=null){
+			if(!content.equals("") && content!=null){
 				if(!content.equals(newsInfo.getNewsInfoContent())){
 					newsInfo.setNewsInfoContent(content);
+					update = true;
+				}
+			}
+			
+			if(!newsTypeId.equals("") && newsTypeId!=null){
+				String newsTypeName = typeService.getNewsTypeById(Integer.valueOf(newsTypeId).intValue()).getNewsTypeName();
+				if(!newsTypeName.equals(newsInfo.getNewsType())){
+					newsInfo.setNewsType(newsTypeName);
 					update = true;
 				}
 			}
@@ -1716,7 +1762,7 @@ public class NewsInterfaceAction extends ActionSupport {
 	/**
 	 * 增加文章类别
 	 * @author zxy
-	 * @return
+	 * @param newsTypeName,newsTypeDescripe
 	 */
 	public String addArticleType(){
 				
@@ -1727,7 +1773,7 @@ public class NewsInterfaceAction extends ActionSupport {
 		}else {
 			try {//更新数据库
 				if(typeService.addNewsType(newsTypeName, newsTypeDescripe)){
-					setMsg(MessageUtil.get("newsinfo.insert.true"));
+					setMsg(MessageUtil.get("newstype.insert.true"));
 				}
 				return SUCCESS;
 			} catch (Exception e) {
@@ -1737,8 +1783,144 @@ public class NewsInterfaceAction extends ActionSupport {
 		return ERROR;
 	}
 	
+	/**
+	 * 删除文章类别：并删除该类别的所有文章！
+	 * @author zxy
+	 * @param newsTypeId
+	 * 
+	 */	
+	public String deleteArticleType(){
+	
+		Admin admin = (Admin)articelUtil.LoginAuthority("admin");//登录的管理员
+		if (admin == null){
+			setMsg(MessageUtil.get("adminlogin.msg"));
+			return ERROR;
+		}else {
+			try {
+				if (typeService.deleteNewsType(Integer.valueOf(newsTypeId).intValue())) {
+					setMsg(MessageUtil.get("newstype.delete.true"));
+				} else {
+					setMsg(MessageUtil.get("newstype.delete.false"));
+				}
+				return SUCCESS;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return ERROR;
+	}
 	
 	
+	/**
+	 * 分页显示文章类型
+	 * @author zxy
+	 * @param currentPage
+	 * @return myArticleTypeMessage：文章类别信息字符串（Type Id,name,description）
+	 */
+	public String listArticleType(){
+		
+		try {
+			Page page = new Page();
+			int cp = Integer.valueOf(currentPage).intValue();
+			int pageSize = 4;
+			
+			page.setEveryPage(pageSize);
+			page.setBeginIndex((cp-1)*pageSize);
+			
+			List<NewsType> all = typeService.getNewsTypeByPage(page);
+			Iterator<NewsType> iter = all.iterator();  
+			
+			int i=1;
+			Map<String,String[]> mapForJson = new HashMap<String,String[]>();
+			while(iter.hasNext()){  
+				NewsType n = iter.next();
+				//Type Id,name,description
+				String[] str = {String.valueOf(n.getNewsTypeId()),n.getNewsTypeName(),n.getNewsTypeDescripe()};
+				
+			    mapForJson.put(String.valueOf(i++),str);
+			}
+			net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(mapForJson);	
+			net.sf.json.JSONObject json2 = new net.sf.json.JSONObject();
+			json2.put("totalCount", typeService.getNewsTypeNum());
+			json2.put("info", json);
+			myArticleTypeMessage = json2.toString();
+
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ERROR;
+	}
+	
+	
+	/**
+	 * 获取全部文章类型
+	 * @author zxy
+	 * @return allmyArticleTypeMessage：包含文章类别总数和全部文章类别信息（id,name）的字符串
+	 */
+	public String getAllArticleType(){
+		try{
+			List<NewsType> all = typeService.getAllNewsType();
+			Iterator<NewsType> iter = all.iterator();  
+			
+			int i=1;
+			Map<String,String[]> mapForJson = new HashMap<String,String[]>();
+	        while(iter.hasNext()){  
+	        	NewsType n = iter.next();
+	        	//Type Id,name
+	        	String[] str = {String.valueOf(n.getNewsTypeId()),n.getNewsTypeName()};
+	        	
+	 	        mapForJson.put(String.valueOf(i++),str);
+	 	    }
+	        net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(mapForJson);	
+			net.sf.json.JSONObject json2 = new net.sf.json.JSONObject();
+			json2.put("totalCount", typeService.getNewsTypeNum());
+			json2.put("info", json);
+			allmyArticleTypeMessage = json2.toString();
+			return SUCCESS;
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return ERROR;
+	}
+	
+	
+	
+	/**
+	 * 编辑文章类别——对应文章的类别属性应级联更改
+	 * @author zxy
+	 * @param newsTypeId newsTypeName newsTypeDescripe
+	 */
+	public String updateArticleType(){
+		
+		NewsType newstype = typeService.getNewsTypeById(Integer.valueOf(newsTypeId).intValue());
+		//判断文章是否修改
+		if(!newsTypeName.equals("")&&newsTypeName!=null){
+			if(!newsTypeName.equals(newstype.getNewsTypeName())){
+				newstype.setNewsTypeName(newsTypeName);
+			}
+		}
+		if(!newsTypeDescripe.equals("")&&newsTypeDescripe!=null){
+			if(!newsTypeDescripe.equals(newstype.getNewsTypeDescripe())){
+				newstype.setNewsTypeDescripe(newsTypeDescripe);
+			}
+		}
+		try {
+			if (typeService.updateNewsType(newstype)) {
+				setMsg(MessageUtil.get("newstype.delete.true"));
+			} else {
+				setMsg(MessageUtil.get("newstype.delete.false"));
+			}
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		return ERROR;
+		
+	}
+
+
 	
 	/**
 	 * 保存用户信息

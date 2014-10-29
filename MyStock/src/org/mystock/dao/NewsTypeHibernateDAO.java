@@ -7,12 +7,19 @@
  */
 package org.mystock.dao;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.mystock.model.NewsInfo;
 import org.mystock.model.NewsType;
+import org.mystock.utils.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
@@ -95,7 +102,7 @@ public class NewsTypeHibernateDAO extends HibernateDaoSupport {
 	}
 	
 	/**
-	 * 查询所有的频道信息
+	 * 查询所有频道
 	 * @return 频道集合
 	 */
      @SuppressWarnings("unchecked")
@@ -108,6 +115,49 @@ public class NewsTypeHibernateDAO extends HibernateDaoSupport {
    			throw re;
    		}
      }
+     
+     
+     /**
+      * 分页查询文章类别
+      * @author zxy
+      * @param page
+      * @return文章类型集合
+      */
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public List<NewsType> getNewsTypeBypaging(final Page page) {
+		return (List<NewsType>) this.getHibernateTemplate().executeFind(new HibernateCallback() {
+			public Object doInHibernate(Session session)throws HibernateException, SQLException {
+				
+				Query query = session.createQuery("from newstype news");
+				// 设置每页显示多少个，设置多大结果。
+				query.setMaxResults(page.getEveryPage());
+				// 设置起点
+				query.setFirstResult(page.getBeginIndex());
+				List<NewsType> NewsTypelist = query.list();
+				return NewsTypelist;
+			}
+		});
+	}
+     
+	
+	/**
+     * 查询文章类别数
+     * @author zxy
+     * @return文章类型集合
+     */
+	public long getNewsTypeNum(){	
+		try{
+			String query = "select count(*) from newstype";
+			Long l = (Long)getHibernateTemplate().find(query).get(0);
+			return l.longValue();
+		}catch(RuntimeException re){
+			log.error("find all failed", re);
+   			throw re;
+		}
+		
+	}
+     
      
      /**
       * 可通过名称来查找频道的信息

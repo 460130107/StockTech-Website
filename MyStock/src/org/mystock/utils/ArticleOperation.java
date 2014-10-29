@@ -29,4 +29,9 @@ public class ArticleOperation {
 		Admin admin = (Admin) ctx.getSession().get(role) ;//登录的管理员
 		return admin;
 	}
+	
+	
+	
+	
+	
 }

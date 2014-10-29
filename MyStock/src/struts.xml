@@ -170,7 +170,29 @@
             </result>
         </action>
         
+        <!-- 展示写新文章页面  -->
+         
+        <action name="Article_addShow" class="newsInterfaceAction" method="getAllArticleType">
+            <result type="json" name="success">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+            <result type="json" name="error">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+        </action>
+        <!--
+        <action name="Article_addShow" class="newsInterfaceAction" method="getAllArticleType">
+            <result name="success">/succ.jsp</result>
+			<result name="error">/succ.jsp</result>
+        </action> 
+         -->
+         
         <!-- 新写文章  -->
+        <!-- 
         <action name="Article_add" class="newsInterfaceAction" method="insertArticle">
             <result type="json" name="success">
                 <param name="contentType">
@@ -183,7 +205,12 @@
                 </param>
             </result>
         </action>
-        
+         -->
+        <action name="Article_add" class="newsInterfaceAction" method="insertArticle">
+            <result name="success">/WEB-INF/pages/myfiles.jsp</result>
+			<result name="error">/succ.jsp</result>   
+        </action>
+         
         <!-- 删除文章  -->
         <action name="Article_delete" class="newsInterfaceAction" method="deleteArticle">
             <result type="json" name="success">
@@ -199,7 +226,8 @@
         </action>
         
         
-        <!-- 按类型分页显示文章  -->        
+        <!-- 按类型分页显示文章  -->  
+        
        <action name="Article_list" class="newsInterfaceAction" method="listArticle">
             <result type="json" name="success">
                 <param name="contentType">
@@ -212,16 +240,16 @@
                 </param>
             </result>
         </action>
-          <!--
+      
+            <!-- 
          <action name="Article_list" class="newsInterfaceAction" method="listArticle">
             <result name="success">/succ.jsp</result>
 			<result name="error">/succ.jsp</result>
         </action> 
-        -->
+           -->
         
         
          <!-- 编辑文章  -->       
-          <!-- 
        <action name="Article_update" class="newsInterfaceAction" method="updateArticle">
             <result type="json" name="success">
                 <param name="contentType">
@@ -234,13 +262,13 @@
                 </param>
             </result>
         </action>
-         -->
+         <!-- 
          <action name="Article_update" class="newsInterfaceAction" method="updateArticle">
             <result name="success">/succ.jsp</result>
 			<result name="error">/succ.jsp</result>
         </action> 
-        
-        
+        -->
+         
         
         <!-- 添加文章类别  -->        
         <action name="ArticleType_add" class="newsInterfaceAction" method="addArticleType">
@@ -261,6 +289,69 @@
 			<result name="error">/WEB-INF/pages/myfiles.jsp</result>
         </action> 
         --> 
+
+
+		<!-- 分页显示文章类别  --> 
+        <action name="ArticleType_list" class="newsInterfaceAction" method="listArticleType">
+            <result type="json" name="success">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+            <result type="json" name="error">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+        </action>
+          
+           <!-- 
+         <action name="ArticleType_list" class="newsInterfaceAction" method="listArticleType">
+            <result name="success">/succ.jsp</result>
+			<result name="error">/succ.jsp</result>
+        </action> 
+       -->
+
+       <!-- 编辑文章类别  -->    
+       <action name="ArticleType_update" class="newsInterfaceAction" method="updateArticleType">
+            <result type="json" name="success">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+            <result type="json" name="error">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+        </action>
+           <!-- 
+         <action name="ArticleType_update" class="newsInterfaceAction" method="updateArticleType">
+            <result name="success">/succ.jsp</result>
+			<result name="error">/succ.jsp</result>
+        </action> 
+    	 -->
+
+		<!-- 删除文章  -->
+		<!-- 
+        <action name="ArticleType_delete" class="newsInterfaceAction" method="deleteArticleType">
+            <result type="json" name="success">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+            <result type="json" name="error">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+        </action>
+         -->
+        <action name="ArticleType_delete" class="newsInterfaceAction" method="deleteArticleType">
+            <result name="success">/succ.jsp</result>
+			<result name="error">/succ.jsp</result>
+        </action> 
+
 
         <action name="saveInfo" class="newsInterfaceAction" method="saveInfo">
             <result type="json" name="success">
