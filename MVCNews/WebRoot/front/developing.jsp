@@ -20,42 +20,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="front/dist/css/bootstrap.css" rel="stylesheet">
 	<link href="front/dist/css/common.css" rel="stylesheet">
 	<link href="front/dist/css/index.css" rel="stylesheet">
+	<link href="front/dist/css/developing.css" rel="stylesheet">
 
   </head>
   
   <body>
   <jsp:include page="_header.jsp?index=index" />
-
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2">
-				<div class="header-14">
-					<a href="index.jsp"><span class="fui-home"></span></a>
-					<div>紧张研发中...</div>
-				</div>
-				<div class="hero-unit">
-					<h1>Stockii</h1>
-					<img src="static/img/zarpe_logo.png" width="800" />
-				</div>
-				<h3></h3>
-				<p>
-					新产品正在路上，输入您的邮件地址并点击“提醒我产品更新”，我们将向您发送最新的产品信息以便于您了解。如果你希望直接和我们进行深度合作，请点击<a
-						href="corpration.html">合作伙伴</a>并与我们取得联系。
-				</p>
-				<div class="row">
-					<div class="subscribe-form col-sm-8 col-sm-offset-2">
-						<form>
-							<div class="input-group">
-								<input type="text" class="form-control"> <span
-									class="input-group-btn">
-									<button class="btn btn-primary" type="button">提醒我产品更新</button>
-								</span>
-							</div>
-						</form>
-					</div>
+  <div class="page-full">
+	<div class="maxbg"></div>
+	<div class="fullscreen">
+		<div class="container">
+			<div class="row">
+					<div class="col-lg-10 col-sm-offset-1 declaration">
+						<a class="icon" href="index.jsp"><span class="home-icon"></span></a>
+						<div class="title text-center">研发中...</div>
+<!-- 						<div class="logo-name"> -->
+<!-- 							<h1>Stockii</h1> -->
+<!-- 						</div> -->
+						<h3 class="body">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新产品正在路上，输入您的<i class="email">邮件地址</i>
+							并点击“提醒我产品更新”，我们将向您发送最新的产品信息以便于您了解。如果你希望直接和我们进行深度合作，请点击<a
+							class="hyperlink" href="corpration.html">合作伙伴</a>并与我们取得联系。
+						</h3>
+					
+						<div class="subscribe-form col-sm-8 col-sm-offset-2">
+							<form>
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="stockii@163.com"> <span
+										class="input-group-btn">
+										<button class="btn btn-primary" type="button">提醒我产品更新</button>
+									</span>
+								</div>
+							</form>
+						</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<jsp:include page="_footer.jsp" />
@@ -64,5 +65,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="front/dist/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="front/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="front/dist/js/site.effect.js"></script>
+	
+	<script type="text/javascript">
+		$(window).resize(function() {
+			// TODO 
+		});
+		
+		$(function () {
+			var sH = $(window).height();
+			$('.maxbg').css('height', sH + 'px');
+		});
+	</script>
+	
   </body>
 </html>
