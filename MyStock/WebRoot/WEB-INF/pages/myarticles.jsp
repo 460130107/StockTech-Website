@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,145 +10,188 @@
 <link href="front/css/jquery-ui.min.css" rel="stylesheet">
 <link href="front/css/global-style.css" rel="stylesheet">
 <link href="front/css/myarticle.css" rel="stylesheet">
-<link href="front/css/shCircleLoader.css" rel="stylesheet">
+<script src="front/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="uedit/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="uedit/ueditor.all.min.js"> </script>
+<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script type="text/javascript" charset="utf-8" src="uedit/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+function setContentn(){	
+	$("#content").text(UE.getEditor('editor').getContent());
+	return false;
+}
+</script>
 </head>
 <body>
-	<s:include value="header.jsp">
-		<s:param name="index">myarticles</s:param>
-	</s:include>
-	
-	<div class="container container-content">
-		<div id="loading" class="loading"></div>
-		<div id="waterfall" class="row article-list">
-			<div id="cellUploadPhoto" class="cell" style="display: none;">
-				<div class="thumbnail">
-					<a href="myarticles_add.action"> <img
-						src="front/img/icon_plus.png" />
-					</a>
-					<h3 class="text-center">
-						<a href="myarticles_add.action">发表文章</a>
-					</h3>
-				</div>
-			</div>
-		</div>
+<s:include value="header.jsp">  
+<s:param name="index">myarticles</s:param></s:include>
+<div id="bd">
+<div id="art_nav" style="text-align: center;">
+<ul id="myTab" class="nav nav-tabs" style="width: 80%;">
+   <li class="active">
+      <a href="#home" data-toggle="tab">文章管理</a>
+   </li>
+   <li><a href="#type" data-toggle="tab">文章类别</a></li>
+   <li><a href="#write" data-toggle="tab">新写文章</a></li>
+</ul>
+</div>
 
-<!-- 		<div id="article_bd"> -->
-<!-- 			<div class="list"> -->
-<!-- 				<div class="list_blog"> -->
-<!-- 					<h4> -->
-<!-- 						<span class="list_blog_title">文摘列表</span><span -->
-<!-- 							class="list_blog_fun"><a href="myarticles_add.action">[发布文章]</a></span> -->
-<!-- 					</h4> -->
-<!-- 					<ul id="article_list"> -->
-<!-- 					</ul> -->
-<!-- 				</div> -->
-<!-- 				<div class="list_search"></div> -->
-<!-- 			</div> -->
-<!-- 			<div class="con"> -->
-<!-- 				<article> -->
-<!-- 				<h2 class="con_title" id="article_title">测试测试测试</h2> -->
-<!-- 				<hr /> -->
-<!-- 				<p class="con_bd" id="article_content">答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac -->
-<!-- 					OS -->
-<!-- 					X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac -->
-<!-- 					OS -->
-<!-- 					X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac -->
-<!-- 					OS -->
-<!-- 					X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。</p> -->
-<!-- 				</article> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-	</div>
-	<s:include value="footer.jsp"></s:include>
+<div id="myTabContent" class="tab-content">
+   <div class="tab-pane fade in active" id="home">
+   		<script type="text/javascript">
+   			$.ajax({
+		      	url:"myarticles_list",
+		      	type:"GET",
+		      	success:function(msg){
+		      		$("div#home").html(msg);
+		      	}
+	      	});
+   		</script> 
+   </div>
+   <div class="tab-pane fade" id="type">
+   		<script type="text/javascript">
+   			$.ajax({
+		      	url:"myarticles_type",
+		      	type:"GET",
+		      	success:function(msg){
+		      		$("div#type").html(msg);
+		      	}
+	      	});
+   		</script>      
+   </div>
+   <div class="tab-pane fade" id="write">
+   		<form action="Article_add">
+	   		标题:<input type="text" name="name" style="width:300px;margin: 0 5px 5px;">
+		     <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
+		     <script type="text/javascript">
+			    //实例化编辑器
+			    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+			    var ue = UE.getEditor('editor');
+			
+			
+			    function isFocus(e){
+			        alert(UE.getEditor('editor').isFocus());
+			        UE.dom.domUtils.preventDefault(e)
+			    }
+			    function setblur(e){
+			        UE.getEditor('editor').blur();
+			        UE.dom.domUtils.preventDefault(e)
+			    }
+			    function insertHtml() {
+			        var value = prompt('插入html代码', '');
+			        UE.getEditor('editor').execCommand('insertHtml', value)
+			    }
+			    function createEditor() {
+			        enableBtn();
+			        UE.getEditor('editor');
+			    }
+			    function getAllHtml() {
+			        alert(UE.getEditor('editor').getAllHtml())
+			    }
+			    function getContent() {
+			        var arr = [];
+			        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+			        arr.push("内容为：");
+			        arr.push(UE.getEditor('editor').getContent());
+			        alert(arr.join("\n"));
+			    }
+			    function getPlainTxt() {
+			        var arr = [];
+			        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+			        arr.push("内容为：");
+			        arr.push(UE.getEditor('editor').getPlainTxt());
+			        alert(arr.join('\n'))
+			    }
+			    function setContent(isAppendTo) {
+			        var arr = [];
+			        arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
+			        UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+			        alert(arr.join("\n"));
+			    }
+			    function setDisabled() {
+			        UE.getEditor('editor').setDisabled('fullscreen');
+			        disableBtn("enable");
+			    }
+			
+			    function setEnabled() {
+			        UE.getEditor('editor').setEnabled();
+			        enableBtn();
+			    }
+			
+			    function getText() {
+			        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+			        var range = UE.getEditor('editor').selection.getRange();
+			        range.select();
+			        var txt = UE.getEditor('editor').selection.getText();
+			        alert(txt)
+			    }
+			
+			    function getContentTxt() {
+			        var arr = [];
+			        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+			        arr.push("编辑器的纯文本内容为：");
+			        arr.push(UE.getEditor('editor').getContentTxt());
+			        alert(arr.join("\n"));
+			    }
+			    function hasContent() {
+			        var arr = [];
+			        arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+			        arr.push("判断结果为：");
+			        arr.push(UE.getEditor('editor').hasContents());
+			        alert(arr.join("\n"));
+			    }
+			    function setFocus() {
+			        UE.getEditor('editor').focus();
+			    }
+			    function deleteEditor() {
+			        disableBtn();
+			        UE.getEditor('editor').destroy();
+			    }
+			    function disableBtn(str) {
+			        var div = document.getElementById('btns');
+			        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+			        for (var i = 0, btn; btn = btns[i++];) {
+			            if (btn.id == str) {
+			                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+			            } else {
+			                btn.setAttribute("disabled", "true");
+			            }
+			        }
+			    }
+			    function enableBtn() {
+			        var div = document.getElementById('btns');
+			        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+			        for (var i = 0, btn; btn = btns[i++];) {
+			            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+			        }
+			    }
+			
+			    function getLocalData () {
+			        alert(UE.getEditor('editor').execCommand( "getlocaldata" ));
+			    }
+			
+			    function clearLocalData () {
+			        UE.getEditor('editor').execCommand( "clearlocaldata" );
+			        alert("已清空草稿箱")
+			    }
+			</script>
+	   	 	
+	   	 	<textarea id="content" name="content" rows="1" cols="20" style="visibility: hidden;" ></textarea> 
+	   	 	<input type="text" name="author" value="caijiachang" style="visibility: hidden;">
+	   	 	<div class="check-group">
+	   	 		<input type="radio" name="newsTypeId" value="1" /> TYPE1 &nbsp;&nbsp;
+	  			<input type="radio" name="newsTypeId" value="2" /> TYPE2 &nbsp;&nbsp;
+	   	 	</div>
+	   	 	<input type="submit" value="发表新文章" onclick="setContentn();">
+   		</form>
+   </div>
+</div>
+</div>
+<s:include value="footer.jsp"></s:include>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="front/js/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="front/js/bootstrap.js"></script>
-	<!-- station function -->
-	<script type="text/javascript" src="front/js/article.js"></script>
-	<!-- ajax -->
-	<script type="text/javascript" src="front/js/ajax.get.js"></script>
-	<!-- waterfall flow -->
-	<script type="text/javascript" src="front/js/jquery.waterfall.js"></script>
-	<!-- loading flow -->
-	<script type="text/javascript" src="front/js/jquery.shCircleLoader.js"></script>
+<script src="front/js/bootstrap.js"></script>
+<script type="text/javascript" src="front/js/jquery.waterfall.js"></script>
 
-	<script>
-	$(document).ready(function() {
-		$("#loading").shCircleLoader();
-		setTimeout("getFirstPageData()",1000);
-	});
-	
-	function getFirstPageData () {
-		var opt = {
-			auto_imgHeight : true,
-			insert_type : 1
-		};
-		
-		$.ajax({
-			type : "post", //使用get方法访问后台
-			dataType : "json", //返回json格式的数据
-			url : "interface/acquireMenu.action", //要访问的后台地址
-			data : "type=1", //要发送的数据
-			success : function(msg) { //msg为返回的数据，在这里做数据绑定
-				$("#loading").hide();
- 				//TODO we should define the pagesize
- 				$("#cellUploadPhoto").css({"display": "block"});
-				var data = msg.index;
-				$("#waterfall").append(getNewCellCode(data));
-
-				opt.getResource = function(index, render) {
-					return $(getNewCellCode(data));
-				};
-				$('#waterfall').waterfall(opt);
-			}
-		});
-	}
-
-	function getNewCellCode(data) {
-		var html = '';
-		for ( var i = 0; i < data.length; i++) {
-			var random = Math.floor(Math.random() * 6 + 1);
-			html += '<div class="cell"><div class="thumbnail">'
-					+ '<a href="#"><img alt="300x200" src="front/img/'+ random +'.jpg" />'
-					+ '<div class="caption"><h3><a href="myarticles_details?articleid='
-					+ data[i].newsInfoId
-					+ '">'
-					+ maxLengthOf(data[i].newsInfoTitle, 16)
-					+ '</a></h3><p>'
-					+ data[i].newsInfoTitle
-					+ '</p>'
-					+ '<hr/><p class="text-right"><a class="btn" href="#"><span class="glyphicon glyphicon-edit"></span></a>'
-					+ '<a class="btn" href="#"><span class="glyphicon glyphicon-heart"></span></a><a class="btn" href="#"><span class="glyphicon glyphicon-trash"></span></a>'
-					+ '</p></div></div></div>';
-		}
-		return $(html);
-	}
-
-	function maxLengthOf(text, length) {
-		if (text.length > length) {
-			return text.substr(0, length) + "...";
-		} else {
-			return text;
-		}
-	}
-
-	function readArticle(value) {
-		// 		$.ajax({
-		// 			type : "post",//使用get方法访问后台
-		// 			dataType : "json",//返回json格式的数据
-		// 			url : "interface/acquireNewsInfo.action",//要访问的后台地址
-		// 			data : "pid=" + value,//要发送的数据
-		// 			success : function(msg) {//msg为返回的数据，在这里做数据绑定
-
-		// 				var data = msg.articleInfo;
-		// 				alert(data.newsInfoContent);
-		$('#article_title').html(data.newsInfoTitle);
-		$('#article_content').html(data.newsInfoContent);
-		// 			}
-		// 		});
-	}
-	</script>
 </body>
 </html>

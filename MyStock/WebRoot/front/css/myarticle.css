@@ -1,63 +1,78 @@
-.article-list {
-	
+#bd{width: 80%;margin: 0 auto;}
+#art_nav{margin-top: 100px;}
+
+/*轮廓*/
+#home,#type,#write{border: 1px solid #ddd;border-top:0px;padding-top: 20px;width: 80%;margin-bottom: 100px;}
+
+/*文章管理*/
+#myarticles_list_bd{width: 100%;padding: 0 10px 0;}
+.myarticles_list_typefun{margin: 10px 0 10px;}
+.myarticles_list_typefun select:nth-child(1){
+	width: 300px;
 }
-
-
-#article_bd {
-	overflow: hidden;
-	padding: 0;
+.myarticles_list_typefun select:nth-child(2){
+	width: 150px;
+}
+.myarticles_list_table{
 	width: 100%;
-	margin: 0 auto;
-	padding-top: 60px;
-	min-height: 800px;
 }
-
-.list,.con {
-	height: auto;
-	margin-bottom: -10000px;
-	padding-bottom: 10000px;
+.myarticles_list_table thead{
+	border-bottom: 1px solid #ddd;
 }
-
-.list {
-	display: inline;
-	float: left;
-	background: gray;
+.myarticles_list_table th:nth-child(1){
+	font-weight:bold;
+	width: 50%;
 }
-
-.list_blog ul,.list_blog li {
-	list-style: none;
-	margin: 0;
-	padding: 5px 3px 0;
+.myarticles_list_table th:nth-child(2){
+	font-weight:bold;
+	width: 15%;
 }
-
-.list_blog a {
-	color: #333;
+.myarticles_list_table th:nth-child(3){
+	font-weight:bold;
+	width: 15%;
 }
-
-.list_blog a:hover {
-	text-decoration: none;
-	color: #ddd;
+.myarticles_list_table th:nth-child(4){
+	font-weight:bold;
+	width: 20%;
 }
-
-.list_blog_fun {
-	float: right;
+.myarticles_list_table tbody tr{
+	line-height: 40px;
+	border-bottom: 1px solid #ddd;
 }
-
-.list_blog_fun a {
-	color: #333;
-	text-decoration: none;
+.myarticles_list_table tbody tr:nth-child(even){
+	background-color: #ddd;
 }
+/*end 文章管理*/
 
-.list_blog_fun a:hover {
-	cursor: pointer;
-	color: #ddd;
+/*文章分类*/
+#myarticles_type_bd{width: 100%;padding: 0 10px 0;}
+.myarticles_type_table{
+	width: 100%;
 }
-
-.con {
-	float: right;
-	width: 93%;
-	padding-left: 25px;
-	padding-right: 25px;
+.myarticles_type_table thead{
+	border-bottom: 1px solid #ddd;
 }
+.myarticles_type_table th:nth-child(1){
+	font-weight:bold;
+	width: 50%;
+}
+.myarticles_type_table th:nth-child(2){
+	font-weight:bold;
+	width: 15%;
+}
+.myarticles_type_table th:nth-child(3){
+	font-weight:bold;
+	width: 15%;
+}
+.myarticles_type_table tbody tr{
+	line-height: 40px;
+	border-bottom: 1px solid #ddd;
+}
+.myarticles_type_table tbody tr:nth-child(even){
+	background-color: #ddd;
+}
+/*end 文章分类*/
 
-.loading { width: 152px; height: 152px; margin: 0 auto;}
+/*新写文章*/
+
+/*end 新写文章*/
