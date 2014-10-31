@@ -51,7 +51,7 @@
 									<br><span>适用工薪族</span>
 								</div>
 								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
+									<p><a href="front/developing.jsp">持中国居民身份证的中国大陆公民21~55周岁</a></p>
 								</div>
 							</li>	
 						</ul>
