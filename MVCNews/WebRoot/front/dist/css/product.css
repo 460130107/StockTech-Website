@@ -6,3 +6,33 @@ header{
   	opacity: 1;-o-opacity: 1;-moz-opacity: 1;
   	-webkit-opacity: 1 !important;
 }
+
+
+
+/*产品详情*/
+.title,.question{
+	width:1000px;
+	margin: 0 auto;
+}
+.img-detail{
+	width: 140px;height: 140px;border: 1px solid black;
+	float: left;
+	margin: 0 50px;
+	display: block;
+}
+.question{
+	padding: 50px 0;
+}
+/* .down_link{
+	display: inline-block;
+	float: right;
+	font-size: 14px;
+	margin: 0;padding: 0;
+} */
+
+
+
+
+/*common.css*/
+.bgc-blue{background: rgb(198,236,255);}
+.bgc-green{background: rgb(82,195,197);}
