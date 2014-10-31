@@ -17,41 +17,6 @@
 <link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
 <style type="text/css">
-    /* Custom Styles */
-    ul.nav-tabs{
-        width: 160px;
-        margin-top: 20px;
-        border-radius: 4px;
-        border: 1px solid #222;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
-    }
-    ul.nav-tabs li{
-        margin: 0;
-        border-top: 1px solid #222;
-    }
-    ul.nav-tabs li:first-child{
-        border-top: none;
-    }
-    ul.nav-tabs li a{
-        margin: 0;
-        padding: 8px 16px;
-        border-radius: 0;
-        color:#222;
-    }
-    ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
-        color: #fff;
-        background: #222;
-        border: 1px solid #222;
-    }
-    ul.nav-tabs li:first-child a{
-        border-radius: 4px 4px 0 0;
-    }
-    ul.nav-tabs li:last-child a{
-        border-radius: 0 0 4px 4px;
-    }
-    ul.nav-tabs.affix{
-        top: 30px; /* Set the top position of pinned element */
-    }
     
     div.col-xs-9 h2{
     	font-size: 20px;

@@ -14,6 +14,8 @@
 						<a href="front/product.jsp">产品</a></li>
 					<li class='${param.index=="project"?"active":"" }'>
 						<a href="front/project.jsp">项目</a></li>
+					<li class='${param.index=="corpration"?"active":"" }'>
+						<a href="front/corpration.jsp">合作</a></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="front/recruit.jsp" target="_blank">关于斯多克</a>
 							<ul class="dropdown-menu" data-toggle="toggle_ul">
@@ -28,8 +30,8 @@
 							<a href="front/account.jsp">登录</a></li>
 						<li class='${param.index=="account"?"active":"" }'>
 							<a href="front/signup.jsp">注册</a></li>
-						<li class='${param.index=="account"?"active":"" }'>
-							<a href="front/account.jsp">忘记密码</a></li>
+						<li class='${param.index=="forum"?"active":"" }'>
+							<a href="front/forum.jsp">论坛</a></li>
 					</ul>
 				</div>
 			</div>
