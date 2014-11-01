@@ -1,0 +1,93 @@
+@CHARSET "UTF-8";
+
+.maxbg {
+/* 	-moz-border-image: url(../img/fullscreen-developing.jpg) 0; */
+/* 	background-repeat: no-repeat\9; */
+/* 	background-image: none\9; */
+/* 	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/fullscreen-developing.jpg', sizingMethod='scale')\9;  */
+	margin-top: 50px;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	background: transparent url("../img/fullscreen-developing-sailing.jpg") no-repeat;
+	background-position: center;
+	background-size: cover;
+	/* background-size: 100% 100%; */
+	moz-background-size: 100% 100%; 
+	-o-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	text-align: center;
+	opacity: 0.8;
+}
+
+.maxbg > div {
+	padding-top: 120px;
+}
+
+.declaration {
+	padding-top: 200px;
+}
+
+.declaration .icon {
+	
+}
+
+.declaration .title {
+	font-size: 48px;
+	color: #1abc9c;
+}
+
+.declaration .link-email {
+	font-size: 32px;
+	font-style: italic;
+	color: #1abc9c;
+}
+
+.declaration .body {
+	font-size: 24px;
+	color: #000033;
+}
+
+.declaration .hyperlink {
+	color: #1abc9c;
+}
+
+.subscribe-form {
+	font-size: 17px;
+}
+
+.subscribe-form form {
+	margin: 40px 0 10px;
+}
+
+.subscribe-form input.form-control {
+	height: 42px;
+	font-size: 17px;
+}
+
+.subscribe-form .btn.btn-primary:hover,
+.subscribe-form .btn.btn-primary:focus {
+  background-color: #e74c3c;
+}
+.subscribe-form .btn.btn-primary:active,
+.subscribe-form .btn.btn-primary.active {
+  background-color: #c44133;
+}
+
+.subscribe-form .btn.btn-primary {
+	background: #1abc9c;
+	border: 0px;
+	height: 42px;
+	font-size: 17px;
+}
+
+.home-icon {
+	background: transparent url("../img/logo_white.png") no-repeat;
+}
+
+
