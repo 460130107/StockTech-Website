@@ -46,20 +46,5 @@
 <jsp:include page="_footer.jsp" />
 <script src="front/dist/js/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-/*$(document).ready(function(){
-	$("button[data-target='personal']").attr("class","btn btn-default active");
-	$("div[data-panle='company']").css("display","none");
-	$("button[data-target='personal']").click(function(){		
-		$("div[data-panle='personal']").css("display","block");
-		$("div[data-panle='company']").css("display","none");		
-	});
-	$("button[data-target='company']").click(function(){
-		$("button[data-target='personal']").attr("class","btn btn-default");
-		$("div[data-panle='personal']").css("display","none");
-		$("div[data-panle='company']").css("display","block");
-	});
-})*/
-</script>
 </body>
 </html>
