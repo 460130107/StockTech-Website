@@ -19,310 +19,135 @@
 		border-radius:4px;-o-border-radius:4px;-moz-border-radius:4px;-webkitborder-radius:4px;
 		
 	}
+	.layer{
+		border: 1px solid #ddd;
+	}
 </style>
 </head>
 <body>
 <jsp:include page="_header.jsp?index=product" />
-<div id="product" style="background: #FAFAFA;">
-	<div class="product-topphoto text-center" style="height:200px;background: url('front/dist/img/product-top-winner.jpg');-webkit-background-size:100% 100%;">
-		<h2 style="line-height: 200px;color: #fff;margin: 0;">选择斯多克，投资快人一步</h2>
-	</div>
-	<br>
-	<div class="container">
-		<div class="btn-group" id="btn-nav">
-			<a class="btn btn-default" href="front/product.jsp#crowd">投资人群</a>
-			<a class="btn btn-default" href="front/product.jsp#amount">投资额度</a>
-			<a class="btn btn-default" href="front/product.jsp#period">投资周期</a>
-			<a class="btn btn-default" href="front/product.jsp#application">应用平台</a>			
+
+<div class="container">
+	<div class="row clearfix">
+	<!-- 产品介绍  第一行 -->
+	<div class="col-md-12 column mgb20 mgt20">
+		<div class="row clearfix">
+			<!-- 产品一 -->
+			<div class="col-md-4 column">
+			  <div class="layer bdradius12-tl bdradius12-tr">
+				<ul class="list-unstyled ">
+					<li class="table-header bgc-green2 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
+					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
+					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
+					<li class="table-item pd6 pdl20 f14">资金安全，投资标的适用本金保障计划</li>
+					<li class="table-footer table-item pd6 pdl20 f14">系统优先投标，精选优质债权，省心省力</li>
+				</ul> 
+				<div style="text-align: center;" class="pd10">
+					<a href="front/productDetail.jsp" type="button" class="btn btn-default btn-info">详情</a>
+					<a type="button" class="btn btn-default btn-info">下载</a>
+				</div>				
+			  </div>
+			</div>
+			<!-- 产品二 -->
+			<div class="col-md-4 column">
+			  <div class="layer bdradius12-tl bdradius12-tr">
+				<ul class="list-unstyled ">
+					<li class="table-header bgc-green1 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
+					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
+					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
+					<li class="table-item pd6 pdl20 f14">资金安全，投资标的适用本金保障计划</li>
+					<li class="table-footer table-item pd6 pdl20 f14">系统优先投标，精选优质债权，省心省力</li>
+				</ul> 
+				<div style="text-align: center;" class="pd10">
+					<a href="front/productDetail.jsp" type="button" class="btn btn-default btn-info">详情</a>
+					<a type="button" class="btn btn-default btn-info">下载</a>
+				</div>					
+			  </div>
+			</div>
+			<!-- 产品一三-->
+			<div class="col-md-4 column">
+			  <div class="layer bdradius12-tl bdradius12-tr">
+				<ul class="list-unstyled ">
+					<li class="table-header bgc-yellow1 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
+					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
+					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
+					<li class="table-item pd6 pdl20 f14">资金安全，投资标的适用本金保障计划</li>
+					<li class="table-footer table-item pd6 pdl20 f14">系统优先投标，精选优质债权，省心省力</li>
+				</ul> 
+				<div style="text-align: center;" class="pd10">
+					<a href="front/productDetail.jsp" type="button" class="btn btn-default btn-info">详情</a>
+					<a type="button" class="btn btn-default btn-info">下载</a>
+				</div>					
+			  </div>
+			</div>			
 		</div>
-	</div>
-	<div class="container text-center" >
-		<div class="panle" data-panle="crowd" id="crowd">
-			<h3 style="border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;">
-				<a href="front/download/product_download.jsp#btn-nav-crowd"><img alt="product-crowd" src="front/dist/img/product-crowd.png" style="margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:25px;"></a>
-			</h3><br><br>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-01 .png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>适用工薪族</span>
-								</div>
-								<div style="">
-									<p><a href="front/developing.jsp">持中国居民身份证的中国大陆公民21~55周岁</a></p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-01 .png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>适用工薪族</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-01 .png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>适用工薪族</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-01 .png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>适用工薪族</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-				</div>
-			</div>	
-			<a href="front/product.jsp#btn-nav" style="color:#ddd;">返回导航</a>		
-		</div><br>
-		<div class="panle" data-panle="amount" id="amount">
-			<h3 style="border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;">
-				<a href="front/download/product_download.jsp#btn-nav-amount"><img alt="product-crowd" src="front/dist/img/product-amount.png" style="margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:25px;"></a>
-			</h3><br><br>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-02.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>小额投资</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-02.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>中额投资</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-02.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>大额投资</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-02.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>巨额投资</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-				</div>
-			</div>	
-			<a href="front/product.jsp#btn-nav" style="color:#ddd;">返回导航</a>			
-		</div><br>
-		<div class="panle" data-panle="period" id="period">
-			<h3 style="border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;">
-				<a href="front/download/product_download.jsp#btn-nav-period"><img alt="product-crowd" src="front/dist/img/product-period.png" style="margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:25px;"></a>
-			</h3><br><br>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-03.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>短期</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-03.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>中期</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-03.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>中长期</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-03.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>长期</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-				</div>
+	</div><!-- end 产品介绍 第一行 -->
+	<!-- 产品介绍  第二行 -->
+	<div class="col-md-12 column mgb20">
+		<div class="row clearfix">
+			<!-- 产品一 -->
+			<div class="col-md-4 column">
+			  <div class="layer bdradius12-tl bdradius12-tr">
+				<ul class="list-unstyled ">
+					<li class="table-header bgc-green2 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
+					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
+					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
+					<li class="table-item pd6 pdl20 f14">资金安全，投资标的适用本金保障计划</li>
+					<li class="table-footer table-item pd6 pdl20 f14">系统优先投标，精选优质债权，省心省力</li>
+				</ul> 
+				<div style="text-align: center;" class="pd10">
+					<a href="front/productDetail.jsp" type="button" class="btn btn-default btn-info">详情</a>
+					<a type="button" class="btn btn-default btn-info">下载</a>
+				</div>				
+			  </div>
 			</div>
-			<a href="front/product.jsp#btn-nav" style="color:#ddd;">返回导航</a>	
-		</div><br>
-		<div class="panle" data-panle="application" id="application">
-			<h3 style="border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;">
-				<img alt="product-crowd" src="front/dist/img/product-platform.png" style="margin: 0;padding:0 30px 0;font-size: 24px;position: relative;top:25px;">
-			</h3><br><br>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-04.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>PC端</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-04.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>适用工薪族</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-04.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>适用工薪族</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<ul class="list-inline">
-							<li style="">
-								<div style="float: left;width: 30%;">
-									<a href="#"><img alt="" src="front/dist/img/product-crowd-04.png" title="点击下载应用..." style="margin-bottom: 30px;"></a>
-									<br><span>适用工薪族</span>
-								</div>
-								<div style="">
-									<p>持中国居民身份证的中国大陆公民21~55周岁</p>
-								</div>
-							</li>	
-						</ul>
-					</div>
-				</div>
+			<!-- 产品二 -->
+			<div class="col-md-4 column">
+			  <div class="layer bdradius12-tl bdradius12-tr">
+				<ul class="list-unstyled ">
+					<li class="table-header bgc-green1 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
+					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
+					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
+					<li class="table-item pd6 pdl20 f14">资金安全，投资标的适用本金保障计划</li>
+					<li class="table-footer table-item pd6 pdl20 f14">系统优先投标，精选优质债权，省心省力</li>
+				</ul> 
+				<div style="text-align: center;" class="pd10">
+					<a href="front/productDetail.jsp" type="button" class="btn btn-default btn-info">详情</a>
+					<a type="button" class="btn btn-default btn-info">下载</a>
+				</div>					
+			  </div>
 			</div>
-			<a href="front/product.jsp#btn-nav" style="color:#ddd;">返回导航</a>	
-		</div>		
+			<!-- 产品一三-->
+			<div class="col-md-4 column">
+			  <div class="layer bdradius12-tl bdradius12-tr">
+				<ul class="list-unstyled ">
+					<li class="table-header bgc-yellow1 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
+					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
+					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
+					<li class="table-item pd6 pdl20 f14">资金安全，投资标的适用本金保障计划</li>
+					<li class="table-footer table-item pd6 pdl20 f14">系统优先投标，精选优质债权，省心省力</li>
+				</ul> 
+				<div style="text-align: center;" class="pd10">
+					<a href="front/productDetail.jsp" type="button" class="btn btn-default btn-info">详情</a>
+					<a type="button" class="btn btn-default btn-info">下载</a>
+				</div>					
+			  </div>
+			</div>			
+		</div>
+	</div><!-- end 产品介绍 第二行 -->
 	</div>
-	<br>
 </div>
+
 
 <jsp:include page="_footer.jsp" />
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
-<script type="text/javascript">
-/*$(document).ready(function(){
-	var panle=$("div[data-panle]");
-	panle.each(function(){
-		$(this).css("display","none");
-	})
-	$("div[data-panle='crowd']").css("display","block");
-	$("button[data-target='crowd']").attr("class","btn btn-default active");
-	$("button[data-target]").on({
-		click:function(){
-			var target=$(this).attr("data-target");
-			$("button[data-target='crowd']").attr("class","btn btn-default");
-			panle.each(function(){
-				if($(this).attr("data-panle")!=target){
-					$(this).css("display","none");
-				}else{
-					$(this).css("display","block");					
-				}
-			});
-		}
-	});
-})*/
-</script>
 </body>
 </html>
