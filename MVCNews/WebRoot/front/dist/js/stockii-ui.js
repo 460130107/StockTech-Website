@@ -10,6 +10,11 @@ function fullscreenHeight(selector) {
 	$("" + selector).css('height', sH + 'px');
 }
 
+function fullscreenWidth(selector) {
+	var sH = $(window).width();
+	$("" + selector).css('width', sH + 'px');
+}
+
 /**
  * 
  * @param selector
