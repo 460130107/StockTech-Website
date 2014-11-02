@@ -13,7 +13,7 @@ $(document).ready(function(){
 	    });
 	})();
 	(function(){
-		if(parseInt($("body").css("height"))<parseInt(window.outerHeight)){
+		if(document.body.scrollHeight < window.screen.availHeight){
 			$("footer").css("position","fixed");
 			$("footer").css("bottom","0");
 		}
@@ -28,11 +28,13 @@ $(document).ready(function(){
 			mouseenter:function(){
 				console.log('enter');		
 				var $menu=$(this).find(".dropdown-menu[data-toggle='toggle_ul']");
-				$menu.toggle( "blind" );
+				//$menu.toggle( "blind" );
+				$menu.show();
 			},
 			mouseleave:function(){
 				var $menu=$(this).find(".dropdown-menu[data-toggle='toggle_ul']");
-				$menu.toggle( "blind" );
+				//$menu.toggle( "blind" );
+				$menu.hide();
 			}
 		});
 	})();

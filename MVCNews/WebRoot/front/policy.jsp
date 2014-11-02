@@ -36,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <ul id="myTab" class="nav nav-tabs">
    <li class="active"><a href="#provicy" data-toggle="tab">隐私条款</a></li>
    <li><a href="#policy" data-toggle="tab">服务政策</a></li>
-   <li><a href="#question" data-toggle="tab">常见问题</a></li>
+   <li><a href="#question" data-toggle="tab">相关法律</a></li>
 </ul>
 <div id="myTabContent" class="tab-content">
    <div class="tab-pane fade in active" id="provicy">

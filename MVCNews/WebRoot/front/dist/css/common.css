@@ -9,7 +9,8 @@ body{
 	 */
 	 font-family:'Glyphicons Halflings' !important;
 	 font-size: 18px;
-	background: #FAFAFA;
+	 background: rgb(242,242,242);
+	 min-width: 1300px;
 }
 h1,h2,h3,h4,h5,span,a,p,div,figure,figcaption,li{
 	font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Segoe UI', 'Microsoft Yahei', Tahoma, Arial, STHeiti, sans-serif !important;
@@ -43,7 +44,7 @@ nav .nav-logo.nav-logo-normal {
 
 nav .nav.navbar-nav{
 	height: 100px;
-	margin-left: 105px;
+	margin-left: 140px;
 }
 
 nav ul.nav.navbar-nav li{
@@ -70,8 +71,10 @@ nav ul.nav.navbar-nav a{
 }
 
 nav ul.nav.navbar-nav a:hover{
-	border-bottom: #ba2635 5px solid;
-	color: #ba2635;
+	/* border-bottom: #ba2635 5px solid;
+	color: #ba2635; */
+	border-bottom: #E04050 5px solid;
+	color: #E04050;	
 }
 
 nav ul.nav.navbar-nav li.active > a{
@@ -104,7 +107,7 @@ header li a:hover {
 
 /* Styles for footer elements */
 footer {
-	width: 100%;
+	min-width: 1000px;
 	text-align: center;
 	padding: 30px 0;
 	background-color: #333333;
@@ -129,23 +132,6 @@ footer div.text-center{
 	color: #ddd;
 }
 /* End of styles for footer elements */
-
-/* Poster styles */
-.poster {
-	
-}
-
-.poster-main {
-	max-width:100%;
-}
-
-.poster-main .main-bg {
-	max-width:100%;
-}
-
-/* End of styles for Poster elements */
-
-
 
 /* Styles for top bar upon the nav-bar elements */
 #top {
@@ -301,12 +287,13 @@ ul.nav-stacked.affix{
 }
 
 /*common组件*/
-.bgc-blue1{background-color: rgb();}
+.bgc-blue1{background-color: rgb(27,184,226);}
 .bgc-green1{background-color: rgb(82,195,197);}
 .bgc-green2{background-color: rgb(195,208,146);}
 .bgc-red1{background-color: rgb();}
 .bgc-yellow1{background-color: rgb(240,211,113);}
 .bgc-orange1{background-color: rgb();}
+.bgc-white{background-color: rgb(255,255,255)}
 .f10{font-size: 10px;}
 .f12{font-size: 12px;}
 .f14{font-size: 14px;}
@@ -365,6 +352,9 @@ ul.nav-stacked.affix{
 .pd35{padding: 35px;}
 .pd40{padding: 40px;}
 .pd45{padding: 45px;}
+.pd50{padding: 50px;}
+.pd55{padding: 55px;}
+.pd60{padding: 60px;}
 .pdt10{padding-top: 10px;}
 .pdt20{padding-top: 20px;}
 .pdt25{padding-top: 25px;}
@@ -372,6 +362,9 @@ ul.nav-stacked.affix{
 .pdt35{padding-top: 35px;}
 .pdt40{padding-top: 40px;}
 .pdt45{padding-top: 45px;}
+.pdt50{padding-top: 50px;}
+.pdt55{padding-top: 55px;}
+.pdt60{padding-top: 60px;}
 .pdl10{padding-left: 10px;}
 .pdl20{padding-left: 20px;}
 .pdl25{padding-left: 25px;}
@@ -379,13 +372,19 @@ ul.nav-stacked.affix{
 .pdl35{padding-left: 35px;}
 .pdl40{padding-left: 40px;}
 .pdl45{padding-left: 45px;}
+.pdl50{padding-left: 50px;}
+.pdl55{padding-left: 55px;}
+.pdl60{padding-left: 60px;}
 .pdb10{padding-bottom: 10px;}
 .pdb20{padding-bottom: 20px;}
 .pdb25{padding-bottom: 25px;}
 .pdb30{padding-bottom: 30px;}
 .pdb35{padding-bottom: 35px;}
 .pdb40{padding-bottom: 40px;}
-.pddb45{padding-bottom: 45px;}
+.pdb45{padding-bottom: 45px;}
+.pdb50{padding-bottom: 50px;}
+.pdb55{padding-bottom: 55px;}
+.pdb60{padding-bottom: 60px;}
 .pdr10{padding-right: 10px;}
 .pdr20{padding-right: 20px;}
 .pdr25{padding-right: 25px;}
@@ -393,6 +392,9 @@ ul.nav-stacked.affix{
 .pdr35{padding-right: 35px;}
 .pdr40{padding-right: 40px;}
 .pdr45{padding-right: 45px;}
+.pdr50{padding-right: 50px;}
+.pdr55{padding-right: 55px;}
+.pdr60{padding-right: 60px;}
 
 /*img size*/
 .img-head{width: 100%;height: 150px;}
@@ -440,6 +442,14 @@ ul.nav-stacked.affix{
 .table-footer{
 	border-bottom: 1px solid #ddd;
 }
+
+/*CSS 实现特殊标记*/
+.icon-triangle-rt{width: 0;height: 0;border-top: 20px solid rgb(33,157,190);border-left: 20px solid transparent; display: inline-block;}
+
+
+/*网页标签集合*/
+.tag-blue{display: inline-block;background-color: rgb(205,234,248);color: rgb(24,172,236);width: 80px;height:30px;line-height: 30px;text-align: center;}
+
 
 /* News list styles */
 .news-list {

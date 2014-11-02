@@ -149,18 +149,26 @@ nav,nav li,nav a{
 /* end product panle */
 
 /* poster main */
-.poster-main .action-area .link-button {
+/* .poster-main .action-area .link-button {
+	
 	width: 292px;
 	height: 70px;
+	background-image:url('../img/index_quick_view.png');
 	background: transparent url('../img/index_quick_view.png') no-repeat !important;
 	position:absolute;
 	z-index: 10;
 	margin-top: 440px;
-	/* top: 60%;
-	bottom: 40%; */
-	/*
+	top: 60%;
+	bottom: 40%;
+	
 	left: 50%;
-	right: 50%; */
+	right: 50%;
+} */
+.link-button {
+	display:inline-block;
+	width: 292px;
+	height: 70px;	
+	background: transparent url('../img/index_quick_view.png') no-repeat !important;
 }
 
 .poster-main .action-area {

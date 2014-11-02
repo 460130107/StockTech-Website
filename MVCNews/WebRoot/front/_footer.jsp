@@ -16,7 +16,7 @@
         </ul>
         <ul class="list-unstyled col-sm-3">
             <li><h3>网站帮助</h3></li>
-            <li><a href="front/question.jsp">问题咨询</a></li>
+            <li><a href="front/help/index.jsp">问题咨询</a></li>
             <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2271088927&site=qq&menu=yes">在线客服</a></li>
             <li><a target="_blank" href="front/policy.jsp">隐私政策</a></li>
             <li><a target="_blank" href="front/policy.jsp">服务条款</a></li>

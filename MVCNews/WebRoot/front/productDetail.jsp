@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="front/dist/css/bootstrap.css" rel="stylesheet">
 	<link href="front/dist/css/common.css" rel="stylesheet">
 	<link href="front/dist/css/product.css" rel="stylesheet">
   </head>
@@ -27,8 +27,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <jsp:include page="_header.jsp?index=product" />
   
-  <div>
-  	<img alt="img" src="front/dist/img/product-detail.jpg" style="width: 100%;">
+  <div class="pdt60 pdb60" style="text-align:center;background-size:100% 100%;;background-image: url('front/dist/img/product-detail.jpg');">
+  	<!-- <img alt="img" src="front/dist/img/product-detail.jpg" style="width: 100%;"> -->
+  	<a class="btn btn-default btn-info" href="">点击下载</a>
   </div>
    <!-- 产品图形介绍 -->
    <div class="bgc-green1">

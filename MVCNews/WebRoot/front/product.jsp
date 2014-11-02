@@ -11,7 +11,7 @@
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
 <link rel="icon" href="../../favicon.ico">
-<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
 <style type="text/css">
 	div.panle{
@@ -142,6 +142,42 @@
 		</div>
 	</div><!-- end 产品介绍 第二行 -->
 	</div>
+	
+	
+	<!-- questions -->
+	<div class="container">
+		<div class="row mgb20">
+			<h3 class="bgc-green1 pdl20 pdb20 pdt20 f24">常见问题<a href="front/guide.jsp" class="btn btn-default btn-info mgr20" style="float: right;">新手指南</a></h3>
+			
+			<div class="col-md-12 mgb20" style="border-bottom: 1px dashed #ddd;">
+				<p class="f20 pd20">Q1：我可以炒股吗？
+				<p class="f16">　　　可以，年满18周岁，具有完全民事权利能力和民事行为能力，可以在斯多克网站上进行注册、完成实名认证、绑定银行卡，成为炒股达人。
+								
+			</div>
+		</div>
+		
+		<div class="row mgb20">
+			<div class="col-md-12 mgb20" style="border-bottom: 1px dashed #ddd;">
+				<p class="f20 pd20">Q2：什么样的产品适合我？
+				<p class="f16">　　　请根据以下数据和您的个人投资需求正确的选择斯多克的产品。或者可以点击<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2271088927&site=qq&menu=yes">这里</a>，联系客服帮助您选择正确的投资产品。
+								
+			</div>
+		</div>
+		
+		<div class="row mgb20">
+			<div class="col-md-12 mgb20" style="border-bottom: 1px dashed #ddd;">
+				<p class="f20 pd20">Q3：怎样进行投资？
+				<p class="f16">　　　请您按照以下步骤进行投资：<br>
+									　　　1. 在人人贷网站上进行注册、通过实名认证、成功绑定银行卡；<br>
+									　　　2. 账户充值；<br>
+									　　　3. 浏览U计划、散标投资列表、债权转让列表，选择自己感兴趣的投资方式；<br>
+									　　　4. 确认投资，投资成功。<br>
+								
+			</div>
+		</div>
+		
+	</div>
+	
 </div>
 
 
