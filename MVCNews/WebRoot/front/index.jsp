@@ -28,18 +28,16 @@
 <jsp:include page="_header.jsp?index=index" />
 <div class="page-content">
 	<div class="container-fluid">
-	<div class="row-fluid poster-main" style="padding-top:430px;height:659px;background-image: url('front/dist/img/index_main_bg.jpg');background-size:100% 100% ">
-		<div style="text-align: center;"><a class="link-button" href="front/product.jsp"></a></div>
-	</div> 
+		<div class="row-fluid poster-main" style="padding-top:430px;height:659px;background-image: url('front/dist/img/index_main_bg.jpg');background-size:100% 100% ">
+			<div style="text-align: center;"><a class="link-button" href="front/product.jsp"></a></div>
+		</div> 
 	
-	<div class="container-fluid sections-list">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-2 col-lg-offset-5">
-					<div class="pin pin-gray"></div>
-				</div>
+	<div class="sections-list container-fluid">
+		<div class="row section section-nomargin">
+			<div class="col-lg-12 pin">
+				<img alt="pin" src="front/dist/img/index_pin_gray.png">
 			</div>
-			<div class="wisdom-saying text-center">
+			<div class="col-lg-12 wisdom-saying text-center">
 				<div class="row">
 					<div class="col-lg-2 col-lg-offset-5">
 						<img alt="portrait" src="front/dist/img/index_investor_livermore.png">
@@ -48,7 +46,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 content">
-						如果你比99%的人知道的都多<br/>那你一定比99%的人都赚钱
+						"如果你比99%的人知道的都多<br/>那你一定比99%的人都赚钱"
 					</div>
 				</div>
 				<div class="row">
@@ -58,127 +56,110 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 link">
-						<a href="product.jsp">了解如何利用这些数据
+						<a href="front/product.jsp">了解如何利用这些数据
 							<span class="link-icon"></span>
 							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	
-	
-</div>
-
-
-
-<div class="container-fluid">
-<!-- what is stockii -->
-<div id="what_is_stockii" class="text-center">	
-	<!-- what can stockii provide -->
-	<div class="container">		
-		<span id="page_title">斯多克能提供什么　</span><img alt="question" src="front/dist/img/index-intro-question.png" style="width:50px;height: auto;position:relative;top:-8px;">
-		<hr class="top"><hr class="bottom"><br>
-		<div class="row">
-			<div class="col-md-6"><img alt="" src="front/dist/img/index-intro-keyword.png" class="intro"> </div>
-			<div class="col-md-6 text-left">
-				<ul class="list-unstyled">
-					<li>智能化投资
-						<p>利用大数据、科学云计算、移动分布式计算等新兴技术进行投资智能化</p>
-					</li>
-					<li>一对一式服务
-						<p>斯多克为每个客户量身打造不同的投资方案，提供本息安全、回报丰厚、操作便捷的互联网金融投资产品。</p>
-					</li>
-				</ul>				
+		
+		<div class="row section section-margin section-white">
+			<div class="col-lg-12 pin">
+				<img alt="pin" src="front/dist/img/index_pin_white.png">
 			</div>
-		</div>	
-		<img alt="process-arrow" src="front/dist/img/process/process_right_bottom.png"　class="process-arrow">					
-	</div>	<!-- ./ end provide -->
-	<!-- what is smart investment -->
-	<div class="container">		
-		<span id="page_title">什么是智能投资　</span><img alt="question" src="front/dist/img/index-intro-question.png" style="width:50px;height: auto;position:relative;top:-8px;">
-		<hr class="top"><hr class="bottom"><br>
-		<div class="row">
-			<div class="col-md-6"><img alt="" src="front/dist/img/index-intro-keyword.png" class="intro"> </div>
-			<div class="col-md-6 text-left">
-				<ul class="list-unstyled">
-					<li>大数据
-						<p>大数据(big data)，或称巨量资料，指的是所涉及的资料量规模巨大到无法透过目前主流软件工具，在合理时间内达到撷取、管理、处理、并整理成为帮助企业经营决策更积极目的的资讯</p>
-					</li>
-					<li>智能分析
-						<p>根据实时动态的投资报告分析，通过不同参数指标预设不同的预播规则，一旦投资在场景中触发了预定义参数指标的边界，斯多克产品会向您发出投资提示，用户可以通过实时提示采取相关措施</p>
-					</li>
-					<!-- 
-					<li>科学云计算
-						<p></p>
-					</li>
-					<li>移动分布式计算
-						<p></p>
-					</li> -->
-				</ul>
+			<div class="col-lg-12 wisdom-saying text-center">
+				<div class="row">
+					<div class="col-lg-2 col-lg-offset-5">
+						<img alt="portrait" src="front/dist/img/index_investor_newberg.png">
+						<p class="author-name">罗伊·纽伯格</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 content">
+						"投资的成功是建立在已有的知识和经验基础上的"
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 explaination">
+						<span class="important-data">专家</span>级的水平，<span class="important-data">管家</span>式的服务，斯多克为客户提供业界<span class="important-data">顶级</span>服务体验
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 link">
+						<a href="front/ourteam.jsp">查看我们的团队
+							<span class="link-icon"></span>
+							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+					</div>
+				</div>
 			</div>
 		</div>
-		<img alt="process-arrow" src="front/dist/img/process/process_left_bottom.png"　class="process-arrow">				
-	</div>	<!-- ./ end smart investment -->
-	<!--  -->
-	<div class="container">		
-		<span id="page_title">为什么选择斯多克　</span><img alt="question" src="front/dist/img/index-intro-question.png" style="width:50px;height: auto;position:relative;top:-8px;">
-		<hr class="top"><hr class="bottom"><br>
-		<div class="row">
-			<div class="col-md-6"><img alt="" src="front/dist/img/index-intro-keyword.png" class="intro"> </div>
-			<div class="col-md-6 text-left">
-				<ul class="list-unstyled">
-					<li>好收益</li>
-					<li>低门栏</li>
-					<li>更方便</li>
-				</ul>
+		
+		<div class="row section section-onmargin">
+			<div class="col-lg-12 pin">
+				<img alt="pin" src="front/dist/img/index_pin_gray.png">
 			</div>
-		</div>				
-	</div>	
-	<img class="split" alt="top" src="front/dist/img/introduction_header-2.png">
+			<div class="col-lg-12 wisdom-saying text-center">
+				<div class="row">
+					<div class="col-lg-2 col-lg-offset-5">
+						<img alt="portrait" src="front/dist/img/index_investor_buffett.png">
+						<p class="author-name">沃伦·巴菲特</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 content">
+						"别犯大错"
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 explaination">
+						新型智能决策方式，规避经验决策<span class="ignore-data">风险</span>，强化理性决策<span class="important-data">收益</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 link">
+						<a href="front/product.jsp">详细了解如何斯多克如何帮您做出更可靠决策
+							<span class="link-icon"></span>
+							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row section section-margin section-white">
+			<div class="col-lg-12 pin">
+				<img alt="pin" src="front/dist/img/index_pin_white.png">
+			</div>
+			<div class="col-lg-12 wisdom-saying text-center">
+				<div class="row">
+					<div class="col-lg-2 col-lg-offset-5">
+						<img alt="portrait" src="front/dist/img/index_investor_rogers.png">
+						<p class="author-name">吉姆·罗杰斯</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 content">
+						"让富有的人更富有"
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 explaination">
+						您对斯多克的<span class="important-data">信任</span>将为您带来超越想象的<span class="important-data">回报</span>！
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 link">
+						<a href="front/productDetail.jsp">查看我能获得多少回报率
+							<span class="link-icon"></span>
+							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
 </div>
-<!-- ./end what is stockii -->
 
-<!-- product platform -->
-<div id="index-product" class="text-center">
-<h1>斯多克产品</h1>
-<div class="container text-center" >	
-	<h3><span>全平台支持</span></h3>
-	<br>
-	<ul class="list-inline">
-		<li style="margin:0 60px;"><a href="front/product.jsp#application"><img alt="" src="front/dist/img/mobile_icon_pc.png" style="margin-bottom: 30px;"></a><br><p>桌面产品</p></li>
-		<li style="margin:0 60px;"><a href="front/product.jsp#application"><img alt="" src="front/dist/img/mobile_icon_iphone.png" style="margin-bottom: 30px;"></a><br><p>Iphone</p></li>
-		<li style="margin:0 60px;"><a href="front/product.jsp#application"><img alt="" src="front/dist/img/mobile_icon_android.png" style="margin-bottom: 30px;"></a><br><p>Android</p></li>
-	</ul>
-</div><br>
-<a href="front/product.jsp" class="btn btn-success">更多了解</a>
-<div class="container text-center" >
-	<h3><span>多角度定位</span></h3>
-	<br>
-	<ul class="list-inline">
-		<li style="margin:0 60px;"><a href="front/product.jsp#crowd"><img alt="" src="front/dist/img/mobile_icon_pc.png" style="margin-bottom: 30px;"></a><br><p>投资人群</p></li>
-		<li style="margin:0 60px;"><a href="front/product.jsp#amount"><img alt="" src="front/dist/img/mobile_icon_iphone.png" style="margin-bottom: 30px;"></a><br><p>投资额度</p></li>
-		<li style="margin:0 60px;"><a href="front/product.jsp#period"><img alt="" src="front/dist/img/mobile_icon_android.png" style="margin-bottom: 30px;"></a><br><p>投资周期</p></li>
-	</ul>
-</div><br>
-<a href="front/product.jsp" class="btn btn-success">更多了解</a><br>
-<img class="split" alt="top" src="front/dist/img/introduction_header-2.png">
-</div>  
-
-<!-- project introduction -->
-<div id="index-project" class="text-center" style="">
-<h1>斯多克项目</h1>
-<div class="container">
-	<h3><span>多人群适用</span></h3>
-	<br><br>
-	<ul class="list-inline">
-		<li style="margin:0 60px;"><a href="front/project.jsp"><img alt="" src="front/dist/img/mobile_icon_pc.png" style="margin-bottom: 30px;"></a><br><p>个人级用户</p></li>
-		<li style="margin:0 60px;"><a href="front/project.jsp"><img alt="" src="front/dist/img/mobile_icon_iphone.png" style="margin-bottom: 30px;"></a><br><p>企业级用户</p></li>
-	</ul>
-</div>
-<a href="front/project.jsp" class="btn btn-warning">更多了解</a>
-</div>
-<!-- ./ end service introduction -->
 </div>
 <jsp:include page="_footer.jsp" />
 

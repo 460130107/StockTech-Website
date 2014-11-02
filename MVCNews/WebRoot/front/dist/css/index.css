@@ -188,11 +188,13 @@ nav,nav li,nav a{
 
 .sections-list .pin {
 	margin-top: -54px;
+	text-align: center;
+	/* width: 100%;
 	width: 190px;
 	height: 55px;
 	max-width: 100%;
 	position:absolute;
-	z-index: 6;
+	z-index: 6; */
 }
 
 .sections-list .pin.pin-white{
@@ -204,18 +206,27 @@ nav,nav li,nav a{
 }
 
 .sections-list .section {
-	margin-top: 80px;
+	
+}
+
+.sections-list .section.section-nomargin {
+	margin-top: 0px;
+}
+
+.sections-list .section.section-margin {
+	margin-top: 120px;
 }
 
 .sections-list .section.section-white {
 	background-color: white;
+	padding-bottom: 140px;
 }
 
 /* End of sections list */
 
 /* Wisdom-saying Style */
 .wisdom-saying {
-	margin: 30px;
+	margin-top: 30px;
 	line-height: 200%;
 }
 
@@ -241,13 +252,19 @@ nav,nav li,nav a{
 	font-size: 24px;
 }
 
+.wisdom-saying .ignore-data {
+	color: #ba2635;
+	text-decoration: line-through;
+	line-height: 150%;
+	font-size: 20px;
+}
+
 .wisdom-saying .explaination {
 	margin-top: 20px;
-	
 }
 
 .wisdom-saying .link {
-	margin-top: 80px;
+	margin-top: 60px;
 }
 
 .wisdom-saying .link a {
