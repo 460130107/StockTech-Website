@@ -26,11 +26,51 @@
 <body>
 
 <jsp:include page="_header.jsp?index=index" />
-<div class="container-fluid">
+<div class="page-content">
+	<div class="container-fluid">
 	<div class="row-fluid poster-main" style="padding-top:430px;height:659px;background-image: url('front/dist/img/index_main_bg.jpg');background-size:100% 100% ">
 		<div style="text-align: center;"><a class="link-button" href="front/product.jsp"></a></div>
 	</div> 
+	
+	<div class="container-fluid sections-list">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-5">
+					<div class="pin pin-gray"></div>
+				</div>
+			</div>
+			<div class="wisdom-saying text-center">
+				<div class="row">
+					<div class="col-lg-2 col-lg-offset-5">
+						<img alt="portrait" src="front/dist/img/index_investor_livermore.png">
+						<p class="author-name">杰西·利弗莫尔</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 content">
+						如果你比99%的人知道的都多<br/>那你一定比99%的人都赚钱
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 explaination">
+						<span class="important-data">24年</span>行业数据积累，<span class="important-data">16亿</span>条股市信息，<span class="important-data">21万</span>家公司情报<br/>尽情为您服务
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 link">
+						<a href="product.jsp">了解如何利用这些数据
+							<span class="link-icon"></span>
+							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
 </div>
+
+
 
 <div class="container-fluid">
 <!-- what is stockii -->

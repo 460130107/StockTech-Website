@@ -133,6 +133,28 @@ footer div.text-center{
 }
 /* End of styles for footer elements */
 
+/* Page styles */
+.page-content {
+	min-width: 960px;
+}
+
+/* End of Page styles */
+
+/* Poster styles */
+.poster {
+	
+}
+
+.poster-main {
+	max-width:100%;
+}
+
+.poster-main .main-bg {
+	max-width:100%;
+}
+
+/* End of styles for Poster elements */
+
 /* Styles for top bar upon the nav-bar elements */
 #top {
 	width: 100%;

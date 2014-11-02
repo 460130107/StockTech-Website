@@ -176,9 +176,99 @@ nav,nav li,nav a{
 	position:absolute;
 	z-index: 5;
 }
-
-
 /* end of poster main */
+
+/* Sections list */
+.sections-list {
+	height: 3500px;
+	max-width: 100%;
+	background: url('../img/index_sections_bg.jpg');
+	padding: 0px 0 30px;
+}
+
+.sections-list .pin {
+	margin-top: -54px;
+	width: 190px;
+	height: 55px;
+	max-width: 100%;
+	position:absolute;
+	z-index: 6;
+}
+
+.sections-list .pin.pin-white{
+	background: url('../img/index_pin_white.png');
+}
+
+.sections-list .pin.pin-gray{
+	background: url('../img/index_pin_gray.png');
+}
+
+.sections-list .section {
+	margin-top: 80px;
+}
+
+.sections-list .section.section-white {
+	background-color: white;
+}
+
+/* End of sections list */
+
+/* Wisdom-saying Style */
+.wisdom-saying {
+	margin: 30px;
+	line-height: 200%;
+}
+
+.wisdom-saying .portrait {
+	
+}
+
+.wisdom-saying .author-name {
+	font-size: 18px;
+	color: #aaa;
+}
+
+.wisdom-saying .content {
+	margin-top: 10px;
+	font-size: 32px;
+	color: #444;
+	line-height: 150%;
+}
+
+.wisdom-saying .important-data {
+	color: #ba2635;
+	line-height: 150%;
+	font-size: 24px;
+}
+
+.wisdom-saying .explaination {
+	margin-top: 20px;
+	
+}
+
+.wisdom-saying .link {
+	margin-top: 80px;
+}
+
+.wisdom-saying .link a {
+	color: #ba2635;
+	font-weight: bold;
+	border-bottom: #ba2635 1px solid;
+}
+
+.wisdom-saying .link a:hover{
+	color: #1abc9c;
+	border-bottom: #1abc9c 1px solid;
+	text-decoration: none;
+}
+
+.wisdom-saying .link .link-icon {
+	width: 23px;
+	height: 23px;
+	background: url('../img/index_icon_goto.png');
+}
+
+/* End of Wisdom-saying Style */
 
 /* project */
 #index-project{
@@ -195,3 +285,4 @@ nav,nav li,nav a{
 	border-bottom: 3px rgb(241, 241, 241) solid;margin: 0;padding:0;
 }
 /* end project */
+
