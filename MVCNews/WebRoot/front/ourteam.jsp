@@ -30,7 +30,7 @@
 <!-- 						与<span class="stockii-name">斯多克</span>一同开启<span -->
 <!-- 							class="science-green">智能投资</span>时代<small>&nbsp;&nbsp;一个英明的决策可以彻底改变您的一生</small> -->
 					</h1>
-					<div></div>
+					<div>斯多克以开启智能投资崭新时代的梦想及互联网金融创新的基因凝聚了一批充满阳光、活力和进取精神的金融及技术精英，他们成为了伟大梦想脚踏实地的践行者。</div>
 				</div>
 <!-- 				<div class="col-lg-2"> -->
 <!-- 					<ul class="nav nav-tabs nav-stacked"> -->
@@ -41,51 +41,83 @@
 <!-- 		                <li><a href="front/corpration.jsp#contact">联系方式</a></li> -->
 <!-- 	            	</ul> -->
 <!-- 				</div> -->
-				<div class="col-lg-10 sections">
-					<div id="partner" class="row">
-						<h3>合作伙伴</h3>
-						<hr/>
-							<p>
-							<dl>
-								<dt>证券公司、投资机构</dt>
-								<dd>斯多克科技现已与<strong>银河证券</strong>、<strong>中信证券</strong>、<strong>国金证券</strong>等各种大中小型证券公司以及100多家证券投资机构达成合作协议及意向。</dd>
-								<dt>政府机构：</dt>
-								<dd>出于对国内量化交易市场和新型金融科技的支持，斯多克的发展还受到了<strong>中国证监会</strong>、<strong>中国银监会</strong>、<strong>中国互联网信息管理中心</strong>等政府机构的支持</dd>
-								<dt>科技同行</dt>
-								<dd>斯多克与<strong>阿里巴巴</strong>，<strong>微软研究院</strong>都建立了长久合作关系。</dd>
-								<dt>顶级学府</dt>
-								<dd>斯多克与<strong>美国伊利诺州立大学</strong>、<strong>北大光华学院</strong>、<strong>北京邮电大学</strong>等国内外一流大学都达成了项目合作。</dd>
-							</dl>
+				<div class="col-lg-10 sections news-list">
+					<div class="row">
+						<div class="col-lg-3">
+							<img class="cover" alt="photo" src="front/dist/img/manager_photo_wangyufei.jpg">
+						</div>
+						<div class="col-lg-9">
+							<div class="row title">
+								<h3 class="col-lg-12">王宇飞<span class="title-subtitle text-right">创始合伙人</span></h3>
+							</div>
+							<div class="row body">
+								<div>毕业于北京邮电大学计算机学院，在量化投资、人工智能等领域有深入研究和实践。先后工作于戴姆勒奔驰集团、中国技术进出口总公司。北京市十佳青年，海淀区优秀青年人才计划人选。</div>
+								<div>2014年，主导创建斯多克科技公司。</div>
+							</div>
+						</div>
+						
 					</div>
-					
-					<div id="declaration" class="row">
-						<h3>合作宣言</h3>
-						<hr/>
-						<p>
-							斯多克科技将会与合作伙伴一起形成网络立体式的经营模式，旨在努力通过为合作伙伴提供及时、专业的技术、高效的解决方案、支持服务等资源，使我们的最终用户可以享受到更加值得信赖、更加有价值的产品、技术、服务的同时，使我们的合作伙伴有机会获得更高的利润空间、更丰厚的投资回报。
-		　　斯多克科技合作伙伴计划会为您提供最佳架构，帮助您在满足用户不断增长的投资需求的同时，创造新的盈利机会，使您在发展迅速、基于互联网的商业环境中稳操胜券。	
-						</p>
+					<hr/>
+					<div class="row">
+						<div class="col-lg-3">
+							<img class="cover" alt="photo" src="front/dist/img/manager_photo_xunaixuan.jpg">
+						</div>
+						<div class="col-lg-9">
+							<div class="row title">
+								<h3 class="col-lg-12">张峻岷<span class="title-subtitle text-right">创始合伙人</span></h3>
+							</div>
+							<div class="row body">
+								<div>张峻岷博士毕业于美国伊利诺伊州立大学计算机系，曾拜读于世界顶级大数据专家李克·伯纳门下，对Hadoop MapReduce及NoSQL Database有深入研究，是将大数据应用到证券投资领域的最早期实践者之一。</div>
+								<div>2014年，作为合伙人创建斯多克科技公司。</div>
+							</div>
+						</div>
 					</div>
-					
-					<div id="mustknow" class="row">
-						<h3>合作须知</h3>
-						<hr/>
-						<p>
-							斯多克科技将会与合作伙伴一起形成网络立体式的经营模式，旨在努力通过为合作伙伴提供及时、专业的技术、高效的解决方案、支持服务等资源，使我们的最终用户可以享受到更加值得信赖、更加有价值的产品、技术、服务的同时，使我们的合作伙伴有机会获得更高的利润空间、更丰厚的投资回报。
-		　　斯多克科技合作伙伴计划会为您提供最佳架构，帮助您在满足用户不断增长的投资需求的同时，创造新的盈利机会，使您在发展迅速、基于互联网的商业环境中稳操胜券。	
-						</p>
+					<hr/>
+					<div class="row">
+						<div class="col-lg-3">
+							<img class="cover" alt="photo" src="front/dist/img/manager_photo_xunaixuan.jpg">
+						</div>
+						<div class="col-lg-9">
+							<div class="row title">
+								<h3 class="col-lg-12">徐乃煊<span class="title-subtitle text-right">副总裁</span></h3>
+							</div>
+							<div class="row body">
+								<div>曾就职于SAP大中华区大数据业务部，工商银行证券投资基金中心。原Dobytes Studio创始人，Intimatest的开发者，在互联网开发及营销领域有深刻理解和广泛实践。</div>
+								<div>2014年，作为合伙人创建斯多克科技公司。</div>
+							</div>
+						</div>
 					</div>
-					
-					<div id="procedure" class="row">
-						<h3>联系方式</h3>
-						<hr/>
-						<address>
-						<strong>北京斯多克科技有限公司</strong><br />海淀区中关村东路8号东升大厦C座133<br />
-<!-- 						<strong>Stockii, Ltd.</strong><br /> C133 DongSheng Mansion, ZhongGuanCun Donglu, Haidian<br /> -->
-						<abbr title="Phone">联系人：王先生</abbr><br/>
-						<abbr title="Phone">电话：18610351400</abbr>
-					</address>
+					<hr/>
+					<div class="row">
+						<div class="col-lg-3">
+							<img class="cover" alt="photo" src="front/dist/img/manager_photo_xunaixuan.jpg">
+						</div>
+						<div class="col-lg-9">
+							<div class="row title">
+								<h3 class="col-lg-12">关放<span class="title-subtitle text-right">技术总监、首席架构师</span></h3>
+							</div>
+							<div class="row body">
+								<div>曾就职于微软亚洲研究院，中国联通研发中心。在系统架构、项目管理领域均有丰富经验，尤其是对大型互联网产品、服务的设计与架构具有独到之处。</div>
+								<div>目前全面负责斯多克的数据采集、分析及交易的平台架构设计等工作。</div>
+							</div>
+						</div>
 					</div>
+					<hr/>
+					<div class="row">
+						<div class="col-lg-3">
+							<img class="cover" alt="photo" src="front/dist/img/manager_photo_xunaixuan.jpg">
+						</div>
+						<div class="col-lg-9">
+							<div class="row title">
+								<h3 class="col-lg-12">刘敏<span class="title-subtitle text-right">首席安全官</span></h3>
+							</div>
+							<div class="row body">
+								<div>知名青年安全专家，曾拜读于北卡罗莱纳州立大学的Donald Jiang门下，深入研究网络安全，移动安全等课题，安全漏洞Maven13-106的提出者。同时在CS架构、系统设计等领域具有丰富的经验。</div>
+								<div>目前全面负责斯多克科技的数据安全等工作。</div>
+							</div>
+						</div>
+					</div>
+					<hr/>
 					
 				</div>
 			

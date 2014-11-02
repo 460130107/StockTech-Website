@@ -45,7 +45,7 @@
 </head>
 
 <body data-spy="scroll" data-target="#myScrollspy">
-<jsp:include page="_header.jsp" />
+<jsp:include page="_header.jsp?index=about" />
 <div class="container">
     <div class="row">
         <div class="col-xs-3" id="myScrollspy">

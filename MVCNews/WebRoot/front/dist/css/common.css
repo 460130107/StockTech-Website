@@ -17,7 +17,8 @@ h1,h2,h3,h4,h5,span,a,p,div,figure,figcaption,li{
 /* Styles for the nav bar */
 nav {
 	font-size: 18px;
-	height: 50px;
+	height: 100px;
+	background: transparent url("../img/navi_bar_bg.jpg") no-repeat;
 }
 
 nav .nav-logo {
@@ -27,13 +28,57 @@ nav .nav-logo {
 	line-height: 3.9000000000000004rem;
 	font-weight: 400;
 	text-indent: -999em;
-	width: 98px;
-	height: 50px;
-	background: transparent url("../img/logo_white_small.png") no-repeat;
+	width: 130px;
+	height: 130px;
+	background: transparent url("../img/logo.png") no-repeat;
+	position:absolute;
+	z-index: 20;
 }
-nav #account-bar{
-	font-size: 14px;
+
+nav .nav-logo.nav-logo-normal {
+	background: transparent url("../img/logo_100.png") no-repeat;
+	width: 100px;
+	height: 100px;
 }
+
+nav .nav.navbar-nav{
+	height: 100px;
+	margin-left: 105px;
+}
+
+nav ul.nav.navbar-nav li{
+	background-color: transparent !important;
+	text-align: center;
+	height: 100%;
+}
+
+nav ul.nav.navbar-nav li a{
+	background-color: transparent !important;
+	text-align: center;
+	height: 100%;
+	padding-top: 40px;
+	padding-bottom: 0px;
+}
+
+nav ul.nav.navbar-nav li.active {
+	background: transparent;
+}
+
+nav ul.nav.navbar-nav a{
+	color: #333333;
+	font-size: 20px;
+}
+
+nav ul.nav.navbar-nav a:hover{
+	border-bottom: #ba2635 5px solid;
+	color: #ba2635;
+}
+
+nav ul.nav.navbar-nav li.active > a{
+	border-bottom: #ba2635 5px solid;
+	color: #ba2635;
+}
+
 /* End of styles for nav bar */
 
 /* Styles for header elements */
@@ -84,6 +129,23 @@ footer div.text-center{
 	color: #ddd;
 }
 /* End of styles for footer elements */
+
+/* Poster styles */
+.poster {
+	
+}
+
+.poster-main {
+	max-width:100%;
+}
+
+.poster-main .main-bg {
+	max-width:100%;
+}
+
+/* End of styles for Poster elements */
+
+
 
 /* Styles for top bar upon the nav-bar elements */
 #top {
@@ -378,3 +440,33 @@ ul.nav-stacked.affix{
 .table-footer{
 	border-bottom: 1px solid #ddd;
 }
+
+/* News list styles */
+.news-list {
+	
+}
+
+.news-list .title{
+	color: #428bca;
+	border-bottom: #428bca 1px solid;
+}
+
+.news-list .title-subtitle {
+	padding-bottom: 0px;
+	position: absolute;
+	font-size: 16px;
+	right: 0;
+	top: 5px;
+}
+
+.news-list .body{
+	margin-top: 8px;
+}
+
+
+.news-list .cover{
+	max-width: 200px;
+	max-height: 200px;
+}
+
+/* News list styles */

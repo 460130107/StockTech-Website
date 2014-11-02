@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="navbar-header">
 <!-- 				<img alt="logo" src="front/dist/img/logo.png"> -->
-				<a class="navbar-brand nav-logo" href="#"></a>
+				<a class="navbar-brand nav-logo nav-logo-normal" href="#"></a>
 			</div>
 			<div>
 				<ul class="nav navbar-nav">
