@@ -263,6 +263,20 @@ footer .icon-qq-contact{
 	width: 80px;height: 25px;
 	background-image: url('../img/footer-qq-contact.png');
 }
+footer .triangle{
+	text-align: center;
+	top:5px;
+	background: #ddd;
+}
+footer .footer-triangle{
+	display:inline-block;
+	width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #272727;
+    
+}
 /* End of styles for footer elements */
 
 

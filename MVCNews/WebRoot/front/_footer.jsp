@@ -24,6 +24,7 @@
    			<input type="button" value="" class="fbtn btn-submit">   			
    		</div>    	
     </div>
+    <div class="triangle"><span class="footer-triangle"></span></div> 
     <div class="bottom">
 	    <div class="container">
 	    	<div class="left f20">
