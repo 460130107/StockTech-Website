@@ -32,7 +32,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 <jsp:include page="_header.jsp"></jsp:include>
   <div class="container">
-  	<h3>新手指南</h3>
+  	<ul id="breadcrumb">
+	  <li><a href="#"><span class="icon">主页</span></a></li>
+	  <li><a href="front/help/index.jsp"><span class="icon"> </span>帮助中心</a></li>
+	  <li><a><span class="icon"></span>新手指南</a></li>
+	</ul>
   	<!-- 导航栏 -->
   	<div class="row" style="width: 1000px;">
   		<div class="col-md-12">
