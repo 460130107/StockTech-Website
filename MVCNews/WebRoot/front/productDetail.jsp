@@ -22,15 +22,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="front/dist/css/bootstrap.css" rel="stylesheet">
 	<link href="front/dist/css/common.css" rel="stylesheet">
 	<link href="front/dist/css/product.css" rel="stylesheet">
+	<link href="front/dist/css/customer-service.css" rel="stylesheet">
   </head>
   
   <body>
   <jsp:include page="_header.jsp?index=product" />
-  
-  <div class="pdt60 pdb60" style="text-align:center;background-size:100% 100%;;background-image: url('front/dist/img/product-detail.jpg');">
-  	<!-- <img alt="img" src="front/dist/img/product-detail.jpg" style="width: 100%;"> -->
-  	<a class="btn btn-default btn-info" href="">点击下载</a>
+  <div class="suspend">
+		<dl>
+			<dt class="IE6PNG"></dt>
+			<dd class="suspendQQ"><a href="http://jq.qq.com/?_wv=1027&amp;k=LohcW9" target="_blank"></a></dd>
+			<dd class="suspendTel"><a href="javascript:void(0);"></a></dd>
+		</dl>
+	</div>
+<div class="container-fluid text-center bg-lattice content-banner">
+<!-- 	<img alt="hello" src="front/dist/img/product_banner.png"> -->
+	<div class="pdt60 pdb60" style="text-align:center;background-size:100% 100%;;background-image: url('front/dist/img/product-detail.jpg');">
   </div>
+	<a class="btn btn-default btn-info" href="">点击下载</a>
+</div>
+  
    <!-- 产品图形介绍 -->
    <div class="bgc-green1">
 	  <div class="container">
@@ -120,5 +130,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	</div>
 <jsp:include page="_footer.jsp" />
+<script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
+<script type="text/javascript">
+$(function() {
+	$(".suspend").mouseover(function() {
+		        $(this).stop();
+		        $(this).animate({width: 160}, 400);
+	    	});
+	
+		    $(".suspend").mouseout(function() {
+		        $(this).stop();
+		        $(this).animate({width: 40}, 400);
+		    });
+});
+</script>
   </body>
 </html>

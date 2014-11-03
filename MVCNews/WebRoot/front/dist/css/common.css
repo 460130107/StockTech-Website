@@ -783,3 +783,22 @@ ul.nav-stacked.affix{
   border-left-color: #16a085;
 }
 /*end Breadcrumb Navigation styles*/
+
+
+.bg-lattice {
+	background: url(../img/bg-lattice.jpg) repeat;
+}
+
+
+/* 内容部分的banner */
+.content-banner {
+	height: 240px;
+}
+
+.content-banner img{
+}
+
+
+
+
+

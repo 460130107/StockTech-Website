@@ -15,6 +15,8 @@
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
 <link href="front/dist/css/corpration.css" rel="stylesheet">
+<link href="front/dist/css/jquery.fs.boxer.css" rel="stylesheet">
+<link href="front/dist/css/customer-service.css" rel="stylesheet">
 <title>合作加盟--斯多克科技</title>
 
 </head>
@@ -22,12 +24,13 @@
 ================================================== -->
   <body>
     <jsp:include page="_header.jsp?index=corpration" />
-<!-- 	<header class="jumbotron subhead-dimblue" id="overview"> -->
-<!-- 		<div class="container"> -->
-<!-- 			<h1>与我们合作</h1> -->
-<!-- 			<p class="lead">互利共赢，一同引领互联网金融的未来！</p> -->
-<!-- 		</div> -->
-<!-- 	</header> -->
+	<div class="suspend">
+		<dl>
+			<dt class="IE6PNG"></dt>
+			<dd class="suspendQQ"><a href="http://wpa.qq.com/msgrd?v=3&uin=610353064&site=qq&menu=yes" target="_blank"></a></dd>
+			<dd class="suspendTel"><a href="javascript:void(0);"></a></dd>
+		</dl>
+	</div>
 	<div class="container-fluid maxbg">
 		<div class="banner-img">
 			<img alt="hello" src="front/dist/img/stockii_services.jpg">
@@ -54,7 +57,13 @@
 									</p>
 									<hr/>
 									<p>
-										<a class="btn btn-success" href="#">咨询标准合作</a>
+									<a class="btn btn-success boxer" href="#hidden">咨询标准合作</a>
+									<div id="hidden" style="display: none;">
+									    <div class="content" style="height: 400px; width: 400px;">
+									    	<img src="front/dist/img/project_3board_cooperation.jpg" alt="" style="height: 300px; width: 300px;">
+									    	<div>客服经理：<span class="glyphicon glyphicon-search"></span></div>
+									    </div>
+									</div>
 									</p>
 <!-- 									<hr/> -->
 <!-- 									<p class="text-right"> -->
@@ -174,11 +183,23 @@
 	<script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
 	<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
+	<script type="text/javascript" language="javascript" src="front/dist/js/jquery.fs.boxer.js"></script>
 	<script type="text/javascript" src="front/dist/js/stockii-ui.js"></script>
 	
 	<script type="text/javascript">
 		$(function () {
 // 			fullscreenHeight(".maxbg");
+			$(".boxer").boxer();
+			
+			$(".suspend").mouseover(function() {
+		        $(this).stop();
+		        $(this).animate({width: 160}, 400);
+	    	});
+	
+		    $(".suspend").mouseout(function() {
+		        $(this).stop();
+		        $(this).animate({width: 40}, 400);
+		    });
 		});
 		
 	</script>

@@ -13,6 +13,7 @@
 <link rel="icon" href="../../favicon.ico">
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
+<link href="front/dist/css/customer-service.css" rel="stylesheet">
 <style type="text/css">
 	div.panle{
 		border:2px solid #fff;
@@ -26,9 +27,20 @@
 </head>
 <body>
 <jsp:include page="_header.jsp?index=product" />
+<div class="suspend">
+		<dl>
+			<dt class="IE6PNG"></dt>
+			<dd class="suspendQQ"><a href="http://jq.qq.com/?_wv=1027&amp;k=LohcW9" target="_blank"></a></dd>
+			<dd class="suspendTel"><a href="javascript:void(0);"></a></dd>
+		</dl>
+	</div>
+<div class="container-fluid text-center bg-lattice content-banner">
+	<img alt="hello" src="front/dist/img/product_banner.png">
+</div>
 
 <div class="container">
 	<div class="row clearfix">
+	
 	<!-- 产品介绍  第一行 -->
 	<div class="col-md-12 column mgb20 mgt20">
 		<div class="row clearfix">
@@ -61,7 +73,7 @@
 					<li class="table-footer table-item pd6 pdl20 f14">系统优先投标，精选优质债权，省心省力</li>
 				</ul> 
 				<div style="text-align: center;" class="pd10">
-					<a href="front/productDetail.jsp" type="button" class="btn btn-default btn-info">详情</a>
+					<a href="front/developing.jsp" type="button" class="btn btn-default btn-info">详情</a>
 					<a type="button" class="btn btn-default btn-info">下载</a>
 				</div>					
 			  </div>
@@ -185,5 +197,18 @@
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
+<script type="text/javascript">
+$(function() {
+	$(".suspend").mouseover(function() {
+		        $(this).stop();
+		        $(this).animate({width: 160}, 400);
+	    	});
+	
+		    $(".suspend").mouseout(function() {
+		        $(this).stop();
+		        $(this).animate({width: 40}, 400);
+		    });
+});
+</script>
 </body>
 </html>

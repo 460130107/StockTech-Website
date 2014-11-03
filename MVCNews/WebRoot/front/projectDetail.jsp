@@ -17,11 +17,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="icon" href="../../favicon.ico">
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
+<link href="front/dist/css/customer-service.css" rel="stylesheet">
 </head>
   
 <body>
 <jsp:include page="_header.jsp?para=project"></jsp:include> 
-    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2271088927&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1715958482:41" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
+<div class="suspend">
+		<dl>
+			<dt class="IE6PNG"></dt>
+			<dd class="suspendQQ"><a href="http://jq.qq.com/?_wv=1027&amp;k=LohcW9" target="_blank"></a></dd>
+			<dd class="suspendTel"><a href="javascript:void(0);"></a></dd>
+		</dl>
+	</div>
+<!--     <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2271088927&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1715958482:41" alt="点击这里给我发消息" title="点击这里给我发消息"></a> -->
 
 <div class="container" style="border: 1px solid #ddd;">
 	<div class="row mgb20" style="border-bottom: 1px dashed #ddd;">
@@ -67,5 +75,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 
 <jsp:include page="_footer.jsp"></jsp:include>
+
+<script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
+<script type="text/javascript">
+$(function() {
+	$(".suspend").mouseover(function() {
+		        $(this).stop();
+		        $(this).animate({width: 160}, 400);
+	    	});
+	
+		    $(".suspend").mouseout(function() {
+		        $(this).stop();
+		        $(this).animate({width: 40}, 400);
+		    });
+});
+</script>
 </body>
 </html>
