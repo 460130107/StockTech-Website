@@ -15,7 +15,8 @@ body{
 	 font-family:'Glyphicons Halflings' !important;
 	 font-size: 18px;
 	 background: rgb(242,242,242);
-	 min-width: 1300px;
+	 min-width: 970px;
+	 
 }
 h1,h2,h3,h4,h5,span,a,p,div,figure,figcaption,li{
 	font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Segoe UI', 'Microsoft Yahei', Tahoma, Arial, STHeiti, sans-serif !important;
@@ -111,32 +112,159 @@ header li a:hover {
 /* End of Styles for header elements */
 
 /* Styles for footer elements */
-footer {
-	min-width: 1000px;
-	text-align: center;
-	padding: 30px 0;
-	background-color: #333333;
-	line-height: 1.8em;
-	color: #ddd;
-	letter-spacing:1px;
+footer{height: 400px;background: #272727;padding: 70px 0 70px 0;}
+footer ul li{margin: 0;padding: 0;list-style: none;}
+footer ul li>a{margin: 0;padding: 0;}
+footer .left{
+	float:left;
+	/* height: 200px;width: 450px; */
+	/* background: gray;  */
+	margin: 0;padding: 0;
 }
-footer li h3 {
-	font-size: 20px;
-	font-family: "Microsoft YaHei", "微软雅黑";
+footer .tdcode{
+	float: left;
+	margin-right: 38px;	
 }
-footer li a {
-	color: #ddd;
-	font-size: 14px;
+footer .tdcode:hover{
+	opacity:0.5;
+	cursor: pointer;
 }
-footer li a:hover {
-	text-decoration: none;
-	color: #F56C0F;
+
+footer .list-block-first{
+	padding:0;
+	padding-top: 30px;
 }
-footer div.text-center{
-	font-size: 14px;
-	color: #ddd;
+footer .list-block-first li{
+	padding-bottom: 16px;
+	list-style: disc;
+	line-height: 18px;
+}
+footer .list-block-first li>a{
+	color: #fff;
+}
+footer .list-block-first li>a:hover{
+	text-decoration: underline;
+	color: #6e6e6e;
+}
+
+footer .list-block-second{
+	padding: 50px 0 0 0;
+	color: #fff;
+}
+footer .list-block-second a{
+	color: inherit;
+}
+footer .list-block-second>li{
+	height: 20px;
+	margin-bottom: 20px;
+}
+footer .list-block-second .text{
+	color: #fff;
+	display: inline-block;
+	line-height: 20px;	
+}
+
+
+footer .right{
+	float:right;
+	/* height: 200px;width: 450px; */
+	margin: 0;padding: 0;
+}
+footer .username,footer .email{
+	width:220px;height:43px;
+	background-color: #525252;
+	border: 0;
+	background-image:url('../img/footer-feedback-border-email&name.png');
+	background-size:100% 100%; 	
+	/* border-image:url('../img/footer-feedback-border-email&name.png');
+	-o-border-image:url('../img/footer-feedback-border-email&name.png');
+	-webkit-border-image:url('../img/footer-feedback-border-email&name.png'); */
+}
+footer .username{
+	/* margin-right: 17px; */
+	display:block;
+    float: left;
+    margin: 0px;margin-right:17px;
+    padding: 0px;
+}
+footer .option{
+	display:block;
+	margin:0;padding:0;
+	border: 0;
+	margin-bottom: 16px;margin-top:16px;
+	width: 457px;height: 151px;
+	background-color: #525252;
+	background-image:url('../img/footer-feedback-border-info.png');
+	background-size:100% 100%; 
+	resize:none;
+}
+footer .fbtn{
+	margin: 0;padding: 0;
+	/* width: 171px;height: 58px; */
+	width: 173px;height: 60px;
+	border: 0;
+	float: right;
+	margin-left: 20px;
+}
+footer .btn-submit{
+	background-image: url('../img/footer-feedbackBtn-submit.png');
+	background-size:100% 100%; 
+}
+footer .btn-refresh{
+	background-image: url('../img/footer-feedbackBtn-refresh.png');
+	background-size:100% 100%; 
+}
+
+footer .bottom{
+	height: 100px;
+	background: #ddd;
+}
+footer .bottom .left,footer .bottom .right{
+	line-height: 100px;
+}
+.list-block3,.list-block3 li{
+	padding: 0;margin: 0;
+	list-style: none;
+}
+.list-block3 li{
+	float: left;
+	margin-left: 20px;
+}
+.list-block3 li>a{
+	color:#333;
+}
+.list-block3 li>a:hover{
+	text-decoration:none;
+	color:#BA2635;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #BA2635;
+}
+
+footer .ficon{
+	display: inline-block;
+	margin-right: 10px;
+	float: left;
+}
+footer .icon-address{
+	width: 13px;height: 20px;
+	background-image: url('../img/footer-icon-address.png');
+}
+footer .icon-email{
+	width: 18px;height: 13px;
+	margin-top:7px; /* (20-13)/2 */
+	background-image: url('../img/footer-icon-email.png');
+}
+footer .icon-qq{
+	width: 17px; height: 17px; 
+	margin-top:3px;/* (25-17)/2=3  */
+	background-image: url('../img/footer-icon-QQ.png');
+}
+footer .icon-qq-contact{
+	width: 80px;height: 25px;
+	background-image: url('../img/footer-qq-contact.png');
 }
 /* End of styles for footer elements */
+
 
 /* Page styles */
 .page-content {
@@ -543,3 +671,101 @@ ul.nav-stacked.affix{
 }
 
 /* News list styles */
+
+/*Breadcrumb Navigation styles*/
+#breadcrumb h1 {
+  font-weight: 100;
+  font-size: 32px;
+  padding: 40px;
+  color: #fff;
+}
+#breadcrumb {
+  list-style: none;
+  display: inline-block;
+  padding: 0 !important;
+}
+#breadcrumb .icon {
+  font-size: 14px;
+}
+#breadcrumb li {
+  float: left;
+}
+#breadcrumb li a {
+  color: #FFF;
+  display: block;
+  background: #B6CFCC;
+  text-decoration: none;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px 0 5px;
+  text-align: center;
+  margin-right: 23px;
+}
+#breadcrumb li:nth-child(even) a {
+  background-color: #869AB2;
+}
+#breadcrumb li:nth-child(even) a:before {
+  border-color: #869AB2;
+  border-left-color: transparent;
+}
+#breadcrumb li:nth-child(even) a:after {
+  border-left-color: #869AB2;
+}
+#breadcrumb li:first-child a {
+  padding-left: 15px;
+  -moz-border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px 0 0 4px;
+}
+#breadcrumb li:first-child a:before {
+  border: none;
+}
+#breadcrumb li:last-child a {
+  padding-right: 15px;
+  -moz-border-radius: 0 4px 4px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 4px 4px 0;
+}
+#breadcrumb li:last-child a:after {
+  border: none;
+}
+#breadcrumb li a:before, #breadcrumb li a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  border: 0 solid #B6CFCC;
+  border-width: 20px 10px;
+  width: 0;
+  height: 0;
+}
+#breadcrumb li a:before {
+  left: -20px;
+  border-left-color: transparent;
+}
+#breadcrumb li a:after {
+  left: 100%;
+  border-color: transparent;
+  border-left-color: #B6CFCC;
+}
+#breadcrumb li a:hover {
+  background-color: #1abc9c;
+}
+#breadcrumb li a:hover:before {
+  border-color: #1abc9c;
+  border-left-color: transparent;
+}
+#breadcrumb li a:hover:after {
+  border-left-color: #1abc9c;
+}
+#breadcrumb li a:active {
+  background-color: #16a085;
+}
+#breadcrumb li a:active:before {
+  border-color: #16a085;
+  border-left-color: transparent;
+}
+#breadcrumb li a:active:after {
+  border-left-color: #16a085;
+}
+/*end Breadcrumb Navigation styles*/
