@@ -10,4 +10,48 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+   <servlet>
+		<!--servlet-name 给该Servlet取名, 该名字可以自己定义:默认就使用该Servlet的名字-->
+      <servlet-name>UserLoginServlet</servlet-name>
+	  <!--servlet-class要指明该Servlet 放在哪个包下 的,形式是 包/包/../类-->
+      <servlet-class>org.news.servlet.UserLoginServlet</servlet-class>
+    </servlet>
+		<!--Servlet的映射-->
+	 <servlet-mapping>
+		<!--这个Servlet-name要和上面的servlet-name名字一样-->
+        <servlet-name>UserLoginServlet</servlet-name>
+		<!--url-pattern 这里就是将来访问该Servlet的资源名部分,默认命名规范:
+		就是该Servlet的名字-->
+        <url-pattern>/UserLoginServlet</url-pattern>
+	</servlet-mapping>
+  
+  
+   <servlet>
+		<!--servlet-name 给该Servlet取名, 该名字可以自己定义:默认就使用该Servlet的名字-->
+      <servlet-name>UserRegisterServlet</servlet-name>
+	  <!--servlet-class要指明该Servlet 放在哪个包下 的,形式是 包/包/../类-->
+      <servlet-class>org.news.servlet.UserRegisterServlet</servlet-class>
+    </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DownLoadServlet</servlet-name>
+    <servlet-class>org.news.servlet.DownLoadServlet</servlet-class>
+  </servlet>
+
+		<!--Servlet的映射-->
+	 <servlet-mapping>
+		<!--这个Servlet-name要和上面的servlet-name名字一样-->
+        <servlet-name>UserRegisterServlet</servlet-name>
+		<!--url-pattern 这里就是将来访问该Servlet的资源名部分,默认命名规范:
+		就是该Servlet的名字-->
+        <url-pattern>/UserRegisterServlet</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownLoadServlet</servlet-name>
+    <url-pattern>/DownLoadServlet</url-pattern>
+  </servlet-mapping>
+
 </web-app>

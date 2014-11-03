@@ -1,13 +1,14 @@
 /*
- * ÏµÍ³Ãû³Æ£ºĞÂÎÅ·¢²¼ÏµÍ³
+ * ç³»ç»Ÿåç§°ï¼šæ–°é—»å‘å¸ƒç³»ç»Ÿ
  * 
- * ÀàÃû£ºDB_UTILS
+ * ç±»åï¼šDB_UTILS
  * 
- * ´´½¨ÈÕÆÚ£º2014-06-18
+ * åˆ›å»ºæ—¥æœŸï¼š2014-06-18
  */
 package org.news.utils;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,14 +16,14 @@ import java.sql.SQLException;
 import org.news.utils.Pools;
 
 /**
- * ÓÃÓÚÁ¬½ÓÊı¾İ¿âµÄ×¨ÓĞÀà
+ * ç”¨äºè¿æ¥æ•°æ®åº“çš„ä¸“æœ‰ç±»
  * @author tt
  * @version 14.6.18
  */
 public class DB_UTILS {
 	
 	/**
-	 * ´ÓÁ¬½Ó³ØÖĞ»ñÈ¡Êı¾İ¿âÁ¬½Ó
+	 * ä»è¿æ¥æ± ä¸­è·å–æ•°æ®åº“è¿æ¥
 	 * @return
 	 */
 	public static Connection getConnection(){
@@ -31,7 +32,7 @@ public class DB_UTILS {
 	}
 	
 	/**
-	 * ½«Êı¾İ¿âÁ¬½Ó·Å»Øµ½³ØÖĞÈ¥
+	 * å°†æ•°æ®åº“è¿æ¥æ”¾å›åˆ°æ± ä¸­å»
 	 * @param connection
 	 * @param pstmt
 	 * @param rs
@@ -46,6 +47,58 @@ public class DB_UTILS {
 				pstmt.close();
 			}
 			Pools.freeConnection(connection);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * ä»è¿æ¥æ± ä¸­è·å–æ•°æ®åº“è¿æ¥
+	 * @return
+	 */
+	public static Connection getConnectionbyjdbc(){
+					
+		String dbDriver = "com.mysql.jdbc.Driver";   
+		String dbUrl = "jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_stocktech";   
+		String dbUser = "lyjxmwm422";           
+		String dbPassword = "5xmmyxk4h5m1xwh2hy2313wz02jimj04myi3353x";  
+			
+		/*	
+		String dbDriver = "com.mysql.jdbc.Driver";   // ä¸æœ¬åœ°è®¾ç½®ç›¸åŒ
+		String dbUrl = "jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8";   
+		String dbUser = "root";           // ä¸º[åº”ç”¨ä¿¡æ¯]->[æ±‡æ€»ä¿¡æ¯]->[key]ä¸­çš„access key
+		String dbPassword = "root";    // ä¸º[åº”ç”¨ä¿¡æ¯]->[æ±‡æ€»ä¿¡æ¯]->[key]ä¸­çš„secret key
+*/
+		try{
+			
+			Class.forName(dbDriver);
+			return DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	/**
+	 * å°†æ•°æ®åº“è¿æ¥æ”¾å›åˆ°æ± ä¸­å»
+	 * @param connection
+	 * @param pstmt
+	 * @param rs
+	 */
+	public synchronized static void closejdbc(Connection connection, PreparedStatement pstmt, ResultSet rs) {
+
+		try {
+			if (rs != null){
+				rs.close();
+			}
+			if (pstmt != null){
+				pstmt.close();
+			}
+			if (connection != null){
+				connection.close();
+			}
+			//Pools.freeConnection(connection);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

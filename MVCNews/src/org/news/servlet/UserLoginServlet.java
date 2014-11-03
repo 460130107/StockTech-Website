@@ -71,14 +71,15 @@ public class UserLoginServlet extends HttpServlet {
 		Users user = new Users(0,mid,new MD5Code().getMD5ofStr(password),"","","","","","") ;
 		try {
 			if(userService.findLogin(user)){//登录成功
+				
 				request.getSession().setAttribute("id",mid) ;	// 保存mid
-				pages = "front/welcome.jsp" ;
+				pages = "/welcome.jsp" ;
 			} else {
 				request.setAttribute("info","错误的用户名或密码！") ;
 				pages = "front/account.jsp" ;
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			request.getRequestDispatcher(pages).forward(request, response);
 		}
 		request.getRequestDispatcher(pages).forward(request, response);//跳转到下一个界面
 	}

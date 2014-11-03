@@ -59,22 +59,32 @@ public class UserRegisterServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String pages = "regist_do.jsp";
 		
-		String mid = request.getParameter("mid") ;
-		String password = new MD5Code().getMD5ofStr(request.getParameter("password"));
-		String info = request.getParameter("info") ;
-		String realName = request.getParameter("name");
-		String sex = request.getParameter("sex");
-		String email = request.getParameter("email");
-		String phone = request.getParameter("telephone");
-		String idNum = request.getParameter("IdNumber");
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		
+		
+		String mid = request.getParameter("usersName") ;
+		String password = new MD5Code().getMD5ofStr(request.getParameter("usersPass"));
+		String info = request.getParameter("usersInfo") ;
+		String realName = request.getParameter("realName");
+		String sex = "man";
+		String email = request.getParameter("usersEmail");
+		String phone = request.getParameter("userPhone");
+		String idNum = request.getParameter("userIdNum");
+		
+		
+	
 		List<Users> userList = userService.getAllUsers();
 	    int userID = ((userList.size() == 0)? 1 : (userList.get(userList.size()-1).getUsersId()+1));
+		/*
 		
+		int userID = 10;
+				*/
 		Users user = new Users(userID,mid,password,info,realName,sex,email,phone,idNum);
 		
 		if (userService.addUsers(user)){//×¢²á³É¹¦
-			response.setHeader("refresh","2;URL=login.jsp") ;
+			response.setHeader("refresh","2;URL= front/account.jsp") ;
+		
 			request.setAttribute("result", 1);
 			request.setAttribute("user", mid);
 		}else{

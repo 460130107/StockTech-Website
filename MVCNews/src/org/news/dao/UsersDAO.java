@@ -8,6 +8,7 @@
 package org.news.dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -35,10 +36,28 @@ public class UsersDAO {
 	 * @return 验证的操作结果
 	 */
 	public boolean findLogin(Users user){
+		/*
 		boolean b = false;//操作成功与否
 		sql = "select count(usersId) from users where usersName = ? and usersPass = ?";
 		
-		con = DB_UTILS.getConnection();//获取连接
+		String dbDriver = "com.mysql.jdbc.Driver";   
+		String dbUrl = "jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_stocktech";   
+		String dbUser = "lyjxmwm422";           
+		String dbPassword = "5xmmyxk4h5m1xwh2hy2313wz02jimj04myi3353x";  
+		
+	
+		String dbDriver = "com.mysql.jdbc.Driver";   // 与本地设置相同
+		String dbUrl = "jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8";   
+		String dbUser = "root";           // 为[应用信息]->[汇总信息]->[key]中的access key
+		String dbPassword = "root";    // 为[应用信息]->[汇总信息]->[key]中的secret key
+	
+		
+		try {
+			Class.forName(dbDriver);
+			con = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}//获取连接
 		try {
 			pstmt = con.prepareStatement(sql);							//实例化操作
 			String userName = user.getUsersName();
@@ -57,9 +76,47 @@ public class UsersDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			try {
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return b;
+		
+		*/
+		
+		boolean b = false;//操作成功与否
+		sql = "select count(usersId) from users where usersName = ? and usersPass = ?";
+		
+		con = DB_UTILS.getConnectionbyjdbc();
+		
+		try {
+			pstmt = con.prepareStatement(sql);							//实例化操作
+			String userName = user.getUsersName();
+			String userPass = user.getUsersPass();
+
+			//按照类型设置管理员信息具体的属性值
+			pstmt.setString(1, userName);				
+			pstmt.setString(2, userPass);					
+			
+			rs = pstmt.executeQuery();//取得查询结果
+			if (rs.next()) {
+				if (rs.getInt(1) > 0) {						//取得ID数，且大于零
+					b = true;											//登录成功
+				}
+			}
+		} catch (Exception e) {
+			b=false;
+		} finally {
+			DB_UTILS.closejdbc(con, pstmt, rs);
+		}
+		return b;
+		
+
 	}
 
 	/**
@@ -72,7 +129,8 @@ public class UsersDAO {
 		sql = "insert into users(usersId,usersName,usersPass,usersEmail,usersInfo,realName,sex,phone,idNumber) " +
 				"values(?,?,?,?,?,?,?,?,?)"; 
 		
-		con = DB_UTILS.getConnection();//获取连接
+		//con = DB_UTILS.getConnection();//获取连接
+		con = DB_UTILS.getConnectionbyjdbc();
 		try {
 			pstmt = con.prepareStatement(sql);//实例化操作
 			int usersId = user.getUsersId();
@@ -103,7 +161,8 @@ public class UsersDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return b;
 	}
@@ -189,7 +248,8 @@ public class UsersDAO {
      public List<Users> getAllUsers(){
     	 List<Users> users = new ArrayList<Users>();		//定义集合，接收全部数据
     	 sql = "select * from users order by usersId";
-    	 con = DB_UTILS.getConnection();
+    	// con = DB_UTILS.getConnection();
+    	 con = DB_UTILS.getConnectionbyjdbc();
     	 
     	 try {
  			 pstmt = con.prepareStatement(sql);		//实例化查询对象
@@ -213,7 +273,8 @@ public class UsersDAO {
     	 }catch (SQLException e) {
  			e.printStackTrace();
  		} finally {
- 			DB_UTILS.close(con, pstmt, rs);
+ 			//DB_UTILS.close(con, pstmt, rs);
+ 			DB_UTILS.closejdbc(con, pstmt, rs);
  		}
  		
     	 return users;
@@ -228,7 +289,8 @@ public class UsersDAO {
     	 Users user = null;//保存管理员结果
     	 sql = "select * from users where usersId = ?";
     	 
- 		con = DB_UTILS.getConnection();//获取连接
+ 		//con = DB_UTILS.getConnection();//获取连接
+    	 con = DB_UTILS.getConnectionbyjdbc();
 		try {
 			pstmt = con.prepareStatement(sql);							//实例化操作
 			pstmt.setInt(1, usersId);
@@ -248,7 +310,8 @@ public class UsersDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		
 		 return user;    	 
