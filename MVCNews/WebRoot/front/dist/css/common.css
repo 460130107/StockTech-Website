@@ -2,6 +2,11 @@
 /*
 	TODO better to describe here about how a style can be called 'common' and put here
 */
+@media screen and (min-width: 970px) {
+    body {
+        overflow-x: hidden; 
+    }
+}
 body{
 	/*font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",
 		STXihei, "华文细黑", serif;*/
