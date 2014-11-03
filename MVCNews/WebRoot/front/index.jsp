@@ -157,6 +157,130 @@
 			</div>
 		</div>
 		
+		<!-- partners -->
+		<div class="row section section-onmargin">
+			<div class="col-lg-12 pin" style="margin-top:0;">
+				<img alt="pin" src="front/dist/img/index_pin_star.png">
+			</div>
+			<div class="col-lg-12 wisdom-saying text-center">
+				<div class="row">
+					<div class="col-lg-2 col-lg-offset-5">
+						<img alt="portrait" src="front/dist/img/logo_red.png" style="margin-top: 54px;margin-bottom: 50px;">						
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 content partner">
+					<p style="color: #332726;font-size: 62px;margin-bottom: 20px;letter-spacing:6px;">我们的合作伙伴</p>
+					<p style="color:#7e7b7b;font-weight:bold;;font-size: 32;letter-spacing: 4px;margin-bottom: 86px;">谁在与斯多克合作?
+					</div>
+				</div>
+				
+				<div class="row mycarousel">
+					<div class="container">
+						<div id="partner-carousel" class="carousel slide">
+						      
+						   <!-- 轮播（Carousel）项目 -->
+						   <div class="carousel-inner" style="margin-left: 120px;">
+						      <!-- first silde -->
+						      <div class="item active" style="text-align: center;">
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1				         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						      </div>
+						      <!-- second slide -->
+						      <div class="item">
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1				         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						      </div>
+						      <!-- third silde -->
+						      <div class="item">
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1				         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						         <div class="img-item">
+						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
+						         </div>
+						      </div>
+						   </div>
+						   <!-- 轮播（Carousel）导航 -->
+						   <a class="carousel-control left my-left" href="#partner-carousel" data-slide="prev"></a>
+						   <a class="carousel-control right my-right" href="#partner-carousel" data-slide="next"></a>
+						
+							<!-- 轮播（Carousel）指标 -->
+						   <ol class="carousel-indicators my-indicators">
+						      <li data-target="#partner-carousel" data-slide-to="0" class="active mydot"></li>
+						      <li data-target="#partner-carousel" data-slide-to="1" class="mydot"></li>
+						      <li data-target="#partner-carousel" data-slide-to="2" class="mydot"></li>
+						   </ol>						
+						</div>
+					</div>					 
+				</div>
+				
+				<!-- links -->
+				<div class="row links text-center" style="margin-top: 188px;">
+					<div class="container">
+						<div class="img-item">
+				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
+				        </div>
+				        <div class="img-item">
+				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
+				        </div>
+				        <div class="img-item">
+				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
+				        </div>
+				        <div class="img-item">
+				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
+				        </div>
+				        <div class="img-item">
+				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
+				        </div>
+				        <div class="img-item">
+				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
+				        </div>
+				        <div class="img-item">
+				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
+				        </div>				        
+					</div>					
+				</div>
+			</div>
+		</div>
+		
+		
 	</div>
 </div>
 

@@ -285,6 +285,46 @@ nav,nav li,nav a{
 	background: url('../img/index_icon_goto.png');
 }
 
+.wisdom-saying .content .partner{
+	color:#7D7B79;
+}
+.mycarousel .my-indicators{
+	position: relative;top:44px;
+}
+.mycarousel .my-indicators .mydot{
+	background: #a9a9a9;
+	width:10px;height:10px;
+	border-radius:10px; 
+}
+.mycarousel .my-indicators .active{
+	background: red;
+	width:10px;height:10px;
+	border-radius:10px;
+}
+.mycarousel .item .partner-name{
+	margin-top: 18px;
+}
+.mycarousel .my-left,.mycarousel  .my-right{	
+	width: 84px;height: 84px;	
+	margin-top: 20px;
+}
+.mycarousel .my-left{
+	background: url("../img/index_slide_left.png");
+	float: left;
+}
+.mycarousel .my-right{
+	background: url("../img/index_slide_right.png");
+	float: right;
+}
+.mycarousel .img-item,.links .img-item{
+	float: left;
+	margin: 0 30px 0;
+}
+#partner-carousel{
+	height: 150px;
+}
+
+
 /* End of Wisdom-saying Style */
 
 /* project */
