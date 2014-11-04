@@ -3,9 +3,9 @@
 	TODO better to describe here about how a style can be called 'common' and put here
 */
 .container{
-	min-width:1200px !important;
+	min-width:960px !important;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 960px) {
     body {
         overflow-x: hidden; 
     }

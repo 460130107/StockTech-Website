@@ -17,8 +17,7 @@
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 450px;  /*--ͼƬ�ĸ߶ȵ�450px--*/
-  background-color: #33CCCC;
+  background-color: trasparent;
 }
 .carousel-inner > .item > img {
   position: absolute;
@@ -180,10 +179,10 @@ nav,nav li,nav a{
 
 /* Sections list */
 .sections-list {
-	height: 3500px;
 	max-width: 100%;
 	background: url('../img/index_sections_bg.jpg');
 	padding: 0px 0 30px;
+	padding-bottom: 100px;
 }
 
 .sections-list .pin {
@@ -264,7 +263,8 @@ nav,nav li,nav a{
 }
 
 .wisdom-saying .link {
-	margin-top: 60px;
+	margin-top: 50px;
+	font-size: 24px;
 }
 
 .wisdom-saying .link a {
@@ -288,6 +288,7 @@ nav,nav li,nav a{
 .wisdom-saying .content .partner{
 	color:#7D7B79;
 }
+
 .mycarousel .my-indicators{
 	position: relative;top:44px;
 }
@@ -323,8 +324,6 @@ nav,nav li,nav a{
 #partner-carousel{
 	height: 150px;
 }
-
-
 /* End of Wisdom-saying Style */
 
 /* project */

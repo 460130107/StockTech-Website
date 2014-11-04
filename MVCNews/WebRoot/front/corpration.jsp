@@ -161,7 +161,7 @@
 						</p>
 					</div>
 					
-					<div id="procedure" class="row">
+					<div id="contact" class="row">
 						<h3>联系方式</h3>
 						<hr/>
 						<address>

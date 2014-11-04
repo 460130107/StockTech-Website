@@ -28,7 +28,7 @@
 			 	<ul class="nav navbar-nav">
 			 		<li class='${param.index=="account"?"active":"" }'>
 						<a href="front/account.jsp">登录</a></li>
-					<li class='${param.index=="account"?"active":"" }'>
+					<li class='${param.index=="signup"?"active":"" }'>
 						<a href="front/signup.jsp">注册</a></li>
 					<li class='${param.index=="forum"?"active":"" }'>
 						<a href="front/forum.jsp">论坛</a></li>

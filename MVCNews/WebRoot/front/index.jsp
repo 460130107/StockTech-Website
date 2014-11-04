@@ -95,7 +95,7 @@
 			</div>
 		</div>
 		
-		<div class="row section section-onmargin">
+		<div class="row section section-nomargin">
 			<div class="col-lg-12 pin">
 				<img alt="pin" src="front/dist/img/index_pin_gray.png">
 			</div>
@@ -118,7 +118,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 link">
-						<a href="front/product.jsp">详细了解如何斯多克如何帮您做出更可靠决策
+						<a href="front/product.jsp">斯多克如何帮您做出更可靠决策
 							<span class="link-icon"></span>
 							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
 					</div>
@@ -149,7 +149,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 link">
-						<a href="front/productDetail.jsp">查看我能获得多少回报率
+						<a href="front/corpration.jsp">与我们合作
 							<span class="link-icon"></span>
 							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
 					</div>
@@ -162,17 +162,17 @@
 			<div class="col-lg-12 pin" style="margin-top:0;">
 				<img alt="pin" src="front/dist/img/index_pin_star.png">
 			</div>
-			<div class="col-lg-12 wisdom-saying text-center">
+			<div class="col-lg-12 text-center">
 				<div class="row">
 					<div class="col-lg-2 col-lg-offset-5">
-						<img alt="portrait" src="front/dist/img/logo_red.png" style="margin-top: 54px;margin-bottom: 50px;">						
+						<img alt="portrait" src="front/dist/img/logo_red.png" style="margin-top: 20px;margin-bottom: 20px;">						
 					</div>
 					
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 content partner">
-					<p style="color: #332726;font-size: 62px;margin-bottom: 20px;letter-spacing:6px;">我们的合作伙伴</p>
-					<p style="color:#7e7b7b;font-weight:bold;;font-size: 32;letter-spacing: 4px;margin-bottom: 86px;">谁在与斯多克合作?
+					<p style="color:#7e7b7b;font-weight:bold;;font-size: 24px;letter-spacing: 4px;margin-bottom: 25px;">我们的合作伙伴?
+					<p style="color: #332726;font-size: 62px;margin-bottom: 20px;letter-spacing:6px;">谁在与斯多克合作？</p>
 					</div>
 				</div>
 				
@@ -252,7 +252,7 @@
 				</div>
 				
 				<!-- links -->
-				<div class="row links text-center" style="margin-top: 188px;">
+				<div class="row links text-center" style="margin-top: 150px;">
 					<div class="container">
 						<div class="img-item">
 				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
@@ -279,8 +279,6 @@
 				</div>
 			</div>
 		</div>
-		
-		
 	</div>
 </div>
 

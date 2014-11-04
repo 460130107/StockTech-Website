@@ -75,8 +75,8 @@ if(request.getParameter("id")=="" || request.getParameter("id")==null){
 					<!-- 公司简介 info -->
 					<h3>公司简介</h3>
 					<p class="f16 spac1 lineheight26">
-						斯多克(stockii.com)，系人人友信集团旗下公司及独立品牌。自2010年5月成立至今，人人贷的服务已覆盖了全国30余个省的2000多个地区，服务了几十万名客户，成功帮助他们通过信用申请获得融资借款，或通过自主出借获得稳定收益。
-						作为中国最早的一批基于互联网的P2P信用借贷服务平台，人人贷以其诚信、透明、公平、高效、创新的特征赢得了良好的用户口碑。现在，人人贷已成为行业内最具影响力的品牌之一。
+						斯多克(stockii.com)，系人人友信集团旗下公司及独立品牌。自2010年5月成立至今，斯多克的服务已覆盖了全国30余个省的2000多个地区，服务了几十万名客户，成功帮助他们通过信用申请获得融资借款，或通过自主出借获得稳定收益。
+						作为中国最早的一批基于互联网的P2P信用借贷服务平台，斯多克以其诚信、透明、公平、高效、创新的特征赢得了良好的用户口碑。现在，斯多克已成为行业内最具影响力的品牌之一。
 					<hr style="border: 1px dashed #ddd;" class="mgt20 mgb20">
 					
 					<h2 class="f18 fwb spac2" style="color: #86CBC4;">使命</h2>
@@ -171,16 +171,16 @@ if(request.getParameter("id")=="" || request.getParameter("id")==null){
 						<p class="f14 spac1">地址：北京市海淀区中关村东路8号东升大厦C座133
 						<p class="f14 spac1 mgb20">邮编：100001
 					<p class="f18 spac2" style="color: #86CBC4;">客服电话
-						<p class="f14 spac1">如果您在使用斯多克(www.stockii.com)的过程中有任何疑问请您与人人贷客服人员联系。
+						<p class="f14 spac1">如果您在使用斯多克(www.stockii.com)的过程中有任何疑问请您与斯多克客服人员联系。
 						<p class="f14 spac1">24小时客服电话：400-111-999
 						<p class="f14 spac1 mgb20">在线帮助：<a href="front/help/index.jsp">http://www.stockii.com/help/index</a>
 					<p class="f18 spac2" style="color: #86CBC4;">商务合作
 						<p class="f14 spac1">如果贵公司希望与我们建立商务合作关系，形成优势互补，请将合作意向进行简要描述并发送邮件至：
 						<p class="f14 spac1">stockii_cooperation@163.com
-						<p class="f14 spac1 mgb20">备注：人人贷目前暂时没有线下加盟/线下开店等商务合作模式，谢谢关注。
+						<p class="f14 spac1 mgb20">备注：斯多克目前暂时没有线下加盟/线下开店等商务合作模式，谢谢关注。
 					<p class="f18 spac2" style="color: #86CBC4;">信息同步
 						<p class="f14 spac1">如果您还希望了解我们更多信息，请关注我们的新浪微博、腾讯微博、微信或博客。
-						<p class="f14 spac1">微信公众平台：renrendai（扫描右侧二维码关注人人贷微信）
+						<p class="f14 spac1">微信公众平台：renrendai（扫描右侧二维码关注斯多克微信）
 						<p class="f14 spac1">新浪博客：blog.sina.com.cn/renrendai
 						<p class="f14 spac1">新浪微博：e.weibo.com/renrendai
 						<p class="f14 spac1 mgb20">腾讯微博：t.qq.com/renrendai
