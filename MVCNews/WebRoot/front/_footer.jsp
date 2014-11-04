@@ -4,9 +4,9 @@
    		<div class="left">
    			<img class="tdcode" alt="二维码" src="front/dist/img/footer-tdcode.png">
    			<ul class="list-block-first">
-   				<li class="f18"><a href="">公司介绍</a></li>
-   				<li class="f18"><a href="">联系我们</a></li>
-   				<li class="f18"><a href="">人才招聘</a></li>
+   				<li class="f18"><a href="front/about.jsp?id=js-info">公司介绍</a></li>
+   				<li class="f18"><a href="front/about.jsp?id=js-concat">联系我们</a></li>
+   				<li class="f18"><a href="front/about.jsp?id=js-recruit">人才招聘</a></li>
    			</ul>
    			<div class="clearfix"></div>
    			<ul class="list-block-second">
@@ -24,7 +24,9 @@
    			<input type="button" value="" class="fbtn btn-submit">   			
    		</div>   		   	
     </div>
-    <div class="triangle"><span class="footer-triangle"></span></div> 
+    
+   <div class="triangle" style="background: #272727;"><span class="footer-triangle"></span></div>
+    <!-- <div class="triangle" style="background: green;"><span style="color: red;position: relative;top: -5px;">&#9660</span></div> --> 
     <div class="bottom">
 	    <div class="container">
 	    	<div class="left f20">
@@ -32,7 +34,7 @@
 	    	</div>
 	    	<div class="right">
 	    		<ul class="list-block3">
-	    			<li><a href="front/ourteam.jsp" target="_self">关于我们</a></li>
+	    			<li><a href="front/about.jsp" target="_self">关于我们</a></li>
 	    			<li><a href="front/policy.jsp" target="_self">隐私条款</a></li>
 	    			<li><a href="front/policy.jsp" target="_self">协议声明</a></li>
 	    			<li><a href="front/" target="_self">更多信息</a></li>

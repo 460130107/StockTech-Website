@@ -470,6 +470,7 @@ ul.nav-stacked.affix{
 .side-fli a{
 	color:#fff;
 	background: transparent;
+	width: 170px;height: 66px;
 }
 
 .side-fli:hover{
@@ -504,6 +505,21 @@ ul.nav-stacked.affix{
 .fwbr{font-weight: bolder;}
 .fwl{font-weight: lighter;}
 .fwn{font-weight: normal;}
+
+.spac1{letter-spacing: 1px;}
+.spac2{letter-spacing: 2px;}
+.spac3{letter-spacing: 3px;}
+.spac4{letter-spacing: 4px;}
+.spac5{letter-spacing: 5px;}
+.lineheight14{line-height: 14px;}
+.lineheight16{line-height: 16px;}
+.lineheight18{line-height: 18px;}
+.lineheight20{line-height: 20px;}
+.lineheight22{line-height: 22px;}
+.lineheight24{line-height: 24px;}
+.lineheight26{line-height: 26px;}
+.lineheight28{line-height: 28px;}
+.lineheight30{line-height: 30px;}
 
 .f10{font-size: 10px;}
 .f12{font-size: 12px;}
@@ -803,7 +819,6 @@ ul.nav-stacked.affix{
 
 .content-banner img{
 }
-
 
 
 
