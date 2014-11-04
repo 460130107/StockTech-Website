@@ -98,7 +98,7 @@
 		</div>
 	</div><!-- end 产品介绍 第一行 -->
 	<!-- 产品介绍  第二行 -->
-	<div class="col-md-12 column mgb20">
+	<div class="col-md-12 column mgb20">		
 		<div class="row clearfix">
 			<!-- 产品一 -->
 			<div class="col-md-4 column">
@@ -156,7 +156,7 @@
 	</div>
 	
 	
-	<!-- questions -->
+	<!-- f & q -->
 	<div class="container">
 		<div class="row mgb20">
 			<h3 class="bgc-green1 pdl20 pdb20 pdt20 f24">常见问题<a href="front/guide.jsp" class="btn btn-default btn-info mgr20" style="float: right;">新手指南</a></h3>
@@ -183,11 +183,9 @@
 									　　　1. 在人人贷网站上进行注册、通过实名认证、成功绑定银行卡；<br>
 									　　　2. 账户充值；<br>
 									　　　3. 浏览U计划、散标投资列表、债权转让列表，选择自己感兴趣的投资方式；<br>
-									　　　4. 确认投资，投资成功。<br>
-								
+									　　　4. 确认投资，投资成功。<br>								
 			</div>
-		</div>
-		
+		</div>		
 	</div>
 	
 </div>

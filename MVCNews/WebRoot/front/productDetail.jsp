@@ -35,44 +35,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</dl>
 	</div>
 <div class="container-fluid text-center bg-lattice content-banner">
-<!-- 	<img alt="hello" src="front/dist/img/product_banner.png"> -->
-	<div class="pdt60 pdb60" style="text-align:center;background-size:100% 100%;;background-image: url('front/dist/img/product-detail.jpg');">
-  </div>
+	<!-- <div class="pdt60 pdb60" style="text-align:center;background-size:100% 100%;;background-image: url('front/dist/img/product-detail.jpg');">
+	</div> -->
 	<a class="btn btn-default btn-info" href="">点击下载</a>
 </div>
   
    <!-- 产品图形介绍 -->
    <div class="bgc-green1">
 	  <div class="container">
-		<div class="row mb10" >
+		<div class="row mgb10 mgt10" >
 			<div class="col-md-3">
-				<img alt="140x140" src="img/a.jpg" class="img-polaroid" style="width: 200px;height: 200px;"/>
+				<img alt="140x140" src="front/dist/img/account_bg.jpg" class="img-polaroid bdradius6" style="width: 200px;height: 200px;"/>
 			</div>
 			<div class="col-md-8">
-				<h3>
-					what is xxxx
-				</h3>
-				<p>
-					<em>Git</em>是一个分布式的版本控制系统，最初由<strong>Linus Torvalds</strong>编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。
-				</p>
+				<h3 class="f20 fwb">产品简介</h3>
+				<p class="f16">拍拍贷同时也是第一家由工商部门特批，获得"金融信息服务"资质，从而得到政府认可的互联网金融平台。 拍拍 贷用先进的理念和创新的技术建立了一个安全、高效、诚信、透明的互联网金融平台，规范了个人借贷行为，让 借入者改善生产生活，让借出者增加投资渠道。拍拍贷相信，随着互联网的发展和中国个人信用体系的健全，先进 的理念和创新的技术将给民间借贷带来历史性的变革，拍拍贷将是这场变革的领导者</p>
 			</div>
 		</div>
-		<div class="row mb10">
+		<div class="row mgb10">
 			<div class="col-md-3">
-				<img alt="140x140" src="img/a.jpg" class="img-polaroid" style="width: 200px;height: 200px;"/>
+				<img alt="140x140" src="front/dist/img/account_bg.jpg" class="img-polaroid bdradius6" style="width: 200px;height: 200px;"/>
 			</div>
 			<div class="col-md-8">
-				<h3>投资收益</h3>
-				<p><em>Git</em>是一个分布式的版本控制系统，最初由<strong>Linus Torvalds</strong>编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。</p>
+				<h3 class="f20 fwb">投资收益</h3>
+				<p class="f16">拍拍贷同时也是第一家由工商部门特批，获得"金融信息服务"资质，从而得到政府认可的互联网金融平台。 拍拍 贷用先进的理念和创新的技术建立了一个安全、高效、诚信、透明的互联网金融平台，规范了个人借贷行为，让 借入者改善生产生活，让借出者增加投资渠道。拍拍贷相信，随着互联网的发展和中国个人信用体系的健全，先进 的理念和创新的技术将给民间借贷带来历史性的变革，拍拍贷将是这场变革的领导者</p>
 			</div>
 		</div>
-		<div class="row mb10">
+		<div class="row mgb10 ">
 			<div class="col-md-3">
-				<img alt="140x140" src="img/a.jpg" class="img-polaroid" style="width: 200px;height: 200px;"/>
+				<img alt="140x140" src="front/dist/img/account_bg.jpg" class="img-polaroid bdradius6" style="width: 200px;height: 200px;"/>
 			</div>
 			<div class="col-md-7">
-				<h3>申请须知</h3>
-				<p><em>Git</em>是一个分布式的版本控制系统，最初由<strong>Linus Torvalds</strong>编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。</p>
+				<h3 class="f20 fwb">申请须知</h3>
+				<p class="f16">拍拍贷同时也是第一家由工商部门特批，获得"金融信息服务"资质，从而得到政府认可的互联网金融平台。 拍拍 贷用先进的理念和创新的技术建立了一个安全、高效、诚信、透明的互联网金融平台，规范了个人借贷行为，让 借入者改善生产生活，让借出者增加投资渠道。拍拍贷相信，随着互联网的发展和中国个人信用体系的健全，先进 的理念和创新的技术将给民间借贷带来历史性的变革，拍拍贷将是这场变革的领导者</p>
 			</div>
 		</div>
 	 </div>
@@ -98,32 +93,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div> -->
 	
 	<!-- 产品相关细节问题 -->
-	<div class="bgc-blue">
+	<div class="bgc-blue1">
 	<div class="container">
 		<div> 
-	  		<h3>产品细节咨询</h3>
+	  		<h3 class="f24">产品细节咨询</h3>
 	  	</div> 
 	  	<hr> 
 		<ul>
 			<li>
-				<h5>什么是产品XXX</h5>
-				<p>U计划是人人贷推出的便捷高效的自动投标工具。U计划在用户认可的标的范围内，对符合要求的标的进行自动投标，且回款本金在相应期限内自动复投，期限结束后U</p>
+				<h5 class="f20"><span>&#10034;&nbsp;</span>什么是产品XXX</h5>
+				<p class="f16">　U计划是人人贷推出的便捷高效的自动投标工具。<br>　U计划在用户认可的标的范围内，对符合要求的标的进行自动投标，且回款本金在相应期限内自动复投，期限结束后U</p>
 			</li>
 			<li>
-				<h5>原优选理财计划的相关说明</h5>
-				<p>1.U计划支持提前退出，提前退出费用为加入计划金额的2%。<br>
-							2.U计划到期后自动退出，无需另行操作。<br>
-							3.U计划支持的收益处理方式：<br>
-							收益再投资<br>
-							提取至主账户<br>
-							注：收益处理方式选择后不再支持中途修改。</p>
+				<h5 class="f20"><span>&#10034;&nbsp;</span>原优选理财计划的相关说明</h5>
+				<p class="f16">　1.U计划支持提前退出，提前退出费用为加入计划金额的2%。<br>
+							　2.U计划到期后自动退出，无需另行操作。<br>
+							　3.U计划支持的收益处理方式：<br>
+							　收益再投资<br>
+							　提取至主账户<br>
+							　注：收益处理方式选择后不再支持中途修改。</p>
 			</li>
 			<li>
-				<h5>问题问题问题</h5>
-				<p>U计划上线后，不再新发优选理财计划。<br>
-							    历史上已发布的优选理财计划照常运行，原有规则保持不变。每期收益均会根据您所选择的收益处理方式照常处置，直到优选理财计划期满您主动选择退出为止。<br>
-							    原优选理财计划仍保留三种收益处理方式：收益再投资、当日提取至人人贷账户或每月定时提取至用户指定的银行卡，用户可以根据需求修改收益处理方式。<br>
-							原优选理财计划仍不支持提前退出。
+				<h5 class="f20"><span>&#10034;&nbsp;</span>问题问题问题</h5>
+				<p class="f16">　U计划上线后，不再新发优选理财计划。<br>
+							    　历史上已发布的优选理财计划照常运行，原有规则保持不变。每期收益均会根据您所选择的收益处理方式照常处置，直到优选理财计划期满您主动选择退出为止。<br>
+							    　原优选理财计划仍保留三种收益处理方式：收益再投资、当日提取至人人贷账户或每月定时提取至用户指定的银行卡，用户可以根据需求修改收益处理方式。<br>
+							　原优选理财计划仍不支持提前退出。
 	                       </p>
 			</li>
 		</ul>

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <footer>
-    <div class="container">    	
+    <div class="container pdb10">    	
    		<div class="left">
    			<img class="tdcode" alt="二维码" src="front/dist/img/footer-tdcode.png">
    			<ul class="list-block-first">
@@ -22,7 +22,7 @@
    			<textarea placeholder="你的宝贵意见..." class="option bdradius6"></textarea>
    			<input type="button" value="" class="fbtn btn-refresh bdradius6">
    			<input type="button" value="" class="fbtn btn-submit">   			
-   		</div>    	
+   		</div>   		   	
     </div>
     <div class="triangle"><span class="footer-triangle"></span></div> 
     <div class="bottom">
@@ -33,8 +33,8 @@
 	    	<div class="right">
 	    		<ul class="list-block3">
 	    			<li><a href="front/ourteam.jsp" target="_self">关于我们</a></li>
-	    			<li><a href="front/account.jsp" target="_self">登陆注册</a></li>
-	    			<li><a href="front/" target="_self">加入我们</a></li>
+	    			<li><a href="front/policy.jsp" target="_self">隐私条款</a></li>
+	    			<li><a href="front/policy.jsp" target="_self">协议声明</a></li>
 	    			<li><a href="front/" target="_self">更多信息</a></li>
 	    		</ul>
 	    	</div>
