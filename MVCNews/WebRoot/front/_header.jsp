@@ -23,7 +23,7 @@
 			 <li class='${param.index=="corpration"?"active":"" }'>
 				<a href="front/corpration.jsp">合作</a></li>
 			 <li class='${param.index=="about"?"active":"" }'>
-				<a href="front/recruit.jsp">关于我们</a></li>
+				<a href="front/about.jsp">关于我们</a></li>
 			 <li>
 			 	<ul class="nav navbar-nav">
 			 		<li class='${param.index=="account"?"active":"" }'>

@@ -14,15 +14,6 @@
 </head>
 <body>
 <jsp:include page="../_header.jsp"></jsp:include>
-<!-- navgation -->
-<!-- <div class="container">
-	<ol class="breadcrumb bgc-white">
-	  <li><a href="#">首页</a></li>
-	  <li><a href="#">帮助中心</a></li>
-	  <li class="active">十一月</li>
-	</ol>
-</div> -->
-
 <!-- body -->
 <div class="container ">
 	<ul id="breadcrumb">
@@ -33,7 +24,7 @@
 		<div class="col-md-6 ">
 			<div class="help-block bdradius6">
 				<!-- <span class="icon-help icon-help-index1"></span> -->
-				<h4 class="help-index-title pd20"><a href="front/help/secondary.jsp?id=js-tender">我要投标</a></h4>
+				<h4 class="help-index-title pd20"><a href="front/help/secondary.jsp?id=js-purchase">产品购买</a></h4>
 				<ul class="list-inline">
 					<li><a class="pd20 f16" href="front/guide.jsp">新手必读</a></li>
 					<li><a class="pd20 f16" href="front/product.jsp">产品介绍</a></li>
@@ -45,8 +36,15 @@
 					<li><a class="pd20 f16" href="">新手必读</a></li>
 				</ul>
 			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="help-block bdradius6">
+				<h4 class="help-index-title pd20"><a href="front/help/secondary.jsp?id=js-corporation">项目合作</a></h4>
 			</div>
-			
+		</div>		
+	</div>
+	
+	<div class="row bgc-white">		
 		<div class="col-md-6">
 			<div class="help-block bdradius6">
 				<h4 class="help-index-title pd20"><a href="front/help/secondary.jsp?id=js-account">账户管理</a></h4>
@@ -62,17 +60,10 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	
-	<div class="row bgc-white">
+		
 		<div class="col-md-6">
 			<div class="help-block bdradius6">
-				<h4 class="help-index-title pd20"><a href="front/help/secondary.jsp?id=js-corporation">我要合作</a></h4>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="help-block bdradius6">
-				<h4 class="help-index-title pd20"><a href="front/help/secondary.jsp?id=js-security">安全保证</a></h4>
+				<h4 class="help-index-title pd20"><a href="front/help/secondary.jsp?id=js-policy">协议条款</a></h4>
 				<ul class="list-inline">
 					<li><a class="pd20 f16" href="">声明计划</a></li>
 					<li><a class="pd20 f16" href="">法律与政策保障</a></li>

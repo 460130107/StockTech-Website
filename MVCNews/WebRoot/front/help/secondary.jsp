@@ -16,6 +16,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="description" content="This is my page">
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
+<style type="text/css">
+/*索引模块*/
+div.index{
+	background: #F9F9F9;
+}
+div.index .item{
+	display: inline-block;
+	text-align:center;
+	min-width: 100px;
+	/* background: pink; */
+	margin-right: 15px;
+}
+div.index .item a{
+	/* color:#fff; */
+}
+div.index .item a:hover{
+	text-decoration: none;
+}
+div.index .active{
+	background: #C6BFBF;
+	border-radius:4px;
+}
+
+/*二级切换文本模块*/
+.secondContent{
+	background: #F9F9F9;
+}
+</style>
 </head>
   
 <body>
@@ -23,10 +51,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <%
 String id="root";
+String sid="sroot";
 if(request.getParameter("id")=="" || request.getParameter("id")==null){
 	id="root";
 }else{
 	id=request.getParameter("id");
+}
+
+if(request.getParameter("sid")=="" || request.getParameter("sid")==null){
+	sid="sroot";
+}else{
+	sid=request.getParameter("sid");
 }
 //System.out.println("id = "+id);
 %>
@@ -36,20 +71,20 @@ if(request.getParameter("id")=="" || request.getParameter("id")==null){
   		<ul id="breadcrumb" class="js-breadcrumb">
 		  <li><a href="#"><span class="icon">主页</span></a></li>
 		  <li><a href="front/help/index.jsp"><span class="icon"></span>帮助中心</a></li>
-		  <li class="js-hide js-tender" data-target="js-tender"><a href="javascritp:void(0);"><span class="icon js-tender"></span>我要投标</a></li>
+		  <!--  <li class="js-hide js-purchase" data-target="js-purchase"><a href="javascritp:void(0);"><span class="icon js-purchase"></span>产品购买</a></li>
 		  <li class="js-hide js-account" data-target="js-account"><a href="javascritp:void(0);"><span class="icon "></span>账户管理</a></li>
-		  <li class="js-hide js-corporation" data-target="js-corporation"><a href="javascritp:void(0);"><span class="icon "></span>我要合作</a></li>
-		  <li class="js-hide js-security" data-target="js-security"><a href="javascritp:void(0);"><span class="icon "></span>安全保证</a></li>
+		  <li class="js-hide js-corporation" data-target="js-corporation"><a href="javascritp:void(0);"><span class="icon "></span>项目合作</a></li>
+		  <li class="js-hide js-service" data-target="js-service"><a href="javascritp:void(0);"><span class="icon "></span>协议条款</a></li>
 		  <li class="js-hide js-stock" data-target="js-stock"><a ><span class="icon "></span>股票名词</a></li>
-		  <li class="js-hide finally"></li>
+		  <li class="js-hide finally"></li> -->
 		</ul>
   	</div>
   	<div class="row">
   		<div class="col-md-9" style="float: right;left:-100px;">
   			<div class="content">
-  				<div class="js-content pdl20 pdr20 bgc-white"  id="js-tender" style="border: 1px solid #ddd;height: 600px;">
+  				<div class="js-content pdl20 pdr20 bgc-white"  id="js-purchase" style="border: 1px solid #ddd;min-height: 600px;">
   					<!-- tender -->
-  					<h3>我要投标</h3>
+  					<h3>产品购买</h3>
   					<p class="f14">
   						HTML5 是 W3C 与 WHATWG 合作的结果,WHATWG 指 Web Hypertext Application Technology Working Group。
 						WHATWG 致力于 web 表单和应用程序，而 W3C 专注于 XHTML 2.0。在 2006 年，双方决定进行合作，来创建一个新版本的 HTML。						
@@ -79,28 +114,49 @@ if(request.getParameter("id")=="" || request.getParameter("id")==null){
 									保障和满足。
   					<hr style="border: 1px dashed #ddd;" class="mgt20 mgb20">
   				</div>
-  				<div class="hide js-content" id="js-account" style="border: 1px solid green;height: 600px;">2</div>
-  				<div class="hide js-content" id="js-corporation" style="border: 1px solid yellow;height: 600px;">3</div>
-  				<div class="hide js-content" id="js-security" style="border: 1px solid blue;height: 600px;">4</div>
-  				<div class="hide js-content" id="js-stock" style="border: 1px solid orange;height: 600px;">5</div>
+  				
+  				<div class="js-content" id="js-account" style="border: 1px solid green;min-height: 600px;">2</div>
+  				
+  				<div class="js-content" id="js-corporation" style="border: 1px solid yellow;min-height: 600px;">3</div>
+  				
+  				<div class="js-content pdl20 pdr20 bgc-white" id="js-service" style="border: 1px solid #ddd;min-height: 600px;">
+					<!-- 协议条款 -->
+  					<div class="index pdt20 pdb20 mgt20 mgb20">
+  						<span class="item f16 mgl10" data-target="js-privacy"><a href="javascript:void(0);" data-target="js-privacy">隐私条款</a></span>
+  						<span class="item f16" data-target="js-service"><a href="javascript:void(0);" data-target="js-service">服务政策</a></span>
+  						<span class="item f16" data-target="js-law"><a href="javascript:void(0);" data-target="js-law">法律文件</a></span>
+  					 </div>
+  					<div class="secondContent pd10 spac1 lineheight20 mgb20 js-sec js-privacy" id="js-privacy">
+  						<!-- 隐私条款 -->
+  						<p class="f16">除非另有规定,我们可以为以下目的使用你的个人信息:改进本网站的内容、根据你的喜好将网站个体化、与你交流信息(如果你提出过要求)、用于我们的营销及研究目的以及用于本隐私制度所述之其他目的。如果你向本网站提供个人信息,我们可以将该等信息与其他主动收集之信息进行合并，除非我们在收集信息时有特别声明。除非你另行同意，我们将采取合理措施，以防止你的个人信息与其他被动收集之信息进行合并。 我们可能会将你的个人信息向三得利（中国）投资有限公司全世界范围内的其他关联公司进行披露，但前提是他们也同意遵守本隐私制度的规定。另外，我们可能也会将你的个人信息透露给在中国或其他国家的第三方，但仅限于：
+  					</div>
+  					<div class="secondContent pd10 spac1 lineheight20 mgb20 js-sec js-service" id="js-service">
+  						<!-- 服务政策 -->
+  						<p class="f16">斯多克科技有权根据互联网的发展和中华人民共和国有关法律、法规的变化，不时地完善和修改斯多克科技服务条款。斯多克科技保留随时修改服务条款的权利，用户在使用斯多克科技平台服务时，有必要对最新的斯多克科技服务条款进行仔细阅读和重新确认，当发生有关争议时，请以最新的服务条款为准。
+  					</div>
+  					<div class="secondContent pd10 spac1 lineheight20 mgb20 js-sec js-law" id="js-law">
+  						<!-- 法律文件 -->
+  						<p class="f16">Meter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。
+  					</div>
+				</div>  					
+  				
+  				<div class="js-content" id="js-stock" style="border: 1px solid orange;min-height: 600px;">5</div>
 		  	</div>
   		</div>
   	
   		<div class="col-md-2">
   			<div class="bar">
 		  		<ul class="sidebar">
-		  			<li class="side-fli pd20 active js-sideli" data-target="js-tender"><a href="front/help/secondary.jsp?id=js-tender">我要投标</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-account"><a href="front/help/secondary.jsp?id=js-account">账户管理</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-corporation"><a href="front/help/secondary.jsp?id=js-corporation">我要合作</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-security"><a href="front/help/secondary.jsp?id=js-security">安全保证</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-stock"><a href="front/help/secondary.jsp?id=js-stock">股票名词</a></li>
+		  			<li class="side-fli pd20 active js-sideli" data-target="js-purchase"><a href="front/help/secondary.jsp?id=js-purchase" data-target="js-purchase">产品购买</a></li>
+		  			<li class="side-fli pd20 js-sideli" data-target="js-account"><a href="front/help/secondary.jsp?id=js-account" data-target="js-account">账户管理</a></li>
+		  			<li class="side-fli pd20 js-sideli" data-target="js-corporation"><a href="front/help/secondary.jsp?id=js-corporation" data-target="js-corporation">项目合作</a></li>
+		  			<li class="side-fli pd20 js-sideli" data-target="js-service"><a href="front/help/secondary.jsp?id=js-service" data-target="js-service">协议条款</a></li>
+		  			<li class="side-fli pd20 js-sideli" data-target="js-stock"><a href="front/help/secondary.jsp?id=js-stock" data-target="js-stock">股票名词</a></li>
 		  		</ul>
 		  	</div>
   		</div>
   		
-  	</div>
-  	
-  	
+  	</div>  	
   </div>
 
 
@@ -112,27 +168,58 @@ if(request.getParameter("id")=="" || request.getParameter("id")==null){
 <script type="text/javascript">
 $(function(){
 	var js_id="<%=id%>";
-	console.log("js-id = "+js_id);
+	//console.log("js-id = "+js_id);
 	if(js_id.match("root")){
-		$(".js-hide").addClass("hide");
+		//top navigator
+		var $liObj=$('<li class="js-purchase" data-target="js-purchase"><a><span class="icon js-purchase"></span>产品购买</a></li>');
+		$liObj.appendTo($("#breadcrumb"));
+		$liObj.children("a").attr("href","javascript:void(0)");
+		//sidebar 
+		$(".side-fli").removeClass("active");
+		$(".side-fli[data-target='js-purchase']").addClass("active");
+		//show and hide content block
+		$(".js-content[id!='js-purchase']").addClass("hide");
 	}else{
-		$(".js-hide").addClass("hide");
-		$(".js-hide").filter("."+js_id+"").removeClass("hide");
-		$(".js-sideli").removeClass("active");
-		$(".js-sideli[data-target='"+js_id+"']").addClass("active");
+		//top navigator
+		var str=$(".side-fli").children("a[data-target='"+js_id+"']").text();
+		console.log("str = "+str);
+		var $liObj=$('<li class="'+js_id+'" data-target="'+js_id+'"><a><span class="icon '+js_id+'"></span>'+str+'</a></li>');
+		$liObj.appendTo($("#breadcrumb"));
+		$liObj.children("a").attr("href","javascript:void(0)");
+		//sidebar 
+		$(".side-fli").removeClass("active");
+		$(".side-fli[data-target='"+js_id+"']").addClass("active");
+		//show and hide content block
+		$(".js-content[id!='"+js_id+"']").addClass("hide");				
 	}
 	
 	$(".js-sideli").on({
 		"click":function(){
-			$(this).siblings().removeClass("active");
-			$(this).addClass("active");
-			var target=$(this).attr("data-target");
-			$("#"+target+"").siblings().addClass("hide");
-			$("#"+target+"").removeClass("hide");
-			$(".js-hide").addClass("hide");
-			$(".js-hide").filter("."+target+"").removeClass("hide");
+			var target=$(this).children("a").attr("data-target");
+			console.log("data-target = "+target);
+			window.location.href="front/help/secondary.jsp?id="+target;
 		}
 	});
+	
+	//二级索引导航
+	var js_sid="<%=sid%>";
+	console.log("sid = "+js_sid);
+	if((js_sid).match("sroot")){
+		//index item active
+		$("span.item[data-target='js-privacy']").addClass("active");
+		$(".secondContent[id!='js-privacy']").addClass("hide");
+	}else{
+		$("span.item[data-target='"+js_sid+"']").addClass("active");
+		$(".secondContent[id!='"+js_sid+"']").addClass("hide");
+	}
+	$("span.item").children("a").on({
+		"click":function(){
+			var starget=$(this).attr("data-target");
+			//console.log("starget = "+starget);
+			window.location.href="front/help/secondary.jsp?id="+js_id+"&sid="+starget;
+		}
+	}); 
+	
 });
 </script>
 </body>

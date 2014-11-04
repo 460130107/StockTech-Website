@@ -30,13 +30,13 @@
     <div class="bottom">
 	    <div class="container">
 	    	<div class="left f20">
-	    		Copyright&nbsp;2013-2014 @andreyen, All right reserved.
+	    		Copyright&nbsp;2013-2014 @andreyen, All right reserved.<span class="small">京网ICP 100000</span>
 	    	</div>
 	    	<div class="right">
 	    		<ul class="list-block3">
 	    			<li><a href="front/about.jsp" target="_self">关于我们</a></li>
-	    			<li><a href="front/policy.jsp" target="_self">隐私条款</a></li>
-	    			<li><a href="front/policy.jsp" target="_self">协议声明</a></li>
+	    			<li><a href="front/help/secondary.jsp?id=js-service&sid=js-privacy" target="_self">隐私条款</a></li>
+	    			<li><a href="front/help/secondary.jsp?id=js-service&sid=js-service" target="_self">协议声明</a></li>
 	    			<li><a href="front/" target="_self">更多信息</a></li>
 	    		</ul>
 	    	</div>
