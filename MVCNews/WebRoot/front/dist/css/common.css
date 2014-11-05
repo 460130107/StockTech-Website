@@ -125,6 +125,10 @@ footer{
 	background: #272727;
 	padding: 0;
 }
+
+footer .footer-panel {
+	color: #ddd;
+}
 footer ul li{margin: 0;padding: 0;list-style: none;}
 footer ul li>a{margin: 0;padding: 0;}
 footer .topLink{
@@ -145,6 +149,8 @@ footer .left{
 	margin: 0;padding: 0;
 }
 footer .tdcode{
+	max-width: 120px;
+	max-height: 120px;
 	float: left;
 	margin-right: 38px;	
 }
@@ -172,7 +178,6 @@ footer .list-block-first li>a:hover{
 
 footer .list-block-second{
 	padding: 10px 0 0 0;
-	color: #fff;
 }
 footer .list-block-second a{
 	color: inherit;
@@ -182,48 +187,102 @@ footer .list-block-second>li{
 	margin-bottom: 10px;
 }
 footer .list-block-second .text{
-	color: #fff;
 	display: inline-block;
 	line-height: 20px;	
 }
 
+footer .sections {
+	
+}
+
+footer a {
+	color: #ddd;
+	font-size: 16px;
+}
+
+footer .title {
+	font-size: 20px;
+	color: #ba2635;
+	font-weight: bold;
+}
+
+footer .icon {
+	width: 100px;
+	height: 100px;
+}
+
+footer .icon.icon-wechat {
+	background-image: url(../img/icon_wechat_dim.png);
+}
+
+footer .icon.icon-wechat:hover {
+	background-image: url(../img/icon_wechat_light.png);
+}
+
+footer .icon.icon-sina {
+	background-image: url(../img/icon_sina_dim.png);
+}
+
+footer .icon.icon-sina:hover {
+	background-image: url(../img/icon_sina_light.png);
+}
 
 footer .right{
 	float:right;
 	margin: 0;padding: 0;
 }
-footer .username,footer .email{
-	width:220px;height:43px;
+
+footer .input-gray {
 	background-color: #525252; 
 	border: 0;
-	background-image:url('../img/footer-feedback-border-email&name.png');
+	/* background-image:url('../img/footer-feedback-border-email&name.png'); */
+	background-size:100% 100%;
+	font-size: 18px;
+	color: #ccc;
+}
+
+footer textarea.input-gray {
+	height: 100px;
+}
+
+footer .username, footer .email{
+	width:220px;
+	height:43px;
+	background-color: #525252; 
+	border: 0;
+	/* background-image:url('../img/footer-feedback-border-email&name.png'); */
 	background-size:100% 100%; 	
 	padding-left: 10px;
 }
 footer .username{
 	display:block;
     float: left;
-    margin: 0px;margin-right:17px;
-    padding: 0px;padding-left: 10px;
+    margin: 0px;
+    margin-right:17px;
+    padding: 0px;
+    padding-left: 10px;
 }
 footer .option{
 	display:block;
-	margin:0;padding:10px;
+	margin:0;
+	padding:10px;
 	border: 0;
-	margin-bottom: 20px;margin-top:20px;
-	width: 457px;height: 100px;
+	margin-bottom: 20px;
+	margin-top:20px;
+	/* width: 457px; */
+	height: 100px;
 	background-color: #525252;
-	background-image:url('../img/footer-feedback-border-info.png');
+	/* background-image:url('../img/footer-feedback-border-info.png'); */
 	background-size:100% 100%; 
 	resize:none;
 }
 footer .fbtn{
-	margin: 0;padding: 0;
-	width: 170px;height: 50px;
+	margin: 0;
+	padding: 0;
+	width: 170px;
+	height: 50px;
 	border: 0;
-	float: right;
-	margin-left: 20px;
-	color:#fff;
+	color:#ccc;
 	letter-spacing: 1px;
 }
 footer .btn-submit{
@@ -560,6 +619,7 @@ ul.nav-stacked.affix{
 .f26{font-size: 26px;}
 .f28{font-size: 28px;}
 .mauto{margin: auto;}
+.mg0{margin: 0px;}
 .mg10{margin: 10px;}
 .mg20{margin: 20px;}
 .mg25{margin: 25px;}
@@ -596,6 +656,7 @@ ul.nav-stacked.affix{
 .mgr40{margin-right: 40px;}
 .mgr45{margin-right: 45px;}
 /*padding*/
+.pd0{padding: 0px;}
 .pd2{padding: 2px;}
 .pd4{padding: 4px;}
 .pd6{padding: 6px;}
