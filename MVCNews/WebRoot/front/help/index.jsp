@@ -15,7 +15,7 @@
 <body>
 <jsp:include page="../_header.jsp"></jsp:include>
 <!-- body -->
-<div class="container ">
+<div class="container mgt40 mgb40">
 	<ul id="breadcrumb">
 	  <li><a href="#"><span class="icon">主页</span></a></li>
 	  <li><a href="front/help/index.jsp"><span class="icon"> </span>帮助中心</a></li>

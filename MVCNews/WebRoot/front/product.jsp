@@ -48,7 +48,7 @@
 			<div class="col-md-4 column">
 			  <div class="layer bdradius12-tl bdradius12-tr">
 				<ul class="list-unstyled ">
-					<li class="table-header bgc-green2 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-header bgc-red3 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
 					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
 					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
 					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
@@ -65,7 +65,7 @@
 			<div class="col-md-4 column">
 			  <div class="layer bdradius12-tl bdradius12-tr">
 				<ul class="list-unstyled ">
-					<li class="table-header bgc-green1 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-header bgc-red4 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
 					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
 					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
 					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
@@ -82,7 +82,7 @@
 			<div class="col-md-4 column">
 			  <div class="layer bdradius12-tl bdradius12-tr">
 				<ul class="list-unstyled ">
-					<li class="table-header bgc-yellow1 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-header bgc-red5 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
 					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
 					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
 					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
@@ -104,7 +104,7 @@
 			<div class="col-md-4 column">
 			  <div class="layer bdradius12-tl bdradius12-tr">
 				<ul class="list-unstyled ">
-					<li class="table-header bgc-green2 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-header bgc-red3 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
 					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
 					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
 					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
@@ -121,7 +121,7 @@
 			<div class="col-md-4 column">
 			  <div class="layer bdradius12-tl bdradius12-tr">
 				<ul class="list-unstyled ">
-					<li class="table-header bgc-green1 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-header bgc-red4 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
 					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
 					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
 					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
@@ -138,7 +138,7 @@
 			<div class="col-md-4 column">
 			  <div class="layer bdradius12-tl bdradius12-tr">
 				<ul class="list-unstyled ">
-					<li class="table-header bgc-yellow1 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
+					<li class="table-header bgc-red5 pd20 f26 bdradius12-tl bdradius12-tr">产品 --XXXXX</li>
 					<li class="table-item pd6 pdl20 f16"><span>平台提供信用认证标、机构担保标、实地认证标等多类产品，用户根据审核后的信息，自选合适的借款标的，构建符合个人意愿的投资组合。</span></li>				
 					<li class="table-item pd6 pdl20 f14">收益稳定，预期年化收益最高达11%</li>
 					<li class="table-item pd6 pdl20 f14">低门槛，最低1,000元起</li>
@@ -159,7 +159,7 @@
 	<!-- f & q -->
 	<div class="container">
 		<div class="row mgb20">
-			<h3 class="bgc-green1 pdl20 pdb20 pdt20 f24">常见问题<a href="front/guide.jsp" class="btn btn-default btn-info mgr20" style="float: right;">新手指南</a></h3>
+			<h3 class="bgc-red4 pdl20 pdb20 pdt20 f24">常见问题<a href="front/guide.jsp" class="btn btn-default btn-info mgr20" style="float: right;">新手指南</a></h3>
 			
 			<div class="col-md-12 mgb20" style="border-bottom: 1px dashed #ddd;">
 				<p class="f20 pd20">Q1：我可以炒股吗？

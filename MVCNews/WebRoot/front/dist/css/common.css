@@ -21,13 +21,17 @@ body{
 	 min-width: 1200px;
 	 
 }
+/*reset*/
 h1,h2,h3,h4,h5,span,a,p,div,figure,figcaption,li{
 	font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Segoe UI', 'Microsoft Yahei', Tahoma, Arial, STHeiti, sans-serif !important;
 }
+input,button,select,textarea{outline:none}
+/*end reset*/
+
 /* Styles for the nav bar */
 nav {
 	font-size: 18px;
-	height: 100px;
+	height: 80px;
 	background: transparent url("../img/navi_bar_bg.jpg") no-repeat;
 }
 
@@ -52,22 +56,23 @@ nav .nav-logo.nav-logo-normal {
 }
 
 nav .nav.navbar-nav{
-	height: 100px;
+	height: 80px;
 	margin-left: 110px;
+	line-height: 80px;
 }
 
 nav ul.nav.navbar-nav li{
 	background-color: transparent !important;
-	text-align: center;
-	height: 100%;
+	text-align: center;	
 }
 
 nav ul.nav.navbar-nav li a{
 	background-color: transparent !important;
 	text-align: center;
-	height: 100%;
-	padding-top: 40px;
-	padding-bottom: 0px;
+	height: 80px;
+	line-height: 80px;
+	padding: 0 10px 0 10px;
+	margin: 0 10px 0 10px;
 }
 
 nav ul.nav.navbar-nav li.active {
@@ -118,10 +123,23 @@ header li a:hover {
 footer{
 	/* height: 400px; */
 	background: #272727;
-	padding: 30px 0 0 0;
+	padding: 0;
 }
 footer ul li{margin: 0;padding: 0;list-style: none;}
 footer ul li>a{margin: 0;padding: 0;}
+footer .topLink{
+	min-height: 25px;
+	line-height: 25px;
+	color: #909090;
+	padding-top: 10px;
+}
+footer .topLink a{
+	color: inherit;
+}
+footer .topLink a:hover{
+	text-decoration: none;
+	color: #696969;
+}
 footer .left{
 	float:left;
 	margin: 0;padding: 0;
@@ -153,7 +171,7 @@ footer .list-block-first li>a:hover{
 }
 
 footer .list-block-second{
-	padding: 30px 0 0 0;
+	padding: 10px 0 0 0;
 	color: #fff;
 }
 footer .list-block-second a{
@@ -161,7 +179,7 @@ footer .list-block-second a{
 }
 footer .list-block-second>li{
 	height: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 footer .list-block-second .text{
 	color: #fff;
@@ -176,23 +194,24 @@ footer .right{
 }
 footer .username,footer .email{
 	width:220px;height:43px;
-	background-color: #525252;
+	background-color: #525252; 
 	border: 0;
 	background-image:url('../img/footer-feedback-border-email&name.png');
 	background-size:100% 100%; 	
+	padding-left: 10px;
 }
 footer .username{
 	display:block;
     float: left;
     margin: 0px;margin-right:17px;
-    padding: 0px;
+    padding: 0px;padding-left: 10px;
 }
 footer .option{
 	display:block;
-	margin:0;padding:0;
+	margin:0;padding:10px;
 	border: 0;
-	margin-bottom: 16px;margin-top:16px;
-	width: 457px;height: 151px;
+	margin-bottom: 20px;margin-top:20px;
+	width: 457px;height: 100px;
 	background-color: #525252;
 	background-image:url('../img/footer-feedback-border-info.png');
 	background-size:100% 100%; 
@@ -200,26 +219,30 @@ footer .option{
 }
 footer .fbtn{
 	margin: 0;padding: 0;
-	width: 173px;height: 60px;
+	width: 170px;height: 50px;
 	border: 0;
 	float: right;
 	margin-left: 20px;
+	color:#fff;
+	letter-spacing: 1px;
 }
 footer .btn-submit{
-	background-image: url('../img/footer-feedbackBtn-submit.png');
-	background-size:100% 100%; 
+	/* background-image: url('../img/footer-feedbackBtn-submit.png');
+	background-size:100% 100%;  */
+	background-color:#ba2634; 
 }
 footer .btn-refresh{
-	background-image: url('../img/footer-feedbackBtn-refresh.png');
-	background-size:100% 100%; 
+	/* background-image: url('../img/footer-feedbackBtn-refresh.png');
+	background-size:100% 100%; */ 
+	background-color: #525252;
 }
 
 footer .bottom{
-	height: 60px;
+	height: 40px;
 	background: #ddd;
 }
 footer .bottom .left,footer .bottom .right{
-	line-height: 60px;
+	line-height: 40px;
 }
 .list-block3,.list-block3 li{
 	padding: 0;margin: 0;
@@ -260,7 +283,7 @@ footer .icon-qq{
 }
 footer .icon-qq-contact{
 	width: 80px;height: 25px;
-	background-image: url('../img/footer-qq-contact.png');
+	background-image: url('../img/footer-qq-contact.png'); 
 }
 footer .triangle{
 	text-align: center;
@@ -501,6 +524,11 @@ ul.nav-stacked.affix{
 .bgc-yellow1{background-color: rgb(240,211,113);}
 .bgc-orange1{background-color: rgb();}
 .bgc-white{background-color: rgb(255,255,255)}
+.bgc-red1{background-color: #790c17;}
+.bgc-red2{background-color: #8b3840;}
+.bgc-red3{background-color: #ba2634;}/*main*/
+.bgc-red4{background-color: #dd5965;}
+.bgc-red5{background-color: #dd7c85;}
 .fwb{font-weight: bold;}
 .fwbr{font-weight: bolder;}
 .fwl{font-weight: lighter;}

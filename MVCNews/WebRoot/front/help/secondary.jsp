@@ -66,7 +66,7 @@ if(request.getParameter("sid")=="" || request.getParameter("sid")==null){
 //System.out.println("id = "+id);
 %>
 
-  <div class="container mgb40">
+  <div class="container mgb40 mgt40">
   	<div>
   		<ul id="breadcrumb" class="js-breadcrumb">
 		  <li><a href="#"><span class="icon">主页</span></a></li>
