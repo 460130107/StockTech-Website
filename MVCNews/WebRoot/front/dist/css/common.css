@@ -2,6 +2,8 @@
 /*
 	TODO better to describe here about how a style can be called 'common' and put here
 */
+
+
 .container{
 	min-width:960px !important;
 }
@@ -18,7 +20,7 @@ body{
 	 font-family:'Glyphicons Halflings' !important;
 	 font-size: 18px;
 	 background: rgb(242,242,242);
-	 min-width: 1200px;
+	 min-width: 960px;
 	 
 }
 /*reset*/
@@ -127,7 +129,7 @@ footer{
 }
 
 footer .footer-panel {
-	color: #ddd;
+	color: #ccc;
 }
 footer ul li{margin: 0;padding: 0;list-style: none;}
 footer ul li>a{margin: 0;padding: 0;}
@@ -151,8 +153,6 @@ footer .left{
 footer .tdcode{
 	max-width: 120px;
 	max-height: 120px;
-	float: left;
-	margin-right: 38px;	
 }
 footer .tdcode:hover{
 	opacity:0.5;
@@ -191,12 +191,16 @@ footer .list-block-second .text{
 	line-height: 20px;	
 }
 
+footer form.form-horizontal {
+	margin-bottom: 1em;
+}
+
 footer .sections {
 	
 }
 
 footer a {
-	color: #ddd;
+	color: #ccc;
 	font-size: 16px;
 }
 
@@ -213,6 +217,9 @@ footer .icon {
 
 footer .icon.icon-wechat {
 	background-image: url(../img/icon_wechat_dim.png);
+}
+footer .icon.icon-wechat:hover {
+	cursor: pointer;
 }
 
 footer .icon.icon-wechat:hover {
@@ -362,7 +369,6 @@ footer .footer-triangle{
 }
 /* End of styles for footer elements */
 
-
 /* Page styles */
 .page-content {
 	min-width: 960px;
@@ -480,12 +486,6 @@ footer .footer-triangle{
 	clear: both;
 }
 
-.container-content {
-	min-width: 960px;
-	min-height: 652px;
-	padding: 60px 0px;
-}
-
 .fullscreen {
 	width: 100%;
 	height: 100%;
@@ -496,7 +496,6 @@ footer .footer-triangle{
 .banner-img {
 	width: 100%;
 }
-
 
 /* Vertical navigation bar */
 ul.nav-stacked{
@@ -900,7 +899,6 @@ ul.nav-stacked.affix{
 	background: url(../img/bg-lattice.jpg) repeat;
 }
 
-
 /* 内容部分的banner */
 .content-banner {
 	height: 240px;
@@ -909,6 +907,136 @@ ul.nav-stacked.affix{
 .content-banner img{
 }
 
+/* Style of declaration Model */
+.declaration {
+	
+}
 
+.declaration .thumbnail{
+	height: 500px;
+}
 
+.declaration .caption .body{
+	height: 125px;
+}
+
+.declaration .stockii-name {
+	color: #FF3333;
+}
+
+.declaration .science-green {
+	color: #66CC66;
+}
+
+.declaration .title-unable {
+	color: #444444;
+}
+/* End fof Style of declaration Model */
+
+/* Form Style for singin */
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/* End of Form Style for singin */
+
+/* Style for Suspend, often used in customer-service */
+.suspend {
+	width: 40px;
+	height: 198px;
+	position: fixed;
+	top: 200px;
+	right: 0;
+	overflow: hidden;
+	z-index: 9999;
+}
+
+.suspend dl {
+	width: 120px;
+	height: 198px;
+	border-radius: 25px 0 0 25px;
+	padding-left: 40px;
+	box-shadow: 0 0 5px #e4e8ec;
+}
+
+.suspend dl dt {
+	width: 40px;
+	height: 198px;
+	background: url(../img/suspend.png);
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+.suspend dl dd.suspendQQ {
+	width: 120px;
+	height: 85px;
+	background: #ffffff;
+}
+
+.suspend dl dd.suspendQQ a {
+	width: 120px;
+	height: 85px;
+	display: block;
+	background: url(../img/suspend.png) -40px 0;
+	overflow: hidden;
+}
+
+.suspend dl dd.suspendTel {
+	width: 120px;
+	height: 112px;
+	background: #ffffff;
+	border-top: 1px solid #e4e8ec;
+}
+
+.suspend dl dd.suspendTel a {
+	width: 120px;
+	height: 112px;
+	display: block;
+	background: url(../img/suspend.png) -40px -86px;
+	overflow: hidden;
+}
+
+* html .suspend {
+	position: absolute;
+	left: expression(eval(document.documentElement.scrollRight) );
+	top: expression(eval(document.documentElement.scrollTop +200) )
+}
+/* End of Style for Suspend */
 

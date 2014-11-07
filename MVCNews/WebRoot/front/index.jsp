@@ -11,7 +11,7 @@
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
 <link rel="icon" href="./dist/img/icon_stockii_square.png">
-<title>斯多克，科技改变投资</title>
+<title>斯多克，改变您投资股票的方式</title>
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
 <link href="front/dist/css/index.css" rel="stylesheet" type="text/css">
@@ -46,12 +46,12 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 content">
-						"如果你比99%的人知道的都多<br/>那你一定比99%的人都赚钱"
+						"如果你比99%的人知道的都多，那你一定比99%的人都赚钱"
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 explaination">
-						<span class="important-data">24年</span>行业数据积累，<span class="important-data">16亿</span>条股市信息，<span class="important-data">21万</span>家公司情报<br/>尽情为您服务
+						<span class="important-data">24年</span>行业数据积累，<span class="important-data">16亿</span>条股市信息，<span class="important-data">21万</span>家公司情报<br/>都在您的<span class="important-data">掌控</span>之中
 					</div>
 				</div>
 				<div class="row">
@@ -82,12 +82,12 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 explaination">
-						<span class="important-data">专家</span>级的水平，<span class="important-data">管家</span>式的服务，斯多克为客户提供业界<span class="important-data">顶级</span>服务体验
+						<span class="important-data">专家</span>级的水平，<span class="important-data">管家</span>式的服务，<span class="important-data">上帝般</span>的享受<br/>斯多克为客户提供业界<span class="important-data">顶级</span>服务体验
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 link">
-						<a href="front/ourteam.jsp">查看我们的团队
+						<a href="front/ourteam.jsp">查看斯多克合作专家
 							<span class="link-icon"></span>
 							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
 					</div>
@@ -113,7 +113,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 explaination">
-						新型智能决策方式，规避经验决策<span class="ignore-data">风险</span>，强化理性决策<span class="important-data">收益</span>
+						新型<span class="important-data">智能</span>决策方式，规避经验决策<span class="ignore-data">风险</span>，强化理性决策<span class="important-data">收益</span>
 					</div>
 				</div>
 				<div class="row">
@@ -144,7 +144,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 explaination">
-						您对斯多克的<span class="important-data">信任</span>将为您带来超越想象的<span class="important-data">回报</span>！
+						您对我们的<span class="important-data">信任</span>将为您带来超越想象的<span class="important-data">回报</span>！
 					</div>
 				</div>
 				<div class="row">
@@ -290,8 +290,9 @@
 
 <script src="front/dist/js/jquery.min.js" type="text/javascript"></script>
 <script src="front/dist/js/jquery-ui.min.js" type="text/javascript"></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.js"></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
+<script type="text/javascript" src="front/dist/js/jquery.webui-popover.min.js"></script>
 <!-- marketing展示效果 -->
 <script type="text/javascript" language="javascript">   
     $( ".ser-blind" ).hover(

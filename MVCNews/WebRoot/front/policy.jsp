@@ -158,7 +158,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- script -->
 <script src="front/dist/js/jquery.min.js" type="text/javascript"></script>
 <script src="front/dist/js/jquery-ui.min.js" type="text/javascript"></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.js"></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
 <script>
    $(function () {

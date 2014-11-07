@@ -14,7 +14,7 @@
 <link rel="icon" href="./dist/img/icon_stockii_square.png">
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
-<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
 <style type="text/css">
 	.service_process{

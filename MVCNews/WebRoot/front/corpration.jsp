@@ -16,7 +16,6 @@
 <link href="front/dist/css/common.css" rel="stylesheet">
 <link href="front/dist/css/corpration.css" rel="stylesheet">
 <link href="front/dist/css/jquery.fs.boxer.css" rel="stylesheet">
-<link href="front/dist/css/customer-service.css" rel="stylesheet">
 <title>合作加盟--斯多克科技</title>
 
 </head>
@@ -38,14 +37,14 @@
 
 		<div class="container">
 			<div class="col-lg-12">
-				<div class="page-header delaration">
+				<div class="page-header declaration">
 					<h1>
 						与<span class="stockii-name">斯多克</span>一同开启<span class="science-green">智能投资</span>时代<small>&nbsp;&nbsp;一个英明的决策可以彻底改变您的一生</small>
 					</h1>
 				</div>
 			</div>
 			<div class="container">
-				<div class="delaration">
+				<div class="declaration">
 					<div class="row thumb-list">
 						<div class="col-lg-4">
 							<div class="thumbnail">

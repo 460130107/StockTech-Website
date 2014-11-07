@@ -13,12 +13,10 @@
 <link rel="icon" href="../../favicon.ico">
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
-<link href="front/dist/css/customer-service.css" rel="stylesheet">
 <style type="text/css">
 	div.panle{
 		border:2px solid #fff;
 		border-radius:4px;-o-border-radius:4px;-moz-border-radius:4px;-webkitborder-radius:4px;
-		
 	}
 	.layer{
 		border: 1px solid #ddd;

@@ -10,7 +10,7 @@
 <base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
 	request.getServerPort() + request.getContextPath() %>/" />
 <link rel="icon" href="./dist/img/icon_stockii_square.png">
-<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
 <link href="front/dist/css/account.css" rel="stylesheet">
 <title>登录斯多克</title>

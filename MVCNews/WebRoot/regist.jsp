@@ -11,12 +11,12 @@
 	</script>
 	
 	<!-- Bootstrap core CSS -->
-<link href="front/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="front/dist/css/bootstrap.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="front/dist/css/signin.css" rel="stylesheet">
 
-<link href="front/dist/css/global.css" rel="stylesheet">
+<link href="front/dist/css/common.css" rel="stylesheet">
 	
 <center> 
 <jsp:include page="_header.jsp?index=signup" />

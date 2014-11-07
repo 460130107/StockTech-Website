@@ -14,7 +14,7 @@
 <title>VIP服务--斯多克科技</title>
 
 <!-- Bootstrap core CSS -->
-<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="dist/css/bootstrap.css" rel="stylesheet">
 
 <style type="text/css">
 *{
