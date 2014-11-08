@@ -235,15 +235,14 @@ nav,nav li,nav a{
 .wisdom-saying .author-name {
 	font-size: 18px;
 	font-family: KaiTi !important;
-	color: #777;
+	color: #555;
 }
 
 .wisdom-saying .content {
-	color: #444;
+	color: #555;
 	line-height: 150%;
 	font-size: 24px;
-	font-family: STXinwei !important;
-	font-style: oblique;
+	font-family: KaiTi !important;
 }
 
 .wisdom-saying .important-data {
