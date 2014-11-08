@@ -211,8 +211,8 @@ footer .title {
 }
 
 footer .icon {
-	width: 100px;
-	height: 100px;
+	width: 60px;
+	height: 60px;
 }
 
 footer .icon.icon-wechat {
@@ -539,7 +539,7 @@ ul.nav-stacked.affix{
 
 /*sidebar and conent styles*/
 .sidebar{
-	background: #B6CFCC;
+	background: #fff;
 	padding: 0;margin: 0;
 	/* color: #fff; */
 }
@@ -548,23 +548,26 @@ ul.nav-stacked.affix{
 	padding: 0;margin: 0;
 	border-bottom: 1px solid #ddd;
 }
-.side-fli a{
-	color:#fff;
+.side-fli a {
+	color:#000;
 	background: transparent;
 	width: 170px;height: 66px;
 }
 
 .side-fli:hover{
-	background: #CBDEDE;
+	background: #ddd;
 	cursor: pointer;
 }
 .side-fli:hover > a{
-	color: #fff;
 	text-decoration: none;
 	
 }
-.side-fli.active{
-	background: #86CBC4;
+.side-fli.active {
+	background: #ba2634;
+}
+
+.side-fli.active a {
+	color:#fff;
 }
 .content .show{
 	display: block;
@@ -1039,4 +1042,101 @@ ul.nav-stacked.affix{
 	top: expression(eval(document.documentElement.scrollTop +200) )
 }
 /* End of Style for Suspend */
+
+/* Support Styles for boostrap*/
+p.input-tips {
+	color: #ba2635;
+	fort-size: 14px !important;
+	display: none;
+}
+/* End of Support Styles for boostrap*/
+
+/* Styles for block content*/
+ .block-content {
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: white;
+	border: 1px solid #ddd;
+	min-height: 600px;
+}
+
+.block-content .title {
+	color: #ba2635;
+	font-weight: bold;
+}
+
+.block-content .title-explanation {
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin-top: 30px;
+}
+
+.block-content .subtitle {
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: #ba2635;
+}
+
+.block-content .sub-content {
+	font-size: 16px;
+	color: #555;
+	letter-spacing: 1px;
+	line-height: 24px;
+}
+
+.block-content .personBlock {
+	background-color: #F9F9F9;
+	min-height: 185px;
+	margin-top: 20px 0px;
+	padding-top: 20px 0px;
+}
+
+.block-content .personBlock .perInfo {
+	text-align: right;
+	height: 25px;
+	line-height: 25px;
+	padding-top: 15px;
+}
+
+.block-content .personBlock div.line{
+	border-top:1px solid #2EA7E0;
+	margin-left: 140px;
+	margin-right: 20px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.block-content .personBlock img.personImg{	
+	width: 120px;
+	height: 175px;
+	border: 2px solid #ddd;	
+	float: left;
+	margin-right: 20px;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+.block-content .personBlock span.name, span.identity{
+	color: #2EA7E0;
+	display: inline-block;
+}
+.block-content .personBlock span.name {
+	float: left;
+	font-size: 20px;
+}
+.block-content .personBlock span.identity{
+	/* float: right; */
+	margin-right: 50px;
+	font-size: 16px;
+	text-align: center;
+}
+
+/* Styles for block content */
+
+/* Styles for divided line */
+.dotline {
+	border: 1px dashed #ddd;
+}
+/* End of Styles for divided line */
+
 
