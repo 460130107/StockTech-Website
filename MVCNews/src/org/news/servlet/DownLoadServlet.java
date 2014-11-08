@@ -70,20 +70,20 @@ public class DownLoadServlet extends HttpServlet {
 		String fpath = this.getServletConfig().getServletContext().getRealPath("files");
 		fpath = fpath + "/GitHubSetup.exe";
 		
-		File file = new File(fpath);// pathÊÇ¸ù¾İÈÕÖ¾Â·¾¶ºÍÎÄ¼şÃûÆ´½Ó³öÀ´µÄ
-	    String filename = file.getName();// »ñÈ¡ÈÕÖ¾ÎÄ¼şÃû³Æ
+		File file = new File(fpath);// pathæ˜¯æ ¹æ®æ—¥å¿—è·¯å¾„å’Œæ–‡ä»¶åæ‹¼æ¥å‡ºæ¥çš„
+	    String filename = file.getName();// è·å–æ—¥å¿—æ–‡ä»¶åç§°
 	    InputStream fis = new BufferedInputStream(new FileInputStream(fpath));
 	    byte[] buffer = new byte[fis.available()];
 	    fis.read(buffer);
 	    fis.close();
 	    response.reset();
-	    // ÏÈÈ¥µôÎÄ¼şÃû³ÆÖĞµÄ¿Õ¸ñ,È»ºó×ª»»±àÂë¸ñÊ½Îªutf-8,±£Ö¤²»³öÏÖÂÒÂë,Õâ¸öÎÄ¼şÃû³ÆÓÃÓÚä¯ÀÀÆ÷µÄÏÂÔØ¿òÖĞ×Ô¶¯ÏÔÊ¾µÄÎÄ¼şÃû
+	    // å…ˆå»æ‰æ–‡ä»¶åç§°ä¸­çš„ç©ºæ ¼,ç„¶åè½¬æ¢ç¼–ç æ ¼å¼ä¸ºutf-8,ä¿è¯ä¸å‡ºç°ä¹±ç ,è¿™ä¸ªæ–‡ä»¶åç§°ç”¨äºæµè§ˆå™¨çš„ä¸‹è½½æ¡†ä¸­è‡ªåŠ¨æ˜¾ç¤ºçš„æ–‡ä»¶å
 	    response.addHeader("Content-Disposition", "attachment;filename=" + new String(filename.replaceAll(" ", "").getBytes("utf-8"),"iso8859-1"));
 	    response.addHeader("Content-Length", "" + file.length());
 	    
 	    OutputStream os = new BufferedOutputStream(response.getOutputStream());
 	   
-	    os.write(buffer);// Êä³öÎÄ¼ş
+	    os.write(buffer);// è¾“å‡ºæ–‡ä»¶
 	    os.flush();
 	    os.close();
 	    
