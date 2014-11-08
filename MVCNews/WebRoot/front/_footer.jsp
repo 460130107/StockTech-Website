@@ -26,7 +26,7 @@
    		<div class="left col-lg-4 sections">
    			<p class="title">联系我们</p>
    			<div class="row-fluid">
-   				<div class="col-lg-5 icon icon-wechat" onclick="showWechatQRCode()" data-placement="top"></div>
+   				<div class="col-lg-5 icon icon-wechat" data-placement="top"></div>
    				<a href="http://weibo.com/u/5318055999" target="blank" class="col-lg-5 col-lg-offset-1 icon icon-sina"></a>
    			</div>
 			<div class="row-fluid">
@@ -42,13 +42,16 @@
    			<p class="title">您的意见</p>
 	   		<form class="form-horizontal" role="form" action="interface/sendMessage.action">
 	   			<div class="form-group">
-    				<div class="col-md-6">
-      					<input type="email" class="form-control input-gray" id="inputName" placeholder="您的名称">
-    				</div>
-    				<div class="col-md-6">
+<!--     				<div class="col-md-6"> -->
+<!--       					<input type="email" class="form-control input-gray" id="inputName" placeholder="您的名称"> -->
+<!--     				</div> -->
+    				<div class="col-md-12">
       					<input type="email" class="form-control input-gray" id="inputEmail" placeholder="您的邮箱">
     				</div>
  		 		</div>
+ 		 		
+				<p class="col-md-5 input-tips" id="submit-tips">
+		   		</p>
  		 		
  		 		<div class="form-group">
     				<div class="col-md-12">
@@ -58,13 +61,13 @@
 				
  		 		<div class="form-group mg0">
 					<div class="col-md-5">
-		   				<input type="button" value="提交意见" class="fbtn btn-submit bdradius6 bgc-red3">
+		   				<input type="button" value="提交意见" class="fbtn btn-submit bdradius6 bgc-red3" onclick="checkBeforeSubmit()">
 		   			</div>
 					<div class="col-md-5 col-md-offset-1">
 		   				<input type="button" value="重写" class="fbtn btn-refresh bdradius6">
 		   			</div>
 	   			</div>
-	   		
+	   			
 	   			<!-- TODO if possible, check and review these code to make it work -->
 <!-- 	   			<div class="form-group mg0"> -->
 <!--     				<div class="col-md-5"> -->
@@ -91,13 +94,6 @@
    		</div>   		   	
     </div>
     
-    <div id="qrcode" style="display:none;">
-	    <div class="text-center">
-	    	<h4>斯多克微信公众账号</h4>
-	   	 	<img class="tdcode" alt="QRcode" src="front/dist/img/footer-tdcode.png" style="width: 100px; height: 100px;">
-		</div>
-	</div>
-    
 <!--    <div class="triangle" style="background: #fff;"><span class="footer-triangle"></span></div> -->
 <!--     <div class="triangle" style="background: green;"><span style="color: red;position: relative;top: -5px;">&#9660</span></div>  -->
     <div class="bottom">
@@ -115,12 +111,21 @@
 	    	</div>
 	    </div>    	
     </div>
+    
+<!--     These following code is just for hidding and showing -->
+    <div id="qrcode" style="display:none;">
+	    <div class="text-center">
+	    	<h4>斯多克微信公众账号</h4>
+	   	 	<img class="tdcode" alt="QRcode" src="front/dist/img/footer-tdcode.png" style="width: 100px; height: 100px;">
+		</div>
+	</div>
+    
     <script src="front/dist/js/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
-    	$(function() {
-	    	var settings = {
+    	var PageVariables = {
+    		settings: {
 				trigger:'click',
-				title:'Pop Title',
+				title:'',
 				content:'<p>This is webui popover demo.</p><p>just enjoy it and have fun !</p>',
 				width:180,						
 				multi:true,						
@@ -128,14 +133,30 @@
 				style:'',
 				padding:true,
 				style: "inverse"
-			};
-			var qrcode = $('#qrcode').html(),
+			},
+    	};
+    
+    	$(function() {
+    		var qrcode = $('#qrcode').html(),
 			qrcodeSettings = {content: qrcode,
 								title: '',
 								padding: false
 							};
-			$('.icon.icon-wechat').webuiPopover($.extend({},settings,qrcodeSettings));
+			$('.icon.icon-wechat').webuiPopover($.extend({}, PageVariables.settings, qrcodeSettings));
+			
     	});
+    	
+    	// TODO abandoned
+    	function showWechatQRCode() {
+		}
+    	
+    	function checkBeforeSubmit() {
+    		if($("#inputEmail").val() == "") {
+    			$("#submit-tips").text("输入邮箱不能为空").show();
+    		} else {
+    			$("#submit-tips").hide();
+    		}
+    	}
     	
     </script>
     
