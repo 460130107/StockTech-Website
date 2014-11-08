@@ -3,15 +3,67 @@
 	TODO better to describe here about how a style can be called 'common' and put here
 */
 
+/*css reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
+form,fieldset,input,textarea,p,blockquote,th,td { 
+    padding: 0; 
+    margin: 0; 
+} 
+table { 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+} 
+fieldset,img { 
+    border: 0; 
+} 
+address,caption,cite,code,dfn,em,strong,th,var { 
+    font-weight: normal; 
+    font-style: normal; 
+} 
+ol,ul { 
+    list-style: none; 
+} 
+caption,th { 
+    text-align: left; 
+} 
+h1,h2,h3,h4,h5,h6 { 
+    font-weight: normal; 
+    font-size: 100%; 
+} 
+q:before,q:after { 
+    content:”; 
+} 
+abbr,acronym { 
+    border: 0; 
+}
+/*end css rest*/
 
 .container{
-	min-width:960px !important;
+	min-width:1200px !important;
 }
-@media screen and (min-width: 960px) {
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
     body {
         overflow-x: hidden; 
     }
+    .container {
+    width: 1170px;
+  }
 }
+
 body{
 	/*font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",
 		STXihei, "华文细黑", serif;*/
@@ -20,7 +72,7 @@ body{
 	 font-family:'Glyphicons Halflings' !important;
 	 font-size: 18px;
 	 background: rgb(242,242,242);
-	 min-width: 960px;
+	 min-width: 1200px;
 	 
 }
 /*reset*/
@@ -211,8 +263,8 @@ footer .title {
 }
 
 footer .icon {
-	width: 60px;
-	height: 60px;
+	width: 100px;
+	height: 100px;
 }
 
 footer .icon.icon-wechat {
@@ -371,7 +423,7 @@ footer .footer-triangle{
 
 /* Page styles */
 .page-content {
-	min-width: 960px;
+	min-width: 1200px;
 }
 
 /* End of Page styles */
@@ -539,7 +591,7 @@ ul.nav-stacked.affix{
 
 /*sidebar and conent styles*/
 .sidebar{
-	background: #fff;
+	background: #B6CFCC;
 	padding: 0;margin: 0;
 	/* color: #fff; */
 }
@@ -548,26 +600,23 @@ ul.nav-stacked.affix{
 	padding: 0;margin: 0;
 	border-bottom: 1px solid #ddd;
 }
-.side-fli a {
-	color:#000;
+.side-fli a{
+	color:#fff;
 	background: transparent;
 	width: 170px;height: 66px;
 }
 
 .side-fli:hover{
-	background: #ddd;
+	background: #CBDEDE;
 	cursor: pointer;
 }
 .side-fli:hover > a{
+	color: #fff;
 	text-decoration: none;
 	
 }
-.side-fli.active {
-	background: #ba2634;
-}
-
-.side-fli.active a {
-	color:#fff;
+.side-fli.active{
+	background: #86CBC4;
 }
 .content .show{
 	display: block;
@@ -620,6 +669,12 @@ ul.nav-stacked.affix{
 .f24{font-size: 24px;}
 .f26{font-size: 26px;}
 .f28{font-size: 28px;}
+.f30{font-size: 30px;}
+.f32{font-size: 32px;}
+.f34{font-size: 34px;}
+.f36{font-size: 36px;}
+.f38{font-size: 38px;}
+.f40{font-size: 40px;}
 .mauto{margin: auto;}
 .mg0{margin: 0px;}
 .mg10{margin: 10px;}
@@ -755,6 +810,9 @@ ul.nav-stacked.affix{
 .bdradius10-br{border-bottom-right-radius:10px;}
 .bdradius12-br{border-bottom-right-radius:12px;}
 
+.hide{
+	display: none;
+}
 /*table list*/
 .table-header{}
 .table-footer{
