@@ -3,67 +3,15 @@
 	TODO better to describe here about how a style can be called 'common' and put here
 */
 
-/*css reset*/
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
-form,fieldset,input,textarea,p,blockquote,th,td { 
-    padding: 0; 
-    margin: 0; 
-} 
-table { 
-    border-collapse: collapse; 
-    border-spacing: 0; 
-} 
-fieldset,img { 
-    border: 0; 
-} 
-address,caption,cite,code,dfn,em,strong,th,var { 
-    font-weight: normal; 
-    font-style: normal; 
-} 
-ol,ul { 
-    list-style: none; 
-} 
-caption,th { 
-    text-align: left; 
-} 
-h1,h2,h3,h4,h5,h6 { 
-    font-weight: normal; 
-    font-size: 100%; 
-} 
-q:before,q:after { 
-    content:”; 
-} 
-abbr,acronym { 
-    border: 0; 
-}
-/*end css rest*/
 
 .container{
-	min-width:1200px !important;
+	min-width:960px !important;
 }
-
-
-@media (min-width: 768px) {
-  .container {
-    width: 1170px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 1170px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 960px) {
     body {
         overflow-x: hidden; 
     }
-    .container {
-    width: 1170px;
-  }
 }
-
 body{
 	/*font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",
 		STXihei, "华文细黑", serif;*/
@@ -72,7 +20,7 @@ body{
 	 font-family:'Glyphicons Halflings' !important;
 	 font-size: 18px;
 	 background: rgb(242,242,242);
-	 min-width: 1200px;
+	 min-width: 960px;
 	 
 }
 /*reset*/
@@ -423,7 +371,7 @@ footer .footer-triangle{
 
 /* Page styles */
 .page-content {
-	min-width: 1200px;
+	min-width: 960px;
 }
 
 /* End of Page styles */
@@ -669,12 +617,6 @@ ul.nav-stacked.affix{
 .f24{font-size: 24px;}
 .f26{font-size: 26px;}
 .f28{font-size: 28px;}
-.f30{font-size: 30px;}
-.f32{font-size: 32px;}
-.f34{font-size: 34px;}
-.f36{font-size: 36px;}
-.f38{font-size: 38px;}
-.f40{font-size: 40px;}
 .mauto{margin: auto;}
 .mg0{margin: 0px;}
 .mg10{margin: 10px;}
@@ -809,10 +751,6 @@ ul.nav-stacked.affix{
 .bdradius8-br{border-bottom-right-radius:8px;}
 .bdradius10-br{border-bottom-right-radius:10px;}
 .bdradius12-br{border-bottom-right-radius:12px;}
-
-.hide{
-	display: none;
-}
 
 /*table list*/
 .table-header{}
@@ -1101,3 +1039,4 @@ ul.nav-stacked.affix{
 	top: expression(eval(document.documentElement.scrollTop +200) )
 }
 /* End of Style for Suspend */
+
