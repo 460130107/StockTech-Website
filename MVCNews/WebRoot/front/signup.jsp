@@ -44,7 +44,7 @@
 				
 				<div class="sign-up-field">
 					<h3>身份证号*</h3>
-					<input id="id_idno" class="form-control" type="text" name="name"
+					<input id="id_idno" class="form-control" type="text" name="userId"
 						placeholder="身份证号/护照号" maxlength="50"
 						onBlur="validateIdNumber(this.value)">
 					<h5 id="tip_idnumber"></h5>
@@ -53,7 +53,7 @@
 				<div class="sign-up-field">
 					<h3>真实姓名*</h3>
 					<input id="id_realname" class="form-control" type="text"
-						name="name" placeholder="斯多克服务要求实名认证" maxlength="50"
+						name="realname" placeholder="斯多克服务要求实名认证" maxlength="50"
 						onBlur="validateRealName(this.value)">
 					<h5 id="tip_realname"></h5>
 				</div>
@@ -68,7 +68,7 @@
 
 				<div class="sign-up-field">
 					<h3>电话</h3>
-					<input id="id_phone" class="form-control" type=tel name="email"
+					<input id="id_phone" class="form-control" type=tel name="userPhone"
 						placeholder="填入手机号有利于帐户安全" onBlur="validatePhone(this.value)">
 					<h5 id="tip_phone"></h5>
 				</div>
