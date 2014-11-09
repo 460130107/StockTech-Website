@@ -29,7 +29,7 @@
 <div class="page-content">
 	<div class="container-fluid">
 		<div class="row-fluid poster-main" style="padding-top:430px;height:659px;background-image: url('front/dist/img/index_main_bg.jpg');background-size:100% 100% ">
-			<div style="text-align: center;"><a class="link-button" href="front/product.jsp"></a></div>
+			<div style="text-align: center;"><a onFocus="this.blur()"class="link-button" href="front/product.jsp"></a></div>
 		</div> 
 	
 	<div class="sections-list container-fluid">
@@ -56,7 +56,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 link">
-						<a href="front/product.jsp">了解如何利用这些数据
+						<a onFocus="this.blur()"href="front/product.jsp">了解如何利用这些数据
 							<span class="link-icon"></span>
 							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
 					</div>
@@ -87,7 +87,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 link">
-						<a href="front/ourteam.jsp">查看斯多克合作专家
+						<a onFocus="this.blur()"href="front/ourteam.jsp">查看斯多克合作专家
 							<span class="link-icon"></span>
 							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
 					</div>
@@ -118,7 +118,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 link">
-						<a href="front/product.jsp">斯多克如何帮您做出更可靠决策
+						<a onFocus="this.blur()"href="front/product.jsp">斯多克如何帮您做出更可靠决策
 							<span class="link-icon"></span>
 							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
 					</div>
@@ -149,7 +149,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 link">
-						<a href="front/corpration.jsp">与我们合作
+						<a onFocus="this.blur()"href="front/corpration.jsp">与我们合作
 							<span class="link-icon"></span>
 							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
 					</div>
@@ -176,109 +176,67 @@
 					</div>
 				</div>
 				
-				<div class="row mycarousel">
-					<div class="container">
-						<div id="partner-carousel" class="carousel slide">
-						      
-						   <!-- 轮播（Carousel）项目 -->
-						   <div class="carousel-inner" style="margin-left: 120px;">
-						      <!-- first silde -->
-						      <div class="item active" style="text-align: center;">
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1				         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						      </div>
-						      <!-- second slide -->
-						      <div class="item">
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1				         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						      </div>
-						      <!-- third silde -->
-						      <div class="item">
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1				         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						         <div class="img-item">
-						         	<img alt="partner-1" src="front/dist/img/index_partner.png"><p class="partner-name">中央电视台1						         
-						         </div>
-						      </div>
-						   </div>
-						   <!-- 轮播（Carousel）导航 -->
-						   <a class="carousel-control left my-left" href="#partner-carousel" data-slide="prev"></a>
-						   <a class="carousel-control right my-right" href="#partner-carousel" data-slide="next"></a>
-						
-							<!-- 轮播（Carousel）指标 -->
-						   <ol class="carousel-indicators my-indicators">
-						      <li data-target="#partner-carousel" data-slide-to="0" class="active mydot"></li>
-						      <li data-target="#partner-carousel" data-slide-to="1" class="mydot"></li>
-						      <li data-target="#partner-carousel" data-slide-to="2" class="mydot"></li>
-						   </ol>						
-						</div>
-					</div>					 
+				<div class="container">
+					<div id="myCarousel" class="carousel slide">
+					   <!-- 轮播（Carousel）指标 -->
+					   <ol class="carousel-indicators">
+					      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					      <li data-target="#myCarousel" data-slide-to="1"></li>
+					      <li data-target="#myCarousel" data-slide-to="2"></li>
+					   </ol>   
+					   <!-- 轮播（Carousel）项目 -->
+					   <div class="carousel-inner">
+					      <div class="item active">
+					      	 <div class="container">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 </div>
+					      </div>
+					      <div class="item">
+					      	 <div class="container">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 </div>
+					      </div>
+					      <div class="item">
+					      	 <div class="container">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+					      	 </div>
+					      </div>
+					   </div>
+					   <!-- 轮播（Carousel）导航 -->
+					   <a class="carousel-control left" href="#myCarousel" 
+					      data-slide="prev"></a>
+					   <a class="carousel-control right" href="#myCarousel" 
+					      data-slide="next"></a>
+					</div> 					 
 				</div>
 				
 				<!-- links -->
-				<div class="row links text-center" style="margin-top: 150px;">
-					<div class="container">
-						<div class="img-item">
-				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
-				        </div>
-				        <div class="img-item">
-				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
-				        </div>
-				        <div class="img-item">
-				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
-				        </div>
-				        <div class="img-item">
-				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
-				        </div>
-				        <div class="img-item">
-				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
-				        </div>
-				        <div class="img-item">
-				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
-				        </div>
-				        <div class="img-item">
-				         	<img alt="partner-1" src="front/dist/img/index_link.png"><p class="partner-name">中央电视台1				         
-				        </div>				        
-					</div>					
-				</div>
+				<div class="container partner-link">
+					<ul class="list-inline">
+						<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
+			      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
+			      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
+			      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
+			      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
+					</ul>
+				</div><!-- end links -->
 			</div>
-		</div>
+		</div><!-- end partners -->
 	</div>
 </div>
 

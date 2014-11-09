@@ -14,7 +14,6 @@
 
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
-<link href="front/dist/css/corpration.css" rel="stylesheet">
 <link href="front/dist/css/jquery.fs.boxer.css" rel="stylesheet">
 <title>合作加盟--斯多克科技</title>
 

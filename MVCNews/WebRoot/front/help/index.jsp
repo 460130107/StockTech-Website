@@ -63,7 +63,7 @@
 		
 		<div class="col-md-6">
 			<div class="help-block bdradius6">
-				<h4 class="help-index-title pd20"><a href="front/help/secondary.jsp?id=js-policy">协议条款</a></h4>
+				<h4 class="help-index-title pd20"><a href="front/help/secondary.jsp?id=js-service">协议条款</a></h4>
 				<ul class="list-inline">
 					<li><a class="pd20 f16" href="">声明计划</a></li>
 					<li><a class="pd20 f16" href="">法律与政策保障</a></li>

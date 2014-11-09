@@ -32,7 +32,7 @@
 		<p class="title">产品介绍</p>
 		<p class="additional">产品介绍，包含产品下载链接等接口</p>
 		<!-- 产品一 -->
-		<div class="col-md-4 pro-module" data-target="js-product1">
+		<div class="col-sm-4 col-md-4 col-lg-4  pro-module" data-target="js-product1">
 			<div class="content">
 				<p class="bar">
 					<span>①</span><br/>
@@ -50,7 +50,7 @@
 		
 		
 		<!-- 产品二 -->
-		<div class="col-md-4 pro-module" data-target="js-product2">
+		<div class="col-sm-4 col-md-4 col-lg-4  pro-module" data-target="js-product2">
 			<div class="content">
 				<p class="bar">
 					<span>②</span><br/>
@@ -66,7 +66,7 @@
 			</div>
 		</div>
 		<!-- 产品三 -->
-		<div class="col-md-4 pro-module" data-target="js-product3">
+		<div class="col-sm-4 col-md-4 col-lg-4  pro-module" data-target="js-product3">
 			<div class="content">
 				<p class="bar">
 					<span>③</span><br/>
@@ -87,7 +87,7 @@
 	<div class="trait-layer">
 		<!-- 对应产品一 -->	
 		<div class="container tab text-center js-tab" id="js-product1">		
-			<div class="switch col-md-4">
+			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait1.png">
 					<span class="title">特点一：智能决策方式</span>
@@ -97,7 +97,7 @@
 				</p>
 				<p class="more"><a href="http://www.baidu.com">Read More&nbsp;&nbsp;<img alt="特点一图标" src="front/dist/img/product-icon-more.png"></a></p>
 			</div>
-			<div class="switch col-md-4">
+			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait2.png">
 					<span class="title">特点二：智能决策方式</span>
@@ -107,7 +107,7 @@
 				</p>
 				<p class="more"><a href="http://www.baidu.com">Read More&nbsp;&nbsp;<img alt="特点一图标" src="front/dist/img/product-icon-more.png"></a></p>
 			</div>
-			<div class="switch col-md-4">
+			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait3.png">
 					<span class="title">特点三：智能决策方式</span>
@@ -121,7 +121,7 @@
 		
 		<!-- 对应产品二 -->	
 		<div class="container tab text-center js-tab" id="js-product2">		
-			<div class="switch col-md-4">
+			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait1.png">
 					<span class="title">特点一：智能决策方式</span>
@@ -131,7 +131,7 @@
 				</p>
 				<p class="more"><a href="http://www.baidu.com">Read More&nbsp;&nbsp;<img alt="特点一图标" src="front/dist/img/product-icon-more.png"></a></p>
 			</div>
-			<div class="switch col-md-4">
+			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait2.png">
 					<span class="title">特点二：智能决策方式</span>
@@ -141,7 +141,7 @@
 				</p>
 				<p class="more"><a href="http://www.baidu.com">Read More&nbsp;&nbsp;<img alt="特点一图标" src="front/dist/img/product-icon-more.png"></a></p>
 			</div>
-			<div class="switch col-md-4">
+			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait3.png">
 					<span class="title">特点三：智能决策方式</span>
@@ -155,7 +155,7 @@
 		
 		<!-- 对应产品三 -->
 		<div class="container tab text-center js-tab" id="js-product3">		
-			<div class="switch col-md-4">
+			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait1.png">
 					<span class="title">特点一：智能决策方式</span>
@@ -165,7 +165,7 @@
 				</p>
 				<p class="more"><a href="http://www.baidu.com">Read More&nbsp;&nbsp;<img alt="特点一图标" src="front/dist/img/product-icon-more.png"></a></p>
 			</div>
-			<div class="switch col-md-4">
+			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait2.png">
 					<span class="title">特点二：智能决策方式</span>
@@ -175,7 +175,7 @@
 				</p>
 				<p class="more"><a href="http://www.baidu.com">Read More&nbsp;&nbsp;<img alt="特点一图标" src="front/dist/img/product-icon-more.png"></a></p>
 			</div>
-			<div class="switch col-md-4">
+			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait3.png">
 					<span class="title">特点三：智能决策方式</span>
@@ -215,6 +215,7 @@
 
 <jsp:include page="_footer.jsp" />
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/jquery-ui.min.js"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
 <!-- 交互效果 -->
 <script type="text/javascript">
@@ -226,8 +227,15 @@ $(function(){
 			var target=$(this).attr('data-target');
 			$("div.tab").removeClass("hide");
 			$("div.tab[id!='"+target+"']").addClass("hide");
+			$("div.tab[id='"+target+"']").effect("slide","slow");
 		}
 	});
+	// 回调函数
+    function callback() {
+      setTimeout(function() {
+        $( "#effect" ).removeAttr( "style" ).hide().fadeIn();
+      }, 1000 );
+    };
 });
 </script>
 </body>

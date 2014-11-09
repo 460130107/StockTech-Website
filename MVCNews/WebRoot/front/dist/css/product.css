@@ -83,7 +83,7 @@
 	color:#727272;
 	font-size: 16px;
 	padding: 10px 0 10px 0;
-	min-width:200px;
+	min-width:50%;
 	background-color: #F8F8F8;
 	margin-bottom: 20px;
 }
@@ -173,8 +173,7 @@
 	font-size: 38px;
 	color:#5E5E5E;
 	padding-top:100px;
-	/* padding-top:20px;
-	margin-bottom: 10px;  */
+	font-family: 'KaiTi';
 }
 .fq p.additional{
 	padding-top:20px;
@@ -182,6 +181,8 @@
 	color: #5E5E5E;
 	font-weight: 200;
 	letter-spacing: 1px;
+	font-family: 'KaiTi';
+	font-style: italic;
 }
 .fq .item{
 	/* padding: 40px 0 30px 0; */
@@ -191,7 +192,7 @@
 .fq .item p.name{
 	font-size: 24px;
 	color: #5E5E5E;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 .fq .item p.para{
 	font-size: 18px;

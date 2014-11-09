@@ -34,11 +34,11 @@ if(request.getParameter("id")=="" || request.getParameter("id")==null){
  	<div class="col-md-2">
 			<div class="bar">
 		  		<ul class="sidebar">
-		  			<li class="side-fli pd20 active js-sideli" data-target="js-info"><a href="javascript:void(0);">公司简介</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-manage"><a href="javascript:void(0);">管理团队</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-export"><a href="javascript:void(0);">专家顾问</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-recruit"><a href="javascript:void(0);">招贤纳士</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-concat"><a href="javascript:void(0);">联系我们</a></li>
+		  			<li class="side-fli pd20 active js-sideli" data-target="js-info"><a onFocus="this.blur()"href="javascript:void(0);">公司简介</a></li>
+		  			<li class="side-fli pd20 js-sideli" data-target="js-manage"><a onFocus="this.blur()"href="javascript:void(0);">管理团队</a></li>
+		  			<li class="side-fli pd20 js-sideli" data-target="js-export"><a onFocus="this.blur()"href="javascript:void(0);">专家顾问</a></li>
+		  			<li class="side-fli pd20 js-sideli" data-target="js-recruit"><a onFocus="this.blur()"href="javascript:void(0);">招贤纳士</a></li>
+		  			<li class="side-fli pd20 js-sideli" data-target="js-concat"><a onFocus="this.blur()"href="javascript:void(0);">联系我们</a></li>
 		  		</ul>
 		  	</div>
 		</div>
@@ -157,7 +157,7 @@ if(request.getParameter("id")=="" || request.getParameter("id")==null){
 															轻松惬意的工作氛围和充满活力的团队文化<br>
 															完善的培训体系和更多的晋升机会<br>
 															</div>
-					<p class="sub-content">请发送您的简历至<a class="text-primary fwb">stock@163.com</a>，标题请注明所申请职位。</p>
+					<p class="sub-content">请发送您的简历至<a onFocus="this.blur()"class="text-primary fwb">stock@163.com</a>，标题请注明所申请职位。</p>
 					<hr class="dotline">
 					<h3 class="subtitle">在招聘中的职位</h3>
 				</div>
@@ -180,7 +180,7 @@ if(request.getParameter("id")=="" || request.getParameter("id")==null){
 					<div class="sub-content">
 						<div>如果您在使用斯多克(www.stockii.com)的过程中有任何疑问请您与斯多克客服人员联系。</div>
 						<div>24小时客服电话：400-111-999</div>
-						<div>在线帮助：<a href="front/help/index.jsp">http://www.stockii.com/help/index</a></div>
+						<div>在线帮助：<a onFocus="this.blur()"href="front/help/index.jsp">http://www.stockii.com/help/index</a></div>
 					</div>
 					<hr class="dotline">
 						
@@ -237,8 +237,8 @@ $(function(){
 			/* $(this).siblings().removeClass("active");
 			$(this).addClass("active"); */
 			var target=$(this).attr("data-target");
-			console.log("data-target = "+target);
-			window.location.href="front/about.jsp?id="+target;
+			/* console.log("data-target = "+target); */
+			window.location.href="<%=basePath%>"+"front/about.jsp?id="+target;
 		}
 	});
 });

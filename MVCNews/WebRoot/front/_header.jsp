@@ -15,23 +15,23 @@
 	   <div class="collapse navbar-collapse" id="navbar-collapse">
 	      <ul class="nav navbar-nav">
 	         <li class='${param.index=="index"?"active":"" }'>
-				<a href="front/index.jsp">首页</a></li>
+				<a href="front/index.jsp" onFocus="this.blur()">首页</a></li>
 			 <li class='${param.index=="product"?"active":"" }'>
-				<a href="front/product.jsp">产品</a></li>
+				<a href="front/product.jsp" onFocus="this.blur()">产品</a></li>
 			 <li class='${param.index=="project"?"active":"" }'>
-				<a href="front/project.jsp">项目</a></li>
+				<a href="front/project.jsp" onFocus="this.blur()">项目</a></li>
 			 <li class='${param.index=="corpration"?"active":"" }'>
-				<a href="front/corpration.jsp">合作</a></li>
+				<a href="front/corpration.jsp" onFocus="this.blur()">合作</a></li>
 			 <li class='${param.index=="about"?"active":"" }'>
-				<a href="front/about.jsp">关于我们</a></li>
+				<a href="front/about.jsp" onFocus="this.blur()">关于我们</a></li>
 			 <li>
 			 	<ul class="nav navbar-nav">
 			 		<li class='${param.index=="account"?"active":"" }'>
-						<a href="front/account.jsp">登录</a></li>
+						<a href="front/account.jsp" onFocus="this.blur()">登录</a></li>
 					<li class='${param.index=="signup"?"active":"" }'>
-						<a href="front/signup.jsp">注册</a></li>
+						<a href="front/signup.jsp" onFocus="this.blur()">注册</a></li>
 					<li class='${param.index=="forum"?"active":"" }'>
-						<a href="front/forum.jsp">论坛</a></li>
+						<a href="front/forum.jsp" onFocus="this.blur()">论坛</a></li>
 			 	</ul>
 			 </li>
 			 

@@ -6,16 +6,16 @@
 			<div class="sections">
 	  			<p class="title">友情链接</p>
 	   			<ul class="list-inline" >
-	   				<li><a href="http://www.jrj.com.cn/" target="_blank">金融界</a></li>
-	   				<li><a href="http://www.fund123.cn/" target="_blank">数米基金网</a></li>
-	   				<li><a href="http://xueqiu.com/" target="_blank">雪球网</a></li>
-	   				<li><a href="http://www.yicai.com/" target="_blank">一财网</a></li>
-	   				<li><a href="http://www.simuwang.com/" target="_blank">私募排排网</a></li>
-	   				<li><a href="http://www.9666.cn/" target="_blank">股票牛仔网</a></li>
-	   				<li><a href="http://www.secon.cn/" target="_blank">股市在线网</a></li>
-	   				<li><a href="http://www.cfcyb.com/" target="_blank">创业板</a></li>
-	   				<li><a href="http://www.guancha.cn/" target="_blank">观察者</a></li>
-	   				<li><a href="http://www.ourxun.com/" target="_blank">钱讯网</a></li>
+	   				<li><a href="http://www.jrj.com.cn/" target="_blank" onFocus="this.blur()">金融界</a></li>
+	   				<li><a href="http://www.fund123.cn/" target="_blank" onFocus="this.blur()">数米基金网</a></li>
+	   				<li><a href="http://xueqiu.com/" target="_blank" onFocus="this.blur()">雪球网</a></li>
+	   				<li><a href="http://www.yicai.com/" target="_blank" onFocus="this.blur()">一财网</a></li>
+	   				<li><a href="http://www.simuwang.com/" target="_blank" onFocus="this.blur()">私募排排网</a></li>
+	   				<li><a href="http://www.9666.cn/" target="_blank" onFocus="this.blur()">股票牛仔网</a></li>
+	   				<li><a href="http://www.secon.cn/" target="_blank" onFocus="this.blur()">股市在线网</a></li>
+	   				<li><a href="http://www.cfcyb.com/" target="_blank" onFocus="this.blur()">创业板</a></li>
+	   				<li><a href="http://www.guancha.cn/" target="_blank" onFocus="this.blur()">观察者</a></li>
+	   				<li><a href="http://www.ourxun.com/" target="_blank" onFocus="this.blur()">钱讯网</a></li>
 	   			</ul>
    			</div>
    			<div class="sections">
@@ -27,12 +27,12 @@
    			<p class="title">联系我们</p>
    			<div class="row-fluid">
    				<div class="col-lg-5 icon icon-wechat" data-placement="top"></div>
-   				<a href="http://weibo.com/u/5318055999" target="blank" class="col-lg-5 col-lg-offset-1 icon icon-sina"></a>
+   				<a href="http://weibo.com/u/5318055999" target="_blank" onFocus="this.blur()" class="col-lg-5 col-lg-offset-1 icon icon-sina"></a>
    			</div>
 			<div class="row-fluid">
 				<ul class="list-block-second col-lg-12">
 	   				<li><span class="ficon icon-address"></span><span class="f16 text">北京市海淀区中关村东路8号东升大厦C座133</span></li>
-	   				<li><span class="ficon icon-email"></span><span class="f16 text"><a href="#">stockii@163.com</a></span></li>
+	   				<li><span class="ficon icon-email"></span><span class="f16 text"><a href="#" onFocus="this.blur()">stockii@163.com</a></span></li>
 	   				<li><span class="ficon icon-qq"></span><a class="ficon icon-qq-contact" href="http://wpa.qq.com/msgrd?v=3&uin=22711111&site=qq&menu=yes"></a></li>
 	   			</ul>
 			</div>
@@ -42,9 +42,6 @@
    			<p class="title">您的意见</p>
 	   		<form class="form-horizontal" role="form" action="interface/sendMessage.action">
 	   			<div class="form-group">
-<!--     				<div class="col-md-6"> -->
-<!--       					<input type="email" class="form-control input-gray" id="inputName" placeholder="您的名称"> -->
-<!--     				</div> -->
     				<div class="col-md-12">
       					<input type="email" class="form-control input-gray" id="inputEmail" placeholder="您的邮箱">
     				</div>
@@ -55,7 +52,7 @@
  		 		
  		 		<div class="form-group">
     				<div class="col-md-12">
-      					<textarea placeholder="你的宝贵意见..." class="form-control input-gray"></textarea>
+      					<textarea placeholder="你的宝贵意见..." class="form-control input-gray" style="resize:none"></textarea>
     				</div>
  		 		</div>
 				
