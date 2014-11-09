@@ -40,10 +40,10 @@
    		
    		<div class="right col-lg-4 sections">
    			<p class="title">您的意见</p>
-	   		<form class="form-horizontal" role="form" action="interface/sendMessage.action">
+	   		<form class="form-horizontal" role="form" action="AdviceInfoServlet" method="post">
 	   			<div class="form-group">
     				<div class="col-md-12">
-      					<input type="email" class="form-control input-gray" id="inputEmail" placeholder="您的邮箱">
+      					<input type="email" class="form-control input-gray" id="inputEmail" placeholder="您的邮箱" name="userEmail">
     				</div>
  		 		</div>
  		 		
@@ -52,13 +52,13 @@
  		 		
  		 		<div class="form-group">
     				<div class="col-md-12">
-      					<textarea placeholder="你的宝贵意见..." class="form-control input-gray" style="resize:none"></textarea>
+      					<textarea placeholder="你的宝贵意见..." class="form-control input-gray" style="resize:none" name="adviceInfo"></textarea>
     				</div>
  		 		</div>
 				
  		 		<div class="form-group mg0">
 					<div class="col-md-5">
-		   				<input type="button" value="提交意见" class="fbtn btn-submit bdradius6 bgc-red3" onclick="checkBeforeSubmit()">
+		   				<input type="submit" value="提交意见" class="fbtn btn-submit bdradius6 bgc-red3" >
 		   			</div>
 					<div class="col-md-5 col-md-offset-1">
 		   				<input type="button" value="重写" class="fbtn btn-refresh bdradius6">

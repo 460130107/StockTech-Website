@@ -62,7 +62,7 @@ public class UserRegisterServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		
-		
+		/*
 		String mid = request.getParameter("usersName") ;
 		String password = new MD5Code().getMD5ofStr(request.getParameter("usersPass"));
 		String info = request.getParameter("usersInfo") ;
@@ -71,6 +71,16 @@ public class UserRegisterServlet extends HttpServlet {
 		String email = request.getParameter("usersEmail");
 		String phone = request.getParameter("userPhone");
 		String idNum = request.getParameter("userIdNum");
+		*/
+		
+		String mid = request.getParameter("name") ;
+		String password = new MD5Code().getMD5ofStr(request.getParameter("password"));
+		String info = request.getParameter("company") ;
+		String realName = request.getParameter("realname");
+		String sex = "man";
+		String email = request.getParameter("email");
+		String phone = request.getParameter("userPhone");
+		String idNum = request.getParameter("userId");
 		
 		
 	

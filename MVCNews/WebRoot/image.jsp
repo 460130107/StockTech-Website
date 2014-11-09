@@ -1,4 +1,4 @@
-<%@ page contentType="image/jpeg" import="java.awt.*,java.awt.image.*,java.util.*,javax.imageio.*" pageEncoding="UTF-8"%>
+<%@ page contentType="image/jpeg" import="java.awt.*,java.awt.image.*,java.util.*,javax.imageio.*,java.io.Serializable" pageEncoding="UTF-8"%>
 <%!
 Color getRandColor(int fc,int bc){//给定范围获得随机颜色
         Random random = new Random();
@@ -61,6 +61,7 @@ String sRand="";
 String[] str = {"A","B","C","D","E","F","G","H","J","K","L","M","N","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","m","n","p","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9"} ;
 
 
+
 for (int i=0;i<4;i++){
     String rand=str[random.nextInt(str.length)];
     sRand+=rand;
@@ -68,7 +69,6 @@ for (int i=0;i<4;i++){
     g.setColor(new Color(20+random.nextInt(110),20+random.nextInt(110),20+random.nextInt(110)));//调用函数出来的颜色相同，可能是因为种子太接近，所以只能直接生成
     g.drawString(rand,16*i+6,19);
 }
-
 // 将认证码存入SESSION
 session.setAttribute("rand",sRand);
 
