@@ -579,7 +579,7 @@ ul.nav-stacked.affix{
 
 /*sidebar and conent styles*/
 .sidebar{
-	background: #B6CFCC;
+	background: #fff;
 	padding: 0;margin: 0;
 	/* color: #fff; */
 }
@@ -589,23 +589,27 @@ ul.nav-stacked.affix{
 	border-bottom: 1px solid #ddd;
 }
 .side-fli a{
-	color:#fff;
+	color:#000;
 	background: transparent;
 	width: 170px;height: 66px;
 }
 
 .side-fli:hover{
-	background: #CBDEDE;
+	background: #ddd;
 	cursor: pointer;
 }
 .side-fli:hover > a{
-	color: #fff;
 	text-decoration: none;
 	
 }
 .side-fli.active{
-	background: #86CBC4;
+	background: #ba2635;
 }
+
+.side-fli.active a {
+	color:#fff;
+}
+
 .content .show{
 	display: block;
 }
@@ -1107,6 +1111,8 @@ p.input-tips {
 }
 
 .block-content .title {
+	padding-top: 20px;
+	font-size: 26px;
 	color: #ba2635;
 	font-weight: bold;
 }
@@ -1125,6 +1131,7 @@ p.input-tips {
 }
 
 .block-content .sub-content {
+	margin-top: 20px;
 	font-size: 16px;
 	color: #555;
 	letter-spacing: 1px;
@@ -1134,15 +1141,15 @@ p.input-tips {
 .block-content .personBlock {
 	background-color: #F9F9F9;
 	min-height: 185px;
-	margin-top: 20px 0px;
-	padding-top: 20px 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .block-content .personBlock .perInfo {
 	text-align: right;
 	height: 25px;
 	line-height: 25px;
-	padding-top: 15px;
+	padding-top: 5px;
 }
 
 .block-content .personBlock div.line{
