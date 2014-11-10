@@ -252,6 +252,7 @@ footer .title {
 footer .icon {
 	/* width: 100px;
 	height: 100px; */
+	width: 60px;height: 60px;
 }
 
 footer .icon.icon-wechat {
@@ -334,7 +335,7 @@ footer .fbtn{
 footer .btn-submit{
 	/* background-image: url('../img/footer-feedbackBtn-submit.png');
 	background-size:100% 100%;  */
-	background-color:#ba2634; 
+	background-color:#ba2635; 
 }
 footer .btn-refresh{
 	/* background-image: url('../img/footer-feedbackBtn-refresh.png');
@@ -623,7 +624,7 @@ ul.nav-stacked.affix{
 .bgc-white{background-color: rgb(255,255,255)}
 .bgc-red1{background-color: #790c17;}
 .bgc-red2{background-color: #8b3840;}
-.bgc-red3{background-color: #ba2634;}/*main*/
+.bgc-red3{background-color: #ba2635;}/*main*/
 .bgc-red4{background-color: #dd5965;}
 .bgc-red5{background-color: #dd7c85;}
 .fwb{font-weight: bold;}
