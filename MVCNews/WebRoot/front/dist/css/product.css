@@ -19,6 +19,7 @@
 	font-size: 78px;
 	color: #484848;
 	padding-bottom: 22px;
+	padding-top: 150px;
 	font-weight: bold;
 	letter-spacing: 2px;
 }
@@ -28,8 +29,19 @@
 	font-weight: bold;
 	padding-bottom: 30px;
 }
-.topTitle{
-	
+#product .topBackground .btn-view,#product .topBackground .btn-other{
+	background-color: #ba2635;
+	color: #fff;
+	padding-top:15px;padding-bottom: 15px;
+	min-width: 280px;
+	font-size: 26px;
+	letter-spacing: 2px;
+	margin-right: 20px;
+	border: 2px solid #ba2635;
+}
+#product .topBackground .btn-other{
+	background-color: #F7F7F7;
+	color: #ba2635;
 }
 /*产品介绍*/
 .layer-pro{
@@ -92,21 +104,22 @@
 	background-color: #F8F8F8;
 	margin-bottom: 20px;
 }
-/*模块鼠标悬浮效果*/
-.profile .pro-module:hover{
+/*==模块鼠标悬浮效果*/
+/*js 控制active样式==*/
+.profile .active{
 	cursor: pointer;
 	transform:scale(1.02);
 	-webkit-transform:scale(1.02);
 }
-.profile .pro-module:hover>.content{
+.profile .active > .content{
 	border: 2px solid #ba2635;
 	border-radius:4px;
 }
-.profile .pro-module:hover>.content .bar{
+.profile .active > .content .bar{
 	background-color: #ba2635;
 	color:#fff;
 }
-.profile .pro-module:hover>.content .btn-view{
+.profile .active > .content .btn-view{
 	border: 2px solid #ba2635;
 	color:#ba2635;
 }
@@ -165,9 +178,9 @@
 }
 .layer-fq .splitLine{
 	display: inline-block;
-	width: 150px;
+	width: 20%;
 	border-top: 1px solid #DCDCDC;
-	margin-top: 50px;margin-bottom: 30px;
+	margin-top: 30px;margin-bottom: 10px;
 }
 .fq p.title>img{
 	padding-right: 0px;
@@ -177,7 +190,7 @@
 	height: 56px;line-height: 56px;
 	font-size: 38px;
 	color:#5E5E5E;
-	padding-top:100px;
+	padding-top:70px;
 	font-family: 'KaiTi';
 }
 .fq p.additional{
@@ -191,8 +204,8 @@
 }
 .fq .item{
 	/* padding: 40px 0 30px 0; */
-	width: 50%;
-	margin: 0 auto;
+	width: 100%;
+	/* margin: 0 auto; */
 }
 .fq .item p.name{
 	font-size: 24px;
@@ -204,6 +217,7 @@
 	color: #5E5E5E;
 	letter-spacing: 1px;
 	line-height: 30px;
+	margin-left: 20px;
 }
 /*=====end product page======*/
 
@@ -229,7 +243,7 @@
 
 @media (min-width: 1200px) {
 	.img-intro{
-		width: 196px;height: 216px;
+		width: 156px;height: 172px;
 	}
 }
 #productDetail .topBackground{
@@ -261,14 +275,14 @@
 	padding: 128px 0 0 0;
 }
 .layer-intro .row{
-	margin-bottom: 120px;
+	margin-bottom: 60px;
 	position: relative;
 }
 .layer-intro .title-intro{
 	color: #0d0d0d;
 	font-size: 36px; 
 	letter-spacing: 2px;
-	padding: 10px 0 34px 0;
+	padding: 0 0 10px 0;
 }
 .layer-intro .title-intro span{
 	font-size: 20px;
@@ -283,13 +297,14 @@
 .layer-intro .icon-arrow{
 	position: absolute;
 	top:140px;
+	height: 200px;
 }
 .layer-intro .icon-arrow:nth-child(1){
 	left: -70px;
 }
 /*f & q*/
 .layer-fq-d .title{
-	padding: 40px 0 40px 0;
+	padding: 20px 0 20px 0;
 	background-color: #ba2635;
 	font-size: 50px;
 	letter-spacing: 5px;

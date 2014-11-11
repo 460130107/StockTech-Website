@@ -12,8 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<base href="<%= request.getScheme() + "://" + request.getServerName() + ":" + 
-	request.getServerPort() + request.getContextPath() %>/" />
+<base href="<%= basePath %>" />
 <link rel="icon" href="../../favicon.ico">
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">

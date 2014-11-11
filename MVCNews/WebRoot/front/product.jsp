@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<base href="<%=basePath%>/" />
+<base href="<%=basePath%>" />
 <link rel="icon" href="../../favicon.ico">
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
@@ -24,9 +24,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="product">
 	<div class="topBackground">
 		<div class="container">
-			<p class="text1">斯多克的智能产品</p>
 			<p class="text3">开启智能投资时代</p>
-			<p class="text2">智能&nbsp;.&nbsp;丰厚&nbsp;.&nbsp;利润</p>
+			<p class="text2">智能&nbsp;.&nbsp;丰厚&nbsp;.&nbsp;利润</p>			
+			<button class="btn-view" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">查看此方案&nbsp;&nbsp;<img alt="btn-view" src="front/dist/img/icon-arrow-5.png"></button>
+			<button class="btn-other" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">其他方案</button>
 		</div>
 		
 	</div>
@@ -35,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<p class="title">产品介绍</p>
 		<p class="additional">产品介绍，包含产品下载链接等接口</p>
 		<!-- 产品一 -->
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  pro-module" data-target="js-product1">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  pro-module active" data-target="js-product1">
 			<div class="content">
 				<p class="bar">
 					<span>①</span><br/>
@@ -50,7 +51,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<button class="btn-view" onclick="jump('item3');">点击查看</button>	
 			</div>
 		</div>
-		
 		
 		<!-- 产品二 -->
 		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  pro-module" data-target="js-product2">
@@ -86,6 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 	</div>
+	
 	<!-- 产品特点 -->
 	<div class="layer layer-trait">
 		<!-- 对应产品一 -->	
@@ -192,8 +193,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div><!-- end 产品特点 -->
 	
 	<!-- F & Q -->
-	<div class="layer layer-fq">
-		<div class="container fq text-center">
+	<div class="layer layer-fq text-left">
+		<div class="container fq">
 			<p class="title"><img alt="答疑解惑" src="front/dist/img/product-icon-fq.png">答疑解惑</p>
 			<p class="additional">为您解答您会遇到的常见问题</p>
 			<span class="splitLine"></span>
@@ -239,6 +240,20 @@ $(function(){
         $( "#effect" ).removeAttr( "style" ).hide().fadeIn();
       }, 1000 );
     };
+    
+    //active样式
+    var lastIndex=2;
+    $('div.pro-module').hover(function(){
+    	console.log("this index = "+$(this).index());
+    	if($(this).index()==lastIndex){
+    		console.log('no change');
+    	}else{
+    		$(this).siblings().removeClass('active');
+    		$(this).addClass('active');
+    		lastIndex=$(this).index();
+    	}
+    	
+    });
 });
 function jump(str){
 	window.location.href="<%=basePath%>"+"front/productDetail.jsp";
