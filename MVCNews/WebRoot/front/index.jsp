@@ -13,6 +13,7 @@
 <link rel="icon" href="./dist/img/icon_stockii_square.png">
 <title>斯多克，改变您投资股票的方式</title>
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
+<link href="front/dist/css/base.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
 <link href="front/dist/css/index.css" rel="stylesheet" type="text/css">
 <!--[if lte IE 9]>
@@ -26,13 +27,13 @@
 <body>
 
 <jsp:include page="_header.jsp?index=index" />
-<div class="page-content">
-	<div class="container-fluid">
+<div class="">
+	<div class="">
 		<div class="row-fluid poster-main" style="padding-top:430px;height:659px;background-image: url('front/dist/img/index_main_bg.jpg');background-size:100% 100% ">
 			<div style="text-align: center;"><a onFocus="this.blur()"class="link-button" href="front/product.jsp"></a></div>
 		</div> 
 	
-	<div class="sections-list container-fluid">
+	<div class="sections-list ">
 		<div class="row section section-nomargin">
 			<div class="col-lg-12 pin">
 				<img alt="pin" src="front/dist/img/index_pin_gray.png">

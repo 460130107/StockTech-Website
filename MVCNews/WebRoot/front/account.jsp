@@ -20,7 +20,7 @@
 <body>
     <jsp:include page="_header.jsp?index=account" />
 	
-	<div class="container-fluid maxbg">
+	<div class=" maxbg">
 		<div class="row">
 			<div class="col-md-2">
 <!-- 				<img alt="img-left" src="front/dist/img/account.png"> -->

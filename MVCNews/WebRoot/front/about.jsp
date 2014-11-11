@@ -15,11 +15,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
+<link href="front/dist/css/base.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
 </head>
 
 <body>
-<jsp:include page="_header.jsp"></jsp:include>
+<jsp:include page="_header.jsp?index=about"></jsp:include>
 <%
 String id="root";
 if(request.getParameter("id")=="" || request.getParameter("id")==null){
@@ -30,15 +31,15 @@ if(request.getParameter("id")=="" || request.getParameter("id")==null){
 %>
 
 <div class="container mgb40 mgt40">
- <div class="row">
+ <div class="row tab">
  	<div class="col-md-2">
 			<div class="bar">
 		  		<ul class="sidebar">
-		  			<li class="side-fli pd20 active js-sideli" data-target="js-info"><a onFocus="this.blur()"href="javascript:void(0);">公司简介</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-manage"><a onFocus="this.blur()"href="javascript:void(0);">管理团队</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-export"><a onFocus="this.blur()"href="javascript:void(0);">专家顾问</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-recruit"><a onFocus="this.blur()"href="javascript:void(0);">招贤纳士</a></li>
-		  			<li class="side-fli pd20 js-sideli" data-target="js-concat"><a onFocus="this.blur()"href="javascript:void(0);">联系我们</a></li>
+		  			<li class="active js-sideli" data-target="js-info"><a onFocus="this.blur()"href="javascript:void(0);">公司简介</a></li>
+		  			<li class="js-sideli" data-target="js-manage"><a onFocus="this.blur()"href="javascript:void(0);">管理团队</a></li>
+		  			<li class="js-sideli" data-target="js-export"><a onFocus="this.blur()"href="javascript:void(0);">专家顾问</a></li>
+		  			<li class="js-sideli" data-target="js-recruit"><a onFocus="this.blur()"href="javascript:void(0);">招贤纳士</a></li>
+		  			<li class="js-sideli" data-target="js-concat"><a onFocus="this.blur()"href="javascript:void(0);">联系我们</a></li>
 		  		</ul>
 		  	</div>
 		</div>
@@ -219,14 +220,14 @@ $(function(){
 	//console.log("js-id = "+js_id);
 	if(js_id.match("root")){
 		//sidebar 
-		$(".side-fli").removeClass("active");
-		$(".side-fli[data-target='js-info']").addClass("active");
+		$(".js-sideli").removeClass("active");
+		$(".js-sideli[data-target='js-info']").addClass("active");
 		//show and hide content block
 		$(".block-content[id!='js-info']").addClass("hide");
 	}else{
 		//sidebar 
-		$(".side-fli").removeClass("active");
-		$(".side-fli[data-target='"+js_id+"']").addClass("active");
+		$(".js-sideli").removeClass("active");
+		$(".js-sideli[data-target='"+js_id+"']").addClass("active");
 		//show and hide content block
 		$(".block-content[id!='"+js_id+"']").addClass("hide");
 		

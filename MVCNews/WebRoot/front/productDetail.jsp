@@ -16,7 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="icon" href="../../favicon.ico">
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
-<link href="front/dist/css/product.css" rel="stylesheet">
+<link href="front/dist/css/page.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="_header.jsp?index=product" />

@@ -15,8 +15,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <base href="<%=basePath%>" />
 <link rel="icon" href="../../favicon.ico">
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
+<link href="front/dist/css/base.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
-<link href="front/dist/css/product.css" rel="stylesheet">
+<link href="front/dist/css/page.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="_header.jsp?index=product" />
@@ -26,8 +27,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="container">
 			<p class="text3">开启智能投资时代</p>
 			<p class="text2">智能&nbsp;.&nbsp;丰厚&nbsp;.&nbsp;利润</p>			
-			<button class="btn-view" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">查看此方案&nbsp;&nbsp;<img alt="btn-view" src="front/dist/img/icon-arrow-5.png"></button>
-			<button class="btn-other" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">其他方案</button>
+			<button class="btn btn-l" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">查看此方案&nbsp;&nbsp;<img alt="btn-view" src="front/dist/img/icon-arrow-5.png"></button>
+			<button class="btn btn-l btn-invert" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">其他方案</button>
 		</div>
 		
 	</div>
@@ -36,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<p class="title">产品介绍</p>
 		<p class="additional">产品介绍，包含产品下载链接等接口</p>
 		<!-- 产品一 -->
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  pro-module active" data-target="js-product1">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  square-y active" data-target="js-product1">
 			<div class="content">
 				<p class="bar">
 					<span>①</span><br/>
@@ -53,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		
 		<!-- 产品二 -->
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  pro-module" data-target="js-product2">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  square-y" data-target="js-product2">
 			<div class="content">
 				<p class="bar">
 					<span>②</span><br/>
@@ -69,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 		<!-- 产品三 -->
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  pro-module" data-target="js-product3">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  square-y" data-target="js-product3">
 			<div class="content">
 				<p class="bar">
 					<span>③</span><br/>
@@ -224,35 +225,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- 交互效果 -->
 <script type="text/javascript">
 $(function(){
+	var lastIndex=2;
+
 	//设置默认显示为产品一的特点
 	$("div.tab[id!='js-product1']").addClass("hide");
 	$('div[data-target]').on({
 		"mouseenter":function(){
-			var target=$(this).attr('data-target');
-			$("div.tab").removeClass("hide");
-			$("div.tab[id!='"+target+"']").addClass("hide");
-			$("div.tab[id='"+target+"']").effect("slide","slow");
+			console.log("hover index = "+$(this).index());
+			if($(this).index()!=lastIndex){
+				var target=$(this).attr('data-target');
+				$("div.tab").removeClass("hide");
+				$("div.tab[id!='"+target+"']").addClass("hide");
+				$("div.tab[id='"+target+"']").effect("slide","slow");
+			}
 		}
 	});
-	// 回调函数
-    function callback() {
-      setTimeout(function() {
-        $( "#effect" ).removeAttr( "style" ).hide().fadeIn();
-      }, 1000 );
-    };
     
     //active样式
-    var lastIndex=2;
-    $('div.pro-module').hover(function(){
+    $('div.square-y').hover(function(){
     	console.log("this index = "+$(this).index());
-    	if($(this).index()==lastIndex){
-    		console.log('no change');
-    	}else{
+    	if($(this).index()!=lastIndex){
     		$(this).siblings().removeClass('active');
     		$(this).addClass('active');
     		lastIndex=$(this).index();
     	}
-    	
     });
 });
 function jump(str){

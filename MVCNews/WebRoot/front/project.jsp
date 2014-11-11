@@ -24,13 +24,9 @@
 			<dd class="suspendTel"><a href="javascript:void(0);"></a></dd>
 		</dl>
 	</div>
-<div class="container-fluid text-center bg-lattice content-banner">
+<div class=" text-center bg-lattice" style="height: 200px;">
 	<img alt="hello" src="front/dist/img/product_banner.png">
 </div>
-<!-- <div class="project-bd"> -->
-<!-- <div> -->
-<!-- <img alt="header" src="front/dist/img/project-test1.jpg" class="img-head"> -->
-<!-- </div> -->
 
 <div class="container mgt30">
 	<!-- row one -->

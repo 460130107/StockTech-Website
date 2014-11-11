@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <jsp:include page="_header.jsp" />
-	<div class="container-fluid">
+	<div class="">
 		<div class="row">
 			<div class="maxbg">
 				<div class="container">
