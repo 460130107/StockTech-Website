@@ -24,9 +24,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="productDetail">
 	<div class="topBackground">
 		<div class="container">
-			<p>新品正中首发</p>
-			<p>统计局网站10日消息，10月CPI环比持平，同比上涨1.6%；PPI环比下降0.4%，同比下降2.2%。对此，国家统计局城市司高级统计师余秋梅表示，CPI整体较为平稳，PPI环比继续下降是受国际油价连续下跌及国内部分行业产能过剩的影响。</p>
-			<button class="btn-quick-view" onclick="javascript:window.location.href='<%=basePath%>'+'front/product.jsp'"></button>
+			<div class="container">
+				<p>新品郑重首发</p>
+				<p>统计局网站10日消息，10月CPI环比持平，同比上涨1.6%；PPI环比下降0.4%，同比下降2.2%。对此，国家统计局城市司高级统计师余秋梅表示，CPI整体较为平稳，PPI环比继续下降是受国际油价连续下跌及国内部分行业产能过剩的影响。</p>
+				<button class="btn-quick-view" onclick="javascript:window.location.href='<%=basePath%>'+'front/product.jsp'"></button>
+			</div>
 		</div>
 	</div>
 	<!-- product introduction -->
@@ -34,12 +36,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="container">
 			<!-- introduction one -->
 			<div class="row">
-				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style=""><img class="img-intro" alt="产品介绍一" src="front/dist/img/product-detail-intro.png"></div>
-				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="">
+				<div class="col-sm-3 col-md-3 col-lg-3" style=""><img class="img-intro" alt="产品介绍一" src="front/dist/img/product-detail-intro.png"></div>
+				<div class="col-sm-9 col-md-9 col-lg-9" style="">
 					<p class="title-intro">首款产品权威发布<span>&#9660;</span></p>
 					<p class="content-intro">中韩自贸区谈判于2012年5月启动，是我国迄今为止对外商谈的覆盖领域最广、涉及国别贸易额最大的自贸区。根据谈判成果，在开放水平方面，双方货物贸易自由化比例均超过“税目90％、贸易额85％”。协定范围涵盖货物贸易、服务贸易、投资和规则共17个领域，包含了电子商务、竞争政策、政府采购、环境等“21世纪经贸议题”。</p>
 				</div>
-				<!-- arrow one -->
+				<!-- arrow three -->
 				<img alt="向下箭头1" src="front/dist/img/icon-arrow-1.png" class="icon-arrow">
 			</div>
 			
@@ -52,7 +54,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p class="title-intro">首款产品权威发布<span>&#9660;</span></p>
 					<p class="content-intro">中韩自贸区谈判于2012年5月启动，是我国迄今为止对外商谈的覆盖领域最广、涉及国别贸易额最大的自贸区。根据谈判成果，在开放水平方面，双方货物贸易自由化比例均超过“税目90％、贸易额85％”。协定范围涵盖货物贸易、服务贸易、投资和规则共17个领域，包含了电子商务、竞争政策、政府采购、环境等“21世纪经贸议题”。</p>
 				</div>
-				
 			</div>
 			
 			<!-- introduction three -->
@@ -84,19 +85,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="main">
 			<div class="container">
 				<div class="block">
-					<p class="item">①&nbsp;新型智能决策方式</p>
+					<p class="item">①新型智能决策方式</p>
 					<p class="text">新华社北京11月10日电 11月10日，中国国家主席习近平与韩国总统朴槿惠在北京举行会晤，双方共同确认中韩自贸区结束实质性谈判。会晤后，在两国领导人共同见证下，中国商务部部长高虎城和韩国通商产业资源部部长尹相直，分别代表两国政府签署了结束中韩自贸区实质性谈判的会议纪要。</p>
 				</div>
 				<div class="block">
-					<p class="item">②&nbsp;新型智能决策方式</p>
+					<p class="item">②新型智能决策方式</p>
 					<p class="text">新华社北京11月10日电 11月10日，中国国家主席习近平与韩国总统朴槿惠在北京举行会晤，双方共同确认中韩自贸区结束实质性谈判。会晤后，在两国领导人共同见证下，中国商务部部长高虎城和韩国通商产业资源部部长尹相直，分别代表两国政府签署了结束中韩自贸区实质性谈判的会议纪要。</p>
 				</div>
 				<div class="block">
-					<p class="item">③&nbsp;新型智能决策方式</p>
+					<p class="item">③新型智能决策方式</p>
 					<p class="text">新华社北京11月10日电 11月10日，中国国家主席习近平与韩国总统朴槿惠在北京举行会晤，双方共同确认中韩自贸区结束实质性谈判。会晤后，在两国领导人共同见证下，中国商务部部长高虎城和韩国通商产业资源部部长尹相直，分别代表两国政府签署了结束中韩自贸区实质性谈判的会议纪要。</p>
 				</div>
 				<div class="block">
-					<p class="item">④&nbsp;新型智能决策方式</p>
+					<p class="item">④新型智能决策方式</p>
 					<p class="text">新华社北京11月10日电 11月10日，中国国家主席习近平与韩国总统朴槿惠在北京举行会晤，双方共同确认中韩自贸区结束实质性谈判。会晤后，在两国领导人共同见证下，中国商务部部长高虎城和韩国通商产业资源部部长尹相直，分别代表两国政府签署了结束中韩自贸区实质性谈判的会议纪要。</p>
 				</div>
 			</div>

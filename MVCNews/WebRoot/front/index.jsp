@@ -31,7 +31,7 @@
 			<div style="text-align: center;"><a onFocus="this.blur()"class="link-button" href="front/product.jsp"></a></div>
 		</div> 
 	
-		<div class="sections-list row">
+		<div class="sections-list">
 			<div class="row section section-nomargin">
 				<div class="col-lg-12 pin">
 					<img alt="pin" src="front/dist/img/index_pin_gray.png">

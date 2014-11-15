@@ -27,8 +27,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="container">
 			<p class="text3">开启智能投资时代</p>
 			<p class="text2">智能&nbsp;.&nbsp;丰厚&nbsp;.&nbsp;利润</p>			
-			<button class="btn btn-l" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">查看此方案&nbsp;&nbsp;<img alt="btn-view" src="front/dist/img/icon-arrow-5.png"></button>
-			<button class="btn btn-l btn-invert" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">其他方案</button>
+			<button class="btn btn-view" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">查看此方案&nbsp;&nbsp;<img alt="btn-view" src="front/dist/img/icon-arrow-5.png"></button>
+			<button class="btn btn-other" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">其他方案</button>
 		</div>
 		
 	</div>
@@ -126,7 +126,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		<!-- 对应产品二 -->	
 		<div class="container tab text-center js-tab" id="js-product2">		
-			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
+			<div class="switch col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait1.png">
 					<span class="title">特点一：智能决策方式</span>
@@ -136,7 +136,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</p>
 				<p class="more"><a href="http://www.baidu.com">Read More&nbsp;&nbsp;<img alt="特点一图标" src="front/dist/img/product-icon-more.png"></a></p>
 			</div>
-			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
+			<div class="switch col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait2.png">
 					<span class="title">特点二：智能决策方式</span>
@@ -146,7 +146,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</p>
 				<p class="more"><a href="http://www.baidu.com">Read More&nbsp;&nbsp;<img alt="特点一图标" src="front/dist/img/product-icon-more.png"></a></p>
 			</div>
-			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
+			<div class="switch col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait3.png">
 					<span class="title">特点三：智能决策方式</span>
@@ -160,7 +160,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		<!-- 对应产品三 -->
 		<div class="container tab text-center js-tab" id="js-product3">		
-			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
+			<div class="switch col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait1.png">
 					<span class="title">特点一：智能决策方式</span>
@@ -170,7 +170,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</p>
 				<p class="more"><a href="http://www.baidu.com">Read More&nbsp;&nbsp;<img alt="特点一图标" src="front/dist/img/product-icon-more.png"></a></p>
 			</div>
-			<div class="switch col-sm-4 col-md-4 col-lg-4 ">
+			<div class="switch col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
 				<p class="title">
 					<img alt="特点一图标" src="front/dist/img/product-icon-trait2.png">
 					<span class="title">特点二：智能决策方式</span>
