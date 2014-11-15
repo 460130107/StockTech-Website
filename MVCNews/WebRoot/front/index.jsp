@@ -34,7 +34,9 @@
 		</div> 
 	
 	<div class="sections-list ">
-		<div class="row section section-nomargin">
+		<div class="layer section-nomargin">
+		<div class="container">
+		<div class="row section">
 			<div class="col-lg-12 pin">
 				<img alt="pin" src="front/dist/img/index_pin_gray.png">
 			</div>
@@ -64,8 +66,12 @@
 				</div>
 			</div>
 		</div>
+		</div>
+		</div>
 		
-		<div class="row section section-margin section-white">
+		<div class="layer section-white section-margin">
+		<div class="container">
+		<div class="row section">
 			<div class="col-lg-12 pin">
 				<img alt="pin" src="front/dist/img/index_pin_white.png">
 			</div>
@@ -95,8 +101,12 @@
 				</div>
 			</div>
 		</div>
+		</div>
+		</div>
 		
-		<div class="row section section-nomargin">
+		<div class="layer section-nomargin">
+		<div class="container">
+		<div class="row section">
 			<div class="col-lg-12 pin">
 				<img alt="pin" src="front/dist/img/index_pin_gray.png">
 			</div>
@@ -126,8 +136,12 @@
 				</div>
 			</div>
 		</div>
+		</div>
+		</div>
 		
-		<div class="row section section-margin section-white">
+		<div class="layer section-white section-margin">
+		<div class="container">
+		<div class="row section">
 			<div class="col-lg-12 pin">
 				<img alt="pin" src="front/dist/img/index_pin_white.png">
 			</div>
@@ -157,8 +171,11 @@
 				</div>
 			</div>
 		</div>
+		</div>
+		</div>
 		
 		<!-- partners -->
+		<div class="container">
 		<div class="row section section-onmargin">
 			<div class="col-lg-12 pin" style="margin-top:0;">
 				<img alt="pin" src="front/dist/img/index_pin_star.png">
@@ -238,6 +255,7 @@
 				</div><!-- end links -->
 			</div>
 		</div><!-- end partners -->
+	</div>
 	</div>
 </div>
 

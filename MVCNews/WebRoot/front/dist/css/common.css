@@ -2,19 +2,16 @@
 /*
 	TODO better to describe here about how a style can be called 'common' and put here
 */
-
+@media (max-width: 768px){
+	body{
+		width: 768px;
+	}
+}
 body{
-	/* font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",
-		STXihei, "华文细黑", serif;
-	font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Segoe UI', 'Microsoft Yahei', Tahoma, Arial, STHeiti, sans-serif !important;
-	  */
-	 font-family:'Glyphicons Halflings';
+	font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",STXihei, "华文细黑", serif;
 	 font-size: 18px;
 	 background: rgb(242,242,242);
-	 min-width: 1200px;
-	 
 }
-
 /* Styles for the nav bar */
 nav {
 	font-size: 18px;
@@ -180,7 +177,7 @@ footer form.form-horizontal {
 }
 
 footer .sections {
-	
+	margin-bottom: 15px;
 }
 
 footer a {
@@ -192,9 +189,11 @@ footer .title {
 	font-size: 20px;
 	color: #ba2635;
 	font-weight: bold;
+	margin-bottom: 15px;
 }
 
 footer .icon {
+	display: inline-block;
 	width: 60px;height: 60px;
 }
 
@@ -670,6 +669,7 @@ p.input-tips {
 /*====component  square-y  (eg:product.jsp)====*/
 .square-y{
 	transition: all ease .3s;
+	margin-bottom: 10px;
 }
 .square-y .content{
 	border: 2px solid #E6E6E6;

@@ -27,7 +27,7 @@
 	background-color: #ba2635;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px){
 	#myCarousel .carousel-inner .item img{
 		width: 70px;height: 70px;
 	}
@@ -41,6 +41,21 @@
 		width: 70px;height: 70px;
 	}
 }
+
+@media (min-width: 768px) {
+	#myCarousel .carousel-inner .item img{
+		width: 70px;height: 70px;
+	}
+	.partner-link img{
+		width: 50px;height: 50px;
+	}
+	#myCarousel .right{
+		width: 70px;height: 70px;
+	}
+	#myCarousel .left{
+		width: 70px;height: 70px;
+	}
+} 
 
 @media (min-width: 992px) {
 	#myCarousel .carousel-inner .item img{
@@ -93,12 +108,6 @@
 .sections-list .pin {
 	margin-top: -54px;
 	text-align: center;
-	/* width: 100%;
-	width: 190px;
-	height: 55px;
-	max-width: 100%;
-	position:absolute;
-	z-index: 6; */
 }
 
 .sections-list .pin.pin-white{
@@ -109,19 +118,16 @@
 	background: url('../img/index_pin_gray.png');
 }
 
-.sections-list .section {
-	
-}
 
-.sections-list .section.section-nomargin {
+.sections-list .section-nomargin {
 	margin-top: 0px;
 }
 
-.sections-list .section.section-margin {
+.sections-list .section-margin {
 	margin-top: 120px;
 }
 
-.sections-list .section.section-white {
+.sections-list .section-white {
 	background-color: white;
 	padding-bottom: 140px;
 }

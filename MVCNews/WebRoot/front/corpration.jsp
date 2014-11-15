@@ -16,8 +16,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	request.getServerPort() + request.getContextPath() %>/" />
 <link rel="icon" href="front/dist/img/icon_stockii_square.png">
 <link href="front/dist/css/bootstrap.css" rel="stylesheet">
+<link href="front/dist/css/base.css" rel="stylesheet">
 <link href="front/dist/css/common.css" rel="stylesheet">
-<link href="front/dist/product-11.css" rel="stylesheet">
+<link href="front/dist/css/page.css" rel="stylesheet">
 <title>合作加盟--斯多克科技</title>
 </head>
 <body>
@@ -38,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<p class="title">合作介绍</p>
 		<p class="additional">合作介绍，包含合作下载链接等接口</p>
 		<!-- 合作一 -->
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  square-x" data-target="js-product1">
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4  square-y" data-target="js-product1">
 			<div class="content">
 				<p class="bar">
 					<span>①</span><br/>
@@ -55,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		
 		<!-- 合作二 -->
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  square-x" data-target="js-product2">
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4  square-y" data-target="js-product2">
 			<div class="content">
 				<p class="bar">
 					<span>②</span><br/>
@@ -71,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 		<!-- 合作三 -->
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  square-x" data-target="js-product3">
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4  square-y" data-target="js-product3">
 			<div class="content">
 				<p class="bar">
 					<span>③</span><br/>
