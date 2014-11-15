@@ -86,7 +86,6 @@
 .sections-list {
 	max-width: 100%;
 	background: url('../img/index_sections_bg.jpg');
-	padding: 0px 0 30px;
 	padding-bottom: 100px;
 }
 
@@ -146,14 +145,14 @@
 .wisdom-saying .content {
 	color: #555;
 	line-height: 150%;
-	font-size: 24px;
+	font-size: 20px;
 	font-family: KaiTi !important;
 }
 
 .wisdom-saying .important-data {
 	color: #ba2635;
 	line-height: 100%;
-	font-size: 36px;
+	font-size: 26px;
 	font-family: Microsoft YaHei !important;
 }
 
@@ -161,23 +160,23 @@
 	color: #ba2635;
 	text-decoration: line-through;
 	line-height: 100%;
-	font-size: 36px;
+	font-size: 18px;
 	font-family: Microsoft YaHei !important;
 }
 
 .wisdom-saying .explaination {
-	font-size: 32px;
+	font-size: 24px;
 	margin-top: 40px;
 }
 
 .wisdom-saying .link {
 	margin-top: 30px;
-	font-size: 24px;
+	font-size: 18px;
 }
 
 .wisdom-saying .link a {
 	font-family: Microsoft YaHei !important;
-	font-size: 22px;
+	font-size: 18px;
 	color: #ba2635;
 	border-bottom: #ba2635 1px solid;
 }

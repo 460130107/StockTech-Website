@@ -25,222 +25,213 @@
 <!-- NAVBAR
 ================================================== -->
 <body>
-
-<jsp:include page="_header.jsp?index=index" />
-<div class="">
-	<div class="">
+	<jsp:include page="_header.jsp?index=index" />
+	<div class="container-fluid">
 		<div class="row-fluid poster-main" style="padding-top:430px;height:659px;background-image: url('front/dist/img/index_main_bg.jpg');background-size:100% 100% ">
 			<div style="text-align: center;"><a onFocus="this.blur()"class="link-button" href="front/product.jsp"></a></div>
 		</div> 
 	
-	<div class="sections-list ">
-		<div class="row section section-nomargin">
-			<div class="col-lg-12 pin">
-				<img alt="pin" src="front/dist/img/index_pin_gray.png">
-			</div>
-			<div class="col-lg-12 wisdom-saying text-center">
-				<div class="row">
-					<div class="col-lg-2 col-lg-offset-5">
-						<img alt="portrait" src="front/dist/img/index_investor_livermore.png">
-						<p class="author-name">杰西·利弗莫尔</p>
-					</div>
+		<div class="sections-list row">
+			<div class="row section section-nomargin">
+				<div class="col-lg-12 pin">
+					<img alt="pin" src="front/dist/img/index_pin_gray.png">
 				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 content">
-						"如果你比99%的人知道的都多，那你一定比99%的人都赚钱"
+				<div class="col-lg-12 wisdom-saying text-center">
+					<div class="row">
+						<div class="col-lg-2 col-lg-offset-5">
+							<img alt="portrait" src="front/dist/img/index_investor_livermore.png">
+							<p class="author-name">杰西·利弗莫尔</p>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 explaination">
-						<span class="important-data">24年</span>行业数据积累，<span class="important-data">16亿</span>条股市信息，<span class="important-data">21万</span>家公司情报<br/>都在您的<span class="important-data">掌控</span>之中
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 content">
+							"如果你比99%的人知道的都多，那你一定比99%的人都赚钱"
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 link">
-						<a onFocus="this.blur()"href="front/product.jsp">了解如何利用这些数据
-							<span class="link-icon"></span>
-							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 explaination">
+							<span class="important-data">24年</span>行业数据积累，<span class="important-data">16亿</span>条股市信息，<span class="important-data">21万</span>家公司情报<br/>都在您的<span class="important-data">掌控</span>之中
+						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="row section section-margin section-white">
-			<div class="col-lg-12 pin">
-				<img alt="pin" src="front/dist/img/index_pin_white.png">
-			</div>
-			<div class="col-lg-12 wisdom-saying text-center">
-				<div class="row">
-					<div class="col-lg-2 col-lg-offset-5">
-						<img alt="portrait" src="front/dist/img/index_investor_newberg.png">
-						<p class="author-name">罗伊·纽伯格</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 content">
-						"投资的成功是建立在已有的知识和经验基础上的"
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 explaination">
-						<span class="important-data">专家</span>级的水平，<span class="important-data">管家</span>式的服务，<span class="important-data">上帝般</span>的享受<br/>斯多克为客户提供业界<span class="important-data">顶级</span>服务体验
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 link">
-						<a onFocus="this.blur()"href="front/ourteam.jsp">查看斯多克合作专家
-							<span class="link-icon"></span>
-							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 link">
+							<a onFocus="this.blur()"href="front/product.jsp">了解如何利用这些数据
+								<span class="link-icon"></span>
+								</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		
-		<div class="row section section-nomargin">
-			<div class="col-lg-12 pin">
-				<img alt="pin" src="front/dist/img/index_pin_gray.png">
-			</div>
-			<div class="col-lg-12 wisdom-saying text-center">
-				<div class="row">
-					<div class="col-lg-2 col-lg-offset-5">
-						<img alt="portrait" src="front/dist/img/index_investor_buffett.png">
-						<p class="author-name">沃伦·巴菲特</p>
-					</div>
+			
+			<div class="row section section-margin section-white">
+				<div class="col-lg-12 pin">
+					<img alt="pin" src="front/dist/img/index_pin_white.png">
 				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 content">
-						"别犯大错"
+				<div class="col-lg-12 wisdom-saying text-center">
+					<div class="row">
+						<div class="col-lg-2 col-lg-offset-5">
+							<img alt="portrait" src="front/dist/img/index_investor_newberg.png">
+							<p class="author-name">罗伊·纽伯格</p>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 explaination">
-						新型<span class="important-data">智能</span>决策方式，规避经验决策<span class="ignore-data">风险</span>，强化理性决策<span class="important-data">收益</span>
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 content">
+							"投资的成功是建立在已有的知识和经验基础上的"
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 link">
-						<a onFocus="this.blur()"href="front/product.jsp">斯多克如何帮您做出更可靠决策
-							<span class="link-icon"></span>
-							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 explaination">
+							<span class="important-data">专家</span>级的水平，<span class="important-data">管家</span>式的服务，<span class="important-data">上帝般</span>的享受<br/>斯多克为客户提供业界<span class="important-data">顶级</span>服务体验
+						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="row section section-margin section-white">
-			<div class="col-lg-12 pin">
-				<img alt="pin" src="front/dist/img/index_pin_white.png">
-			</div>
-			<div class="col-lg-12 wisdom-saying text-center">
-				<div class="row">
-					<div class="col-lg-2 col-lg-offset-5">
-						<img alt="portrait" src="front/dist/img/index_investor_rogers.png">
-						<p class="author-name">吉姆·罗杰斯</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 content">
-						"让富有的人更富有"
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 explaination">
-						您对我们的<span class="important-data">信任</span>将为您带来超越想象的<span class="important-data">回报</span>！
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 link">
-						<a onFocus="this.blur()"href="front/corpration.jsp">与我们合作
-							<span class="link-icon"></span>
-							</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 link">
+							<a onFocus="this.blur()"href="front/ourteam.jsp">查看斯多克合作专家
+								<span class="link-icon"></span>
+								</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		
-		<!-- partners -->
-		<div class="row section section-onmargin">
-			<div class="col-lg-12 pin" style="margin-top:0;">
-				<img alt="pin" src="front/dist/img/index_pin_star.png">
+			
+			<div class="row section section-nomargin">
+				<div class="col-lg-12 pin">
+					<img alt="pin" src="front/dist/img/index_pin_gray.png">
+				</div>
+				<div class="col-lg-12 wisdom-saying text-center">
+					<div class="row">
+						<div class="col-lg-2 col-lg-offset-5">
+							<img alt="portrait" src="front/dist/img/index_investor_buffett.png">
+							<p class="author-name">沃伦·巴菲特</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 content">
+							"别犯大错"
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 explaination">
+							新型<span class="important-data">智能</span>决策方式，规避经验决策<span class="ignore-data">风险</span>，强化理性决策<span class="important-data">收益</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 link">
+							<a onFocus="this.blur()"href="front/product.jsp">斯多克如何帮您做出更可靠决策
+								<span class="link-icon"></span>
+								</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-lg-12 text-center">
-				<div class="row">
-					<div class="col-lg-2 col-lg-offset-5">
-						<img alt="portrait" src="front/dist/img/logo_red.png" style="margin-top: 20px;margin-bottom: 20px;">						
+			
+			<div class="row section section-margin section-white">
+				<div class="col-lg-12 pin">
+					<img alt="pin" src="front/dist/img/index_pin_white.png">
+				</div>
+				<div class="col-lg-12 wisdom-saying text-center">
+					<div class="row">
+						<div class="col-lg-2 col-lg-offset-5">
+							<img alt="portrait" src="front/dist/img/index_investor_rogers.png">
+							<p class="author-name">吉姆·罗杰斯</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 content">
+							"让富有的人更富有"
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 explaination">
+							您对我们的<span class="important-data">信任</span>将为您带来超越想象的<span class="important-data">回报</span>！
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 link">
+							<a onFocus="this.blur()"href="front/corpration.jsp">与我们合作
+								<span class="link-icon"></span>
+								</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row section section-onmargin">
+				<div class="col-lg-12 pin" style="margin-top:0;">
+					<img alt="pin" src="front/dist/img/index_pin_star.png">
+				</div>
+				<div class="col-lg-12 text-center">
+					<div class="row">
+						<div class="col-lg-2 col-lg-offset-5">
+							<img alt="portrait" src="front/dist/img/logo_red.png" style="margin-top: 20px;margin-bottom: 20px;">						
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 content partner">
+						<p style="color:#7e7b7b;font-weight:bold;;font-size: 24px;letter-spacing: 4px;margin-bottom: 25px;">我们的合作伙伴?
+						<p style="color: #332726;font-size: 62px;margin-bottom: 20px;letter-spacing:6px;">谁在与斯多克合作？</p>
+						</div>
 					</div>
 					
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3 content partner">
-					<p style="color:#7e7b7b;font-weight:bold;;font-size: 24px;letter-spacing: 4px;margin-bottom: 25px;">我们的合作伙伴?
-					<p style="color: #332726;font-size: 62px;margin-bottom: 20px;letter-spacing:6px;">谁在与斯多克合作？</p>
+					<div class="container">
+						<div id="myCarousel" class="carousel slide">
+						   <ol class="carousel-indicators">
+						      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						      <li data-target="#myCarousel" data-slide-to="1"></li>
+						      <li data-target="#myCarousel" data-slide-to="2"></li>
+						   </ol>   
+						   <div class="carousel-inner">
+						      <div class="item active">
+						      	 <div class="container">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 </div>
+						      </div>
+						      <div class="item">
+						      	 <div class="container">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 </div>
+						      </div>
+						      <div class="item">
+						      	 <div class="container">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
+						      	 </div>
+						      </div>
+						   </div>
+						   <a class="carousel-control left" href="#myCarousel" 
+						      data-slide="prev"></a>
+						   <a class="carousel-control right" href="#myCarousel" 
+						      data-slide="next"></a>
+						</div> 					 
+					</div>
+					
+					<div class="container partner-link">
+						<ul class="list-inline">
+							<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
+				      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
+				      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
+				      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
+				      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
+						</ul>
 					</div>
 				</div>
-				
-				<div class="container">
-					<div id="myCarousel" class="carousel slide">
-					   <!-- 轮播（Carousel）指标 -->
-					   <ol class="carousel-indicators">
-					      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					      <li data-target="#myCarousel" data-slide-to="1"></li>
-					      <li data-target="#myCarousel" data-slide-to="2"></li>
-					   </ol>   
-					   <!-- 轮播（Carousel）项目 -->
-					   <div class="carousel-inner">
-					      <div class="item active">
-					      	 <div class="container">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 </div>
-					      </div>
-					      <div class="item">
-					      	 <div class="container">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 </div>
-					      </div>
-					      <div class="item">
-					      	 <div class="container">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 	<img src="front/dist/img/index_partner.png" alt="Second slide">
-					      	 </div>
-					      </div>
-					   </div>
-					   <!-- 轮播（Carousel）导航 -->
-					   <a class="carousel-control left" href="#myCarousel" 
-					      data-slide="prev"></a>
-					   <a class="carousel-control right" href="#myCarousel" 
-					      data-slide="next"></a>
-					</div> 					 
-				</div>
-				
-				<!-- links -->
-				<div class="container partner-link">
-					<ul class="list-inline">
-						<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
-			      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
-			      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
-			      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
-			      	 	<li><a href=""><img src="front/dist/img/index_partner.png" alt="Second slide"></a></li>
-					</ul>
-				</div><!-- end links -->
 			</div>
-		</div><!-- end partners -->
-	</div>
-</div>
-
+		</div>
 </div>
 <jsp:include page="_footer.jsp" />
 
