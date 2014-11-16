@@ -2,29 +2,20 @@
 /*
 	TODO better to describe here about how a style can be called 'common' and put here
 */
-@media (max-width: 768px){
+@media (max-width: 720px){
 	body{
-		width: 768px;
+		width: 720px;
 	}
 }
 body{
-	/* font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",
-		STXihei, "华文细黑", serif;
-	font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Segoe UI', 'Microsoft Yahei', Tahoma, Arial, STHeiti, sans-serif !important;
-	  */
 	 font-family:'Glyphicons Halflings', "微软雅黑";
 	 font-size: 16px;
 	 background: rgb(242,242,242);
 }
 
 h1, h2, h3, h4 {
-	/* font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",
-		STXihei, "华文细黑", serif;
-	font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Segoe UI', 'Microsoft Yahei', Tahoma, Arial, STHeiti, sans-serif !important;
-	  */
 	font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",STXihei, "华文细黑", serif;
 	font-size: 18px;
-	background: rgb(242,242,242);
 }
 /* Styles for the nav bar */
 
@@ -73,29 +64,6 @@ nav ul.nav.navbar-nav li.active > a{
 	border-bottom: #ba2635 5px solid;
 	color: #ba2635;
 }
-
-/* End of styles for nav bar */
-
-/* Styles for header elements */
-/* header {
-	font-size: 16px;
-	color: white;
-}
-
-header li {
-	color: white;
-}
-
-header li a {
-	color: white;
-	padding-right: 20px;
-}
-
-header li a:hover {
-	text-decoration: none;
-	color: #F56C0F;
-} */
-/* End of Styles for header elements */
 
 /* Styles for footer elements */
 footer{
@@ -869,7 +837,7 @@ span.solidline{
 }
 /*====end compenent split line*/
 
-/*====compenent tab====*/
+/*====compenent tab-vertical====*/
 .tab .bar .sidebar{
 	background: #fff;
 	padding: 0;margin: 0;
@@ -970,4 +938,100 @@ span.solidline{
 	font-size: 16px;
 	text-align: center;
 }
-/*====end compenent tab====*/
+/*====end compenent tab-vertical====*/
+
+/*====compenent tab-horizontal(usage:news.jsp 要闻概览板块)====*/
+.tab-horizontal .topbar:after{
+	clear: both;
+}
+.tab-horizontal .topbar ul,.tab-horizontal .topbar li{
+	list-style: none;
+}
+.tab-horizontal .topbar ul>li{
+	float: left;
+	margin-right: 20px;
+	font-size: 18px;
+	color: #333;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	min-width: 120px; 
+}
+.tab-horizontal .topbar ul>li:after{
+	clear: both;
+}
+.tab-horizontal .topbar ul>li.active{
+	color: #fff;
+	background-color: #ba2635;
+	padding: 10px;
+	border: 1px solid #ba2635;
+	border-radius: 4px;
+	min-width: 120px
+		
+}
+.tab-horizontal .topbar ul>li.active:hover{
+	color: #fff;
+	border: 1px solid #ba2635;
+}
+.tab-horizontal .topbar ul>li:hover{
+	cursor: pointer;
+	color: #333;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	min-width: 120px; 
+}
+.tab-horizontal .content .block ul{
+	text-align: left;
+}
+.tab-horizontal .content .block span{
+	display: inline-block;
+}
+.tab-horizontal .content .block .title{
+	display: inline-block;
+	width: 70%;
+	overflow: hidden;
+	white-space: nowrap; 
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis; 
+}
+.tab-horizontal .content .block .title>a{	
+	color: #333;	
+}
+.tab-horizontal .content .block .date{
+	float: right;
+}
+.tab-horizontal .content .block .date:AFTER {
+	clear: both;
+}
+/*====end compenent tab-horizontal*/
+
+/*====compenent tab-hor-compact(usage:news.jsp 指数板块)====*/
+.tab-hor-compact .topbar ul,.tab-hor-compact .topbar li{
+	list-style: none;
+	text-align: center;
+}
+.tab-hor-compact .topbar li{
+	float: left;
+	border: 1px solid #ddd;
+	min-width: 33.333333%;
+	padding: 10px 0 10px 0;
+	position: relative;
+}
+.tab-hor-compact .topbar li:after{
+	clear: both;
+}
+.tab-hor-compact .topbar li>.flag-border,.tab-hor-compact .topbar li>.flag-cover{
+	position: absolute;
+}
+.tab-hor-compact .topbar li>.flag-border{
+	color: #ddd;
+	bottom: -5;
+	left: 50%;
+}
+.tab-hor-compact .topbar li>.flag-cover{
+	color: #F2F2F2;
+	bottom:-7px;
+	left: 50%;
+}
+/*====end compenent tab-hor-compact====*/

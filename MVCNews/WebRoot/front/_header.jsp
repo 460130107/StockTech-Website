@@ -20,6 +20,8 @@
 					<a href="front/product.jsp" onFocus="this.blur()">产品</a></li>
 				 <li class='${param.index=="corpration"?"active":"" }'>
 					<a href="front/corpration.jsp" onFocus="this.blur()">合作</a></li>
+				<li class='${param.index=="news"?"active":"" }'>
+					<a href="front/news.jsp" onFocus="this.blur()">咨询中心</a></li>
 				 <li class='${param.index=="about"?"active":"" }'>
 					<a href="front/about.jsp" onFocus="this.blur()">关于我们</a></li>
             </ul>
