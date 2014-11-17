@@ -30,10 +30,10 @@ div{
 <jsp:include page="_header.jsp?index=news"></jsp:include>
 	<div class="container text-center">
 		<!-- hot news -->
-		<div class="row text-left hotnews">
-			<div class="col-lg-4"><img alt="news1" src="front/dist/img/news/news1.jpg"><p class="profile"><a href="">今日头条1</a></p></div>
-			<div class="col-lg-4"><img alt="news2" src="front/dist/img/news/news1.jpg"><p class="profile"><a href="">今日头条2</a></p></div>
-			<div class="col-lg-4"><img alt="news3" src="front/dist/img/news/news1.jpg"><p class="profile"><a href="">今日头条3</a></p></div>
+		<div class="row text-left hotnews" data-type="type1">
+			<div class="col-lg-4"><img alt="news1" src="front/dist/img/news/news1.jpg"><p class="profile"><a href="javascript:viod(0);">今日头条1</a></p></div>
+			<div class="col-lg-4"><img alt="news2" src="front/dist/img/news/news1.jpg"><p class="profile"><a href="javascript:viod(0);">今日头条2</a></p></div>
+			<div class="col-lg-4"><img alt="news3" src="front/dist/img/news/news1.jpg"><p class="profile"><a href="javascript:viod(0);">今日头条3</a></p></div>
 		</div>
 		<!-- end hot news -->
 		<div class="row">
@@ -52,31 +52,31 @@ div{
 							</div>
 							<div class="clearfix"></div>
 							<div class="content mgt20 mgb20">
-								<div class="block" data-aim="js-block1">
+								<div class="block" data-aim="js-block1" data-type="type2">
 									<ul>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会中国去确定举办2016年G20峰会中国去确定举办2016年G20峰会中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会中国去确定举办2016年G20峰会中国去确定举办2016年G20峰会中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
 									</ul>
 								</div>
-								<div class="block hide" data-aim="js-block2">
+								<div class="block hide" data-aim="js-block2" data-type="type3">
 									<ul>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会2</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会2</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会2</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会2</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会2</a></span><span class="date">2014-11-18</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会2</a></span><span class="date">2014-11-18</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会2</a></span><span class="date">2014-11-18</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会2</a></span><span class="date">2014-11-18</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会2</a></span><span class="date">2014-11-18</span></li>
 									</ul>
 								</div>
-								<div class="block hide" data-aim="js-block3">
+								<div class="block hide" data-aim="js-block3" data-type="type4">
 									<ul>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会3</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会3</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会3</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会3</a></span><span class="date">2014-11-16</span></li>
-										<li class="item"><span class="title"><a href="" class="">中国去确定举办2016年G20峰会</a></span><span class="date">2014-11-16</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会3</a></span><span class="date">2014-11-19</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会3</a></span><span class="date">2014-11-19</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会3</a></span><span class="date">2014-11-19</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会3</a></span><span class="date">2014-11-19</span></li>
+										<li class="item"><span class="title"><a href="javascript:viod(0);" class="">中国去确定举办2016年G20峰会3</a></span><span class="date">2014-11-19</span></li>
 									</ul>
 								</div>
 							</div>
@@ -88,49 +88,49 @@ div{
 				<!-- 四大板块 -->
 				<div class="row classify">
 					<!-- 股票市场 -->
-					<div class="col-lg-6 sector">
-						<div class="caption text-left"><span class="title">股票市场</span><span class="more"><a href="">更多&#10174;</a></span></div>
+					<div class="col-lg-6 sector" data-type="type5">
+						<div class="caption text-left"><span class="title">股票市场</span><span class="more"><a href="javascript:viod(0);">更多&#10174;</a></span></div>
 						<ul class="list">
-							<li class=""><span class="title"><a href="">今天你站队了吗？今天你站队了吗？今天你站队了吗？今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>												
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？今天你站队了吗？今天你站队了吗？今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>												
 						</ul>
 					</div>
 					<!-- 基金市场 -->
-					<div class="col-lg-6 sector">
-						<div class="caption text-left"><span class="title">基金市场</span><span class="more"><a href="">更多&#10174;</a></span></div>
+					<div class="col-lg-6 sector" data-type="type6">
+						<div class="caption text-left"><span class="title">基金市场</span><span class="more"><a href="javascript:viod(0);">更多&#10174;</a></span></div>
 						<ul class="list">
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>												
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>												
 						</ul>
 					</div>
 				</div>
 				<div class="row classify">
 					<!-- 债券/外汇 -->
-					<div class="col-lg-6 sector">
-						<div class="caption text-left"><span class="title">债券/外汇</span><span class="more"><a href="">更多&#10174;</a></span></div>
+					<div class="col-lg-6 sector" data-type="type7">
+						<div class="caption text-left"><span class="title">债券/外汇</span><span class="more"><a href="javascript:viod(0);">更多&#10174;</a></span></div>
 						<ul class="list">
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>												
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>												
 						</ul>
 					</div>
 					<!-- 期货市场 -->
-					<div class="col-lg-6 sector">
-						<div class="caption text-left"><span class="title">期货市场</span><span class="more"><a href="">更多&#10174;</a></span></div>
+					<div class="col-lg-6 sector" data-type="type8">
+						<div class="caption text-left"><span class="title">期货市场</span><span class="more"><a href="javascript:viod(0);">更多&#10174;</a></span></div>
 						<ul class="list">
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
-							<li class=""><span class="title"><a href="">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>												
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>
+							<li class=""><span class="title"><a href="javascript:viod(0);">今天你站队了吗？</a></span><span class="date">2014-11-16</span></li>												
 						</ul>
 					</div>
 				</div>
@@ -183,6 +183,82 @@ function switchTab_hor_com(){
 }
 $(".tab-horizontal .topbar li").click(switchTab_hor);
 $(".tab-hor-compact .topbar li").click(switchTab_hor_com);
+
+$(function(){
+	$.ajax({
+		url:"front/test/json",
+		type:"GET",
+		data:{"page":"index","search":"type1,type2,type3,type4,type5,type6,type7,type8"},
+		success:function(msg){
+			var obj=eval("("+msg+")");
+			/*hotnews*/
+			$.each($(".hotnews a"),function(key,val){
+				var str=obj.type1[key].split("+");
+				$(this).text(str[0]);
+				//跳转到具体的某一条新闻
+			});
+			/*overview*/
+			$.each($(".tab-horizontal li.item"),function(key,val){
+				var division=Math.floor(key/5);
+				var modulus=key%5;
+				var date = new Date();
+				switch(division){
+					case 0:	//console.log(obj.type2);
+							var str=obj.type2[modulus].split("+");
+							$(this).children(".title").children("a").text(str[0]);
+							$(this).children(".date").text(str[1]);
+							//跳转到具体某一条新闻
+							break;
+					case 1: //console.log(obj.type3);
+							var str=obj.type3[modulus].split("+");
+							$(this).children(".title").children("a").text(str[0]);
+							$(this).children(".date").text(str[1]);
+							break;
+					case 2: //console.log(obj.type4);
+							var str=obj.type4[modulus].split("+");
+							$(this).children(".title").children("a").text(str[0]);
+							$(this).children(".date").text(str[1]);
+							break;
+				}
+			});
+			/*classify*/
+			$.each($(".classify li"),function(key,val){
+				var division=Math.floor(key/5);
+				var modulus=key%5;
+				var date = new Date();
+				switch(division){
+					case 0:
+							var str=obj.type5[modulus].split("+");
+							$(this).children(".title").children("a").text(str[0]);
+							$(this).children(".date").text(str[1]);
+							//跳转到具体某一条新闻
+						   	break;
+					case 1:
+							var str=obj.type6[modulus].split("+");
+							$(this).children(".title").children("a").text(str[0]);
+							$(this).children(".date").text(str[1]);
+							//跳转到具体某一条新闻
+						   	break;
+					case 2:	
+							var str=obj.type7[modulus].split("+");
+							$(this).children(".title").children("a").text(str[0]);
+							$(this).children(".date").text(str[1]);
+							//跳转到具体某一条新闻
+						   	break;
+					case 3:
+							var str=obj.type8[modulus].split("+");
+							$(this).children(".title").children("a").text(str[0]);
+							$(this).children(".date").text(str[1]);
+							//跳转到具体某一条新闻
+						   	break;
+				}
+			})
+		},
+		error:function(){
+			console.log("get info error");
+		}
+	});
+});
 </script>
 </body>
 </html>

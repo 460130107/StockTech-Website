@@ -1035,3 +1035,10 @@ span.solidline{
 	left: 50%;
 }
 /*====end compenent tab-hor-compact====*/
+
+/*====compenent pagination(usage:news module // rewrite active style in bootstrap)====*/
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+	background-color: #ba2635 !important;
+	border-color: #ba2635;
+}
+/*====end compenent pagination====*/
