@@ -64,102 +64,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</div>
 							</div>							
 						</div>
-						<div class="news">
-							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
-								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
-									<div class="fagement">
-										<p class="title">新闻1+1 all-3</p>
-										<p class="source">新华社新闻</p>
-										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
-									</div>
-								</div>
-							</div>							
-						</div>
-						<div class="news">
-							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
-								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
-									<div class="fagement">
-										<p class="title">新闻1+1 all-4</p>
-										<p class="source">新华社新闻</p>
-										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
-									</div>
-								</div>
-							</div>							
-						</div>
-						<div class="news">
-							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
-								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
-									<div class="fagement">
-										<p class="title">新闻1+1 all-5</p>
-										<p class="source">新华社新闻</p>
-										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
-									</div>
-								</div>
-							</div>							
-						</div>
-						<div class="news">
-							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
-								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
-									<div class="fagement">
-										<p class="title">新闻1+1 all-6</p>
-										<p class="source">新华社新闻</p>
-										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
-									</div>
-								</div>
-							</div>							
-						</div>
-						<div class="news">
-							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
-								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
-									<div class="fagement">
-										<p class="title">新闻1+1 all-7</p>
-										<p class="source">新华社新闻</p>
-										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
-									</div>
-								</div>
-							</div>							
-						</div>
-						<div class="news">
-							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
-								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
-									<div class="fagement">
-										<p class="title">新闻1+1 all-8</p>
-										<p class="source">新华社新闻</p>
-										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
-									</div>
-								</div>
-							</div>							
-						</div>
-						<div class="news">
-							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
-								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
-									<div class="fagement">
-										<p class="title">新闻1+1 all-9</p>
-										<p class="source">新华社新闻</p>
-										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
-									</div>
-								</div>
-							</div>							
-						</div>
-						<div class="news">
-							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
-								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
-									<div class="fagement">
-										<p class="title">新闻1+1 all-10</p>
-										<p class="source">新华社新闻</p>
-										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
-									</div>
-								</div>
-							</div>							
-						</div>
 						
 					</div><!-- end 全部新闻 -->
 					
@@ -281,6 +185,7 @@ $(function(){
 	
 	var total={};
 	total.all,total.type2,total.type3,total.type4;	
+	var newsMsg;
 	/*判断当前显示新闻的类别*/
 	function determinType(){
 		var type=$(".topbar li.active").attr("data-target");
@@ -294,6 +199,7 @@ $(function(){
 		success:function(msg){
 			console.log("get info success");
 			var obj=eval("("+msg+")");
+			newsMsg=obj;
 			total.all=obj.type2.length+obj.type3.length+obj.type4.length;
 			total.type2=obj.type2.length;
 			console.log("total.type2 = "+total.type2);
@@ -301,6 +207,7 @@ $(function(){
 			total.type4=obj.type4.length;
 			reshapePagination();
 			displayPagination();
+			replace(1,2);
 		},
 		error:function(){
 			console.log("get info error");
@@ -315,6 +222,7 @@ $(function(){
 		else if(type.match("2")){tt=total.type2;}
 		else if(type.match("3")){tt=total.type2;}
 		else if(type.match("4")){tt=total.type2;}
+		tt=Math.ceil(tt/2)
 		$(".pagination li").remove();
 		$(".pagination").append('<li><a href="javascript:void(0);" data-dir="pre">&laquo;</a></li>');
 		for(var i=1;i<=tt;i++){
@@ -330,6 +238,7 @@ $(function(){
 		else if(type.match("2")){tt=total.type2;}
 		else if(type.match("3")){tt=total.type2;}
 		else if(type.match("4")){tt=total.type2;}
+		tt=Math.ceil(tt/2)
 		return tt;
 	}
 	/*分页显示*/
@@ -360,12 +269,26 @@ $(function(){
 					$(this).siblings("li").removeClass("active");
 					$(this).addClass("active");
 				}				
-				replace(current);
+				replace(current,NumPerPage);
 			}
 		});
 	}
-	function replace(flag){
+	function replace(current,numPerPage){
 		//console.log("current = "+flag);
+		var type=determinType();
+		var curMsg;
+		if(type.match("all")){curMsg=newsMsg.type2}
+		else if(type.match("2")){curMsg=newsMsg.type2;}
+		else if(type.match("3")){curMsg=newsMsg.type3;}
+		else if(type.match("4")){curMsg=newsMsg.type4;}
+		console.log(curMsg);
+		/* console.log("current news type = "+type);
+		console.log("current page = "+current); */
+		$(".block[data-aim="+type+"] > .news").each(function(key,val){
+			$(this).find(".title").text(curMsg[numPerPage*current-numPerPage+key].title);
+			$(this).find(".source").text(curMsg[numPerPage*current-numPerPage+key].author);
+			$(this).find(".body").text(curMsg[numPerPage*current-numPerPage+key].content);
+		});
 	}
 	
 	/*新闻类别切换*/
@@ -379,6 +302,7 @@ $(function(){
 		/*分页*/
 		reshapePagination();
 		displayPagination();
+		replace(1,2);
 	}
 	$(".tab-horizontal .topbar li").click(switchTab_hor);
 });
