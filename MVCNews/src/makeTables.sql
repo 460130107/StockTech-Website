@@ -79,4 +79,27 @@ CREATE TABLE `news_attachment` (
   KEY `Relationship_1_FK` (`news_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
+
+CREATE TABLE advice
+(
+adviceId int NOT NULL,
+userEmail varchar(20) NOT NULL,
+userName varchar(32),
+adviceInfo text,
+primary key(adviceId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 insert into admin(adminId,adminName,adminPass,adminInfo) values(1,"admin","21232F297A57A5A743894A0E4A801FC3","init");
+
+
+
+USE news_all;
+
+insert into newsinfo(newsInfoId,newsInfoTitle,newsInfoDescribe,newsInfoContent,newsInfoTime,newsAuthor,adminId,newsType,newsInfoState) values(41,"ÎÒÊÇÌâÄ¿","ÎÒÊÇÕªÒª","ÎÒÊÇÄÚÈÝ","2014-11-20 00:00:00","ÎÒÊÇ×÷Õß",1,"type8",1); 
+insert into newsinfo(newsInfoId,newsInfoTitle,newsInfoDescribe,newsInfoContent,newsInfoTime,newsAuthor,adminId,newsType,newsInfoState) values(42,"ÎÒÊÇÌâÄ¿","ÎÒÊÇÕªÒª","ÎÒÊÇÄÚÈÝ","2014-11-20 00:00:00","ÎÒÊÇ×÷Õß",1,"type8",1); 
+insert into newsinfo(newsInfoId,newsInfoTitle,newsInfoDescribe,newsInfoContent,newsInfoTime,newsAuthor,adminId,newsType,newsInfoState) values(43,"ÎÒÊÇÌâÄ¿","ÎÒÊÇÕªÒª","ÎÒÊÇÄÚÈÝ","2014-11-20 00:00:00","ÎÒÊÇ×÷Õß",1,"type8",1); 
+insert into newsinfo(newsInfoId,newsInfoTitle,newsInfoDescribe,newsInfoContent,newsInfoTime,newsAuthor,adminId,newsType,newsInfoState) values(44,"ÎÒÊÇÌâÄ¿","ÎÒÊÇÕªÒª","ÎÒÊÇÄÚÈÝ","2014-11-20 00:00:00","ÎÒÊÇ×÷Õß",1,"type8",1); 
+insert into newsinfo(newsInfoId,newsInfoTitle,newsInfoDescribe,newsInfoContent,newsInfoTime,newsAuthor,adminId,newsType,newsInfoState) values(45,"ÎÒÊÇÌâÄ¿","ÎÒÊÇÕªÒª","ÎÒÊÇÄÚÈÝ","2014-11-20 00:00:00","ÎÒÊÇ×÷Õß",1,"type8",1); 
+select * from newsinfo;

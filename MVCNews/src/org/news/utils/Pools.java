@@ -50,17 +50,17 @@ public class Pools {
 	private static Connection con = null;
 	private static LinkedList<Connection> pools = new LinkedList<Connection>();//用链表表示连接池
 	
-//	static{//初始化连接池，建立若干个连接
-//		config();
-//		try {
-//			Class.forName(driver);
-//			for(int i = 1 ; i <= num ; i++){
-//				pools.addLast(getPoolsConnection());
-//			}
-//		} catch (ClassNotFoundException e) {
-//			e.printStackTrace();
-//		}
-//	}
+	static{//初始化连接池，建立若干个连接
+		config();
+		try {
+			Class.forName(driver);
+			for(int i = 1 ; i <= num ; i++){
+				pools.addLast(getPoolsConnection());
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public static void config() {
 		//读取系统配置

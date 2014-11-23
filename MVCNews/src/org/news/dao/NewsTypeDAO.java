@@ -38,8 +38,8 @@ public class NewsTypeDAO {
 		boolean b = false;//操作成功与否
 		sql = "insert into newstype(newsTypeId,newsTypeName,newsTypeDescripe) " +
 				"values(?,?,?)"; 
-		
-		con = DB_UTILS.getConnection();//获取连接
+		con = DB_UTILS.getConnectionbyjdbc();
+		//con = DB_UTILS.getConnection();//获取连接
 		try {
 			pstmt = con.prepareStatement(sql);							//实例化操作
 			String newsTypeName= newsType.getNewsTypeName();
@@ -59,7 +59,8 @@ public class NewsTypeDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return b;
 	}
@@ -72,8 +73,8 @@ public class NewsTypeDAO {
 	public boolean deleteNewsType(ArrayList<Integer> newsTypeIds) {
 		boolean b = false;//操作成功与否
 		sql = "delete from newstype where newsTypeId = ?"; 
-		con = DB_UTILS.getConnection();//获取连接
-		
+		//con = DB_UTILS.getConnection();//获取连接
+		con = DB_UTILS.getConnectionbyjdbc();
 		/*循环执行SQL语句，对每个频道分别删除*/
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -87,7 +88,8 @@ public class NewsTypeDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return b;
 	}
@@ -98,7 +100,8 @@ public class NewsTypeDAO {
 	 * @return 频道
 	 */
 	public NewsType updateNewsType(NewsType newsType) {
-	   con = DB_UTILS.getConnection();
+	   //con = DB_UTILS.getConnection();
+		con = DB_UTILS.getConnectionbyjdbc();
 	   sql = "update newstype set newsTypeName = ? ,newsTypeDescripe = ?"
 				+ " where newsTypeId = ?";
 	   
@@ -121,7 +124,8 @@ public class NewsTypeDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return newsType;
 	}
@@ -131,7 +135,8 @@ public class NewsTypeDAO {
 	 * @return 频道集合
 	 */
      public List<NewsType> getAllNewsType(){
-    	 con = DB_UTILS.getConnection();
+    	 //con = DB_UTILS.getConnection();
+    	 con = DB_UTILS.getConnectionbyjdbc();
     	 List<NewsType> allNewsType = new ArrayList<NewsType>();		//定义集合，接收全部数据
     	 sql = "select * from newstype order by newsTypeId";
     	 
@@ -151,7 +156,8 @@ public class NewsTypeDAO {
     	 }catch (SQLException e) {
  			e.printStackTrace();
  		} finally {
- 			DB_UTILS.close(con, pstmt, rs);
+ 			//DB_UTILS.close(con, pstmt, rs);
+ 			DB_UTILS.closejdbc(con, pstmt, rs);
  		}
  		
     	 return allNewsType;
@@ -165,8 +171,8 @@ public class NewsTypeDAO {
      public NewsType findNewsTypeById(int typeId){
     	 NewsType type = null;//保存结果
     	 sql = "select * from newstype where newsTypeId = ?";
-    	 
- 		con = DB_UTILS.getConnection();//获取连接
+    	 con = DB_UTILS.getConnectionbyjdbc();
+ 		//con = DB_UTILS.getConnection();//获取连接
 		try {
 			pstmt = con.prepareStatement(sql);							//实例化操作
 			pstmt.setInt(1, typeId);
@@ -180,9 +186,12 @@ public class NewsTypeDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		
 		 return type;    	 
      }
+      
+
 }

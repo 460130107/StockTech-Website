@@ -57,17 +57,17 @@ public class DB_UTILS {
 	 * @return
 	 */
 	public static Connection getConnectionbyjdbc(){
-				
+		/*		
 		String dbDriver = "com.mysql.jdbc.Driver";   
 		String dbUrl = "jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_stocktech";   
 		String dbUser = "lyjxmwm422";           
 		String dbPassword = "5xmmyxk4h5m1xwh2hy2313wz02jimj04myi3353x";  
-		/*	
+		*/		
 		String dbDriver = "com.mysql.jdbc.Driver";   // 与本地设置相同
 		String dbUrl = "jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8";   
 		String dbUser = "root";           // 为[应用信息]->[汇总信息]->[key]中的access key
 		String dbPassword = "root";    // 为[应用信息]->[汇总信息]->[key]中的secret key
-		*/
+	
 			
 		try{
 			

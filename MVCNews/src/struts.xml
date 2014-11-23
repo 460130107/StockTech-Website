@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 所有的页面都要进行登录验证，未登录进入登录界面 -->
+	<!-- 定义权限检查拦截器 -->
+		
+	 	
+	<package name="global" extends="struts-default">
+ <!-- 
+		<interceptors>
+			<interceptor name="authority" class="org.mystock.utils.AuthorityInterceptor">
+				<param name="allowAction">userLogin</param>
+			</interceptor>
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="authority" />
+			</interceptor-stack>			
+		</interceptors>
+	 
+		<default-interceptor-ref name="mydefault" />
+	  
+		<global-results>
+			<result name="error">/WEB-INF/pages/errors.jsp</result>
+			<result name="login">/WEB-INF/pages/account.jsp</result>
+			<result name="input">/WEB-INF/pages/errors.jsp</result>
+		</global-results>	
+		-->	
+	</package>
+	  	
+	  	
+	  	
+	<package name="default" namespace="/" extends="global">
+ 
+	    <action name="UserLoginAction" class="org.news.action.UserLoginAction">
+			<result name="success">/welcome.jsp</result>
+			<result name="error">/front/account.jsp</result>
+		</action>
+		<!-- 
+		<action name="UserLogoutAction" class="org.mystock.action.UserLogout">
+			<result name="success">/WEB-INF/pages/account.jsp</result>
+		</action>
+	 	
+	  -->
+	    <action name="UserRegisterAction" class="org.news.action.UserRegisterAction">
+			<result name="success">/regist_do.jsp</result>
+			<result name="error">/regist_do.jsp</result>
+		</action>
+	 
+	 
+	 	<action name="AdviceInfoAction" class="org.news.action.AdviceInfoAction">
+			<result name="success">/front/advice_do.jsp</result>
+			<result name="error">front/advice_do.jsp</result>
+		</action>
+		
+		<action name="DownloadAction" class="org.news.action.DownloadAction">
+			<result name="success">/front/index.jsp</result>
+			<result name="error">/front/index.jsp</result>
+		</action>
+		
+		<!-- 通用的Action，*表示可以处理任意的请求 -->
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/front/{1}.jsp</result>
+		</action>
+
+		<action name="top">
+			<result>/WEB-INF/back/top.jsp</result>
+		</action>		
+		<action name="left">
+			<result>/WEB-INF/back/left.jsp</result>
+		</action>
+		<action name="right">
+			<result>/WEB-INF/back/right.jsp</result>
+		</action>
+	
+	</package>
+	
+	<!-- 全局国际化 -->
+<!-- 
+	<constant name="struts.multipart.maxSize" value="1073741824"/>
+	<constant name="struts.custom.i18n.resources" value="mess"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+	<include file="struts-back.xml" />
+	 --> 
+	 
+	
+	<package name="interface" namespace="/interface" extends="json-default">
+		<!-- 新闻列表 -->
+		<action name="acquireHomepageAction" class="org.news.action.NewsInterfaceAction" method="acquireHomepageAction">
+			<result type="json" name="success">
+            	<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+            <result type="json" name="error">
+                <param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+		</action>
+		
+		<action name="acquireNewsByTypeAction" class="org.news.action.NewsInterfaceAction" method="acquireNewsByTypeAction">
+			<result type="json" name="success">
+            	<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+            <result type="json" name="error">
+                <param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+		</action>
+		
+		<action name="acquirenewAction" class="org.news.action.NewsInterfaceAction" method="acquirenewAction">
+			<result type="json" name="success">
+            	<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+            <result type="json" name="error">
+                <param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+		</action>
+		
+		<action name="TestAction" class="org.news.action.TestAction" method="forTest">
+			<result type="json" name="success">
+            	<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+            <result type="json" name="error">
+                <param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+		</action>
+		
+		<action name="test2Action" class="com.stockii.httpclient.Test2Action">
+			<result>
+				/test2.jsp
+			</result>
+		</action>
+		
+		
+	</package>
+
+	<!-- 管理员增删改 -->
+	<package name="admin" namespace="/back/admin/admin" extends="global">
+		 
+		 <action name="Admin_show" class="org.news.action.AdminAction" method="show">
+			<result name="success">/WEB-INF/back/admin/admin/admin_show.jsp</result>
+			<result name="error">/WebRoot/errors.jsp</result>
+		</action>
+		<action name="Admin_list" class="org.news.action.AdminAction" method="list">
+			<result name="success">/WEB-INF/back/admin/admin/admin_list.jsp</result>
+		</action>
+		
+		
+		<action name="Admin_insert_jsp">
+			<result>/WEB-INF/back/admin/admin/admin_insert.jsp</result>
+		</action>
+		<action name="Admin_insert" class="org.news.action.AdminAction" method="insert">
+			<result name="success">/WEB-INF/back/admin/admin/admin_operate_do.jsp</result>
+			<result name="error">/WebRoot/errors.jsp</result>
+		</action>
+	
+		<action name="Admin_updatepre" class="org.news.action.AdminAction" method="updatepre">
+			<result name="success">
+				/WEB-INF/back/admin/admin/admin_update.jsp
+			</result>
+		</action>
+		<action name="Admin_update" class="org.news.action.AdminAction" method="update">
+			<result name="success">
+				/WEB-INF/back/admin/admin/admin_operate_do.jsp
+			</result>
+		</action>
+		
+		<action name="Admin_delete" class="org.news.action.AdminAction" method="delete">
+			<result name="success">
+				/WEB-INF/back/admin/admin/admin_operate_do.jsp
+			</result>
+		</action>
+	 	 
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/admin/admin/{1}.jsp</result>
+		</action>
+	</package>	
+	
+	<!-- 新闻增删改 -->
+	<package name="newsinfo" namespace="/back/admin/newsinfo" extends="json-default">
+		<action name="NewsInfo_insertpre" class="org.news.action.NewsInfoAction" method="insertpre" >
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_insert.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+		<action name="NewsInfo_insert" class="org.news.action.NewsInfoAction" method="insert">			
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_insert_do.jsp</result>
+			<result name="forward">/WEB-INF/back/login.jsp</result>
+			<result name="error">/WEB-INF/back/admin/newsinfo/newsinfo_insert.jsp</result>
+		</action>
+		
+		<action name="NewsInfo_show" class="org.news.action.NewsInfoAction" method="show">
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_show.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+		<action name="NewsInfo_list" class="org.news.action.NewsInfoAction" method="list" >
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_list.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+		
+		<action name="NewsInfo_update" method="update" class="org.news.action.NewsInfoAction">		
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_operate_do.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+
+		<action name="NewsInfo_updatepre" method="updatepre" class="org.news.action.NewsInfoAction">
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_update.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+		
+		<action name="NewsInfo_delete" method="delete" class="org.news.action.NewsInfoAction">
+			<result name="success">/WEB-INF/back/admin/newsinfo/newsinfo_operate_do.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+		
+		<action name="uploadAction" class="org.news.action.UploadAction" method="upload">
+			<result type="json" name="success">
+            	<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+            <result type="json" name="error">
+                <param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+            </result>
+		</action>
+
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/admin/newsinfo/{1}.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 新闻类型增删改 -->	
+	<package name="newstype" namespace="/back/admin/newstype" extends="global">
+	
+		<action name="NewsType_insert_jsp">
+			<result>/WEB-INF/back/admin/newstype/newstype_insert.jsp</result>
+		</action>
+	
+		<action name="NewsType_insert" method="insert" class="org.news.action.NewsTypeAction">
+			<result name="success">/WEB-INF/back/admin/newstype/newstype_operate_do.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+		
+		<action name="NewsType_list" method="list" class="org.news.action.NewsTypeAction">
+			<result name="success">/WEB-INF/back/admin/newstype/newstype_list.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+
+		<action name="NewsType_show" method="show" class="org.news.action.NewsTypeAction">
+			<result name="success">/WEB-INF/back/admin/newstype/newstype_show.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+		<action name="NewsType_update"  method="update" class="org.news.action.NewsTypeAction">
+			<result name="success">/WEB-INF/back/admin/newstype/newstype_operate_do.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+		<action name="NewsType_updatepre" method="updatepre" class="org.news.action.NewsTypeAction">
+			<result name="success">/WEB-INF/back/admin/newstype/newstype_update.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+		<action name="NewsType_delete" method="delete" class="org.news.action.NewsTypeAction">
+			<result name="success">/WEB-INF/back/admin/newstype/newstype_operate_do.jsp</result>
+			<result name="error">/errors.jsp</result>
+		</action>
+		
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/admin/newstype/{1}.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 图片上传 -->	
+	<package name="photo" namespace="/back/admin/photo" extends="global">
+	
+		<action name="photoUpload">
+			<result>/WEB-INF/back/admin/photo/PhotoUpload.jsp</result>
+		</action>
+		
+		<action name="Image_upload" method="uploadImage" class="org.news.action.FileUploadAction">
+			<!-- 不超过1G -->
+			<!--  
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1073741824</param>
+				<param name="allowedTypes">
+					application/octet-stream,image/x-ms-bmp,image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/pjpeg,image/gif,image/x-png,
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />		
+				-->
+			<result name="success">/WEB-INF/back/admin/photo/images_operate_do.jsp</result>	
+		</action>
+		
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/admin/newstype/{1}.jsp</result>
+		</action>
+		
+		<action name="Image_list" method="imagelist" class="org.news.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/admin/photo/ImageList.jsp
+			</result>
+		</action>
+		
+		<action name="Image_delete" method="delete"
+			class="org.news.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/images_operate_do.jsp
+			</result>
+		</action>
+		<action name="File_upload" method="upload" class="org.news.action.FileUploadAction">
+			<!-- 不超过1G -->
+			<!-- 
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1073741824</param>
+				<param name="allowedTypes">
+					application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,application/octet-stream,
+					image/x-ms-bmp,image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/pjpeg,image/gif,image/x-png,
+					application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+					application/pdf,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,
+					text/plain,application/rtf,text/xml,application/xml
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />	
+			 -->		
+		</action>
+		
+
+		<action name="File_download" class="org.news.action.FileUploadAction">
+			<result name="success" type="stream">
+				<param name="contentType">text/plain;charset=utf-8</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+
+		
+	</package>
+	
+	
+	<!-- 后台管理员登陆 退出 ，验证-->
+	<package name="back" namespace="/back" extends="global">
+		<action name="validateName" class="org.news.action.ValidateNameAction" >
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">tip</param>
+			</result>
+		</action>
+		
+		<action name="adminLogout" class="org.news.action.AdminLogoutAction">
+			<result name="success">/back/login.jsp</result>
+		</action>
+		
+		<action name="adminLogin" class="org.news.action.AdminLoginAction">
+			<result name="success">/WEB-INF/back/index.htm</result>
+			<result name="error">/front/index.jsp</result>
+		</action>
+		
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/{1}.jsp</result>
+		</action>
+		
+	</package>
+	
+
+</struts>    

@@ -7,12 +7,19 @@
  */
 package org.news.model;
 
+import java.io.Serializable;
+
 /**
  * 管理员信息PO
  * @author tt
  * @version 14.6.18
  */
-public class Admin {
+public class Admin implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -233870229087971100L;
 	
 	private int adminId;		//管理员Id
 	private String adminName;	//管理员用户

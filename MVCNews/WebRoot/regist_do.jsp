@@ -1,6 +1,6 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-	int result = (Integer)request.getAttribute("result");
+	int result = Integer.valueOf((String)request.getAttribute("result"));
 	String user = (String)request.getAttribute("user");
 %>
 <center>

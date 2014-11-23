@@ -49,6 +49,14 @@ public class Constant {
 			this.index = index;
 		}
 	}
+	
+	
+	public static enum Type{
+		MEMBER,
+		ADMIN,
+		NEWSTYPE,
+		NEWSINFO
+	}
 }
 
 

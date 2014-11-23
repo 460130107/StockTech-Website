@@ -217,4 +217,25 @@ public class NewsTypeService {
 //		String[] names = typesName.split(",");
 //		return names;
 //	}
+	
+	
+	/**
+	 * 根据名称找到对应的类别
+	 * @param name
+	 * @return
+	 */
+	
+	public boolean findNewsTypeName(String name){
+		/*
+		if (newsTypeDAO.findNewsTypeByName(name) == null){
+			return false;
+		}else {
+			return true;
+		}
+		*/
+		return true;
+			
+	}
+	
+	
 }

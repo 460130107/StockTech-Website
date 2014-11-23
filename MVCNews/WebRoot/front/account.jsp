@@ -32,7 +32,7 @@
 				<div class="panel panel-default">
     			<div class="panel-body">
     				<%=request.getAttribute("info")!=null?request.getAttribute("info"):""%>
-      				<form action="UserLoginServlet" method="post" onSubmit="return validate(this);">
+      				<form action="UserLoginAction" method="post" onSubmit="return validate(this);">
       					<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓">
       					<input name="authenticity_token" type="hidden" value="3EliZ07kHTqkHCEcNDJegiCF6qNH3xDxQLU+K8H6+rk="></div>
         				<div class="form-group">

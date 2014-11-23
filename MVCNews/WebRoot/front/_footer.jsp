@@ -42,7 +42,7 @@
    		
    		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 sections">
    			<p class="title">您的意见</p>
-	   		<form class="form-horizontal" role="form" action="AdviceInfoServlet" method="post">
+	   		<form class="form-horizontal" role="form" action="AdviceInfoAction" method="post">
 	   			<div class="form-group">
     				<div class="col-md-12">
       					<input type="email" class="form-control input-gray" id="inputEmail" placeholder="您的邮箱" name="userEmail">

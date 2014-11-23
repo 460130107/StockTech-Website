@@ -39,7 +39,8 @@ public class AdminDAO {
 		boolean b = false;//操作成功与否
 		sql = "select count(adminId) from admin where adminName = ? and adminPass = ?";
 		
-		con = DB_UTILS.getConnection();//获取连接
+		//con = DB_UTILS.getConnection();//获取连接
+		con = DB_UTILS.getConnectionbyjdbc();
 		try {
 			pstmt = con.prepareStatement(sql);							//实例化操作
 			String adminName = user.getAdminName();
@@ -58,7 +59,8 @@ public class AdminDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return b;
 	}
@@ -73,7 +75,8 @@ public class AdminDAO {
 		sql = "insert into admin(adminId,adminName,adminPass,adminInfo) " +
 				"values(?,?,?,?)"; 
 		
-		con = DB_UTILS.getConnection();//获取连接
+		//con = DB_UTILS.getConnection();//获取连接
+		con = DB_UTILS.getConnectionbyjdbc();
 		try {
 			pstmt = con.prepareStatement(sql);//实例化操作
 			int adminId = user.getAdminId();
@@ -94,7 +97,8 @@ public class AdminDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return b;
 	}
@@ -107,8 +111,8 @@ public class AdminDAO {
 	public boolean deleteAdmins(int[] adminIds) {
 		boolean b = false;//操作成功与否
 		sql = "delete from admin where adminId = ?"; 
-		con = DB_UTILS.getConnection();//获取连接
-		
+		//con = DB_UTILS.getConnection();//获取连接
+		con = DB_UTILS.getConnectionbyjdbc();
 		/*循环执行SQL语句，对每个管理员分别删除*/
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -122,7 +126,8 @@ public class AdminDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return b;
 	}
@@ -133,7 +138,8 @@ public class AdminDAO {
 	 * @return 管理员
 	 */
 	public Admin updateAdmin(Admin admin) {
-	   con = DB_UTILS.getConnection();
+	   //con = DB_UTILS.getConnection();
+		con = DB_UTILS.getConnectionbyjdbc();
 	   sql = "update admin set adminName = ? ,adminPass = ? ,adminInfo = ?"
 				+ " where adminId = ?";
 	   
@@ -157,7 +163,8 @@ public class AdminDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return admin;
 	}
@@ -169,8 +176,9 @@ public class AdminDAO {
      public List<Admin> getAllAdmin(){
     	 List<Admin> admins = new ArrayList<Admin>();		//定义集合，接收全部数据
     	 sql = "select * from admin order by adminId";
-    	 con = DB_UTILS.getConnection();
-    	 
+    	 //con = DB_UTILS.getConnection();
+    	 con= DB_UTILS.getConnectionbyjdbc();
+    			 
     	 try {
  			 pstmt = con.prepareStatement(sql);		//实例化查询对象
  			 rs = pstmt.executeQuery();				//取得查询结果
@@ -188,7 +196,8 @@ public class AdminDAO {
     	 }catch (SQLException e) {
  			e.printStackTrace();
  		} finally {
- 			DB_UTILS.close(con, pstmt, rs);
+ 			//DB_UTILS.close(con, pstmt, rs);
+ 			DB_UTILS.closejdbc(con, pstmt, rs);
  		}
  		
     	 return admins;
@@ -202,8 +211,8 @@ public class AdminDAO {
      public Admin findAdminById(int adminId){
     	 Admin admin = null;//保存管理员结果
     	 sql = "select * from admin where adminId = ?";
-    	 
- 		con = DB_UTILS.getConnection();//获取连接
+    	 con = DB_UTILS.getConnectionbyjdbc();
+ 		//con = DB_UTILS.getConnection();//获取连接
 		try {
 			pstmt = con.prepareStatement(sql);							//实例化操作
 			pstmt.setInt(1, adminId);
@@ -218,7 +227,8 @@ public class AdminDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		
 		 return admin;    	 
@@ -232,8 +242,8 @@ public class AdminDAO {
      public Admin findAdminByName(String adminName){
     	 Admin admin = null;//保存管理员结果
     	 sql = "select * from admin where adminName = ?";
-    	 
- 		con = DB_UTILS.getConnection();//获取连接
+    	 con = DB_UTILS.getConnectionbyjdbc();
+ 		//con = DB_UTILS.getConnection();//获取连接
 		try {
 			pstmt = con.prepareStatement(sql);							//实例化操作
 			pstmt.setString(1, adminName);
@@ -248,10 +258,10 @@ public class AdminDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
-		
-		 return admin;    	 
+		return admin;    	 
      }
      
      /**

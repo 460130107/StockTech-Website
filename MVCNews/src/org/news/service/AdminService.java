@@ -108,4 +108,18 @@ public class AdminService {
        public long getCount(String keyword){
     	   return adminDAO.getCount(keyword);
        }
+       
+       
+       /**
+        * 查找管理员是否存在 
+        * @param userName
+        * @return
+        */
+   		public boolean findAdminName(String userName) {
+	   		if (adminDAO.findAdminByName(userName) != null){
+	   			return true;
+	   		}
+	   		return false;
+   		}
+   		
 }

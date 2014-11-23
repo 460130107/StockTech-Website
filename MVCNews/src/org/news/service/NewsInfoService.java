@@ -58,6 +58,11 @@ public class NewsInfoService {
 		return newsInfoDAO.addNewsInfo(newsInfo);
 	}
 	
+	public boolean addNewsInfo(NewsInfo newsInfo){
+		
+		return newsInfoDAO.addNewsInfo(newsInfo);
+	}
+	
 	/**
 	 * 批量删除服务
 	 * @param newsInfoIds
@@ -66,9 +71,11 @@ public class NewsInfoService {
 	public boolean deleteNewsInfo(int[] newsInfoIds) {
 		for (int i=0;i<newsInfoIds.length;++i){
 			//有附件才删除附件
+			/*
 			if(attachmentDAO.findNewsAttachmentByNewsId(newsInfoIds[i]).size()>0&&!attachmentDAO.deleteNewsAttachmentByNewsId(newsInfoIds[i])){
 				return false;
 			}
+			*/
 		}
 
 		return newsInfoDAO.deleteNewsInfo(newsInfoIds);
@@ -110,6 +117,15 @@ public class NewsInfoService {
 	    }
 	}
 	
+	
+	public boolean updateNewsInformation(NewsInfo newsInfo) {
+		if (newsInfoDAO.updateNewsInformation(newsInfo) == null){
+			return false;
+	    }else{
+	    	return true;
+	    }
+	}
+	
 	/**
 	 * 查询所有的新闻信息
 	 * @return 新闻集合
@@ -138,24 +154,33 @@ public class NewsInfoService {
     	 return newsInfoDAO.getAllNewsInfo(keyword,currentPage,lineSize);
      }
      
+     
+     
      /**
+      * .3
   	 * 根据文章类型查询的相关的新闻
   	 * @param newsType 
   	 * @return 新闻集合
   	 */
        public List<NewsInfo> getAllNewsInfoByType(String newsType){
-    	   List<NewsInfo> newsInfos = getAllNewsInfo();
+    	   List<NewsInfo> newsInfos = newsInfoDAO.getAllNewsInfoByType(newsType);
+    	   /*
     	   List<NewsInfo> results = new ArrayList<NewsInfo>();
     	   
     	   for (NewsInfo news:newsInfos){
     		   if (news.getNewsType().contains(newsType+",")){
     			   results.add(news);
     		   }
-    	   }
+    	   }   	 
+    	   
     	   return results;
+    	   */
+    	   return newsInfos;
        }
+            
        
        /**
+        * .2
      	 * 根据文章类型查询的相关的新闻
      	 * @param newsType 
      	 * @param currentPage 当前页
@@ -164,6 +189,7 @@ public class NewsInfoService {
      	 */
           public List<NewsInfo> getAllNewsInfoByType(String newsType, int currentPage, int lineSize){
         	  List<NewsInfo> newsInfos = getAllNewsInfoByType(newsType);
+        	  
         	  int floor = (currentPage - 1) * lineSize ;//下限
         	  int celling = currentPage * lineSize ; //上限
         	 
@@ -172,10 +198,31 @@ public class NewsInfoService {
         		  if (i >= floor && i < celling){
         			  result.add(newsInfos.get(i));
         		  }
-        	  }
-        	  
+        	  }       	 
+        	
         	  return result;
           }
+          
+          /**
+           * .1
+       	 * 根据文章类型查询的相关的新闻
+       	 * @param newsType 
+       	 * @param currentPage 当前页
+       	 * @param lineSize 每页大小
+       	 * @return 新闻集合
+       	 * @author zxy
+       	 */
+            public List<NewsIndex> getNewsInfoByType(String newsType, int currentPage, int lineSize){
+            	
+            	List<NewsInfo> all = this.getAllNewsInfoByType(newsType, currentPage, lineSize);
+    	   		ArrayList<NewsIndex> index = new ArrayList<NewsIndex>();
+    	   		for (int i = 0; i<all.size(); ++i){
+    	   			index.add(this.toNewsIndex(all.get(i)));
+    	   		}    
+    	   		
+    	   		return index;
+            }
+          
        
        /**
         * 获取查询结果的数量
@@ -222,4 +269,124 @@ public class NewsInfoService {
     	   }
     	   return newsVO;    	   
        }
+       
+       
+       
+       /**
+        * 
+   	 * 获取某一类型的所有文章
+   	 */
+       /*
+   		public List<NewsIndex> getNewsByType(String newsType){
+   		
+	   		if (this.getAllNewsInfoByType(newsType)== null){
+	   			return null;
+	   		}
+	   		
+	   		List<NewsInfo> all = this.getAllNewsInfoByType(newsType);//获取某类型所有新闻
+	   		ArrayList<NewsIndex> index = new ArrayList<NewsIndex>();
+	   		
+	   		for (int i = 0; i<all.size(); ++i){
+	   			index.add(this.toNewsIndex(all.get(i)));
+	   		}
+	   		return index;
+   		}
+       */
+       
+        /**
+         * .
+   	   	 * 获取某一类型的前几条新闻(按时间)
+   	   	 */
+   	   		public List<NewsIndex> getFewNewsByType(String newsType,int num){
+   	   		
+   		   		if (this.getAllNewsInfoByType(newsType)== null){
+   		   			return null;
+   		   		}
+   		   		
+   		   		List<NewsInfo> all = this.getAllNewsInfoByType(newsType);//获取某类型所有新闻
+   		   		ArrayList<NewsIndex> index = new ArrayList<NewsIndex>();
+   		   		
+   		   		if(num > all.size()){
+	   		   		for (int i = 0; i<all.size(); ++i){
+	   		   			index.add(this.toNewsIndex(all.get(i)));
+	   		   		}
+   		   		}else{
+	   		   		for (int i = 0; i<num; ++i){
+	   		   			index.add(this.toNewsIndex(all.get(i)));
+	   		   		}
+   		   		}
+   		   		return index;
+   	   		}
+   	   		
+   	   		
+   	   	 /**
+   	   	  * .
+   	   	 * 获取某一类型的新闻总数
+   	   	 */
+   	   		public long getCountByType(String newsType){
+   		   		long count = newsInfoDAO.getCountByType(newsType);//获取某类型的新闻数	
+   		   		return count;
+   	   		}
+   	   		
+   	   		
+   	   		
+   	   		
+   	   	/**
+   	   	 * .
+   	   	 * 获取某几种类型的新闻
+   	   	 */
+   	   		public List<NewsIndex> getNewsByTypes(String[] newsTypes){
+   	   			
+		   		//List<NewsInfo> all = newsInfoDAO.getNewsByTypes(newsTypes);//获取某类型所有新闻
+   	   			List<NewsInfo> all = newsInfoDAO.getAllNewsInfo();
+   	   			
+   	   			List<NewsInfo> results = new ArrayList<NewsInfo>();
+     	   /*
+   	   			for(int i=0;i<newsTypes.length;i++){
+	   	   			for (NewsInfo news:all){
+	   	   				if (news.getNewsType().contains(newsTypes[i]+",")){
+	   	   					results.add(news);
+	   	   				}
+	   	   			}   
+   	   			}
+   	   			*/
+   	   			for(int i=0;i<newsTypes.length;i++){
+	   	   			for (NewsInfo news:all){
+	   	   				if (news.getNewsType().contains(newsTypes[i])){
+	   	   					results.add(news);
+	   	   				}
+	   	   			}   
+   	   			}
+ 	   			
+		   		ArrayList<NewsIndex> index = new ArrayList<NewsIndex>();
+		   		
+		   		for (int i = 0; i<all.size(); ++i){
+   		   			index.add(this.toNewsIndex(all.get(i)));
+   		   		}
+		   		return index;
+   	   		}	
+   	   		
+   	   	/**
+   	   	 * .
+   	     	 * 分页获取某几类新闻
+   	     	 * @param newsType 
+   	     	 * @param currentPage 当前页
+   	     	 * @param lineSize 每页大小
+   	     	 * @return 新闻集合
+   	     	 */
+   	          public List<NewsIndex> getNewsByTypes(String[] newsTypes, int currentPage, int lineSize){
+   	        	  
+   	        	  List<NewsIndex> newsInfos = getNewsByTypes(newsTypes);
+   	        	  int floor = (currentPage - 1) * lineSize ;//下限
+   	        	  int celling = currentPage * lineSize ; //上限
+   	        	 
+   	        	  List<NewsIndex> result = new ArrayList<NewsIndex>();
+   	        	  for (int i = 0; i < newsInfos.size(); ++i){
+   	        		  if (i >= floor && i < celling){
+   	        			  result.add(newsInfos.get(i));
+   	        		  }
+   	        	  }
+   	        	  return result;
+   	          }  
+
 }

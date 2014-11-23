@@ -40,8 +40,8 @@ public class NewsInfoDAO {
 		boolean b = false;//操作成功与否
 		sql = "insert into newsinfo(newsInfoId,newsInfoTitle,newsInfoDescribe,newsInfoContent,newsInfoTime,newsAuthor,adminId,newsType,newsInfoState) " +
 				"values(?,?,?,?,?,?,?,?,?)"; 
-		
-		con = DB_UTILS.getConnection();//获取连接
+		con = DB_UTILS.getConnectionbyjdbc();
+		//con = DB_UTILS.getConnection();//获取连接
 		try {
 			pstmt = con.prepareStatement(sql);							//实例化操作
 			String newsInfoTitle = newsInfo.getNewsInfoTitle();
@@ -52,6 +52,7 @@ public class NewsInfoDAO {
 			int adminId = newsInfo.getAdminId();
 			String newsType = newsInfo.getNewsType();
 			int newsInfoId = newsInfo.getNewsInfoId();
+			
 			int newsInfoState = newsInfo.getNewsInfoState();
 
 			//按照类型设置新闻信息具体的属性值
@@ -73,7 +74,8 @@ public class NewsInfoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return b;
 	}
@@ -86,8 +88,8 @@ public class NewsInfoDAO {
 	public boolean deleteNewsInfo(int[] newsInfoIds) {
 		boolean b = false;//操作成功与否
 		sql = "delete from newsInfo where newsInfoId = ?"; 
-		con = DB_UTILS.getConnection();//获取连接
-		
+		//con = DB_UTILS.getConnection();//获取连接
+		con = DB_UTILS.getConnectionbyjdbc();
 		/*循环执行SQL语句，对每个文章分别删除*/
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -101,7 +103,8 @@ public class NewsInfoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return b;
 	}
@@ -114,8 +117,8 @@ public class NewsInfoDAO {
 	 */
 	public NewsInfo searchNewsInfo(int newsInfoId) {
 		sql = "select * from newsInfo where newsInfoId = ?";
-		con = DB_UTILS.getConnection();
-		
+		//con = DB_UTILS.getConnection();
+		con = DB_UTILS.getConnectionbyjdbc();
 		NewsInfo newsInfo = null;//查询到的结果
 		try {
 			pstmt = con.prepareStatement(sql);		//实例化操作
@@ -138,7 +141,8 @@ public class NewsInfoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return newsInfo;//返回结果
 	}
@@ -149,7 +153,8 @@ public class NewsInfoDAO {
 	 * @return 文章内容
 	 */
 	public NewsInfo updateNewsInformation(NewsInfo newsInfo) {
-	   con = DB_UTILS.getConnection();
+	   //con = DB_UTILS.getConnection();
+	   con = DB_UTILS.getConnectionbyjdbc();
 	   sql = "update newsInfo set newsInfoTitle = ? ,newsInfoDescribe = ?,newsInfoContent = ?,"
 				+ "newsInfoTime = ?,newsAuthor = ?,adminId = ? , newsType = ? ,newsInfoState = ? where newsInfoId = ?";
 	   
@@ -183,7 +188,8 @@ public class NewsInfoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DB_UTILS.close(con, pstmt, rs);
+			//DB_UTILS.close(con, pstmt, rs);
+			DB_UTILS.closejdbc(con, pstmt, rs);
 		}
 		return newsInfo;
 	}
@@ -194,9 +200,9 @@ public class NewsInfoDAO {
 	 */
      public List<NewsInfo> getAllNewsInfo(){
     	 List<NewsInfo> allNews = new ArrayList<NewsInfo>();		//定义集合，接收全部数据
-    	 sql = "select * from newsInfo order by newsInfoId desc";
-    	 con = DB_UTILS.getConnection();
-    	 
+    	 sql = "select * from newsInfo order by newsInfoTime desc";
+    	 //con = DB_UTILS.getConnection();
+    	 con = DB_UTILS.getConnectionbyjdbc();
     	 try {
  			 pstmt = con.prepareStatement(sql);		//实例化查询对象
  			 rs = pstmt.executeQuery();				//取得查询结果
@@ -217,11 +223,11 @@ public class NewsInfoDAO {
  							newsAuthor, adminId, newsType, newsInfoState);
  					allNews.add(newsInfo);
  				}
- 			
     	 }catch (SQLException e) {
  			e.printStackTrace();
  		} finally {
- 			DB_UTILS.close(con, pstmt, rs);
+ 			//DB_UTILS.close(con, pstmt, rs);
+ 			DB_UTILS.closejdbc(con, pstmt, rs);
  		}
  		
     	 return allNews;
@@ -293,8 +299,8 @@ public class NewsInfoDAO {
 	 		   " or newsInfoTime like binary ?" +
 	 		   " or newsType like binary ?" +
 	 		   " or newsAuthor like binary ?  order by newsInfoId desc limit ?,?"; //模糊匹配
-    	 con = DB_UTILS.getConnection();
-    	 
+    	 //con = DB_UTILS.getConnection();
+    	 con = DB_UTILS.getConnectionbyjdbc();
     	 try {
     		 Logger.log(keyword, Logger.DEBUG);
  			 pstmt = con.prepareStatement(sql);		//实例化查询对象
@@ -329,20 +335,24 @@ public class NewsInfoDAO {
     	 }catch (SQLException e) {
  			e.printStackTrace();
  		} finally {
- 			DB_UTILS.close(con, pstmt, rs);
+ 			//DB_UTILS.close(con, pstmt, rs);
+ 			DB_UTILS.closejdbc(con, pstmt, rs);
  		}
  		   	 
     	 return allNews;
      }
+     
+     
      
      /**
  	 * 根据文章类型查询的相关的新闻
  	 * @return 新闻集合
  	 */
       public List<NewsInfo> getAllNewsInfoByType(String newsType){
-    	 con = DB_UTILS.getConnection();
+    	 //con = DB_UTILS.getConnection();
+    	  con = DB_UTILS.getConnectionbyjdbc();
      	 List<NewsInfo> allNews = new ArrayList<NewsInfo>();		//定义集合，接收全部数据
-     	 sql = "select * from newsInfo where newsType=? order by newsInfoId desc";
+     	 sql = "select * from newsInfo where newsType=? order by newsInfoTime desc";
      	 
      	 try {
   			 pstmt = con.prepareStatement(sql);		//实例化查询对象
@@ -368,11 +378,13 @@ public class NewsInfoDAO {
      	 }catch (SQLException e) {
   			e.printStackTrace();
   		} finally {
-  			DB_UTILS.close(con, pstmt, rs);
+  			//DB_UTILS.close(con, pstmt, rs);
+  			DB_UTILS.closejdbc(con, pstmt, rs);
   		}
-  		
      	 return allNews;
       }
+      
+      
      
       /**
        * 获取查询结果的数量
@@ -410,4 +422,92 @@ public class NewsInfoDAO {
 			}
     	  return count;
       }
+      
+      /**
+       * 根据类型获取查询结果的数量
+       * @param keyword
+       * @return
+       */
+      public long getCountByType(String newsType){	  
+    	  long count = 0;
+    	  sql = "select count(*) from newsInfo where newsType= ?";
+     	  //con = DB_UTILS.getConnection();
+    	  con = DB_UTILS.getConnectionbyjdbc();
+	 
+		  try {
+			  pstmt = con.prepareStatement(sql);		//实例化查询对象
+			  pstmt.setString(1, newsType); 
+			  //pstmt.setString(1, newsType);
+			  rs = pstmt.executeQuery();				//取得查询结果	
+		 
+			  if (rs.next()) { // 取得全部的记录数
+					count = rs.getInt(1);
+				}
+		
+			 }catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				//DB_UTILS.close(con, pstmt, rs);
+				DB_UTILS.closejdbc(con, pstmt, rs);
+			}
+    	  return count;
+      }
+      
+      /**
+       * 根据多个类型获取新闻
+       * @param keyword
+       * @return
+       */
+      public List<NewsInfo> getNewsByTypes(String[] newsTypes){
+    	  
+    	  List<NewsInfo> allNews = new ArrayList<NewsInfo>();	
+    	  /*
+    	  String sql = "select * from newsInfo where ";
+     	  for(int i=0;i<newsTypes.length;i++){
+     		String temp = "";
+    	  	temp = "\'"+newsTypes[i]+","+"\'";
+    	  	sql = sql+"newsType = "+temp+" or ";
+     	  }
+     	  	
+     	 int pos = sql.lastIndexOf("or");
+ 	  	 sql = sql.substring(0,pos);
+ 	  	 sql = sql + " order by newsInfoTime desc;";
+*/
+
+     	  //con = DB_UTILS.getConnection();
+    	  con = DB_UTILS.getConnectionbyjdbc();
+	 
+		  try {
+			 pstmt = con.prepareStatement(sql);		//实例化查询对象
+			 rs = pstmt.executeQuery();				//取得查询结果	
+		 
+			 NewsInfo newsInfo = null;
+  		     while(rs.next()) {//当结果不为空，则取得新闻信息的各个元素
+  		    	 	int newsInfoId = rs.getInt("newsInfoId");
+  					String newsInfoTitle = rs.getString("newsInfoTitle");
+  					String newsInfoDescribe = rs.getString("newsInfoDescribe");
+  					Date newsInfoTime = rs.getDate("newsInfoTime");
+  					String newsAuthor = rs.getString("newsAuthor");
+  					String newsInfoContent = rs.getString("newsInfoContent");
+  					String newsType= rs.getString("newsType");
+  					int adminId = rs.getInt("adminId");
+  					int newsInfoState = rs.getInt("newsInfoState");
+  					newsInfo = new NewsInfo(newsInfoId, newsInfoTitle,
+ 							newsInfoDescribe, newsInfoContent, newsInfoTime,
+ 							newsAuthor, adminId, newsType, newsInfoState);
+  					allNews.add(newsInfo);
+  				}
+		
+			 }catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				//DB_UTILS.close(con, pstmt, rs);
+				DB_UTILS.closejdbc(con, pstmt, rs);
+
+			}
+    	  return allNews;
+      }
+      
+
+      
 }
