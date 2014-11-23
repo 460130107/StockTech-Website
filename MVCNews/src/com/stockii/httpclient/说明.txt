@@ -1,0 +1,3 @@
+·ÃÎÊ£º   http://localhost:8080/stocktech3/interface/test2Action
+½Ó¿Ú£º   getResponse;	
+	 postResponse;
