@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li class="" data-target="js-type-3">财经要闻</li>
 						<li class="" data-target="js-type-4">投资者管理</li>
 					</ul>
-					<span class="more important"><a href="front/news.jsp">返回资讯主页&#8634;</a></span>
+					<span class="more important"><a href="news">返回资讯主页&#8634;</a></span>
 				</div>
 				<div class="clearfix"></div>
 				<div class="content mgt20 mgb20">
@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
 								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
 									<div class="fagement">
-										<p class="title">新闻1+1 all-1</p>
+										<p class="title"><a href="javascript:void(0);">新闻1+1 all-1</a></p>
 										<p class="source">新华社新闻</p>
 										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
 									</div>
@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
 								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
 									<div class="fagement">
-										<p class="title">新闻1+1 all-2</p>
+										<p class="title"><a href="javascript:void(0);">新闻1+1 all-2</a></p>
 										<p class="source">新华社新闻</p>
 										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
 									</div>
@@ -74,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
 								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
 									<div class="fagement">
-										<p class="title">新闻1+1 b2-1</p>
+										<p class="title"><a href="javascript:void(0);">新闻1+1 b2-1</a></p>
 										<p class="source">新华社新闻</p>
 										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
 									</div>
@@ -86,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
 								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
 									<div class="fagement">
-										<p class="title">新闻1+1 b2-2</p>
+										<p class="title"><a href="javascript:void(0);">新闻1+1 b2-2</p>
 										<p class="source">新华社新闻</p>
 										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
 									</div>
@@ -102,7 +102,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
 								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
 									<div class="fagement">
-										<p class="title">新闻1+1 b3-1</p>
+										<p class="title"><a href="javascript:void(0);">新闻1+1 b3-1</a></p>
 										<p class="source">新华社新闻</p>
 										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
 									</div>
@@ -114,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
 								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
 									<div class="fagement">
-										<p class="title">新闻1+1 b3-2</p>
+										<p class="title"><a href="javascript:void(0);">新闻1+1 b3-2</a></p>
 										<p class="source">新华社新闻</p>
 										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
 									</div>
@@ -130,7 +130,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
 								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
 									<div class="fagement">
-										<p class="title">新闻1+1 b4-1</p>
+										<p class="title"><a href="javascript:void(0);">新闻1+1 b4-1</a></p>
 										<p class="source">新华社新闻</p>
 										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
 									</div>
@@ -142,7 +142,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="imply" alt="新闻1+1" src="front/dist/img/news/news1.jpg"></div>
 								<div class="col-lg-9 col-lg-9 col-sm-9 col-xs-9">
 									<div class="fagement">
-										<p class="title">新闻1+1 b4-2</p>
+										<p class="title"><a href="javascript:void(0);">新闻1+1 b4-2</a></p>
 										<p class="source">新华社新闻</p>
 										<div class="body">。先说说周五兰石引起的惨案，兰石之前说过几次，可以翻前贴看看。射人先射马，擒贼先擒王，龙头跌下神坛是必须的，另外龙头跌落，也会拉了一片陪葬。以跌停开始回调是迅猛的，直线下落，很快会回调到位，整体兰石那批估计要在回调20%左右。迪瑞医疗，腾信股份，花园生物等相对优秀者肯定不会回调到开板价的；质地差些的搞不好回到开板价。</div>
 									</div>
@@ -181,33 +181,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </script>
 <script type="text/javascript">
 $(function(){
-	/*====变量====*/
-	
-	var total={};
-	total.all,total.type2,total.type3,total.type4;	
-	var newsMsg;
-	/*判断当前显示新闻的类别*/
-	function determinType(){
-		var type=$(".topbar li.active").attr("data-target");
-		return type;/*返回当前新闻类别*/
-	}
-	/*获取包含所有新闻的综合列表*/
+	var currentPage=1;
+	var num_all,num_type2,num_type3,num_type4;
+	var NumPerPage;
+	var newsInfo;
 	$.ajax({
-		url:"front/test/json_all",
+		url:"<%=request.getContextPath()%>/interface/acquireHomepageAction.action",
 		type:"GET",
-		data:{"page":"all","search":"type2,type3,type4"},
+		dataType:"json",
+		data:{"page":"more","search":"type2,type3,type4"},
 		success:function(msg){
-			console.log("get info success");
-			var obj=eval("("+msg+")");
-			newsMsg=obj;
-			total.all=obj.type2.length+obj.type3.length+obj.type4.length;
-			total.type2=obj.type2.length;
-			console.log("total.type2 = "+total.type2);
-			total.type3=obj.type3.length;
-			total.type4=obj.type4.length;
-			reshapePagination();
-			displayPagination();
-			replace(1,2);
+			//msg.allInfo=
+			var obj=eval("("+msg.allInfo+")");
+			//console.log(obj.newsInfo.all);
+			num_all=obj.pagination.total,num_type2=obj.pagination.type2,num_type3=obj.pagination.type3,num_type4=obj.pagination.type4;
+			//NumPerPage=obj.numPerPage;
+			NumPerPage=2;
+			newsInfo=obj.newsInfo;
+			console.log(newsInfo.type3[0].id);
+			/*重塑分页组件*/
+			reshapePagination(num_all,NumPerPage);
+			//reshapePagination(num_all,NumPerPage);
+			displayPagination(currentPage,obj.pagination.total,obj.numPerPage);
+			//显示当前页面的新闻列表
+			replace_tab(newsInfo);
 		},
 		error:function(){
 			console.log("get info error");
@@ -215,83 +212,63 @@ $(function(){
 	});
 	
 	/*重塑分页组件*/
-	function reshapePagination(){
-		var type=determinType();
-		var tt;
-		if(type.match("all")){tt=total.all;}
-		else if(type.match("2")){tt=total.type2;}
-		else if(type.match("3")){tt=total.type2;}
-		else if(type.match("4")){tt=total.type2;}
-		tt=Math.ceil(tt/2)
+	function reshapePagination(total,numPerPage){
+		tt=Math.ceil(total/numPerPage);
 		$(".pagination li").remove();
-		$(".pagination").append('<li><a href="javascript:void(0);" data-dir="pre">&laquo;</a></li>');
+		$(".pagination").append('<li data-dir="pre"><a href="javascript:void(0);">&laquo;</a></li>');
 		for(var i=1;i<=tt;i++){
-			$(".pagination").append('<li data-dir='+i+'><a href="javascript:void(0);">'+i+'</a></li>');
+			if(i==1){
+				$(".pagination").append('<li data-dir='+i+' class="active"><a href="javascript:void(0);">'+i+'</a></li>');
+			}else{
+				$(".pagination").append('<li data-dir='+i+'><a href="javascript:void(0);">'+i+'</a></li>');
+			}
 		}
-		$(".pagination").append('<li><a href="javascript:void(0);" data-dir="next">&raquo;</a></li>');
+		$(".pagination").append('<li data-dir="next"><a href="javascript:void(0);">&raquo;</a></li>');
 	}
-	/*获取当前新闻类别所需的页数*/
-	function getPageNum(){
-		var type=determinType();
-		var tt=0;
-		if(type.match("all")){tt=total.all;}
-		else if(type.match("2")){tt=total.type2;}
-		else if(type.match("3")){tt=total.type2;}
-		else if(type.match("4")){tt=total.type2;}
-		tt=Math.ceil(tt/2)
-		return tt;
-	}
-	/*分页显示*/
-	function displayPagination(){
-		var NumPerPage=2;/*每页显示新闻数目*/
-		var pageNum=getPageNum();
-		var current=1;
-		$(".pagination li[data-dir=1]").addClass("active");
+	
+	/*分页组件==翻页显示*/
+	function displayPagination(currentPage,total,numPerPage){
 		$(".pagination li").on({
-			"click":function(){				
-				var type=determinType();
-				if(isNaN($(this).children("a").text())){//not a number
-					if($(this).children("a").attr("data-dir").match("pre")){
-						if(current!=1){
-							current=current-1;
+			"click":function(){
+				if(isNaN($(this).text())){//not a number
+					if($(this).attr("data-dir").match("pre")){
+						if(currentPage!=1){
+							currentPage=currentPage-1;
 							$(this).siblings("li").removeClass("active");
-							$(this).siblings("li[data-dir="+current+"]").addClass("active");
+							$(this).siblings("li[data-dir="+currentPage+"]").addClass("active");
 						}
 					}else{
-						if(current!=pageNum){
-							current=current+1;
+						if(currentPage!=Math.ceil(total/numPerPage)){
+							currentPage=currentPage+1;
 							$(this).siblings("li").removeClass("active");
-							$(this).siblings("li[data-dir="+current+"]").addClass("active");
+							$(this).siblings("li[data-dir="+currentPage+"]").addClass("active");
 						}
 					}
 				}else{//is a number
-					current=parseInt($(this).children("a").text());
+					currentPage=parseInt($(this).text());
 					$(this).siblings("li").removeClass("active");
 					$(this).addClass("active");
-				}				
-				replace(current,NumPerPage);
+				}
+				$.ajax({
+					url:"<%=request.getContextPath()%>/interface/acquireNewsByTypeAction.action",
+					type:"GET",
+					dataType:"json",
+					data:{"currentPage":currentPage,"search":getCurrentPageType()},
+					success:function(msg){
+						//显示（下一/上一）页内容
+						//console.log("dd "+msg.newsInfo);
+						var obj=eval("("+msg.newsInfo+")");
+						console.log(obj.all);
+						replace_pag(obj);
+					},
+					error:function(){
+						console.log("get info error");
+					}
+				});
 			}
 		});
-	}
-	function replace(current,numPerPage){
-		//console.log("current = "+flag);
-		var type=determinType();
-		var curMsg;
-		if(type.match("all")){curMsg=newsMsg.type2}
-		else if(type.match("2")){curMsg=newsMsg.type2;}
-		else if(type.match("3")){curMsg=newsMsg.type3;}
-		else if(type.match("4")){curMsg=newsMsg.type4;}
-		console.log(curMsg);
-		/* console.log("current news type = "+type);
-		console.log("current page = "+current); */
-		$(".block[data-aim="+type+"] > .news").each(function(key,val){
-			$(this).find(".title").text(curMsg[numPerPage*current-numPerPage+key].title);
-			$(this).find(".source").text(curMsg[numPerPage*current-numPerPage+key].author);
-			$(this).find(".body").text(curMsg[numPerPage*current-numPerPage+key].content);
-		});
-	}
-	
-	/*新闻类别切换*/
+	}	
+	/*新闻类别切换==初始显示*/
 	function switchTab_hor(){
 		var target=$(this).attr("data-target");
 		$(".tab-horizontal .block[data-aim]").removeClass("hide");
@@ -299,12 +276,115 @@ $(function(){
 		/*topbar li style switch*/
 		$(".tab-horizontal .topbar li").removeClass("active");
 		$(".tab-horizontal .topbar li[data-target='"+target+"']").addClass("active");
-		/*分页*/
-		reshapePagination();
-		displayPagination();
-		replace(1,2);
+		/*重塑分页组件*/
+		if(target.match("2")){
+			reshapePagination(num_type2,NumPerPage);
+			displayPagination(currentPage,num_type2,NumPerPage);
+		}else if(target.match("3")){
+			reshapePagination(num_type3,NumPerPage);
+			displayPagination(currentPage,num_type3,NumPerPage);
+		}else if(target.match("4")){
+			reshapePagination(num_type4,NumPerPage);
+			displayPagination(currentPage,num_type4,NumPerPage);
+		}else{
+			reshapePagination(num_all,NumPerPage);
+			displayPagination(currentPage,num_all,NumPerPage);
+		}
+		
+		replace_tab(newsInfo);
+		//console.log(newsInfo);
 	}
 	$(".tab-horizontal .topbar li").click(switchTab_hor);
+	
+	//翻页显示
+	function replace_pag(msg){
+		var obj=msg;
+		var target=$(".tab-horizontal .topbar li.active").attr("data-target");
+		if(target.match("2")){
+			$(".block[data-aim="+target+"] > .news").each(function(key,val){
+				$(this).find(".title a").text(obj.type2[key].title);
+				$(this).find(".title a").attr(obj.type2[key].id);
+				$(this).find(".source").text(obj.type2[key].author);
+				$(this).find(".body").text(obj.type2[key].summary);
+			});
+		}else if(target.match("3")){
+			$(".block[data-aim="+target+"] > .news").each(function(key,val){
+				$(this).find(".title a").text(obj.type3[key].title);
+				$(this).find(".title a").attr(obj.type3[key].id);
+				$(this).find(".source").text(obj.type3[key].author);
+				$(this).find(".body").text(obj.type3[key].summary);
+			});
+		}else if(target.match("4")){
+			$(".block[data-aim="+target+"] > .news").each(function(key,val){
+				$(this).find(".title a").text(obj.type4[key].title);
+				$(this).find(".title a").attr(obj.type4[key].id);
+				$(this).find(".source").text(obj.type4[key].author);
+				$(this).find(".body").text(obj.type4[key].summary);
+			});
+		}else{
+			$(".block[data-aim="+target+"] > .news").each(function(key,val){
+				$(this).find(".title a").text(obj.all[key].title);
+				$(this).find(".title a").attr(obj.newsInfo.all[key].id);
+				$(this).find(".source").text(obj.all[key].author);
+				$(this).find(".body").text(obj.all[key].summary);
+			});
+		}
+	}
+	//初始显示
+	function replace_tab(msg){
+		//var obj=eval("("+msg+")");
+		var obj={};
+		obj.newsInfo=msg;
+		var target=$(".tab-horizontal .topbar li.active").attr("data-target");
+		if(target.match("2")){
+			$(".block[data-aim="+target+"] > .news").each(function(key,val){
+				$(this).find(".title a").text(obj.newsInfo.type2[key].title);
+				$(this).find(".title a").attr(obj.newsInfo.type2[key].id);
+				$(this).find(".source").text(obj.newsInfo.type2[key].author);
+				$(this).find(".body").text(obj.newsInfo.type2[key].summary);
+			});
+		}else if(target.match("3")){
+			$(".block[data-aim="+target+"] > .news").each(function(key,val){
+				$(this).find(".title a").text(obj.newsInfo.type3[key].title);
+				$(this).find(".title a").attr(obj.newsInfo.type3[key].id);
+				$(this).find(".source").text(obj.newsInfo.type3[key].author);
+				$(this).find(".body").text(obj.newsInfo.type3[key].summary);
+			});
+		}else if(target.match("4")){
+			$(".block[data-aim="+target+"] > .news").each(function(key,val){
+				$(this).find(".title a").text(obj.newsInfo.type4[key].title);
+				$(this).find(".title a").attr(obj.newsInfo.type4[key].id);
+				$(this).find(".source").text(obj.newsInfo.type4[key].author);
+				$(this).find(".body").text(obj.newsInfo.type4[key].summary);
+			});
+		}else{
+			$(".block[data-aim="+target+"] > .news").each(function(key,val){
+				$(this).find(".title a").text(obj.newsInfo.all[key].title);
+				$(this).find(".title a").attr(obj.newsInfo.all[key].id);
+				$(this).find(".source").text(obj.newsInfo.all[key].author);
+				$(this).find(".body").text(obj.newsInfo.all[key].summary);
+			});
+		}
+	}
+	
+	//
+	function getCurrentPageType(){
+		var currentPageType=$(".tab-horizontal .topbar li.active").attr("data-target");
+		if(currentPageType.match("2")){
+			currentPageType="type2";
+		}else if(currentPageType.match("3")){
+			currentPageType="type3";
+		}else if(currentPageType.match("4")){
+			currentPageType="type4";
+		}else{
+			currentPageType="type2,type3,type4";
+		}
+		return currentPageType;
+	}
+});
+
+$(".title a").click(function(){
+	window.location.href="news_item?id="+$(this).attr("data-id");
 });
 
 </script>

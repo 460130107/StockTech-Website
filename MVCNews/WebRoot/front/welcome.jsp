@@ -32,7 +32,7 @@
 			if(session.getAttribute("id") != null){
 		%>
 				<h2>欢迎<font color="RED"><%=session.getAttribute("id")%></font>光临！</h2>
-				<a class="btn btn-lg btn-success" href="logout.jsp">登录注销</a>
+				<a class="btn btn-lg btn-success" href="logout">登录注销</a>
 		<%			
 			} else {
 				request.setAttribute("info","请先登陆！") ;

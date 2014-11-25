@@ -50,7 +50,7 @@
         				<div>
         					<ul class="list-inline" style="width: 100%;">
         						<li style="width: 45%;"><input class="btn btn-lg btn-block btn-success" name="commit" type="submit" value="登录"/></li>
-        						<li style="width: 45%;"><a class="btn btn-lg btn-block btn-success" href="front/signup.jsp">立即注册</a></li>
+        						<li style="width: 45%;"><a class="btn btn-lg btn-block btn-success" href="signup">立即注册</a></li>
         					</ul>        					        					
         				</div>
 					</form>    

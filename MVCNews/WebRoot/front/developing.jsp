@@ -29,14 +29,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="maxbg">
 				<div class="container">
 					<div class="col-lg-10 declaration">
-						<a class="icon" href="index.jsp"><span class="home-icon"></span></a>
+						<a class="icon" href="index"><span class="home-icon"></span></a>
 						<div class="title text-right">研发中...</div>
 						
 						<h3 class="body text-right">输入您的<i class="link-email">邮件地址</i>
 							并点击“提醒我产品更新”，您将可以了解到最新的产品信息
 						</h3>
 						<h3 class="body text-right">如果你希望直接和我们进行深度合作，请点击<a
-								class="hyperlink" href="front/corpration.jsp">合作伙伴</a>并与我们取得联系</h3>
+								class="hyperlink" href="corpration">合作伙伴</a>并与我们取得联系</h3>
 					</div>
 					<div class="subscribe-form col-sm-6 col-sm-offset-4">
 						<form>

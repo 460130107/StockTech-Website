@@ -38,12 +38,14 @@
 }
 
 .declaration .title {
-	font-size: 48px;
+	/* font-size: 48px; */
+	font-size: 30px;
 	color: #1abc9c;
 }
 
 .declaration .link-email {
-	font-size: 32px;
+	/* font-size: 32px; */
+	font-size: 30px;
 	font-style: italic;
 	color: #1abc9c;
 }

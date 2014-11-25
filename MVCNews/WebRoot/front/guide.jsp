@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div class="container">
   	<ul id="breadcrumb">
 	  <li><a href="#"><span class="icon">主页</span></a></li>
-	  <li><a href="front/help/index.jsp"><span class="icon"> </span>帮助中心</a></li>
+	  <li><a href="/help/index.jsp"><span class="icon"> </span>帮助中心</a></li>
 	  <li><a><span class="icon"></span>新手指南</a></li>
 	</ul>
   	<!-- 导航栏 -->

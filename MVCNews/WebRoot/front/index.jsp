@@ -28,7 +28,7 @@
 	<jsp:include page="_header.jsp?index=index" />
 	<div class="container-fluid">
 		<div class="row-fluid poster-main" style="padding-top:430px;height:659px;background-image: url('front/dist/img/index_main_bg.jpg');background-size:100% 100% ">
-			<div style="text-align: center;"><a onFocus="this.blur()"class="link-button" href="front/product.jsp"></a></div>
+			<div style="text-align: center;"><a onFocus="this.blur()"class="link-button" href="product"></a></div>
 		</div> 
 	
 		<div class="sections-list">
@@ -55,7 +55,7 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-6 col-lg-offset-3 link">
-							<a onFocus="this.blur()"href="front/product.jsp">了解如何利用这些数据
+							<a onFocus="this.blur()"href="product">了解如何利用这些数据
 								<span class="link-icon"></span>
 								</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
 						</div>
@@ -86,9 +86,13 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-6 col-lg-offset-3 link">
-							<a onFocus="this.blur()"href="front/ourteam.jsp">查看斯多克合作专家
+							<!-- <a onFocus="this.blur()" href="ourteam">查看斯多克合作专家
 								<span class="link-icon"></span>
-								</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
+							</a> -->
+							<a onFocus="this.blur()" href="forbid">查看斯多克合作专家
+								<span class="link-icon"></span>
+							</a>
+							<img alt="link" src="front/dist/img/index_icon_goto.png" >
 						</div>
 					</div>
 				</div>
@@ -117,7 +121,7 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-6 col-lg-offset-3 link">
-							<a onFocus="this.blur()"href="front/product.jsp">斯多克如何帮您做出更可靠决策
+							<a onFocus="this.blur()"href="product">斯多克如何帮您做出更可靠决策
 								<span class="link-icon"></span>
 								</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
 						</div>
@@ -148,7 +152,7 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-6 col-lg-offset-3 link">
-							<a onFocus="this.blur()"href="front/corpration.jsp">与我们合作
+							<a onFocus="this.blur()"href="corpration">与我们合作
 								<span class="link-icon"></span>
 								</a><img alt="link" src="front/dist/img/index_icon_goto.png" >
 						</div>
@@ -170,7 +174,8 @@
 					<div class="row">
 						<div class="col-lg-6 col-lg-offset-3 content partner">
 						<p style="color:#7e7b7b;font-weight:bold;;font-size: 24px;letter-spacing: 4px;margin-bottom: 25px;">我们的合作伙伴?
-						<p style="color: #332726;font-size: 62px;margin-bottom: 20px;letter-spacing:6px;">谁在与斯多克合作？</p>
+						<!-- <p style="color: #332726;font-size: 62px;margin-bottom: 20px;letter-spacing:6px;">谁在与斯多克合作？</p> -->
+						<p style="color: #332726;font-size: 30px;margin-bottom: 20px;letter-spacing:6px;">谁在与斯多克合作？</p>
 						</div>
 					</div>
 					

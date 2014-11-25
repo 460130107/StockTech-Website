@@ -50,11 +50,11 @@
     <div class="row">
         <div class="col-xs-3" id="myScrollspy">
             <ul class="nav nav-tabs nav-stacked" id="myNav">
-                <li class="active"><a href="front/recruit.jsp#about">公司简介</a></li>
-                <li><a href="front/recruit.jsp#team">团队建设</a></li>
-                <li><a href="front/recruit.jsp#join">加入斯多克</a></li>
-                <li><a href="front/recruit.jsp#position">在招职位</a></li>
-                <li><a href="front/recruit.jsp#contact">联系我们</a></li>               
+                <li class="active"><a href="recruit#about">公司简介</a></li>
+                <li><a href="recruit#team">团队建设</a></li>
+                <li><a href="recruit#join">加入斯多克</a></li>
+                <li><a href="recruit#position">在招职位</a></li>
+                <li><a href="recruit#contact">联系我们</a></li>               
             </ul>
         </div>
         <div class="col-xs-9">           

@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="container">
 				<p>新品郑重首发</p>
 				<p>统计局网站10日消息，10月CPI环比持平，同比上涨1.6%；PPI环比下降0.4%，同比下降2.2%。对此，国家统计局城市司高级统计师余秋梅表示，CPI整体较为平稳，PPI环比继续下降是受国际油价连续下跌及国内部分行业产能过剩的影响。</p>
-				<button class="btn-quick-view" onclick="javascript:window.location.href='<%=basePath%>'+'front/product.jsp'"></button>
+				<button class="btn-quick-view" onclick="javascript:window.location.href='product'"></button>
 			</div>
 		</div>
 	</div>

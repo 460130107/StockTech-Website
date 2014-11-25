@@ -21,6 +21,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 
 <body>
+<%
+String id="";
+id=request.getParameter("id");
+if(id==""||id==null){
+	id="root";
+}
+ %>
 <jsp:include page="_header.jsp?index=news"></jsp:include>
 
 <div class="container">
@@ -52,5 +59,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/jquery-ui.min.js"></script>
 <script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$.ajax({
+	url:"<%=request.getContextPath()%>/interface/acquirenewAction.action",
+	type:"GET",
+	dataType:"json",
+	//data:{"id":"<%=id%>"},
+	data:{"id":"11"},
+	//dataType:"json",
+	success:function(msg){
+		var obj=eval("("+msg.newsInfo+")");
+		$(".news-general .title").text(obj.title);
+		$(".news-general .source").text(obj.author);
+		$(".news-general .body").text(obj.content);
+		$(".news-general .time").text(obj.time);
+	},
+	error:function(){
+		console.log("get info error");
+	}
+});
+</script>
 </body>
 </html>

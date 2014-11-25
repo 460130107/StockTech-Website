@@ -35,7 +35,7 @@
 			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<img alt="140x140" src="front/dist/img/project_3board_cooperation.jpg" class="img-rounded img300" />
-					<a href="front/projectDetail.jsp" class="btn btn-info mgb10 mgt10">查看详情</a>
+					<a href="projectDetail" class="btn btn-info mgb10 mgt10">查看详情</a>
 				</div>
 			</div>
 			<div class="row clearfix">
@@ -48,7 +48,7 @@
 			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<img alt="140x140" src="front/dist/img/project_fund_cooperation.jpg" class="img-rounded img300" />
-					<a href="front/projectDetail.jsp" class="btn btn-info mgb10 mgt10">查看详情</a>
+					<a href="projectDetail" class="btn btn-info mgb10 mgt10">查看详情</a>
 				</div>
 			</div>
 			<div class="row clearfix">
@@ -61,7 +61,7 @@
 			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<img alt="140x140" src="front/dist/img/project_broker_cooperation.jpg" class="img-rounded img300" />
-					<a href="front/projectDetail.jsp" class="btn btn-info mgb10 mgt10">查看详情</a>
+					<a href="projectDetail" class="btn btn-info mgb10 mgt10">查看详情</a>
 				</div>
 			</div>
 			<div class="row clearfix">
@@ -78,7 +78,7 @@
 			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<img alt="140x140" src="front/dist/img/project_company_cooperation.jpg" class="img-rounded img300" />
-					<a href="front/projectDetail.jsp" class="btn btn-info mgb10 mgt10">查看详情</a>
+					<a href="projectDetail" class="btn btn-info mgb10 mgt10">查看详情</a>
 				</div>
 			</div>
 			<div class="row clearfix">
@@ -91,7 +91,7 @@
 			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<img alt="140x140" src="front/dist/img/project_pe.jpg" class="img-rounded img300" />
-					<a href="front/projectDetail.jsp" class="btn btn-info mgb10 mgt10">查看详情</a>
+					<a href="projectDetail" class="btn btn-info mgb10 mgt10">查看详情</a>
 				</div>
 			</div>
 			<div class="row clearfix">
@@ -104,7 +104,7 @@
 			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<img alt="140x140" src="front/dist/img/project_pe_cooperation.jpg" class="img-rounded img300" />
-					<a href="front/projectDetail.jsp" class="btn btn-info mgb10 mgt10">查看详情</a>
+					<a href="projectDetail" class="btn btn-info mgb10 mgt10">查看详情</a>
 				</div>
 			</div>
 			<div class="row clearfix">
@@ -119,7 +119,7 @@
 <!-- F&Q -->
 <div class="container">
 	<div class="row mgb20">
-		<h3 class="bgc-green1 pdl20 pdb20 pdt20 f24">常见问题<a href="front/guide.jsp" class="btn btn-default btn-info mgr20" style="float: right;">新手指南</a></h3>
+		<h3 class="bgc-green1 pdl20 pdb20 pdt20 f24">常见问题<a href="guide" class="btn btn-default btn-info mgr20" style="float: right;">新手指南</a></h3>
 		
 		<div class="col-md-12 mgb20" style="border-bottom: 1px dashed #ddd;">
 			<p class="f20 pd20">Q1：我可以炒股吗？

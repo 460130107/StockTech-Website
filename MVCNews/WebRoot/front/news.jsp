@@ -186,11 +186,13 @@ $(".tab-hor-compact .topbar li").click(switchTab_hor_com);
 
 $(function(){
 	$.ajax({
-		url:"front/test/json",
+		url:"<%=request.getContextPath()%>/interface/acquireHomepageAction.action",
 		type:"GET",
+		dataType:"json",
 		data:{"page":"index","search":"type1,type2,type3,type4,type5,type6,type7,type8"},
 		success:function(msg){
-			var obj=eval("("+msg+")");
+			
+			var obj=eval("("+msg.newsInfo+")");
 			/*hotnews*/
 			$.each($(".hotnews a"),function(key,val){
 				var str=obj.type1[key].split("+");
@@ -258,6 +260,13 @@ $(function(){
 			console.log("get info error");
 		}
 	});
+	
+		$(".title a").on({
+		"click":function(){
+			window.location.href="news_item?id="+$(this).attr("data-id");
+		}
+	});
+	
 });
 </script>
 </body>

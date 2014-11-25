@@ -29,8 +29,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="container">
 			<p class="text3">改变人生的英明决策</p>
 			<p class="text2">智能&nbsp;.&nbsp;丰厚&nbsp;.&nbsp;利润</p>			
-			<button class="btn-view" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">查看此方案&nbsp;&nbsp;<img alt="btn-view" src="front/dist/img/icon-arrow-5.png"></button>
-			<button class="btn-other" onclick="javascript:window.location.href='<%=basePath %>front/productDetail.jsp'">其他方案</button>
+			<button class="btn-view" onclick="javascript:window.location.href='productDetail'">查看此方案&nbsp;&nbsp;<img alt="btn-view" src="front/dist/img/icon-arrow-5.png"></button>
+			<button class="btn-other" onclick="javascript:window.location.href='productDetail'">其他方案</button>
 		</div>
 		
 	</div>

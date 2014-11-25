@@ -182,7 +182,7 @@ if(request.getParameter("id")=="" || request.getParameter("id")==null){
 					<div class="sub-content">
 						<div>如果您在使用斯多克(www.stockii.com)的过程中有任何疑问请您与斯多克客服人员联系。</div>
 						<div>24小时客服电话：400-111-999</div>
-						<div>在线帮助：<a onFocus="this.blur()"href="front/help/index.jsp">http://www.stockii.com/help/index</a></div>
+						<div>在线帮助：<a onFocus="this.blur()" href="<%=request.getContextPath()%>/help/index">http://www.stockii.com/help/index</a></div>
 					</div>
 					<hr class="dotline">
 						
@@ -240,7 +240,11 @@ $(function(){
 			$(this).addClass("active"); */
 			var target=$(this).attr("data-target");
 			/* console.log("data-target = "+target); */
-			window.location.href="<%=basePath%>"+"front/about.jsp?id="+target;
+			//window.location.href="<%=basePath%>"+"front/about.jsp?id="+target;
+			window.location.href="about?id="+target;
+			if(target.match("manage")){
+				window.location.href="forbid";
+			}
 		}
 	});
 });
