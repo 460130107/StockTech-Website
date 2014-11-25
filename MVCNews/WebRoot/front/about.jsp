@@ -239,14 +239,22 @@ $(function(){
 			/* $(this).siblings().removeClass("active");
 			$(this).addClass("active"); */
 			var target=$(this).attr("data-target");
-			/* console.log("data-target = "+target); */
+			target=handle(target);
+			//console.log("data-target = "+target);
 			//window.location.href="<%=basePath%>"+"front/about.jsp?id="+target;
-			window.location.href="about?id="+target;
+			/* window.location.href="about?id="+target; */
+			window.location.href="<%=request.getContextPath()%>/about/"+target;
 			if(target.match("manage")){
 				window.location.href="forbid";
 			}
 		}
 	});
+	
+	//handle target
+	function handle(target){
+		target=target.split("-")[1];
+		return target;
+	}
 });
 </script>
 </body>

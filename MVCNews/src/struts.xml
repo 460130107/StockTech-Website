@@ -75,7 +75,9 @@
 		</action>
 	
 	</package>
-	<package name="front_help" namespace="/help" extends="global">
+	
+	<!-- route  -->
+	<package name="help" namespace="/help" extends="global">
 		<!-- 通用的Action，*表示可以处理任意的请求 -->
 		<action name="*">
 			<!-- 此处{1}表示前面第一个*代表的字符串 -->
@@ -87,6 +89,11 @@
 		<action name="*">
 			<!-- 此处{1}表示前面第一个*代表的字符串 -->
 			<result>/front/forbid.jsp</result>
+		</action>
+	</package>
+	<package name="about_module" namespace="/about" extends="global">
+		<action name="*">
+			<result>/front/about.jsp?id=js-{1}</result>
 		</action>
 	</package>
 	
