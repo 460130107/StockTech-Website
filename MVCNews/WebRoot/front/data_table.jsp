@@ -125,12 +125,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 // 			{ id: "pe", name: "市盈率", width: 10, align: "left", }
 		];
 		
-		$.ajax({
+		options.ajax = {
 			url:"<%=request.getContextPath()%>/interface/Test2Action.action",
 			type:"get",
 			data: "",
 			dataType: "json",
-			success:function(data){
+			func: function(data) {
 				var jsonObj = eval("(" + data.getResponse + ")");
 				var array = jsonObj.liststockclassficationresponse.stockclassification;
 				var contentData = [];
@@ -154,15 +154,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 // 					dataItem.total_stock = array[i].total_stock;
 					contentData[i] = dataItem;
 				}
-				options.contentData = contentData;
-				$("#table_test").stockiitable(options);
-				$("#table_test").tablesorter({theme: 'default'});
-			},
-			error:function(){
-				console.log("get info error");
+				return contentData;
+// 				options.contentData = contentData;
 			}
+		};
 		
-		});
+		$("#table_test").stockiitable(options);
+		$("#table_test").tablesorter({theme: 'default'});
+		
+// 		$.ajax({
+// 			url:"<%=request.getContextPath()%>/interface/Test2Action.action",
+// 			type:"get",
+// 			data: "",
+// 			dataType: "json",
+// 			success:function(data){
+				
+// 			},
+// 			error:function(){
+// 				console.log("get info error");
+// 			}
+		
+// 		});
 		
 		
 	}
