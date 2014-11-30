@@ -19,13 +19,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<link href="front/dist/css/bootstrap.css" rel="stylesheet">
 	<link href="front/dist/css/common.css" rel="stylesheet">
+	<link href="front/dist/css/base.css" rel="stylesheet">
 	<link href="front/dist/css/developing.css" rel="stylesheet">
   </head>
   
   <body>
   <jsp:include page="_header.jsp" />
-	<div class="">
-		<div class="row">
+	<div class="container-fluid">
+		<div class="row-fluid">
 			<div class="maxbg">
 				<div class="container">
 					<div class="col-lg-10 declaration">
@@ -42,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<form>
 							<div class="input-group">
 								<input id="input-email" type="text" class="form-control"
-									placeholder="stockii@163.com"> <span
+									placeholder="helloworld@stockii.com"> <span
 									class="input-group-btn">
 									<button class="btn btn-primary" type="button">提醒我产品更新</button>
 								</span>

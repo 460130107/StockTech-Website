@@ -13,17 +13,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" href="front/dist/css/bootstrap.css">
 <link rel="stylesheet" href="front/dist/css/base.css">
 <link rel="stylesheet" href="front/dist/css/common.css">
+<link rel="stylesheet" href="front/dist/css/tablesorter.theme.default.css">
 
 <script type="text/javascript" src="front/dist/js/jquery.min.js" ></script>
 <script type="text/javascript" src="front/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="front/dist/js/jquery.infinitescroll.min.js"></script>
 <script type="text/javascript" src="front/dist/js/jquery.stockii.table.js"></script>
+<script type="text/javascript" src="front/dist/js/jquery.tablesorter.js"></script>
 
 </head>
 <body>
 <jsp:include page="_header.jsp?index=product" />
 	<div class="container" style="height: 1000px; padding-bottom: 300px;">
-		<table id="table_test" class="table">
+		<h1 style="font-size: 30px; padding: 20px;">A股所有公司</h1>
+		
+		<table id="table_test" class="tablesorter">
 		</table>
 		
 <!-- 		<div class="row"> -->
@@ -42,7 +46,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript">
 	$(function() {
 		initTable();
-// 		loadCompanyInfo();
 // 		loadMore();
 	});
 
@@ -51,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    if ($(document).height() - $(this).scrollTop() - $(this).height() < 800) {
 	    	loadMore();  
 	    }
-	});  
+	});
 // 	$(function() { //别忘了加这句，除非你没学Jquery  
 // 		$("#data_table").infinitescroll({
 // 			navSelector : "#navigation", //导航的选择器，会被隐藏
@@ -88,99 +91,80 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 	}
 	
-	/* request company info */
-	function loadCompanyInfo() {
+	/* request company info and init the table */
+	function initTable() {
+		var options = {
+			customClass: "success",
+		};
+		options.columns = [
+// 			{ id: "stockid", name: "股票代码", width: 10, align: "left"},
+// 			{ id: "growth", name: "涨幅", width: 10, align: "left", },
+// 			{ id: "cprice", name: "当前价格", width: 10, align: "left"},
+// 			{ id: "bought_price", name: "买价", width: 10, align: "left"},
+// 			{ id: "sold_price", name: "售价", width: 10, align: "left"},
+// 			{ id: "last_deal_amount", name: "上次交易量", width: 10, align: "left"},
+// 			{ id: "total_deal_amount", name: "总交流量", width: 10, align: "left"},
+// 			{ id: "max", name: "最高", width: 10, align: "left"},
+// 			{ id: "min", name: "最低", width: 10, align: "left"},
+// 			{ id: "total_stock", name: "总股数", width: 10, align: "left"},
+
+			{ id: "number", name: "序号", width: 10, align: "left"},
+			{ id: "stockid", name: "#股票代码", width: 20, align: "left"},
+			{ id: "stockname", name: "股票名称", width: 20, align: "left", },
+			{ id: "areaname", name: "所在地区", width: 10, align: "left", },
+			{ id: "industryname", name: "所在行业", width: 30, align: "left", },
+			
+// 			{ id: "code", name: "股票代码", width: 10, align: "left", },
+// 			{ id: "name", name: "股票名称", width: 10, align: "left", },
+// 			{ id: "cprice", name: "当前价格", width: 10, align: "left"},
+// 			{ id: "rise", name: "涨幅", width: 10, align: "left", },
+// 			{ id: "vol", name: "交易量", width: 10, align: "left", },
+// 			{ id: "amo", name: "交易额", width: 10, align: "left"},
+// 			{ id: "maxmin", name: "最值", width: 10, align: "left", },
+// 			{ id: "yesto", name: "昨收/今开", width: 20, align: "left", },
+// 			{ id: "pe", name: "市盈率", width: 10, align: "left", }
+		];
+		
 		$.ajax({
-			url:"http://192.168.1.220:8080/client/api",
+			url:"<%=request.getContextPath()%>/interface/Test2Action.action",
 			type:"get",
-			data: "?command=liststockclassfication&response=json",
-// 			data:{"page":"all","search":"type2,type3,type4"},
-			success:function(msg){
-// 				console.log("get info success");
-// 				var obj=eval("("+msg+")");
-// 				total.all=obj.type2.length+obj.type3.length+obj.type4.length;
-// 				total.type2=obj.type2.length;
-// 				console.log("total.type2 = "+total.type2);
-// 				total.type3=obj.type3.length;
-// 				total.type4=obj.type4.length;
-// 				reshapePagination();
-// 				displayPagination();
-				alert("test");
+			data: "",
+			dataType: "json",
+			success:function(data){
+				var jsonObj = eval("(" + data.getResponse + ")");
+				var array = jsonObj.liststockclassficationresponse.stockclassification;
+				var contentData = [];
+				for(var i = 0; i < array.length; i++) {
+					var dataItem = {};
+					dataItem.number = i + 1;
+					dataItem.stockid = array[i].stockid;
+					dataItem.stockname = array[i].stockname;
+					dataItem.areaname = array[i].areaname;
+					dataItem.industryname = array[i].industryname;
+					
+// 					dataItem.stockid = array[i].stockid;
+// 					dataItem.growth = array[i].growth_ratio;
+// 					dataItem.cprice = array[i].current_price;
+// 					dataItem.bought_price = array[i].bought_price;
+// 					dataItem.sold_price = array[i].sold_price;
+// 					dataItem.last_deal_amount = array[i].last_deal_amount;
+// 					dataItem.total_deal_amount = array[i].total_deal_amount;
+// 					dataItem.max = array[i].max;
+// 					dataItem.min = array[i].min;
+// 					dataItem.total_stock = array[i].total_stock;
+					contentData[i] = dataItem;
+				}
+				options.contentData = contentData;
+				$("#table_test").stockiitable(options);
+				$("#table_test").tablesorter({theme: 'default'});
 			},
 			error:function(){
 				console.log("get info error");
 			}
+		
 		});
-	}
-	
-	function initTable() {
-		var options = {
-			theme: "success",
-		};
-		options.columns = [
-			{ id: "code", name: "股票代码", width: 10, align: "left", },
-			{ id: "name", name: "股票名称", width: 10, align: "left", },
-			{ id: "cprice", name: "当前价格", width: 10, align: "left"},
-			{ id: "rise", name: "涨幅", width: 10, align: "left", },
-			{ id: "vol", name: "交易量", width: 10, align: "left", },
-			{ id: "amo", name: "交易额", width: 10, align: "left"},
-			{ id: "maxmin", name: "最值", width: 10, align: "left", },
-			{ id: "yesto", name: "昨收/今开", width: 20, align: "left", },
-			{ id: "pe", name: "市盈率", width: 10, align: "left", }
-		];
 		
-		options.ajax = function() {
-			var jsonObj = {
-				sum: 10000,
-				records: [{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-						maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						{code: 1000, name: "中信证券", cprice: "12.25", rise: "12%", vol: "120031", amo: "12.52", 
-							maxmin: "12.76/12.02", yesto: "12.76/12.02", pe: "1230%"},
-						],
-			};
-			var result = [];
-			var j = 0;
-			for(var i = 0; i < jsonObj.records.length * 100; i ++) {
-				var each = jsonObj.records[i % jsonObj.records.length];
-				var obj = {};
-				obj.code = each.code + j;
-				obj.name = each.name;
-				obj.cprice = each.cprice;
-				obj.rise = each.rise;
-				obj.vol = each.vol;
-				obj.amo = each.amo;
-				obj.maxmin = each.maxmin;
-				obj.yesto = each.yesto;
-				obj.pe = each.pe;
-				result[i] = obj;
-				j++;
-			}
-			return result;
-		};
 		
-		$("#table_test").stockiitable(options);
 	}
 	
 </script>

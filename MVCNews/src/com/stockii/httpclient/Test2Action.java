@@ -33,22 +33,17 @@ public class Test2Action extends ActionSupport {
 		this.getResponse = getResponse;
 	}
 	
-	
-	
 	@Override
 	public String execute() throws Exception {
-		
-	
-		
 		getResponse = StockiiHTTPRequest.sendGet(
 				"http://192.168.1.220:8080/client/api", "command=liststockclassfication&response=json");
 		
 		System.out.println(getResponse);
 
 		// send post request
-		postResponse = StockiiHTTPRequest.sendGet(
-				"http://192.168.1.220:8080/client/api", "command=liststockclassfication&response=json");
-		System.out.println(postResponse);
+//		postResponse = StockiiHTTPRequest.sendPost(
+//				"http://192.168.1.220:8080/client/api", "command=liststockclassfication&response=json");
+//		System.out.println(postResponse);
 		
 		return SUCCESS;
 	}
