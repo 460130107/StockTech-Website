@@ -96,7 +96,17 @@
 			<result>/front/about.jsp?id=js-{1}</result>
 		</action>
 	</package>
-	
+	<package name="news_model" namespace="/news/2014" extends="global">
+		<action name="finance">
+			<result>/front/news_more.jsp?more=overview</result>
+		</action>
+		<action name="market">
+			<result>/front/news_more.jsp?more=classify</result>
+		</action>
+		<action name="*">
+			<result>/front/news_itme.jsp?id=*</result>
+		</action>
+	</package>
 	<!-- 全局国际化 -->
 <!-- 
 	<constant name="struts.multipart.maxSize" value="1073741824"/>

@@ -542,7 +542,8 @@ $(function(){
 });
 
 $(".title a").click(function(){
-	window.location.href="front/news_item.jsp?id="+$(this).attr("data-id");
+	//window.location.href="front/news_item.jsp?id="+$(this).attr("data-id");
+	window.location.href="<%=basePath%>news/2014/"+$(this).attr("data-id");
 });
 
 </script>

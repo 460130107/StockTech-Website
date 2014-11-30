@@ -280,13 +280,16 @@ $(function(){
 	//具体新闻跳转
 	$(".title a").on({
 		"click":function(){
-			window.location.href="front/news_item.jsp?id="+$(this).attr("data-id");
+			//window.location.href="front/news_item.jsp?id="+$(this).attr("data-id");
+			window.location.href="<%=basePath%>news/2014/"+$(this).attr("data-id");
 		}
 	});
 	
 	//more
+	var map = {"overview":"finance","classify":"market"};
 	$("span.more > a").click(function(){
-		window.location.href="front/news_more.jsp?more="+$(this).attr("data-more");
+		//window.location.href="front/news_more.jsp?more="+$(this).attr("data-more");
+		window.location.href="<%=basePath%>news/2014/"+map[$(this).attr("data-more")];
 	});
 });
 </script>
