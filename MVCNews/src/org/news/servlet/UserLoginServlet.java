@@ -1,13 +1,14 @@
 /*
- * ÏµÍ³Ãû³Æ£ºĞÂÎÅ·¢²¼ÏµÍ³
+ * ç³»ç»Ÿåç§°ï¼šæ–°é—»å‘å¸ƒç³»ç»Ÿ
  * 
- * ÀàÃû£ºUserLoginServlet
+ * ç±»åï¼šUserLoginServlet
  * 
- * ´´½¨ÈÕÆÚ£º2014-06-26
+ * åˆ›å»ºæ—¥æœŸï¼š2014-06-26
  */
 package org.news.servlet;
 
 import java.io.IOException;
+import java.io.Serializable;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,14 +20,34 @@ import org.news.service.UserService;
 import org.news.utils.MD5Code;
 
 /**
- * ÓÃÓÚ»áÔ±µÇÂ¼µÄServlet
+ * ç”¨äºä¼šå‘˜ç™»å½•çš„Servlet
  * 
  * @author tt
  * @version 14.6.18
  */
-public class UserLoginServlet extends HttpServlet {
+public class UserLoginServlet extends HttpServlet implements Serializable{
 
 	private static final long serialVersionUID = 1753352205254920641L;
+	
+	
+	/**
+	 * Constructor of the object.
+	 */
+	public UserLoginServlet() {
+		super();
+	}
+
+	/**
+	 * Destruction of the servlet. <br>
+	 */
+	public void destroy() {
+		super.destroy(); // Just puts "destroy" string in log
+		// Put your code here
+	}
+
+	
+	
+	
 	private UserService userService = new UserService();
 
 	/**
@@ -56,32 +77,53 @@ public class UserLoginServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String pages = "front/account.jsp";//ÏÂÒ»¸öÒªÌø×ªµÄÒ³Ãæ
-		String rand = (String) request.getSession().getAttribute("rand") ;	// ´ÓsessionÖĞÈ¡³öÑéÖ¤Âë
-		String code = request.getParameter("code") ;
+		String pages = "front/account.jsp";//ä¸‹ä¸€ä¸ªè¦è·³è½¬çš„é¡µé¢
 		
-		if(!rand.equalsIgnoreCase(code)){//ÑéÖ¤Âë²»ÕıÈ·
-			request.setAttribute("info","ÇëÊäÈëÕıÈ·µÄÑéÖ¤Âë£¡") ;
-			request.getRequestDispatcher(pages).forward(request, response);//Ìø×ªµ½ÏÂÒ»¸ö½çÃæ
-			return;
+		
+		String rand = "";
+		rand = (String) request.getSession().getAttribute("rand") ;	// ä»sessionä¸­å–å‡ºéªŒè¯ç 
+		
+		String code = "";
+		code = request.getParameter("code") ;
+		
+		if(code.equals("") || code == null){
+			request.setAttribute("info","è¯·è¾“å…¥éªŒè¯ç ï¼") ;
+			request.getRequestDispatcher(pages).forward(request, response);//è·³è½¬åˆ°ä¸‹ä¸€ä¸ªç•Œé¢
+			//return;
+			
+		}else if(!rand.equalsIgnoreCase(code)){//éªŒè¯ç ä¸æ­£ç¡®
+			request.setAttribute("info","è¯·è¾“å…¥æ­£ç¡®çš„éªŒè¯ç ï¼") ;
+			request.getRequestDispatcher(pages).forward(request, response);//è·³è½¬åˆ°ä¸‹ä¸€ä¸ªç•Œé¢
+			//return;
 		}
 		
 		String mid = request.getParameter("mid") ;
 		String password = request.getParameter("password") ;
 		Users user = new Users(0,mid,new MD5Code().getMD5ofStr(password),"","","","","","") ;
 		try {
-			if(userService.findLogin(user)){//µÇÂ¼³É¹¦
+			if(userService.findLogin(user)){//ç™»å½•æˆåŠŸ
 				
-				request.getSession().setAttribute("id",mid) ;	// ±£´æmid
+				request.getSession().setAttribute("id",mid) ;	// ä¿å­˜mid
 				pages = "/welcome.jsp" ;
 			} else {
-				request.setAttribute("info","´íÎóµÄÓÃ»§Ãû»òÃÜÂë£¡") ;
+				request.setAttribute("info","é”™è¯¯çš„ç”¨æˆ·åæˆ–å¯†ç ï¼") ;
 				pages = "front/account.jsp" ;
 			}
 		} catch (Exception e) {
 			request.getRequestDispatcher(pages).forward(request, response);
 		}
-		request.getRequestDispatcher(pages).forward(request, response);//Ìø×ªµ½ÏÂÒ»¸ö½çÃæ
+		//request.getRequestDispatcher(pages).forward(request, response);//è·³è½¬åˆ°ä¸‹ä¸€ä¸ªç•Œé¢
+		response.sendRedirect(pages);
+	}
+	
+	
+	/**
+	 * Initialization of the servlet. <br>
+	 *
+	 * @throws ServletException if an error occurs
+	 */
+	public void init() throws ServletException {
+		// Put your code here
 	}
 
 }

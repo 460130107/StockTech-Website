@@ -1,9 +1,9 @@
 /*
- * ÏµÍ³Ãû³Æ£ºĞÂÎÅ·¢²¼ÏµÍ³
+ * ç³»ç»Ÿåç§°ï¼šæ–°é—»å‘å¸ƒç³»ç»Ÿ
  * 
- * ÀàÃû£ºDeleteNewsInfoServlet
+ * ç±»åï¼šDeleteNewsInfoServlet
  * 
- * ´´½¨ÈÕÆÚ£º2014-06-18
+ * åˆ›å»ºæ—¥æœŸï¼š2014-06-18
  */
 package org.news.servlet;
 
@@ -18,7 +18,7 @@ import org.news.service.NewsInfoService;
 import org.news.utils.Logger;
 
 /**
- * ÓÃÓÚÉ¾³ıĞÂÎÅµÄServlet
+ * ç”¨äºåˆ é™¤æ–°é—»çš„Servlet
  * 
  * @author tt
  * @version 14.6.18
@@ -56,16 +56,16 @@ public class DeleteNewsInfoServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		NewsInfoService nis = new NewsInfoService();						//ĞÂÎÅ·şÎñÀà
-		String[] newsInfo = request.getParameterValues("newsInfoId");		//½ÓÊÕĞÂÎÅID
+		NewsInfoService nis = new NewsInfoService();						//æ–°é—»æœåŠ¡ç±»
+		String[] newsInfo = request.getParameterValues("newsInfoId");		//æ¥æ”¶æ–°é—»ID
 		
-		if (newsInfo == null){												//ÎŞ²ÎÊıÍË³ö
+		if (newsInfo == null){												//æ— å‚æ•°é€€å‡º
 			Logger.log("No parameter", "debug");
 			return;
 		}			
 		
-		int[] newsInfoIds = new int[newsInfo.length];						//ĞÂÎÅIDÕûĞÍÊı×é
-		for (int i = 0; i < newsInfoIds.length; i++) {						//»ñÈ¡ËùÓĞIDµÄÕûĞÍÖµ
+		int[] newsInfoIds = new int[newsInfo.length];						//æ–°é—»IDæ•´å‹æ•°ç»„
+		for (int i = 0; i < newsInfoIds.length; i++) {						//è·å–æ‰€æœ‰IDçš„æ•´å‹å€¼
 			newsInfoIds[i] = Integer.parseInt(newsInfo[i]);					
 		}
 

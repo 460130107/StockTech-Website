@@ -1,9 +1,8 @@
 /*
- * ÏµÍ³Ãû³Æ£ºĞÂÎÅ·¢²¼ÏµÍ³
+ * ç³»ç»Ÿåç§°ï¼šæ–°é—»å‘å¸ƒç³»ç»Ÿ
  * 
- * ÀàÃû£ºHttpServlet
+ * ç±»åï¼šHttpServlet
  * 
- * ´´½¨ÈÕÆÚ£º2014-06-23
  */
 package org.news.servlet;
 
@@ -15,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ÓÃÓÚ¹ÜÀíÔ±ÍË³öµÇÂ¼µÄServlet
+ * ç”¨äºç®¡ç†å‘˜é€€å‡ºç™»å½•çš„Servlet
  * 
  * @author tt
  * @version 14.6.18

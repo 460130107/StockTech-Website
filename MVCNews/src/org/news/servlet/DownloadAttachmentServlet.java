@@ -1,9 +1,9 @@
 /*
- * ÏµÍ³Ãû³Æ£ºĞÂÎÅ·¢²¼ÏµÍ³
+ * ç³»ç»Ÿåç§°ï¼šæ–°é—»å‘å¸ƒç³»ç»Ÿ
  * 
- * ÀàÃû£ºDownloadAttachmentServlet
+ * ç±»åï¼šDownloadAttachmentServlet
  * 
- * ´´½¨ÈÕÆÚ£º2014-07-02
+ * åˆ›å»ºæ—¥æœŸï¼š2014-07-02
  */
 package org.news.servlet;
 
@@ -24,7 +24,7 @@ import com.jspsmart.upload.SmartUpload;
 import com.jspsmart.upload.SmartUploadException;
 
 /**
- * ÓÃÓÚÏÂÔØ²Ù×÷µÄServlet
+ * ç”¨äºä¸‹è½½æ“ä½œçš„Servlet
  * 
  * @author tt
  * @version 14.6.18
@@ -68,7 +68,7 @@ public class DownloadAttachmentServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		//ÏÂÔØ¸½¼ş£¬´ÓÊı¾İ¿âÖĞ¶Á
+		//ä¸‹è½½é™„ä»¶ï¼Œä»æ•°æ®åº“ä¸­è¯»
 		if (request.getParameter("id")!=null){
 			Long attid = Long.valueOf(request.getParameter("id"));
 			NewsAttachment attachment = service.findNewsAttachmentById(attid);
@@ -76,24 +76,24 @@ public class DownloadAttachmentServlet extends HttpServlet {
 			response.setHeader("Content-Disposition","attachment;filename="+new String(filename.getBytes("gb2312"), "ISO8859-1" ));
 			ServletOutputStream out = response.getOutputStream();
 			out.write(attachment.getAttachmentContent());
-		}else{//ÏÂÔØÈí¼ş£¬´Ó·şÎñÆ÷Àï¶Á
+		}else{//ä¸‹è½½è½¯ä»¶ï¼Œä»æœåŠ¡å™¨é‡Œè¯»
 			Long attid = Long.valueOf(request.getParameter("sid"));
 			Logger.log(attid, Logger.DEBUG);
 			NewsAttachment attachment = service.findNewsAttachmentById(attid);
-			String filepath = getServletContext().getRealPath("/") + "softwares" + java.io.File.separator; //ÎÄ¼ş±£´æÂ·¾¶
+			String filepath = getServletContext().getRealPath("/") + "softwares" + java.io.File.separator; //æ–‡ä»¶ä¿å­˜è·¯å¾„
 			String filename = attachment.getAttachmentName();
 			Logger.log(filepath+attachment.getAttachmentName(), Logger.DEBUG);
-			//ĞÂ½¨Ò»¸öSmartUpload¶ÔÏó
+			//æ–°å»ºä¸€ä¸ªSmartUploadå¯¹è±¡
 			SmartUpload su=new SmartUpload();
 			  
 			try {
-				//³õÊ¼»¯
+				//åˆå§‹åŒ–
 				  su.initialize(config, request, response);
-				  //Éè¶¨contentDispositionÎªnullÒÔ½ûÖ¹ä¯ÀÀÆ÷×Ô¶¯´ò¿ªÎÄ¼ş,
-				  //±£Ö¤µã»÷Á¬½ÓºóÊÇÏÂÔØÎÄ¼ş¡£Èô²»Éè¶¨£¬ÔòÏÂÔØµÄÎÄ¼şÀ©Õ¹ÃûÎªdocÊ±£¬
-				  //ä¯ÀÀÆ÷½«×Ô¶¯ÓÃword´ò¿ª¡£À©Õ¹ÃûÎªpdfÊ±£¬ä¯ÀÀÆ÷½«ÓÃacrobat´ò¿ª.
+				  //è®¾å®šcontentDispositionä¸ºnullä»¥ç¦æ­¢æµè§ˆå™¨è‡ªåŠ¨æ‰“å¼€æ–‡ä»¶,
+				  //ä¿è¯ç‚¹å‡»è¿æ¥åæ˜¯ä¸‹è½½æ–‡ä»¶ã€‚è‹¥ä¸è®¾å®šï¼Œåˆ™ä¸‹è½½çš„æ–‡ä»¶æ‰©å±•åä¸ºdocæ—¶ï¼Œ
+				  //æµè§ˆå™¨å°†è‡ªåŠ¨ç”¨wordæ‰“å¼€ã€‚æ‰©å±•åä¸ºpdfæ—¶ï¼Œæµè§ˆå™¨å°†ç”¨acrobatæ‰“å¼€.
 				  su.setContentDisposition(null);
-				  //ÏÂÔØÎÄ¼ş
+				  //ä¸‹è½½æ–‡ä»¶
 				  su.downloadFile(filepath+filename,null,new String(filename.getBytes("gb2312"), "ISO8859-1" ));
 			} catch (SmartUploadException e) {
 				e.printStackTrace();

@@ -1,9 +1,9 @@
 /*
- * ÏµÍ³Ãû³Æ£ºĞÂÎÅ·¢²¼ÏµÍ³
+ * ç³»ç»Ÿåç§°ï¼šæ–°é—»å‘å¸ƒç³»ç»Ÿ
  * 
- * ÀàÃû£ºUserRegisterServlet
+ * ç±»åï¼šUserRegisterServlet
  * 
- * ´´½¨ÈÕÆÚ£º2014-06-26
+ * åˆ›å»ºæ—¥æœŸï¼š2014-06-26
  */
 package org.news.servlet;
 
@@ -20,7 +20,7 @@ import org.news.service.UserService;
 import org.news.utils.MD5Code;
 
 /**
- * ÓÃÓÚ»áÔ±×¢²áµÄServlet
+ * ç”¨äºä¼šå‘˜æ³¨å†Œçš„Servlet
  * 
  * @author tt
  * @version 14.6.18
@@ -83,7 +83,8 @@ public class UserRegisterServlet extends HttpServlet {
 		String idNum = request.getParameter("userId");
 		
 		
-	
+		
+		
 		List<Users> userList = userService.getAllUsers();
 	    int userID = ((userList.size() == 0)? 1 : (userList.get(userList.size()-1).getUsersId()+1));
 		/*
@@ -92,7 +93,7 @@ public class UserRegisterServlet extends HttpServlet {
 				*/
 		Users user = new Users(userID,mid,password,info,realName,sex,email,phone,idNum);
 		
-		if (userService.addUsers(user)){//×¢²á³É¹¦
+		if (userService.addUsers(user)){//æ³¨å†ŒæˆåŠŸ
 			response.setHeader("refresh","2;URL= front/account.jsp") ;
 		
 			request.setAttribute("result", 1);

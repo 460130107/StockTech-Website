@@ -81,7 +81,7 @@ public class AdviceInfoServlet extends HttpServlet {
 		
 		
 		Advice advice = new Advice(adviceId,userEmail,userName,adviceInfo);
-		if (adviceService.addAdvice(advice)){//ע��ɹ�
+		if (adviceService.addAdvice(advice)){//注册成功
 			response.setHeader("refresh","2;URL= front/index.jsp") ;
 		
 			request.setAttribute("result", 1);
