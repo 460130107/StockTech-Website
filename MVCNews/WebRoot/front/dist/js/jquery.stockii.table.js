@@ -3,7 +3,6 @@
  */
 
 ;(function ($, window) {
-	var contentData;
 	
 	/**
 	 * @options
@@ -72,33 +71,38 @@
 			}
 			this.element.append(tableHead);
 			
-			// make the table content
-			var result = this.options.contentData;
-			// traverse content data which is a json string
-			for(var i = 0; i < result.length; i++) {
-				var row = $("<tr></tr>");
-				// traverse columns, read all the properties of column object
-				for(var j = 0; j < this.options.columns.length; j ++) {
-					var each = this.options.columns[j];
-					var id = each.id;
-					row.append(
-						$("<td><div></div></td>")
-						.html(result[i][id]
-								));
-				}
-				this.element.append(row);
-			}
+//			// make the table content
+//			var result = this.options.contentData;
+//			// traverse content data which is a json string
+//			for(var i = 0; i < result.length; i++) {
+//				var row = $("<tr></tr>");
+//				// traverse columns, read all the properties of column object
+//				for(var j = 0; j < this.options.columns.length; j ++) {
+//					var each = this.options.columns[j];
+//					var id = each.id;
+//					row.append(
+//						$("<td><div></div></td>")
+//						.html(result[i][id]
+//								));
+//				}
+//				this.element.append(row);
+//			}
 			
-//			startAjax(this.options);
-			
+			startAjax(this);
 		},
-		addRow: function() {
+		
+		// implement and call this function to do things you want to do after refreshing the table
+		afterRefresh: function() {
 			
 		}
 		
 	};
 	
-	function startAjax(options) {
+	/**
+	 * Start an ajax request, get data back and refresh the table
+	 */
+	function startAjax(table) {
+		var options = table.options;
 		var param = "";
 		if(options.scrollPagerUsed) {
 			param = options.ajax.data
@@ -114,8 +118,8 @@
 			data: "" + param,
 			dataType: "json",
 			success:function(data){
-				contentData = options.ajax.func(data);
-				refreshTable(options, contentData);
+				var displayData = options.ajax.func(data.getResponse);
+				refreshTable(table, displayData);
 			},
 			error:function(){
 				console.log("get info error");
@@ -124,24 +128,39 @@
 		});
 	}
 	
-	function refreshTable(options, displayData) {
+	/**
+	 * Start the table by an object for displaying
+	 */
+	function refreshTable(table, displayData) {
 		// traverse content data which is a json string
 		for(var i = 0; i < displayData.length; i++) {
 			var row = $("<tr></tr>");
 			// traverse columns, read all the properties of column object
-			for(var j = 0; j < options.columns.length; j ++) {
-				var each = options.columns[j];
+			for(var j = 0; j < table.options.columns.length; j ++) {
+				var each = table.options.columns[j];
 				var id = each.id;
 				row.append(
 					$("<td><div></div></td>")
-					.html(displayData[i][id]
+					.append(displayData[i][id]
 							));
 			}
-			this.element.append(row);
+			// add one table row for element
+			table.element.append(row);
 		}
+		
+		// do things you want to do after refreshing
+		table.options.afterRefresh();
 	}
 	
+	function addNewPager() {
+		
+	}
 	
+	function nextPage() {
+		
+	}
+	
+	// call the jquery function to init and new a stockii table
     $.fn.stockiitable = function (options) {
     	var stockiiTable = new StockiiTable(this, options);
     	stockiiTable.init();
