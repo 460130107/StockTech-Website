@@ -40,7 +40,7 @@
 			    align: "left",		// text-align for this column
 			   	},
 			],
-//			contentData: {},
+			contentData: {},
 			customClass: "",
 			minHeight: 120,
 			minWidth: 120,
@@ -72,24 +72,24 @@
 			}
 			this.element.append(tableHead);
 			
-//			// make the table content
-//			var result = this.options.contentData;
-//			// traverse content data which is a json string
-//			for(var i = 0; i < result.length; i++) {
-//				var row = $("<tr></tr>");
-//				// traverse columns, read all the properties of column object
-//				for(var j = 0; j < this.options.columns.length; j ++) {
-//					var each = this.options.columns[j];
-//					var id = each.id;
-//					row.append(
-//						$("<td><div></div></td>")
-//						.html(result[i][id]
-//								));
-//				}
-//				this.element.append(row);
-//			}
+			// make the table content
+			var result = this.options.contentData;
+			// traverse content data which is a json string
+			for(var i = 0; i < result.length; i++) {
+				var row = $("<tr></tr>");
+				// traverse columns, read all the properties of column object
+				for(var j = 0; j < this.options.columns.length; j ++) {
+					var each = this.options.columns[j];
+					var id = each.id;
+					row.append(
+						$("<td><div></div></td>")
+						.html(result[i][id]
+								));
+				}
+				this.element.append(row);
+			}
 			
-			startAjax(this.options);
+//			startAjax(this.options);
 			
 		},
 		addRow: function() {

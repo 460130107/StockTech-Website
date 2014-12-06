@@ -125,22 +125,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 // 			{ id: "pe", name: "市盈率", width: 10, align: "left", }
 		];
 		
-		options.ajax = {
-			url:"<%=request.getContextPath()%>/interface/Test2Action.action",
-			type:"get",
-			data: "",
-			dataType: "json",
-			func: function(data) {
-				var jsonObj = eval("(" + data.getResponse + ")");
-				var array = jsonObj.liststockclassficationresponse.stockclassification;
-				var contentData = [];
-				for(var i = 0; i < array.length; i++) {
-					var dataItem = {};
-					dataItem.number = i + 1;
-					dataItem.stockid = array[i].stockid;
-					dataItem.stockname = array[i].stockname;
-					dataItem.areaname = array[i].areaname;
-					dataItem.industryname = array[i].industryname;
+// 		options.ajax = {
+// 			url:"<%=request.getContextPath()%>/interface/Test2Action.action",
+// 			type:"get",
+// 			data: "",
+// 			dataType: "json",
+// 			func: function(data) {
+// 				var jsonObj = eval("(" + data.getResponse + ")");
+// 				var array = jsonObj.liststockclassficationresponse.stockclassification;
+// 				var contentData = [];
+// 				for(var i = 0; i < array.length; i++) {
+// 					var dataItem = {};
+// 					dataItem.number = i + 1;
+// 					dataItem.stockid = array[i].stockid;
+// 					dataItem.stockname = array[i].stockname;
+// 					dataItem.areaname = array[i].areaname;
+// 					dataItem.industryname = array[i].industryname;
 					
 // 					dataItem.stockid = array[i].stockid;
 // 					dataItem.growth = array[i].growth_ratio;
@@ -152,15 +152,51 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 // 					dataItem.max = array[i].max;
 // 					dataItem.min = array[i].min;
 // 					dataItem.total_stock = array[i].total_stock;
+// 					contentData[i] = dataItem;
+// 				}
+// 				return contentData;
+// 				options.contentData = contentData;
+// 			}
+// 		};
+		
+		$.ajax({
+			url:"<%=request.getContextPath()%>/interface/Test2Action.action",
+			type:"get",
+			data: "",
+			dataType: "json",
+			success:function(data){
+				var jsonObj = eval("(" + data.getResponse + ")");
+				var array = jsonObj.liststockclassficationresponse.stockclassification;
+				var contentData = [];
+				for(var i = 0; i < array.length; i++) {
+					var dataItem = {};
+					dataItem.number = i + 1;
+					dataItem.stockid = array[i].stockid;
+					dataItem.stockname = array[i].stockname;
+					dataItem.areaname = array[i].areaname;
+					dataItem.industryname = array[i].industryname;
+					
+					dataItem.stockid = array[i].stockid;
+					dataItem.growth = array[i].growth_ratio;
+					dataItem.cprice = array[i].current_price;
+					dataItem.bought_price = array[i].bought_price;
+					dataItem.sold_price = array[i].sold_price;
+					dataItem.last_deal_amount = array[i].last_deal_amount;
+					dataItem.total_deal_amount = array[i].total_deal_amount;
+					dataItem.max = array[i].max;
+					dataItem.min = array[i].min;
+					dataItem.total_stock = array[i].total_stock;
 					contentData[i] = dataItem;
 				}
-				return contentData;
-// 				options.contentData = contentData;
+				options.contentData = contentData;
+				$("#table_test").stockiitable(options);
+				$("#table_test").tablesorter({theme: 'default'});
+			},
+			error:function(){
+				console.log("get info error");
 			}
-		};
 		
-		$("#table_test").stockiitable(options);
-		$("#table_test").tablesorter({theme: 'default'});
+		});
 		
 // 		$.ajax({
 // 			url:"<%=request.getContextPath()%>/interface/Test2Action.action",
