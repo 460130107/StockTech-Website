@@ -62,3 +62,22 @@ function fullscreenWidth(selector) {
 function focusTo(selector) {
 	$("" + selector)[0].focus();
 }
+
+
+/**
+ * QQ service
+ * @param 
+ */
+(function suspend(){
+	//$(".boxer").boxer();
+	
+	$(".suspend").mouseover(function() {
+        $(this).stop();
+        $(this).animate({width: 160}, 400);
+	});
+
+    $(".suspend").mouseout(function() {
+        $(this).stop();
+        $(this).animate({width: 40}, 400);
+    });
+})();

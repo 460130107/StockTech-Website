@@ -94,45 +94,50 @@
 	   	 	<img class="tdcode" alt="QRcode" src="front/dist/img/footer-tdcode.png" style="width: 100px; height: 100px;">
 		</div>
 	</div>
-    
-    <script src="front/dist/js/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-    	var PageVariables = {
-    		settings: {
-				trigger:'click',
-				title:'',
-				content:'<p>This is webui popover demo.</p><p>just enjoy it and have fun !</p>',
-				width:180,						
-				multi:true,						
-				closeable:false,
-				style:'',
-				padding:true,
-				style: "inverse"
-			},
-    	};
-    
-    	$(function() {
-    		var qrcode = $('#qrcode').html(),
-			qrcodeSettings = {content: qrcode,
-								title: '',
-								padding: false
-							};
-			$('.icon.icon-wechat').webuiPopover($.extend({}, PageVariables.settings, qrcodeSettings));
-			
-    	});
-    	
-    	// TODO abandoned
-    	function showWechatQRCode() {
-		}
-    	
-    	function checkBeforeSubmit() {
-    		if($("#inputEmail").val() == "") {
-    			$("#submit-tips").text("输入邮箱不能为空").show();
-    		} else {
-    			$("#submit-tips").hide();
-    		}
-    	}
-    	
-    </script>
-    
+        
 </footer>
+
+<script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/jquery-ui.min.js"></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/jquery.fs.boxer.js"></script>
+<script type="text/javascript" language="javascript" src="front/dist/js/jquery.webui-popover.min.js"></script> 
+<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
+<script type="text/javascript">
+   	var PageVariables = {
+   		settings: {
+			trigger:'click',
+			title:'',
+			content:'<p>This is webui popover demo.</p><p>just enjoy it and have fun !</p>',
+			width:180,						
+			multi:true,						
+			closeable:false,
+			style:'',
+			padding:true,
+			style: "inverse"
+		},
+   	};
+   
+   	$(function() {
+   		var qrcode = $('#qrcode').html(),
+		qrcodeSettings = {content: qrcode,
+							title: '',
+							padding: false
+						};
+		$('.icon.icon-wechat').webuiPopover($.extend({}, PageVariables.settings, qrcodeSettings));
+		
+   	});
+   	
+   	// TODO abandoned
+   	function showWechatQRCode() {
+	}
+   	
+   	function checkBeforeSubmit() {
+   		if($("#inputEmail").val() == "") {
+   			$("#submit-tips").text("输入邮箱不能为空").show();
+   		} else {
+   			$("#submit-tips").hide();
+   		}
+   	}
+   	
+</script>

@@ -124,9 +124,6 @@
 			
 			</div>
 <jsp:include page="_footer.jsp" />
-<script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>	
-<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     $("#myNav").affix({

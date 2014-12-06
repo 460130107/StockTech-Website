@@ -20,7 +20,7 @@
 <body>
     <jsp:include page="_header.jsp?index=account" />
 	
-	<div class=" maxbg">
+	<div class=" maxbg container">
 		<div class="row">
 			<div class="col-md-2">
 <!-- 				<img alt="img-left" src="front/dist/img/account.png"> -->
@@ -65,9 +65,6 @@
 	
     
     <jsp:include page="_footer.jsp" />
-    <script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
-	<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
     <script type="text/javascript">
 	  function validate(f){
 	  			if (!(/^[a-zA-Z]\w{5,17}$/.test(f.mid.value))){

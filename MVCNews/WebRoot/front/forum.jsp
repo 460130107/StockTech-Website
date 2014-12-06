@@ -55,11 +55,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<jsp:include page="_footer.jsp" />
     
-    <script type="text/javascript" src="front/dist/js/jquery.min.js"></script>
-	<script type="text/javascript" src="front/dist/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="front/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="front/dist/js/site.effect.js"></script>
-	<script type="text/javascript" src="front/dist/js/stockii-ui.js"></script>
 	
 	<script type="text/javascript">
 		$(window).resize(function() {

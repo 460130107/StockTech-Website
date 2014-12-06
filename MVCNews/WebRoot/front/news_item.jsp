@@ -42,9 +42,6 @@ if(id==""||id==null){
 </div>
 
 <jsp:include page="_footer.jsp"></jsp:include>  
-<script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/jquery-ui.min.js"></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $.ajax({
 	url:"<%=request.getContextPath()%>/interface/acquirenewAction.action",

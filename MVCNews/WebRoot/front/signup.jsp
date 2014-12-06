@@ -21,7 +21,7 @@
 <link rel="icon" href="front/dist/img/icon_stockii_square.png">
 </head>
 <body>
-	<jsp:include page="_header.jsp?index=index" />
+	<jsp:include page="_header.jsp?index=signup" />
 	
 	<div class="container sign-up-section">
     	<div class="col-md-6">
@@ -83,18 +83,14 @@
 				<div class="note">
 					点击注册表示您同意我们的 <a href="https://istocktech.com/terms/">条款</a> and <a
 						href="https://istocktech.com/privacy/">隐私协议</a>.
-				</div>
 				<button class="btn btn-success">注册</button>
+				</div>
 			</div>
-			</form>
+		</form>
 		</div>    
     </div>
 	
 	<jsp:include page="_footer.jsp" />
-	
-    <script language="javascript" charset="GBK" src="../js/signup_validate.js"></script>
-    <script type="text/javascript" src="front/dist/js/jquery.min.js"></script>
-	<script type="text/javascript" src="front/dist/js/bootstrap.min.js"></script>
 	
 </body>
 </html>

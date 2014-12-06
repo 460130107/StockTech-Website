@@ -22,6 +22,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 <jsp:include page="_header.jsp?index=product" />
 
+<!-- QQ service -->
+<div class="suspend">   
+	<dl>
+		<dt class="IE6PNG"></dt>
+		<dd class="suspendQQ"><a href="http://jq.qq.com/?_wv=1027&amp;k=LohcW9" target="_blank"></a></dd>
+		<dd class="suspendTel"><a href="javascript:void(0);"></a></dd>
+	</dl>
+</div>
+
 <div id="product">
 	<div class="topBackground">
 		<div class="container">
@@ -219,9 +228,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 
 <jsp:include page="_footer.jsp" />
-<script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/jquery-ui.min.js"></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
 <!-- 交互效果 -->
 <script type="text/javascript">
 $(function(){

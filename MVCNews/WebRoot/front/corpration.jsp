@@ -24,6 +24,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 <jsp:include page="_header.jsp?index=corpration" />
 
+<!-- QQ service -->
+<div class="suspend">   
+	<dl>
+		<dt class="IE6PNG"></dt>
+		<dd class="suspendQQ"><a href="http://jq.qq.com/?_wv=1027&amp;k=LohcW9" target="_blank"></a></dd>
+		<dd class="suspendTel"><a href="javascript:void(0);"></a></dd>
+	</dl>
+</div>
+
 <div id="product">
 	<div class="topBackground">
 		<div class="container">
@@ -51,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p class="phrase">强化理性决策回报</p>
 					<p class="phrase">强化理性决策回报</p>
 				</div>	
-				<button class="btn-view" onclick="jump('item3');">点击查看</button>	
+				<button class="btn-view" >点击查看</button>	
 			</div>
 		</div>
 		
@@ -68,7 +77,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p class="phrase">强化理性决策回报</p>
 					<p class="phrase">强化理性决策回报</p>
 				</div>	
-				<button class="btn-view" onclick="jump('item3');">点击查看</button>		
+				<button class="btn-view" >点击查看</button>		
 			</div>
 		</div>
 		<!-- 合作三 -->
@@ -84,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p class="phrase">强化理性决策回报</p>
 					<p class="phrase">强化理性决策回报</p>
 				</div>	
-				<button class="btn-view" onclick="jump('item3');">点击查看</button>		
+				<button class="btn-view" >点击查看</button>		
 			</div>
 		</div>
 	</div>
@@ -137,7 +146,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 
 <jsp:include page="_footer.jsp" />
-<script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -243,11 +243,6 @@
 <!-- dialog before jump -->
 
 
-<script src="front/dist/js/jquery.min.js" type="text/javascript"></script>
-<script src="front/dist/js/jquery-ui.min.js" type="text/javascript"></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/site.effect.js"></script>
-<script type="text/javascript" src="front/dist/js/jquery.webui-popover.min.js"></script>
 <!-- marketing展示效果 -->
 <script type="text/javascript" language="javascript">   
     $( ".ser-blind" ).hover(

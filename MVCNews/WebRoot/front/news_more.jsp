@@ -27,7 +27,6 @@ more=request.getParameter("more");
 if(more==""||more==null){
 	more="root";
 }
-System.out.println(more);
  %>
 
 <jsp:include page="_header.jsp?index=news"></jsp:include>
@@ -327,12 +326,7 @@ System.out.println(more);
 </div>
 
 <jsp:include page="_footer.jsp" />
-<script type="text/javascript" language="javascript" src="front/dist/js/jquery.min.js" ></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/jquery-ui.min.js"></script>
-<script type="text/javascript" language="javascript" src="front/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript">
 
-</script>
 <script type="text/javascript">
 $(function(){
 	var currentPage=1;
